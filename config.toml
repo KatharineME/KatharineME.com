@@ -1,5 +1,5 @@
 baseurl = "http://www.example.com"
-title = "Yusuke Ishimi"
+title = "Katharine Medetgul-Ernar"
 
 theme = "coder-portfolio"
 
@@ -18,7 +18,7 @@ disqusShortname = "yourdiscussshortname"
     author = "Yusuke Ishimi"
     description = "Yusuke Ishimi's personal website"
     keywords = "blog,developer,personal"
-    info = "WEB AND APPS ENGINEER"
+    info = "Genomics and Computer Science Blog"
     avatarurl = "images/avatar.jpg"
     footercontent = "Enter a text here."
     fixedbarContent = "Do you want to know me more private?→"
@@ -54,31 +54,18 @@ disqusShortname = "yourdiscussshortname"
     name = "Github"
     icon = "fab fa-github"
     weight = 1
-    url = "https://github.com/naro143/"
-[[params.social]]
-    name = "Twitter"
-    icon = "fab fa-twitter"
-    weight = 2
-    url = "https://twitter.com/naro143/"
-[[params.social]]
-    name = "LinkedIn"
-    icon = "fab fa-linkedin"
-    weight = 3
-    url = "https://www.linkedin.com/in/naro143/"
-[[params.social]]
-    name = "LinkedIn"
-    weight = 4
-    url = "https://www.linkedin.com/in/naro143/"
+    url = "https://github.com/KatharineME/"
+
 
 [languages]
     [languages.en]
         languagecode = "en"
         languagename = "English" # The language name to be displayed in the selector.
-        title = "Yusuke Ishimi"
+        title = "Katharine Medetgul-Ernar"
 
         # You can configure the theme parameter for each language.
         [languages.en.params]
-            author = "Yusuke Ishimi"
+            author = "Katharine Medetgul-Ernar"
             info = "WEB AND APPS ENGINEER"
             description = "Yusuke Ishimi's personal website"
             keywords = "blog,developer,personal"
