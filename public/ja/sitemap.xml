@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://www.example.com/ja/posts/featuresofcoderportfolio/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.example.com/posts/featuresofcoderportfolio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://www.example.com/ja/posts/featuresofcoderportfolio/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/ja/posts/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.example.com/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://www.example.com/ja/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/ja/posts/theme-demo/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.example.com/posts/theme-demo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://www.example.com/ja/posts/theme-demo/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/ja/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.example.com/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://www.example.com/ja/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/ja/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.example.com/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://www.example.com/ja/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/ja/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.example.com/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://www.example.com/ja/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/ja/contact/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.example.com/contact/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://www.example.com/ja/contact/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/ja/projects/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.example.com/projects/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://www.example.com/ja/projects/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/ja/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.example.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://www.example.com/ja/tags/"
+                />
+  </url>
+  
+</urlset>

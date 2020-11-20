@@ -103,33 +103,3 @@ disqusShortname = "yourdiscussshortname"
                 name = "Contact me"
                 weight = 5
                 url = "contact"
-
-
-    [languages.ja]
-        languagecode = "ja"
-        languagename = "Japanese"
-        title = "石見 優丞"
-
-        [languages.ja.params]
-            author = "石見 優丞"
-            description = "石見のサイト"
-            keywords = "blog,developer,strona domowa"
-            info = "WEBとアプリのエンジニア"
-
-        [languages.ja.menu]
-            [[languages.ja.menu.main]]
-                name = "テーマについて"
-                weight = 1.0
-                url = "ja/about"
-            [[languages.ja.menu.main]]
-                name = "ブログ"
-                weight = 2.0
-                url = "ja/posts"
-            [[languages.ja.menu.main]]
-                name = "プロジェクト"
-                weight = 3
-                url = "ja/projects"
-            [[languages.ja.menu.main]]
-                name = "お問い合わせ"
-                weight = 5
-                url = "ja/contact"
