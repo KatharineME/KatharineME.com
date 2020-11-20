@@ -13,17 +13,17 @@
   </url>
   
   <url>
+    <loc>http://www.example.com/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.example.com/posts/</loc>
     <lastmod>2018-08-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.example.com/posts/theme-demo/</loc>
-    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/</loc>
     <lastmod>2018-08-03T00:00:00+00:00</lastmod>
   </url>
   

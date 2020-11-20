@@ -15,27 +15,15 @@ pygmentsUseClasses = true
 disqusShortname = "yourdiscussshortname"
 
 [params]
-    author = "Yusuke Ishimi"
-    description = "Yusuke Ishimi's personal website"
+    author = "Katharine Medetgul-Ernar"
+    description = "Genomics and Computer Science Blog"
     keywords = "blog,developer,personal"
     info = "Genomics and Computer Science Blog"
     avatarurl = "images/avatar.jpg"
     footercontent = "Enter a text here."
-    fixedbarContent = "Do you want to know me more private?→"
-    fixedbarContentAfter = "Thank You! Please share it if you like it→"
 
     hideCredits = false
     hideCopyright = false
-
-    # Bottom sns share
-    snsShare = true
-    # Popular sns share
-    # if you want add sns. please message!
-    enableTwitterShare = true
-    enableFacebookShare = true
-    enableHatenaShare = true
-    enableLineShare = true
-    enableLinkedInShare = true
 
     thumbnail = "images/tn.png"
 
@@ -66,27 +54,13 @@ disqusShortname = "yourdiscussshortname"
         # You can configure the theme parameter for each language.
         [languages.en.params]
             author = "Katharine Medetgul-Ernar"
-            info = "WEB AND APPS ENGINEER"
+            info = "Computational Genomics Blog"
             description = "Yusuke Ishimi's personal website"
             keywords = "blog,developer,personal"
 
         [languages.en.menu] # It is possible to change the menu too.
 
             [[languages.en.menu.main]]
-                name = "About"
-                weight = 1.0
-                url = "about"
-
-            [[languages.en.menu.main]]
                 name = "Blog"
                 weight = 2.0
                 url = "posts"
-
-            [[languages.en.menu.main]]
-                name = "Projects"
-                weight = 3
-                url = "projects"
-            [[languages.en.menu.main]]
-                name = "Contact me"
-                weight = 5
-                url = "contact"
