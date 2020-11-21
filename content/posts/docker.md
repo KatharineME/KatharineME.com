@@ -6,9 +6,6 @@ tags = []
 categories = []
 +++
 
-
-## Docker
-
 Docker tutorial: https://www.youtube.com/watch?v=zJ6WbK9zFpI&t=1s
 
 Its purpose is to make a process, with unique environment requirments, run anywhere.
@@ -25,13 +22,13 @@ A process on your machine that is isolated from all other processes.
 
 It uses various layers from its image for its filesystem. However, each container gets a scratch space to add/update/remove files. This scratch space is isolated in each container, even containers built from the same image.
 
-Docker Volumes allow you to connect the filesystem of a container with the host OS filesystem. When directory with data in a container is "mounted," it is connected to the host OS filesystem. `named volumes` are volumes like buckets of data. `named volumes` are saved in a docker controlled directory close to root of host OS. `bind mounts` are another type of volume and way to persist data in docker. With bind mounts you can control the mountpoint on the host.
+Docker Volumes allow you to connect the filesystem of a container with the host OS filesystem. When directory with data in a container is "mounted," it is connected to the host OS filesystem. __named volumes__ are volumes like buckets of data. named volumes are saved in a docker controlled directory close to root of host OS. __bind mounts__ are another type of volume and way to persist data in docker. With bind mounts you can control the mountpoint on the host.
 
 Containers are not like VMs in that they don't just run on standby, they are not meant to run full operating systems. Containers are environments for running processes. Therefore a contianer only lives as long as the process inside it is alive. When the process finishes, the container exits.
 
 ## Dockerfile and Image
 
-A `Dockerfile` is a set of isntructions for building an image. When an image is built it can then be run. Running an image creates a container. The dockerfile is composed of commands that create image layers. A Dockerfile must be built off a previous image. This is done with the `FROM` command like this:
+A Dockerfile is a set of isntructions for building an image. When an image is built it can then be run. Running an image creates a container. The dockerfile is composed of commands that create image layers. A Dockerfile must be built off a previous image. This is done with the FROM command like this:
 
 ```sh
 FROM ubuntu
@@ -39,32 +36,32 @@ FROM ubuntu
 RUN apt-get update
 ```
 
-That is why there is a default base image for docker: its Alpine (a lightweight Linux distro). Interestingly, the Dockerfile is not included in the image that made it. The best way to get more information about an image is `docker inspect <image_name>`.
+That is why there is a default base image for docker: its Alpine (a lightweight Linux distro). Interestingly, the Dockerfile is not included in the image that made it. The best way to get more information about an image is docker inspect <image_name>.
 
 
 ## Basic Commands
 
-Run the container in the background `-d` and map port `-p` 80 of the host to 80 in the container. Without `-d` you won't get your prompt back and STDOUT of the container will be printed to the terminal.
+Run the container in the background __-d__ and map port __-p__ 80 of the host to 80 in the container. Without __-d__ you won't get your prompt back and STDOUT of the container will be printed to the terminal.
 ```sh
 docker run -dp 80:80 <image_name>
 ```
 
-Run a container based off the ubuntu image. If no `ubuntu` image exists locally, docker will pull it from Docker Hub. Specifically, Docker will look for `uhbuntu/ubuntu:latest` when `ubuntu` is passed in. No tag is specified, so docker will use the version of ubuntu tagged with `latest` on Docker Hub.
+Run a container based off the ubuntu image. If no __ubuntu__ image exists locally, docker will pull it from Docker Hub. Specifically, Docker will look for __uhbuntu/ubuntu:latest__ when __ubuntu__ is passed in. No tag is specified, so docker will use the version of ubuntu tagged with __latest__ on Docker Hub.
 ```sh
 docker run -d ubuntu
 ```
 
-Run a container based off the verison of ubuntu tagged with `11.2.0`.
+Run a container based off the verison of ubuntu tagged with __11.2.0__.
 ```sh
 docker run -d ubuntu:11.2.0
 ```
 
-Run a container in interactive mode `-i`. By default, containers dont listen to STDIN. In interactive mode, they will. `-t` attaches to the container's terminal. With both of these flags, STDIN and STDOUT will flow through the container.
+Run a container in interactive mode __-i__. By default, containers dont listen to STDIN. In interactive mode, they will. __-t__ attaches to the container's terminal. With both of these flags, STDIN and STDOUT will flow through the container.
 ```sh
 docker run -it ubuntu ls /
 ```
 
-List containers that are running and because `-a` exited.
+List containers that are running and because __-a__ exited.
 ```sh
 docker ps -a
 ```
@@ -96,7 +93,7 @@ List images.
 docker image list
 ```
 
-List dangling images. Dangling images are layers that have no relationship to any tagged iamges. They consume disk space, so its usually better to remove them. `-f` is for filter.
+List dangling images. Dangling images are layers that have no relationship to any tagged iamges. They consume disk space, so its usually better to remove them. __-f__ is for filter.
 ```sh
 docker images -f dangling=true
 ```
@@ -152,12 +149,12 @@ docker push katharineme/myimage
 
 ## Volume
 
-Map host data to container to create a `bind-mount`. When the container is running, the data will be accessible by the container at the mapped location. The container will listen to changes made the data and changes made to the data in the container will be saved on the host.
+Map host data to container to create a __bind-mount__. When the container is running, the data will be accessible by the container at the mapped location. The container will listen to changes made the data and changes made to the data in the container will be saved on the host.
 ```sh
 docker run -v </host/data/dir>:</container/dir> <image_name>
 ```
 
-Create a `named volume`. named volumes are stored in a directory in the virtual machine docker is running. So they arent accessible in the host CLI.
+Create a __named volume__. named volumes are stored in a directory in the virtual machine docker is running. So they arent accessible in the host CLI.
 ```sh
 docker volume create <volume_name>
 ```
@@ -227,16 +224,16 @@ CMD ["5"]
 ```
 
 ENTRYPOINT
-- when you `docker run` the container, you can pass in a parameter, which will be added the command you set as the entrypoint. For example if the entrypoint is: `ENTRYPOINT ["sleep"]` and you run `docker run ubuntu-sleeper 10`, the ubuntu-sleeper container will run the sleep command for 10 seconds, and then exit.
+- when you __docker run__ the container, you can pass in a parameter, which will be added the command you set as the entrypoint. For example if the entrypoint is: __ENTRYPOINT ["sleep"]__ and you run __docker run ubuntu-sleeper 10__, the ubuntu-sleeper container will run the sleep command for 10 seconds, and then exit.
 
 CMD
-- the process that is run in the container. When this process is finished, the container exits. If your Dockerfile has `CMD ["sleep", "5"]` but you run `docker run ubunutu-sleeper sleep 10` the contianer will run sleep for 10 seconds, then exit, becuase the command you pass in overides the CMD in the Dockerfile.
+- the process that is run in the container. When this process is finished, the container exits. If your Dockerfile has __CMD ["sleep", "5"]__ but you run __docker run ubunutu-sleeper sleep 10__ the contianer will run sleep for 10 seconds, then exit, becuase the command you pass in overides the CMD in the Dockerfile.
 
 ## docker-compose
 
 docker-compose makes the process of building, running, and linking multiple containers easier. This might be done to create different containers for parts of a single application (one container for the frontend, and one for the sql database). However, docker-compose can also be used to start a single container. docker-compose runs all the containers with their specificed parameters in docker-compose.yml and connects them so they can access each other.
 
-`docker-compose.yml`
+__docker-compose.yml__
 
 ```sh
 version: 3
@@ -251,16 +248,16 @@ services:
             -5000:80
 ```
 
-Run containers in `docker-compose.yml`
+Run containers in __docker-compose.yml__
 ```sh
 docker-compose up
 ```
 
-Exit and remove containers in `docker-compose.yml` 
+Exit and remove containers in __docker-compose.yml__ 
 ```sh
 docker-compose down
 ```
 
 ## .dockerignore
 
-While building an image from a Dockerfile, the Docker client will send everything the entire directory the Dockerfile is in to the Docker daemon. So if your project has a lot of data, use `.dockerignore` to tell the Docker client what not to send to the daemon. This will speed up image building significantly for large projects.
+While building an image from a Dockerfile, the Docker client will send everything the entire directory the Dockerfile is in to the Docker daemon. So if your project has a lot of data, use __.dockerignore__ to tell the Docker client what not to send to the daemon. This will speed up image building significantly for large projects.
