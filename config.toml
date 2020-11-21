@@ -19,7 +19,7 @@ disqusShortname = "yourdiscussshortname"
     description = "Genomics and Computer Science Blog"
     keywords = "blog,developer,personal"
     info = "Genomics and Computer Science Blog"
-    avatarurl = "images/avatar.jpg"
+    avatarurl = "images/profile.jpg"
     footercontent = "Enter a text here."
 
     hideCredits = false
@@ -55,7 +55,7 @@ disqusShortname = "yourdiscussshortname"
         [languages.en.params]
             author = "Katharine Medetgul-Ernar"
             info = "Computational Genomics Blog"
-            description = "Yusuke Ishimi's personal website"
+            description = "Computational Genomics Blog"
             keywords = "blog,developer,personal"
 
         [languages.en.menu] # It is possible to change the menu too.
