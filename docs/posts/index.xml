@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Katharine Medetgul-Ernar</title>
+    <link>http://www.example.com/posts/</link>
+    <description>Recent content in Posts on Katharine Medetgul-Ernar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://www.example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>http://www.example.com/posts/docker/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/posts/docker/</guid>
+      <description>Best Docker tutorial
+Its purpose is to make a process, with unique environment requirments, run anywhere.
+It&amp;rsquo;s built on the Linux kernal. To run on Windows, Docker creates a Linux VM and runs containers in that VM. When the host kernal is Windows or Unix, Docker can interact with it directly.
+To run Docker on Mac specifically, the newest and best option is to get Docker Desktop for Mac. Docker Desktop for Mac uses HyperKit (virtualization software) to create a Linux OS.</description>
+    </item>
+    
+    <item>
+      <title>Virtualization</title>
+      <link>http://www.example.com/posts/virtualization/</link>
+      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/posts/virtualization/</guid>
+      <description>VMs  virtualize the hardware come with complete OS and kernal interact with the hardware via a hypervisor run on standby start in minutes usually GBs in size  Containers  virtualize the OS interact with and use the host OS and host kernal  Docker does this via Docker Daemon   will exit without an active process start in seconds usually MBs in size  </description>
+    </item>
+    
+  </channel>
+</rss>

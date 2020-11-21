@@ -1,5 +1,6 @@
 baseurl = "http://www.example.com"
 title = "Katharine Medetgul-Ernar"
+publishDir = "docs/"
 
 theme = "coder-portfolio"
 

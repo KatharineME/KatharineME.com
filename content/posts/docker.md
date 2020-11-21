@@ -6,11 +6,11 @@ tags = []
 categories = []
 +++
 
-Docker tutorial: https://www.youtube.com/watch?v=zJ6WbK9zFpI&t=1s
+[Best Docker tutorial](https://www.youtube.com/watch?v=zJ6WbK9zFpI&t=1s)
 
 Its purpose is to make a process, with unique environment requirments, run anywhere.
 
-It's built on the Linux kernal. To run on Windows, Docker creates a Linux VM and runs containers in that VM. When the host kernal is Linux or Unix, Docker can interact with it directly.
+It's built on the Linux kernal. To run on Windows, Docker creates a Linux VM and runs containers in that VM. When the host kernal is Windows or Unix, Docker can interact with it directly.
 
 To run Docker on Mac specifically, the newest and best option is to get Docker Desktop for Mac. Docker Desktop for Mac uses HyperKit (virtualization software) to create a Linux OS. Then Docker runs inside of the Linux OS.
 
@@ -30,14 +30,13 @@ Containers are not like VMs in that they don't just run on standby, they are not
 
 A Dockerfile is a set of isntructions for building an image. When an image is built it can then be run. Running an image creates a container. The dockerfile is composed of commands that create image layers. A Dockerfile must be built off a previous image. This is done with the FROM command like this:
 
-```sh
+```
 FROM ubuntu
 
 RUN apt-get update
 ```
 
 That is why there is a default base image for docker: its Alpine (a lightweight Linux distro). Interestingly, the Dockerfile is not included in the image that made it. The best way to get more information about an image is docker inspect <image_name>.
-
 
 ## Basic Commands
 

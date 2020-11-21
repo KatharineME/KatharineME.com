@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Katharine Medetgul-Ernar">
+    <meta name="description" content="http://www.example.com">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta property="og:site_name" content="Katharine Medetgul-Ernar">
+    <meta property="og:title" content="
+  Docker - Katharine Medetgul-Ernar
+">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.example.com/posts/docker/">
+    <meta property="og:image" content="http://www.example.com">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="http://www.example.com/posts/docker/">
+    <meta name="twitter:image" content="http://www.example.com">
+
+    <base href="http://www.example.com/posts/docker/">
+    <title>
+  Docker - Katharine Medetgul-Ernar
+</title>
+
+    <link rel="canonical" href="http://www.example.com/posts/docker/">
+    
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="/css/normalize.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    
+      <link rel="alternate" href="http://www.example.com/index.xml" type="application/rss+xml" title="Katharine Medetgul-Ernar">
+      <link href="http://www.example.com/index.xml" rel="feed" type="application/rss+xml" title="Katharine Medetgul-Ernar" />
+    
+
+    <meta name="generator" content="Hugo 0.78.2" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">Katharine Medetgul-Ernar</a>
+    <input type="checkbox" id="menu-control"/>
+    <label class="menu-mobile  float-right " for="menu-control">
+      <span class="btn-mobile  float-right ">&#9776;</span>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="http://www.example.com/posts">Blog</a>
+            </li>
+          
+        
+        
+      </ul>
+    </label>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">Docker</h1>
+      <h2 class="date">November 10, 2020</h2>
+
+      
+    </header>
+
+    <p><a href="https://www.youtube.com/watch?v=zJ6WbK9zFpI&amp;t=1s">Best Docker tutorial</a></p>
+<p>Its purpose is to make a process, with unique environment requirments, run anywhere.</p>
+<p>It&rsquo;s built on the Linux kernal. To run on Windows, Docker creates a Linux VM and runs containers in that VM. When the host kernal is Windows or Unix, Docker can interact with it directly.</p>
+<p>To run Docker on Mac specifically, the newest and best option is to get Docker Desktop for Mac. Docker Desktop for Mac uses HyperKit (virtualization software) to create a Linux OS. Then Docker runs inside of the Linux OS.</p>
+<p>Docker acheives its sandbox effect using namespaces. The host OS Linux has process numbers starting with 1. Each process it opens gets a subsequent number. No two processes can have the same number (hence namespace). So the Docker process actually has a number of say 6 on the host OS. But Docker creates a new namespace for itself and makes its start process number 1. Therefore achieving a kind of sandbox. Everything that dockers needs to do, like create containers, networks, mounts, and etc, use separate namespaces to isolate themselves.</p>
+<h2 id="container">Container</h2>
+<p>A process on your machine that is isolated from all other processes.</p>
+<p>It uses various layers from its image for its filesystem. However, each container gets a scratch space to add/update/remove files. This scratch space is isolated in each container, even containers built from the same image.</p>
+<p>Docker Volumes allow you to connect the filesystem of a container with the host OS filesystem. When directory with data in a container is &ldquo;mounted,&rdquo; it is connected to the host OS filesystem. <strong>named volumes</strong> are volumes like buckets of data. named volumes are saved in a docker controlled directory close to root of host OS. <strong>bind mounts</strong> are another type of volume and way to persist data in docker. With bind mounts you can control the mountpoint on the host.</p>
+<p>Containers are not like VMs in that they don&rsquo;t just run on standby, they are not meant to run full operating systems. Containers are environments for running processes. Therefore a contianer only lives as long as the process inside it is alive. When the process finishes, the container exits.</p>
+<h2 id="dockerfile-and-image">Dockerfile and Image</h2>
+<p>A Dockerfile is a set of isntructions for building an image. When an image is built it can then be run. Running an image creates a container. The dockerfile is composed of commands that create image layers. A Dockerfile must be built off a previous image. This is done with the FROM command like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">FROM ubuntu
+
+RUN apt-get update
+</code></pre></div><p>That is why there is a default base image for docker: its Alpine (a lightweight Linux distro). Interestingly, the Dockerfile is not included in the image that made it. The best way to get more information about an image is docker inspect &lt;image_name&gt;.</p>
+<h2 id="basic-commands">Basic Commands</h2>
+<p>Run the container in the background <strong>-d</strong> and map port <strong>-p</strong> 80 of the host to 80 in the container. Without <strong>-d</strong> you won&rsquo;t get your prompt back and STDOUT of the container will be printed to the terminal.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -dp 80:80 &lt;image_name&gt;
+</code></pre></div><p>Run a container based off the ubuntu image. If no <strong>ubuntu</strong> image exists locally, docker will pull it from Docker Hub. Specifically, Docker will look for <strong>uhbuntu/ubuntu:latest</strong> when <strong>ubuntu</strong> is passed in. No tag is specified, so docker will use the version of ubuntu tagged with <strong>latest</strong> on Docker Hub.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -d ubuntu
+</code></pre></div><p>Run a container based off the verison of ubuntu tagged with <strong>11.2.0</strong>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -d ubuntu:11.2.0
+</code></pre></div><p>Run a container in interactive mode <strong>-i</strong>. By default, containers dont listen to STDIN. In interactive mode, they will. <strong>-t</strong> attaches to the container&rsquo;s terminal. With both of these flags, STDIN and STDOUT will flow through the container.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -it ubuntu ls /
+</code></pre></div><p>List containers that are running and because <strong>-a</strong> exited.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker ps -a
+</code></pre></div><p>Stop a running container.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker stop &lt;container_id&gt;
+</code></pre></div><p>Remove a container.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker rm &lt;container_id&gt;
+</code></pre></div><p>Remove all stopped containers.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker system prune
+</code></pre></div><p>Execute a command in a running container.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker <span class="nb">exec</span> &lt;container_id&gt; cat file_in_container
+</code></pre></div><h2 id="image">Image</h2>
+<p>List images.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker image list
+</code></pre></div><p>List dangling images. Dangling images are layers that have no relationship to any tagged iamges. They consume disk space, so its usually better to remove them. <strong>-f</strong> is for filter.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker images -f <span class="nv">dangling</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div><p>Remove an image.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker rmi &lt;image_name&gt;
+</code></pre></div><p>Tag an image.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker tag &lt;source_image_name&gt;:&lt;tag&gt; &lt;target_image_name&gt;:&lt;tag&gt;
+</code></pre></div><p>Rename an image.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker tag &lt;old_image_name&gt; &lt;new_image_name&gt;
+</code></pre></div><p>Build an iamge off of the Dockerfile in the current directory and tag it <code>-t</code> with <code>image_name</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker build -t &lt;image_name&gt; . 
+</code></pre></div><p>See image layer information.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker <span class="nb">history</span> &lt;image_name&gt;
+</code></pre></div><h2 id="registry">Registry</h2>
+<p>Login to Docker Hub.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker login -u &lt;user_name&gt;
+</code></pre></div><p>Pull image. It will pull from Docker Hub unless a different registry is specified. If you dont specifiy a username, docker will assume the username is the same as the image name. So these two commands will do the same thing:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker pull ubuntu
+
+docker pull ubuntu/ubuntu:latest
+</code></pre></div><p>Pull image from a different registry.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker pull myregistry.local:5000/testing/test-image
+</code></pre></div><p>Push image. It will push to Docker Hub unless a different registry is specified.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker push katharineme/myimage
+</code></pre></div><h2 id="volume">Volume</h2>
+<p>Map host data to container to create a <strong>bind-mount</strong>. When the container is running, the data will be accessible by the container at the mapped location. The container will listen to changes made the data and changes made to the data in the container will be saved on the host.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -v &lt;/host/data/dir&gt;:&lt;/container/dir&gt; &lt;image_name&gt;
+</code></pre></div><p>Create a <strong>named volume</strong>. named volumes are stored in a directory in the virtual machine docker is running. So they arent accessible in the host CLI.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker volume create &lt;volume_name&gt;
+</code></pre></div><p>List named volumes.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker volume ls
+</code></pre></div><h2 id="container-status">Container Status</h2>
+<p>See container details.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker inspect &lt;container_name&gt;
+</code></pre></div><p>See container logs (STDOUT).</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker logs &lt;container_name&gt;
+</code></pre></div><h2 id="container-power">Container Power</h2>
+<p>Give a container 50% of host CPU</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run --cpus<span class="o">=</span>.5 ubuntu
+</code></pre></div><p>Give a container 100Mb of host Memory</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run --memory<span class="o">=</span>100m ubuntu
+</code></pre></div><h2 id="environment-variables">Environment Variables</h2>
+<p>Run container with environment variable. See a containers current environment variables by running <code>docker inspect</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -e <span class="nv">APP_COLOR</span><span class="o">=</span>blue &lt;image_name&gt;
+</code></pre></div><h2 id="dockerfile">Dockerfile</h2>
+<p>Plan Layers</p>
+<ul>
+<li>OS</li>
+<li>source repos</li>
+<li>depedencies with apt</li>
+<li>python dependencies</li>
+<li>copy source to /opt</li>
+<li>run web server command</li>
+</ul>
+<p>Write Dockerfile</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">FROM Ubuntu
+
+RUN apt-get update
+RUN apt-get install python
+
+COPY . . 
+
+ENTRYPOINT [&#34;sleep&#34;]
+
+WORKDIR /home/work
+
+CMD [&#34;5&#34;]
+
+</code></pre></div><p>ENTRYPOINT</p>
+<ul>
+<li>when you <strong>docker run</strong> the container, you can pass in a parameter, which will be added the command you set as the entrypoint. For example if the entrypoint is: <strong>ENTRYPOINT [&ldquo;sleep&rdquo;]</strong> and you run <strong>docker run ubuntu-sleeper 10</strong>, the ubuntu-sleeper container will run the sleep command for 10 seconds, and then exit.</li>
+</ul>
+<p>CMD</p>
+<ul>
+<li>the process that is run in the container. When this process is finished, the container exits. If your Dockerfile has <strong>CMD [&ldquo;sleep&rdquo;, &ldquo;5&rdquo;]</strong> but you run <strong>docker run ubunutu-sleeper sleep 10</strong> the contianer will run sleep for 10 seconds, then exit, becuase the command you pass in overides the CMD in the Dockerfile.</li>
+</ul>
+<h2 id="docker-compose">docker-compose</h2>
+<p>docker-compose makes the process of building, running, and linking multiple containers easier. This might be done to create different containers for parts of a single application (one container for the frontend, and one for the sql database). However, docker-compose can also be used to start a single container. docker-compose runs all the containers with their specificed parameters in docker-compose.yml and connects them so they can access each other.</p>
+<p><strong>docker-compose.yml</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">version: <span class="m">3</span>
+services:
+    redis:
+        image: my_redis_image
+    db:
+        image: postgres:9.4
+    vote:
+        image: voting-app
+        ports:
+            -5000:80
+</code></pre></div><p>Run containers in <strong>docker-compose.yml</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker-compose up
+</code></pre></div><p>Exit and remove containers in <strong>docker-compose.yml</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker-compose down
+</code></pre></div><h2 id="dockerignore">.dockerignore</h2>
+<p>While building an image from a Dockerfile, the Docker client will send everything the entire directory the Dockerfile is in to the Docker daemon. So if your project has a lot of data, use <strong>.dockerignore</strong> to tell the Docker client what not to send to the daemon. This will speed up image building significantly for large projects.</p>
+
+  </article>
+
+  <br/>
+
+  
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  
+</section>
+
+      </div>
+      
+    </main>
+
+    
+
+  <script src="/js/app.js"></script>
+  
+  </body>
+</html>
