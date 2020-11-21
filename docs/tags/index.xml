@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Katharine Medetgul-Ernar</title>
-    <link>http://www.example.com/tags/</link>
+    <link>https://katharineme.github.io/katharineme.com/tags/</link>
     <description>Recent content in Tags on Katharine Medetgul-Ernar</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="http://www.example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://katharineme.github.io/katharineme.com/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
