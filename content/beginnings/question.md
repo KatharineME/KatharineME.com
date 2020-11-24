@@ -1,0 +1,1 @@
+Assuming that the reference genome is not a true human average (or even if it is) it must contain mutations that are causing a significant portion of humans problems (or at least a phenotype that makes a difference in daily life) that we aren’t paying attention to because they’re defined as “reference”, right?
