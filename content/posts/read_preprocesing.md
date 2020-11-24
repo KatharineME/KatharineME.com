@@ -65,3 +65,13 @@ Paramters to use for paired end short read sequencing.
 * —-out2
 * —-unpaired1
 * —-unpaired2
+
+## FATSQ file naming conventions
+- Before you pre-process the reads, you need to understand what the file names mean right?
+- [Illumina FASTQ file naming convention](https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/NamingConvention_FASTQ-files-swBS.htm)
+
+## Forward and reverse reads
+
+- [Forward and reverse reads in paired- end sequencing](https://www.cureffi.org/2012/12/19/forward-and-reverse-reads-in-paired-end-sequencing/)
+
+<img src"images/paired_end_reads.jpg">

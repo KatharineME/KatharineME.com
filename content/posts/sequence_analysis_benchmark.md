@@ -8,7 +8,6 @@ categories = []
 
 
 ## Precision FDA Truth Challenge
-- https://precision.fda.gov/challenges/truth
 - Genome in Bottle’s NA12878 also known as HG001.
 - Used to develop the actual tools (overfitted to analyzing this sample).
 - So using this sample to test for accuracy and quality is too easy.
@@ -20,6 +19,7 @@ HG001 is female, HG002 is male.
 - Some pipelines are gender aware for the x chromosome and won’t call an snp on chromosome x heterozygous for an XY male, but other tools will (which is incorrect).
 - They used Real Time Genomics’ vcfeval and Illuminas hap.py to compare vcfs.
 - Vcfeval generates an intermediate vcd and hap.py counts indels and snp.
+- [Precision FDA Truth Challenge site](https://precision.fda.gov/challenges/truth)
 
 
 ## Genome in a Bottle (Giab)
@@ -37,4 +37,4 @@ HG001 is female, HG002 is male.
     - Son was sequenced at 100X, others were sequenced at 300X
     - Son is what giab recommends using at this time, because its being actively updated
 - Ashkenazi Jew family trio
-
+- [Giab benchmark data paper](https://www.nature.com/articles/sdata201625)

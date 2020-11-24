@@ -34,7 +34,7 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
       <pubDate>Fri, 02 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.github.io/katharineme.com/posts/sequence-analysis-benchmark/</guid>
-      <description>Precision FDA Truth Challenge  https://precision.fda.gov/challenges/truth Genome in Bottle’s NA12878 also known as HG001. Used to develop the actual tools (overfitted to analyzing this sample). So using this sample to test for accuracy and quality is too easy. The NA24285 sample known as HG002 (the son of an Ashkenazi trio) was about to be released from GiaB (genome in a bottle) as another truth dataset. So this challenge took advantage of that HG002 to assess SA pipelines.</description>
+      <description>Precision FDA Truth Challenge  Genome in Bottle’s NA12878 also known as HG001. Used to develop the actual tools (overfitted to analyzing this sample). So using this sample to test for accuracy and quality is too easy. The NA24285 sample known as HG002 (the son of an Ashkenazi trio) was about to be released from GiaB (genome in a bottle) as another truth dataset. So this challenge took advantage of that HG002 to assess SA pipelines.</description>
     </item>
     
     <item>
@@ -45,6 +45,20 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
       <guid>https://katharineme.github.io/katharineme.com/posts/read-preprocessing/</guid>
       <description>Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects.
 Sequencing Biases  Batch effects include any errors that occur after random fragmentation of the DNA until it is input to the flow cell.  e.g., PCR amplification and reverse transcription artifacts.   Lane effects include any errors that occur from the point at which the sample is input to the flow cell until data are output from the sequencing machine.</description>
+    </item>
+    
+    <item>
+      <title>Web Design</title>
+      <link>https://katharineme.github.io/katharineme.com/posts/web-design/</link>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.github.io/katharineme.com/posts/web-design/</guid>
+      <description>Fonts Serif
+ Has “serifs” at the end of the letters Its the oldest font, from 15th century Gives a trustworthy classic feeling Times New Roman Baskerville  Sans-serif
+ Simpler, cleaner, modern, no serifs Helvetica Rubik Arial  Slab serif
+ Courier New Rockwell  Pair a bold serif header with a nondescript sans-serif subheader for an approachabe yet sophisticated look.
+General Concepts   Visual Hierarchy
+  Golden Ratio</description>
     </item>
     
     <item>
@@ -62,7 +76,7 @@ Sequencing Biases  Batch effects include any errors that occur after random frag
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.github.io/katharineme.com/beginnings/sequencing_analysis/</guid>
-      <description>General  Samtools is good at calling snps, but most tools are also good at calling snps. Variant calling algorithms have a larger effect on what variants are “found” than alignment algorithms. Novel variants, rare variants, and indels more than snps, have more variance between pipelines. Genomes of European descent are better represented in the public genome knowledge base and are therefore variant called more accurately. Genomes of African descent (where there is greater genetic diversity) , because they are more different from the human reference and the are more likely to have “rare” variants, are prone to more inaccurate variant calling.</description>
+      <description>General  Samtools is good at calling snps, but most tools are also good at calling snps. Variant calling algorithms have a larger effect on what variants are “found” than alignment algorithms. Novel variants, rare variants, and indels have more variance between pipelines than SNPs. Genomes of European descent are better represented in the public genome knowledge base and are therefore variant called more accurately. Genomes of African descent (where there is greater genetic diversity) , because they are more different from the human reference and are therefore more likely to have “rare” variants, are prone to more inaccurate variant calling.</description>
     </item>
     
   </channel>
