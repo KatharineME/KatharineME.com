@@ -29,6 +29,10 @@ Slab serif
 
 Pair a bold serif header with a nondescript sans-serif subheader for an approachabe yet sophisticated look.
 
+{{< rawhtml >}}
+  <img src="images/font_pairing.png">
+{{< /rawhtml >}}
+
 
 ## General Concepts
 
