@@ -28,5 +28,15 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
       <description>VMs  virtualize the hardware come with complete OS and kernal interact with the hardware via a hypervisor run on standby start in minutes usually GBs in size  Containers  virtualize the OS interact with and use the host OS and host kernal  Docker does this via Docker Daemon   will exit without an active process start in seconds usually MBs in size  </description>
     </item>
     
+    <item>
+      <title>Read Pre-Processing</title>
+      <link>https://katharineme.github.io/katharineme.com/posts/read-preprocessing/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.github.io/katharineme.com/posts/read-preprocessing/</guid>
+      <description>Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects.
+Sequencing Biases  Batch effects include any errors that occur after random fragmentation of the DNA until it is input to the flow cell.  e.g., PCR amplification and reverse transcription artifacts.   Lane effects include any errors that occur from the point at which the sample is input to the flow cell until data are output from the sequencing machine.</description>
+    </item>
+    
   </channel>
 </rss>
