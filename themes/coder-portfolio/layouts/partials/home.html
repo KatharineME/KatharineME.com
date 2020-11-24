@@ -1,7 +1,6 @@
 <section class="container centered">
-  <div class="about">
+  <div class="about" style="background-color: aliceblue">
     {{ with .Site.Params.avatarurl }}
-      <div class="avatar"><img src="{{ . | absURL }}" alt="avatar"></div>
     {{ end }}
         <h1>{{ .Site.Params.author }}</h1>
         <h2>{{ .Site.Params.info }}</h2>
