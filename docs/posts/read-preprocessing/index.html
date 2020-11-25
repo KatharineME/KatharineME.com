@@ -81,25 +81,7 @@
       
     </header>
 
-    <p>Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects. Before you can beging to pre-process reads, you should understand whats below.</p>
-<h2 id="fatsq-file-naming-conventions">FATSQ file naming conventions</h2>
-<p>SampleName_S1_L001_R1_001.fastq.gz</p>
-<ul>
-<li>SampleName &gt; sample name provided</li>
-<li>S1 &gt; sample number based on order in list of samples. S1 is first sample on the list.</li>
-<li>L001 &gt; Lane number</li>
-<li>R1 &gt; Read number. Paired end sequencing must have at least one R1 file and 1 R2 file.</li>
-<li>001 &gt; The last segment is always 001.</li>
-</ul>
-<p><a href="https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/NamingConvention_FASTQ-files-swBS.htm">Illumina FASTQ file naming convention</a></p>
-<h2 id="forward-and-reverse-reads">Forward and reverse reads</h2>
-<ul>
-<li><a href="https://www.cureffi.org/2012/12/19/forward-and-reverse-reads-in-paired-end-sequencing/">Forward and reverse reads in paired- end sequencing</a></li>
-</ul>
-
-
-  <img class="post-image "src="../../images/paired_end_reads.jpg" alt="font pairing">
-
+    <p>Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects.</p>
 <h2 id="sequencing-biases">Sequencing Biases</h2>
 <ul>
 <li><strong>Batch effects</strong> include any errors that occur after random fragmentation of the DNA until it is input to the flow cell.
@@ -172,29 +154,6 @@
   </article>
 
   <br/>
-
-  
-      <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-  
   
 </section>
 

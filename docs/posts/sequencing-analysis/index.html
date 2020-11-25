@@ -11,22 +11,22 @@
 
     <meta property="og:site_name" content="Katharine Medetgul-Ernar">
     <meta property="og:title" content="
-  Virtualization - Katharine Medetgul-Ernar
+  Sequencing Analysis - Katharine Medetgul-Ernar
 ">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://katharineme.github.io/katharineme.com/posts/virtualization/">
+    <meta property="og:url" content="https://katharineme.github.io/katharineme.com/posts/sequencing-analysis/">
     <meta property="og:image" content="https://katharineme.github.io/katharineme.com/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="https://katharineme.github.io/katharineme.com/posts/virtualization/">
+    <meta name="twitter:site" content="https://katharineme.github.io/katharineme.com/posts/sequencing-analysis/">
     <meta name="twitter:image" content="https://katharineme.github.io/katharineme.com/">
 
-    <base href="https://katharineme.github.io/katharineme.com/posts/virtualization/">
+    <base href="https://katharineme.github.io/katharineme.com/posts/sequencing-analysis/">
     <title>
-  Virtualization - Katharine Medetgul-Ernar
+  Sequencing Analysis - Katharine Medetgul-Ernar
 </title>
 
-    <link rel="canonical" href="https://katharineme.github.io/katharineme.com/posts/virtualization/">
+    <link rel="canonical" href="https://katharineme.github.io/katharineme.com/posts/sequencing-analysis/">
     
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
     <link rel="stylesheet" href="/katharineme.com/css/normalize.min.css">
@@ -75,32 +75,35 @@
   <section class="container post">
   <article>
     <header>
-      <h1 class="title">Virtualization</h1>
-      <h2 class="date">October 25, 2020</h2>
+      <h1 class="title">Sequencing Analysis</h1>
+      <h2 class="date">October 15, 2020</h2>
 
       
     </header>
 
-    <h2 id="vms">VMs</h2>
+    <p>The human genome is 3.3 billion base pairs long.</p>
+<p>75% of RNA-Seq sequences will be ribosomal.</p>
+<p>Replicates</p>
 <ul>
-<li>virtualize the hardware</li>
-<li>come with complete OS and kernal</li>
-<li>interact with the hardware via a hypervisor</li>
-<li>run on standby</li>
-<li>start in minutes</li>
-<li>usually GBs in size</li>
-</ul>
-<h2 id="containers">Containers</h2>
+<li>Technical replicate: sequence same sample 2x
 <ul>
-<li>virtualize the OS</li>
-<li>interact with and use the host OS and host kernal
-<ul>
-<li>Docker does this via Docker Daemon</li>
+<li>NGS technical replicates are usually 97% matching or better</li>
 </ul>
 </li>
-<li>will exit without an active process</li>
-<li>start in seconds</li>
-<li>usually MBs in size</li>
+<li>Biological replicate: different individual sequenced under same conditions</li>
+</ul>
+<h2 id="general">General</h2>
+<ul>
+<li>Variant calling algorithms have a larger effect on what variants are “found” than alignment algorithms.</li>
+<li>Novel variants, rare variants, and indels have more variance between pipelines than SNPs.</li>
+<li>Genomes of European descent are better represented in the public genome knowledge base and are therefore variant called more accurately. Genomes of African descent (where there is greater genetic diversity) , because they are more different from the human reference and are therefore more likely to have “rare” variants, are prone to more inaccurate variant calling.</li>
+</ul>
+<h2 id="cool-papers">Cool Papers</h2>
+<ul>
+<li><a href="https://www.mdpi.com/2077-0383/9/1/132">Bioinformatics and Computational Tools for Next-Generation Sequencing Analysis in Clinical Genetics</a></li>
+<li><a href="https://www.nature.com/articles/s41598-019-39108-2">Comparative analysis of whole-
+genome sequencing pipelines to
+minimize false negative findings</a></li>
 </ul>
 
   </article>

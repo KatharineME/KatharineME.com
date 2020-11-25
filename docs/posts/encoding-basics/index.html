@@ -11,22 +11,22 @@
 
     <meta property="og:site_name" content="Katharine Medetgul-Ernar">
     <meta property="og:title" content="
-  Virtualization - Katharine Medetgul-Ernar
+  Encoding Basics - Katharine Medetgul-Ernar
 ">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://katharineme.github.io/katharineme.com/posts/virtualization/">
+    <meta property="og:url" content="https://katharineme.github.io/katharineme.com/posts/encoding-basics/">
     <meta property="og:image" content="https://katharineme.github.io/katharineme.com/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="https://katharineme.github.io/katharineme.com/posts/virtualization/">
+    <meta name="twitter:site" content="https://katharineme.github.io/katharineme.com/posts/encoding-basics/">
     <meta name="twitter:image" content="https://katharineme.github.io/katharineme.com/">
 
-    <base href="https://katharineme.github.io/katharineme.com/posts/virtualization/">
+    <base href="https://katharineme.github.io/katharineme.com/posts/encoding-basics/">
     <title>
-  Virtualization - Katharine Medetgul-Ernar
+  Encoding Basics - Katharine Medetgul-Ernar
 </title>
 
-    <link rel="canonical" href="https://katharineme.github.io/katharineme.com/posts/virtualization/">
+    <link rel="canonical" href="https://katharineme.github.io/katharineme.com/posts/encoding-basics/">
     
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
     <link rel="stylesheet" href="/katharineme.com/css/normalize.min.css">
@@ -75,32 +75,24 @@
   <section class="container post">
   <article>
     <header>
-      <h1 class="title">Virtualization</h1>
-      <h2 class="date">October 25, 2020</h2>
+      <h1 class="title">Encoding Basics</h1>
+      <h2 class="date">October 8, 2020</h2>
 
       
     </header>
 
-    <h2 id="vms">VMs</h2>
+    <h2 id="ascii">ASCII</h2>
 <ul>
-<li>virtualize the hardware</li>
-<li>come with complete OS and kernal</li>
-<li>interact with the hardware via a hypervisor</li>
-<li>run on standby</li>
-<li>start in minutes</li>
-<li>usually GBs in size</li>
+<li>character to number mapping</li>
+<li>0-32 are non-written symbols like breaks, sounds, etc.</li>
+<li>33 is the first written character and is the exclamation point (!)</li>
+<li>There are 128 total ASCII characters</li>
 </ul>
-<h2 id="containers">Containers</h2>
+<h2 id="utf-8">UTF-8</h2>
 <ul>
-<li>virtualize the OS</li>
-<li>interact with and use the host OS and host kernal
-<ul>
-<li>Docker does this via Docker Daemon</li>
-</ul>
-</li>
-<li>will exit without an active process</li>
-<li>start in seconds</li>
-<li>usually MBs in size</li>
+<li>UTF-8 is capable of encoding all 1,112,064 valid character code points in Unicode using one to four one-byte code units</li>
+<li>As of November 2020, UTF-8 accounts on average for 95.8% of all web pages</li>
+<li>The first 128 characters correspond 1 to 1 with ASCII characters, a big reason for its popularity</li>
 </ul>
 
   </article>

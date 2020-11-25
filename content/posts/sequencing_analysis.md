@@ -1,3 +1,11 @@
++++ 
+date = "2020-10-15"
+title = "Sequencing Analysis"
+slug = "sequencing-analysis" 
+tags = []
+categories = []
++++
+
 The human genome is 3.3 billion base pairs long.
 
 75% of RNA-Seq sequences will be ribosomal.
@@ -6,21 +14,6 @@ Replicates
 - Technical replicate: sequence same sample 2x
     - NGS technical replicates are usually 97% matching or better
 - Biological replicate: different individual sequenced under same conditions
-
-ASCII
-- character to number mapping 
-- 0-32 are non written symbols like breaks, sounds, etc.
-- 33 is the first written character and is the exclamation point (!)
-- There are 128 total ASCII characters
-
-Quality Scores in FASTQ files
-
-UTF-8
-- UTF-8 is capable of encoding all 1,112,064 valid character code points in Unicode using one to four one-byte code units
-- As of November 2020, UTF-8 accounts on average for 95.8% of all web pages
-- The first 128 characters correspond 1 to 1 with ASCII characters, a big reason for its popularity
--  
-
 
 ## General
 

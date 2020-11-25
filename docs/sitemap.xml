@@ -23,8 +23,28 @@
   </url>
   
   <url>
+    <loc>https://katharineme.github.io/katharineme.com/posts/fastq/</loc>
+    <lastmod>2020-10-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://katharineme.github.io/katharineme.com/posts/sequencing-analysis/</loc>
+    <lastmod>2020-10-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://katharineme.github.io/katharineme.com/posts/encoding-basics/</loc>
+    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://katharineme.github.io/katharineme.com/posts/sequence-analysis-benchmark/</loc>
     <lastmod>2020-10-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://katharineme.github.io/katharineme.com/posts/sam-bam-cram/</loc>
+    <lastmod>2020-09-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -39,10 +59,6 @@
   
   <url>
     <loc>https://katharineme.github.io/katharineme.com/beginnings/question/</loc>
-  </url>
-  
-  <url>
-    <loc>https://katharineme.github.io/katharineme.com/beginnings/sequencing_analysis/</loc>
   </url>
   
   <url>

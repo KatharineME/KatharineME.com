@@ -29,6 +29,38 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
     </item>
     
     <item>
+      <title>FASTQ</title>
+      <link>https://katharineme.github.io/katharineme.com/posts/fastq/</link>
+      <pubDate>Tue, 20 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.github.io/katharineme.com/posts/fastq/</guid>
+      <description>FASTQ file naming conventions SampleName_S1_L001_R1_001.fastq.gz
+ SampleName &amp;gt; sample name provided S1 &amp;gt; sample number based on order in list of samples. S1 is first sample on the list. L001 &amp;gt; Lane number R1 &amp;gt; Read number. Paired end sequencing must have at least one R1 file and 1 R2 file. 001 &amp;gt; The last segment is always 001.  Illumina FASTQ naming convention
+FASTQ format For a single-read run, one Read 1 (R1) FASTQ file is created for each sample per flow cell lane.</description>
+    </item>
+    
+    <item>
+      <title>Sequencing Analysis</title>
+      <link>https://katharineme.github.io/katharineme.com/posts/sequencing-analysis/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.github.io/katharineme.com/posts/sequencing-analysis/</guid>
+      <description>The human genome is 3.3 billion base pairs long.
+75% of RNA-Seq sequences will be ribosomal.
+Replicates
+ Technical replicate: sequence same sample 2x  NGS technical replicates are usually 97% matching or better   Biological replicate: different individual sequenced under same conditions  General  Variant calling algorithms have a larger effect on what variants are “found” than alignment algorithms. Novel variants, rare variants, and indels have more variance between pipelines than SNPs.</description>
+    </item>
+    
+    <item>
+      <title>Encoding Basics</title>
+      <link>https://katharineme.github.io/katharineme.com/posts/encoding-basics/</link>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.github.io/katharineme.com/posts/encoding-basics/</guid>
+      <description>ASCII  character to number mapping 0-32 are non-written symbols like breaks, sounds, etc. 33 is the first written character and is the exclamation point (!) There are 128 total ASCII characters  UTF-8  UTF-8 is capable of encoding all 1,112,064 valid character code points in Unicode using one to four one-byte code units As of November 2020, UTF-8 accounts on average for 95.8% of all web pages The first 128 characters correspond 1 to 1 with ASCII characters, a big reason for its popularity  </description>
+    </item>
+    
+    <item>
       <title>Sequence Analysis Benchmark</title>
       <link>https://katharineme.github.io/katharineme.com/posts/sequence-analysis-benchmark/</link>
       <pubDate>Fri, 02 Oct 2020 00:00:00 +0000</pubDate>
@@ -38,14 +70,26 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
     </item>
     
     <item>
+      <title>SAM BAM CRAM</title>
+      <link>https://katharineme.github.io/katharineme.com/posts/sam-bam-cram/</link>
+      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.github.io/katharineme.com/posts/sam-bam-cram/</guid>
+      <description>SAM is the current standard format for storing aligned sequences. It was defined by the community in the early days of the 1000 genomes project.
+SAM format tutorial
+Samtools commands tutorial
+BAM is the compressed version of SAM.
+However the newest format is CRAM. A CRAM file is about 30% the size of a BAM file. CRAM is now being adopted by important bioinformatics tools like Samtools.</description>
+    </item>
+    
+    <item>
       <title>Read Pre-Processing</title>
       <link>https://katharineme.github.io/katharineme.com/posts/read-preprocessing/</link>
       <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.github.io/katharineme.com/posts/read-preprocessing/</guid>
-      <description>Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects. Before you can beging to pre-process reads, you should understand whats below.
-FATSQ file naming conventions SampleName_S1_L001_R1_001.fastq.gz
- SampleName &amp;gt; sample name provided S1 &amp;gt; sample number based on order in list of samples. S1 is first sample on the list.</description>
+      <description>Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects.
+Sequencing Biases  Batch effects include any errors that occur after random fragmentation of the DNA until it is input to the flow cell.  e.g., PCR amplification and reverse transcription artifacts.   Lane effects include any errors that occur from the point at which the sample is input to the flow cell until data are output from the sequencing machine.</description>
     </item>
     
     <item>
@@ -58,8 +102,7 @@ FATSQ file naming conventions SampleName_S1_L001_R1_001.fastq.gz
  Has “serifs” at the end of the letters Its the oldest font, from 15th century Gives a trustworthy classic feeling Times New Roman Baskerville  Sans-serif
  Simpler, cleaner, modern, no serifs Helvetica Rubik Arial  Slab serif
  Courier New Rockwell  Pair a bold serif header with a nondescript sans-serif subheader for an approachabe yet sophisticated look.
-General Concepts   Visual Hierarchy
-  Golden Ratio</description>
+General Concepts 1. Visual Hierarchy 2. Golden Ratio 1.</description>
     </item>
     
   </channel>

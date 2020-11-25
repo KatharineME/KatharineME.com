@@ -762,6 +762,10 @@ code {
 
 .post-image {
     display: flex;
-    max-width: 70%;
-    max-height: 30%;
+    max-width: 60%;
+}
+
+.square-image {
+    display: flex;
+    max-width: 30%;
 }

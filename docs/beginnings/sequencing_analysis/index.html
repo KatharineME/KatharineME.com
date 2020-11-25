@@ -78,9 +78,34 @@
       <h1></h1>
     </header>
 
-    <h2 id="general">General</h2>
+    <p>The human genome is 3.3 billion base pairs long.</p>
+<p>75% of RNA-Seq sequences will be ribosomal.</p>
+<p>Replicates</p>
 <ul>
-<li>Samtools is good at calling snps, but most tools are also good at calling snps.</li>
+<li>Technical replicate: sequence same sample 2x
+<ul>
+<li>NGS technical replicates are usually 97% matching or better</li>
+</ul>
+</li>
+<li>Biological replicate: different individual sequenced under same conditions</li>
+</ul>
+<p>ASCII</p>
+<ul>
+<li>character to number mapping</li>
+<li>0-32 are non written symbols like breaks, sounds, etc.</li>
+<li>33 is the first written character and is the exclamation point (!)</li>
+<li>There are 128 total ASCII characters</li>
+</ul>
+<p>Quality Scores in FASTQ files</p>
+<p>UTF-8</p>
+<ul>
+<li>UTF-8 is capable of encoding all 1,112,064 valid character code points in Unicode using one to four one-byte code units</li>
+<li>As of November 2020, UTF-8 accounts on average for 95.8% of all web pages</li>
+<li>The first 128 characters correspond 1 to 1 with ASCII characters, a big reason for its popularity</li>
+<li></li>
+</ul>
+<h2 id="general">General</h2>
+<ul>
 <li>Variant calling algorithms have a larger effect on what variants are “found” than alignment algorithms.</li>
 <li>Novel variants, rare variants, and indels have more variance between pipelines than SNPs.</li>
 <li>Genomes of European descent are better represented in the public genome knowledge base and are therefore variant called more accurately. Genomes of African descent (where there is greater genetic diversity) , because they are more different from the human reference and are therefore more likely to have “rare” variants, are prone to more inaccurate variant calling.</li>

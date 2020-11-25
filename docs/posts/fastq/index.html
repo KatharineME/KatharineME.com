@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Katharine Medetgul-Ernar">
+    <meta name="description" content="https://katharineme.github.io/katharineme.com/">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta property="og:site_name" content="Katharine Medetgul-Ernar">
+    <meta property="og:title" content="
+  FASTQ - Katharine Medetgul-Ernar
+">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://katharineme.github.io/katharineme.com/posts/fastq/">
+    <meta property="og:image" content="https://katharineme.github.io/katharineme.com/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="https://katharineme.github.io/katharineme.com/posts/fastq/">
+    <meta name="twitter:image" content="https://katharineme.github.io/katharineme.com/">
+
+    <base href="https://katharineme.github.io/katharineme.com/posts/fastq/">
+    <title>
+  FASTQ - Katharine Medetgul-Ernar
+</title>
+
+    <link rel="canonical" href="https://katharineme.github.io/katharineme.com/posts/fastq/">
+    
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="/katharineme.com/css/normalize.min.css">
+    <link rel="stylesheet" href="/katharineme.com/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/katharineme.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/katharineme.com/images/favicon-16x16.png" sizes="16x16">
+
+    
+      <link rel="alternate" href="https://katharineme.github.io/katharineme.com/index.xml" type="application/rss+xml" title="Katharine Medetgul-Ernar">
+      <link href="https://katharineme.github.io/katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="Katharine Medetgul-Ernar" />
+    
+
+    <meta name="generator" content="Hugo 0.78.2" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/katharineme.com/">Katharine Medetgul-Ernar</a>
+    <input type="checkbox" id="menu-control"/>
+    <label class="menu-mobile  float-right " for="menu-control">
+      <span class="btn-mobile  float-right ">&#9776;</span>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="https://katharineme.github.io/katharineme.com/posts">Blog</a>
+            </li>
+          
+        
+        
+      </ul>
+    </label>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">FASTQ</h1>
+      <h2 class="date">October 20, 2020</h2>
+
+      
+    </header>
+
+    <h2 id="fastq-file-naming-conventions">FASTQ file naming conventions</h2>
+<p>SampleName_S1_L001_R1_001.fastq.gz</p>
+<ul>
+<li>SampleName &gt; sample name provided</li>
+<li>S1 &gt; sample number based on order in list of samples. S1 is first sample on the list.</li>
+<li>L001 &gt; Lane number</li>
+<li>R1 &gt; Read number. Paired end sequencing must have at least one R1 file and 1 R2 file.</li>
+<li>001 &gt; The last segment is always 001.</li>
+</ul>
+<p><a href="https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/NamingConvention_FASTQ-files-swBS.htm">Illumina FASTQ naming convention</a></p>
+<h2 id="fastq-format">FASTQ format</h2>
+<p>For a single-read run, one Read 1 (R1) FASTQ file is created for each sample per flow cell lane. For each cluster that passes filter, a single sequence is written to that samples&rsquo;s R1 FASTQ file. So you can think of a single read as the sequence produced by a single cluster in one flowcell during one sequencing run.</p>
+<p>Each read has 4 lines:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">@EAS139:136:FC706VJ:2:2104:15343:197393 1:N:18:1
+GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
++
+!<span class="s1">&#39;&#39;</span>*<span class="o">((((</span>***+<span class="o">))</span>%%%++<span class="o">)(</span>%%%%<span class="o">)</span>.1***-+*<span class="s1">&#39;&#39;</span><span class="o">))</span>**55CCF&gt;&gt;&gt;&gt;&gt;&gt;CCCCCCC65
+</code></pre></div><h4 id="1st-line">1st line</h4>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">@&lt;instrument&gt;:&lt;run_number&gt;:&lt;flowcell ID&gt;:&lt;lane&gt;:&lt;title&gt;:&lt;x-pos&gt;:&lt;y-pos&gt;:&lt;UMI&gt; &lt;read&gt;:&lt;is_filtered&gt;:&lt;control_number&gt;:&lt;index&gt;
+</code></pre></div><h4 id="2nd-line">2nd line</h4>
+<p>The sequence.</p>
+<h4 id="3rd-line">3rd line</h4>
+<p>&ldquo;+&rdquo;. The space this line adds helped make the FASTQ format popular.</p>
+<h4 id="4th-line">4th line</h4>
+<ul>
+<li>Quality scores for the read.</li>
+<li>Uses ASCII symbols to more efficiently encode multi-digit quality scores. See <a href="encoding-basics">Encoding Basics</a></li>
+<li>Quality (!) means 33, which in a 33 based quality score system means a phred score of 0.</li>
+<li>Quality scores are usually 33 based because the first written ASCII character codes for 33.</li>
+<li>Some older quality score system are 64 based.</li>
+<li>Phred scores are like this:
+<ul>
+<li>0: 0% confidence</li>
+<li>10: 90% confidence and 1/10 error rate</li>
+<li>20: 99% confidence and 1/100 error rate</li>
+<li>30: 99.9% confidence and 1/1000 error rate</li>
+<li>40: 99.99% confidence and 1/10000 error rate</li>
+</ul>
+</li>
+<li>If sequencing gives a base call a phred score of 10, then the FASTQ file will show the ASCII character for 43 (33 + 10) which is <strong>+</strong>. If a base call gets a phred score of 20 that would be represented by the ASCII character for 53 (33 + 20) which is <strong>5</strong>.</li>
+</ul>
+<h2 id="forward-and-reverse-reads">Forward and reverse reads</h2>
+<ul>
+<li><a href="https://www.cureffi.org/2012/12/19/forward-and-reverse-reads-in-paired-end-sequencing/">Forward and reverse reads in paired- end sequencing</a></li>
+</ul>
+
+
+  <img class="post-image "src="../../images/paired_end_reads.jpg" alt="font pairing">
+
+
+  </article>
+
+  <br/>
+  
+</section>
+
+      </div>
+      
+    </main>
+
+    
+
+  <script src="/katharineme.com/js/app.js"></script>
+  
+  </body>
+</html>

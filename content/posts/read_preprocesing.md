@@ -6,35 +6,7 @@ tags = []
 categories = []
 +++
 
-Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects. Before you can beging to pre-process reads, you should understand whats below.
-
-## FATSQ file naming conventions
-
-SampleName_S1_L001_R1_001.fastq.gz
-
-- SampleName > sample name provided
-- S1 > sample number based on order in list of samples. S1 is first sample on the list.
-- L001 > Lane number
-- R1 > Read number. Paired end sequencing must have at least one R1 file and 1 R2 file.
-- 001 > The last segment is always 001.
-
-The first line:
-
-```sh
-@<instrument>:<run_number>:<flowcell ID>:<lane>:<title>:<x-pos>:<y-pos>:<UMI> <read>:<is_filtered>:<control_number>:<index>
-``` 
-<br>
-
-[Illumina FASTQ file naming convention](https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/NamingConvention_FASTQ-files-swBS.htm)
-
-## Forward and reverse reads
-
-- [Forward and reverse reads in paired- end sequencing](https://www.cureffi.org/2012/12/19/forward-and-reverse-reads-in-paired-end-sequencing/)
-
-{{< rawhtml >}}
-  <img class="post-image "src="../../images/paired_end_reads.jpg" alt="font pairing">
-{{< /rawhtml >}}
-
+Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects. 
 
 ## Sequencing Biases 
 - __Batch effects__ include any errors that occur after random fragmentation of the DNA until it is input to the flow cell.
@@ -42,8 +14,6 @@ The first line:
 - __Lane effects__ include any errors that occur from the point at which the sample is input to the flow cell until data are output from the sequencing machine.
     * e.g., systematically bad sequencing cycles and errors in base calling.
 - [Source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2881125/)
-
-
 
 ## Adapter trimming
 - Adapters are almost always trimmed from 3’ end instead of 5’ end. Illumina reads don’t need to have the 5’ end adapter trimmed because there is a primer sequence that binds to the 5’ end and sequencing by synthesis begins with the first base on the DNA insert.
