@@ -81,7 +81,25 @@
       
     </header>
 
-    <p>Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects.</p>
+    <p>Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects. Before you can beging to pre-process reads, you should understand whats below.</p>
+<h2 id="fatsq-file-naming-conventions">FATSQ file naming conventions</h2>
+<p>SampleName_S1_L001_R1_001.fastq.gz</p>
+<ul>
+<li>SampleName &gt; sample name provided</li>
+<li>S1 &gt; sample number based on order in list of samples. S1 is first sample on the list.</li>
+<li>L001 &gt; Lane number</li>
+<li>R1 &gt; Read number. Paired end sequencing must have at least one R1 file and 1 R2 file.</li>
+<li>001 &gt; The last segment is always 001.</li>
+</ul>
+<p><a href="https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/NamingConvention_FASTQ-files-swBS.htm">Illumina FASTQ file naming convention</a></p>
+<h2 id="forward-and-reverse-reads">Forward and reverse reads</h2>
+<ul>
+<li><a href="https://www.cureffi.org/2012/12/19/forward-and-reverse-reads-in-paired-end-sequencing/">Forward and reverse reads in paired- end sequencing</a></li>
+</ul>
+
+
+  <img class="post-image "src="../../images/paired_end_reads.jpg" alt="font pairing">
+
 <h2 id="sequencing-biases">Sequencing Biases</h2>
 <ul>
 <li><strong>Batch effects</strong> include any errors that occur after random fragmentation of the DNA until it is input to the flow cell.
@@ -150,16 +168,6 @@
 <li>—-unpaired1</li>
 <li>—-unpaired2</li>
 </ul>
-<h2 id="fatsq-file-naming-conventions">FATSQ file naming conventions</h2>
-<ul>
-<li>Before you pre-process the reads, you need to understand what the file names mean right?</li>
-<li><a href="https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/NamingConvention_FASTQ-files-swBS.htm">Illumina FASTQ file naming convention</a></li>
-</ul>
-<h2 id="forward-and-reverse-reads">Forward and reverse reads</h2>
-<ul>
-<li><a href="https://www.cureffi.org/2012/12/19/forward-and-reverse-reads-in-paired-end-sequencing/">Forward and reverse reads in paired- end sequencing</a></li>
-</ul>
-<p>&lt;img src&quot;images/paired_end_reads.jpg&quot;&gt;</p>
 
   </article>
 

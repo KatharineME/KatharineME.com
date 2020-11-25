@@ -6,7 +6,34 @@ tags = []
 categories = []
 +++
 
-Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects.
+Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects. Before you can beging to pre-process reads, you should understand whats below.
+
+## FATSQ file naming conventions
+
+SampleName_S1_L001_R1_001.fastq.gz
+
+- SampleName > sample name provided
+- S1 > sample number based on order in list of samples. S1 is first sample on the list.
+- L001 > Lane number
+- R1 > Read number. Paired end sequencing must have at least one R1 file and 1 R2 file.
+- 001 > The last segment is always 001.
+
+The first line:
+
+```sh
+@<instrument>:<run_number>:<flowcell ID>:<lane>:<title>:<x-pos>:<y-pos>:<UMI> <read>:<is_filtered>:<control_number>:<index>
+``` 
+<br>
+
+[Illumina FASTQ file naming convention](https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/NamingConvention_FASTQ-files-swBS.htm)
+
+## Forward and reverse reads
+
+- [Forward and reverse reads in paired- end sequencing](https://www.cureffi.org/2012/12/19/forward-and-reverse-reads-in-paired-end-sequencing/)
+
+{{< rawhtml >}}
+  <img class="post-image "src="../../images/paired_end_reads.jpg" alt="font pairing">
+{{< /rawhtml >}}
 
 
 ## Sequencing Biases 
@@ -65,13 +92,3 @@ Paramters to use for paired end short read sequencing.
 * —-out2
 * —-unpaired1
 * —-unpaired2
-
-## FATSQ file naming conventions
-- Before you pre-process the reads, you need to understand what the file names mean right?
-- [Illumina FASTQ file naming convention](https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/NamingConvention_FASTQ-files-swBS.htm)
-
-## Forward and reverse reads
-
-- [Forward and reverse reads in paired- end sequencing](https://www.cureffi.org/2012/12/19/forward-and-reverse-reads-in-paired-end-sequencing/)
-
-<img src"images/paired_end_reads.jpg">

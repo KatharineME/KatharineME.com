@@ -30,25 +30,29 @@ Slab serif
 Pair a bold serif header with a nondescript sans-serif subheader for an approachabe yet sophisticated look.
 
 {{< rawhtml >}}
-  <img src="images/font_pairing.png">
+  <img class="square-image"src="../../images/font_pairing.png" alt="font pairing">
 {{< /rawhtml >}}
 
 
 ## General Concepts
 
-1. Visual Hierarchy
+#### 1. Visual Hierarchy
 
-2. Golden Ratio
+{{< rawhtml >}}
+  <img class="post-image"src="../../images/visual_hierarchy.png" alt="font pairing">
+{{< /rawhtml >}}
+
+#### 2. Golden Ratio
 
 1.618 
 
-Golden ratio typography: https://pearsonified.com/golden-ratio-typography-intro/
+[Golden ratio typography](https://pearsonified.com/golden-ratio-typography-intro/)
 
-3. Hick’s Law
+#### 3. Hick’s Law
 
 Hicks law says that with every additional choice increases the time required to make a decision.
 
-4. Fitt’s Law
+#### 4. Fitt’s Law
 
 The time required to move to a target area is a function of the distance to the target area and the size of the target.
 
@@ -56,17 +60,22 @@ Make things physically easy to use. Make buttons close and big, easy to click. B
 
 The size of a button should be proportional to how often its clicked.
 
-5. The Law of Thirds
+#### 5. The Law of Thirds
 
 An image should be divided into nine equal parts by two equally spaced horizontal lines and two equally spaced vertical lines. Important compositional elements should be placed along these lines or at their intersections.
 
-6. Don’t Skimp on Whitespace
+{{< rawhtml >}}
+  <img class="square-image"src="../../images/visual_in_thirds.png" alt="font pairing">
+{{< /rawhtml >}}
 
-7. Occam’s Razor
+
+#### 6. Don’t Skimp on Whitespace
+
+#### 7. Occam’s Razor
 
 The simplest solution is usually the best.
 
-8. Gestalt Design Laws
+#### 8. Gestalt Design Laws
 
 The whole is a separate entity from its parts, and the whole is perceived first.
 

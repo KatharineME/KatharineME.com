@@ -43,8 +43,9 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
       <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.github.io/katharineme.com/posts/read-preprocessing/</guid>
-      <description>Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects.
-Sequencing Biases  Batch effects include any errors that occur after random fragmentation of the DNA until it is input to the flow cell.  e.g., PCR amplification and reverse transcription artifacts.   Lane effects include any errors that occur from the point at which the sample is input to the flow cell until data are output from the sequencing machine.</description>
+      <description>Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects. Before you can beging to pre-process reads, you should understand whats below.
+FATSQ file naming conventions SampleName_S1_L001_R1_001.fastq.gz
+ SampleName &amp;gt; sample name provided S1 &amp;gt; sample number based on order in list of samples. S1 is first sample on the list.</description>
     </item>
     
     <item>
