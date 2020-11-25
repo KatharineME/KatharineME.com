@@ -15,8 +15,29 @@ Pre-processing is an umbrella term that can mean filtering out / trimming low qu
     * e.g., systematically bad sequencing cycles and errors in base calling.
 - [Source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2881125/)
 
+## Ways to Trim Reads
+- Hard Trim
+    - Cut off reads after certain number of bases
+    - Computational easy
+    - Makes all reads same length
+- Soft Trim
+    - Trimming that considers quality scores in a sliding window that is usually ~10bp wide
+    - Tools that do this
+        - Sickle from UC Davis Bioinformatics
+
+## Sequence Duplicaiton
+- Duplicates should be remeved
+- There are two ways duplication can happen:
+    - PCR duplication from uneven amplification
+    - Optical duplication
+        - One sequencing colony can look like two colonies to the sequencing machine
+        - Illumina made this less of an issue on the NovaSeq by adding millions of microwells to the flowcells
+
+
 ## Adapter trimming
 - Adapters are almost always trimmed from 3’ end instead of 5’ end. Illumina reads don’t need to have the 5’ end adapter trimmed because there is a primer sequence that binds to the 5’ end and sequencing by synthesis begins with the first base on the DNA insert.
+- Most adapter trimmers will take into account the quiality of the sequences on the 3' end to better determine whether there is adapter sequence or not
+- It's good practice to run FASTQC before and after trimming for comparison
 - [Illumina adapter sequences](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/experiment-design/illumina-adapter-sequences-1000000002694-14.pdf)
 
 ## Most popular pre-processors

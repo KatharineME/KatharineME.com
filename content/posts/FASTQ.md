@@ -1,6 +1,6 @@
 
 +++ 
-date = "2020-10-20"
+date = "2020-08-28"
 title = "FASTQ"
 slug = "fastq" 
 tags = []
@@ -8,7 +8,7 @@ categories = []
 +++
 
 
-## FASTQ file naming conventions
+## FASTQ File Naming Conventions
 
 SampleName_S1_L001_R1_001.fastq.gz
 
@@ -20,7 +20,7 @@ SampleName_S1_L001_R1_001.fastq.gz
 
 [Illumina FASTQ naming convention](https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/NamingConvention_FASTQ-files-swBS.htm)
 
-## FASTQ format
+## FASTQ Format
 
 For a single-read run, one Read 1 (R1) FASTQ file is created for each sample per flow cell lane. For each cluster that passes filter, a single sequence is written to that samples's R1 FASTQ file. So you can think of a single read as the sequence produced by a single cluster in one flowcell during one sequencing run.
 
@@ -33,18 +33,18 @@ GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
 !''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF>>>>>>CCCCCCC65
 ```
 
-#### 1st line
+#### 1st Line
 
 ```sh
 @<instrument>:<run_number>:<flowcell ID>:<lane>:<title>:<x-pos>:<y-pos>:<UMI> <read>:<is_filtered>:<control_number>:<index>
 ``` 
-#### 2nd line
+#### 2nd Line
 The sequence.
 
-#### 3rd line
+#### 3rd Line
 "+". The space this line adds helped make the FASTQ format popular.
 
-#### 4th line
+#### 4th Line
 - Quality scores for the read.
 - Uses ASCII symbols to more efficiently encode multi-digit quality scores. See [Encoding Basics](encoding-basics)
 - Quality (!) means 33, which in a 33 based quality score system means a phred score of 0.

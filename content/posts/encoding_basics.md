@@ -1,5 +1,5 @@
 +++ 
-date = "2020-10-08"
+date = "2020-08-08"
 title = "Encoding Basics"
 slug = "encoding-basics" 
 tags = []
@@ -7,7 +7,7 @@ categories = []
 +++
 
 ## ASCII
-- character to number mapping 
+- Character to number mapping 
 - 0-32 are non-written symbols like breaks, sounds, etc.
 - 33 is the first written character and is the exclamation point (!)
 - There are 128 total ASCII characters

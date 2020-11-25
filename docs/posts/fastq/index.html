@@ -76,12 +76,12 @@
   <article>
     <header>
       <h1 class="title">FASTQ</h1>
-      <h2 class="date">October 20, 2020</h2>
+      <h2 class="date">August 28, 2020</h2>
 
       
     </header>
 
-    <h2 id="fastq-file-naming-conventions">FASTQ file naming conventions</h2>
+    <h2 id="fastq-file-naming-conventions">FASTQ File Naming Conventions</h2>
 <p>SampleName_S1_L001_R1_001.fastq.gz</p>
 <ul>
 <li>SampleName &gt; sample name provided</li>
@@ -91,20 +91,20 @@
 <li>001 &gt; The last segment is always 001.</li>
 </ul>
 <p><a href="https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/NamingConvention_FASTQ-files-swBS.htm">Illumina FASTQ naming convention</a></p>
-<h2 id="fastq-format">FASTQ format</h2>
+<h2 id="fastq-format">FASTQ Format</h2>
 <p>For a single-read run, one Read 1 (R1) FASTQ file is created for each sample per flow cell lane. For each cluster that passes filter, a single sequence is written to that samples&rsquo;s R1 FASTQ file. So you can think of a single read as the sequence produced by a single cluster in one flowcell during one sequencing run.</p>
 <p>Each read has 4 lines:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">@EAS139:136:FC706VJ:2:2104:15343:197393 1:N:18:1
 GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
 +
 !<span class="s1">&#39;&#39;</span>*<span class="o">((((</span>***+<span class="o">))</span>%%%++<span class="o">)(</span>%%%%<span class="o">)</span>.1***-+*<span class="s1">&#39;&#39;</span><span class="o">))</span>**55CCF&gt;&gt;&gt;&gt;&gt;&gt;CCCCCCC65
-</code></pre></div><h4 id="1st-line">1st line</h4>
+</code></pre></div><h4 id="1st-line">1st Line</h4>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">@&lt;instrument&gt;:&lt;run_number&gt;:&lt;flowcell ID&gt;:&lt;lane&gt;:&lt;title&gt;:&lt;x-pos&gt;:&lt;y-pos&gt;:&lt;UMI&gt; &lt;read&gt;:&lt;is_filtered&gt;:&lt;control_number&gt;:&lt;index&gt;
-</code></pre></div><h4 id="2nd-line">2nd line</h4>
+</code></pre></div><h4 id="2nd-line">2nd Line</h4>
 <p>The sequence.</p>
-<h4 id="3rd-line">3rd line</h4>
+<h4 id="3rd-line">3rd Line</h4>
 <p>&ldquo;+&rdquo;. The space this line adds helped make the FASTQ format popular.</p>
-<h4 id="4th-line">4th line</h4>
+<h4 id="4th-line">4th Line</h4>
 <ul>
 <li>Quality scores for the read.</li>
 <li>Uses ASCII symbols to more efficiently encode multi-digit quality scores. See <a href="encoding-basics">Encoding Basics</a></li>

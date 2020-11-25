@@ -29,35 +29,15 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
     </item>
     
     <item>
-      <title>FASTQ</title>
-      <link>https://katharineme.github.io/katharineme.com/posts/fastq/</link>
-      <pubDate>Tue, 20 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.github.io/katharineme.com/posts/fastq/</guid>
-      <description>FASTQ file naming conventions SampleName_S1_L001_R1_001.fastq.gz
- SampleName &amp;gt; sample name provided S1 &amp;gt; sample number based on order in list of samples. S1 is first sample on the list. L001 &amp;gt; Lane number R1 &amp;gt; Read number. Paired end sequencing must have at least one R1 file and 1 R2 file. 001 &amp;gt; The last segment is always 001.  Illumina FASTQ naming convention
-FASTQ format For a single-read run, one Read 1 (R1) FASTQ file is created for each sample per flow cell lane.</description>
-    </item>
-    
-    <item>
-      <title>Sequencing Analysis</title>
-      <link>https://katharineme.github.io/katharineme.com/posts/sequencing-analysis/</link>
+      <title>Sequence Analysis</title>
+      <link>https://katharineme.github.io/katharineme.com/posts/sequence-analysis/</link>
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://katharineme.github.io/katharineme.com/posts/sequencing-analysis/</guid>
+      <guid>https://katharineme.github.io/katharineme.com/posts/sequence-analysis/</guid>
       <description>The human genome is 3.3 billion base pairs long.
 75% of RNA-Seq sequences will be ribosomal.
 Replicates
- Technical replicate: sequence same sample 2x  NGS technical replicates are usually 97% matching or better   Biological replicate: different individual sequenced under same conditions  General  Variant calling algorithms have a larger effect on what variants are “found” than alignment algorithms. Novel variants, rare variants, and indels have more variance between pipelines than SNPs.</description>
-    </item>
-    
-    <item>
-      <title>Encoding Basics</title>
-      <link>https://katharineme.github.io/katharineme.com/posts/encoding-basics/</link>
-      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.github.io/katharineme.com/posts/encoding-basics/</guid>
-      <description>ASCII  character to number mapping 0-32 are non-written symbols like breaks, sounds, etc. 33 is the first written character and is the exclamation point (!) There are 128 total ASCII characters  UTF-8  UTF-8 is capable of encoding all 1,112,064 valid character code points in Unicode using one to four one-byte code units As of November 2020, UTF-8 accounts on average for 95.8% of all web pages The first 128 characters correspond 1 to 1 with ASCII characters, a big reason for its popularity  </description>
+ Technical replicate: sequence same sample 2x  NGS technical replicates are usually 97% matching or better   Biological replicate: different individual sequenced under same conditions  Reference Genomes  2 major verisons  GRCh  NIH Genome Reference Consortium Latest release is GRCh38   UCSC  Latest release is hg38 Previous release was hg19 After hg19 they decided to jump release number to match GRCh      Decoy Genomes When you sequence a human genome, you dont just get human DNA.</description>
     </item>
     
     <item>
@@ -93,16 +73,46 @@ Sequencing Biases  Batch effects include any errors that occur after random frag
     </item>
     
     <item>
+      <title>FASTQ</title>
+      <link>https://katharineme.github.io/katharineme.com/posts/fastq/</link>
+      <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.github.io/katharineme.com/posts/fastq/</guid>
+      <description>FASTQ File Naming Conventions SampleName_S1_L001_R1_001.fastq.gz
+ SampleName &amp;gt; sample name provided S1 &amp;gt; sample number based on order in list of samples. S1 is first sample on the list. L001 &amp;gt; Lane number R1 &amp;gt; Read number. Paired end sequencing must have at least one R1 file and 1 R2 file. 001 &amp;gt; The last segment is always 001.  Illumina FASTQ naming convention
+FASTQ Format For a single-read run, one Read 1 (R1) FASTQ file is created for each sample per flow cell lane.</description>
+    </item>
+    
+    <item>
+      <title>Encoding Basics</title>
+      <link>https://katharineme.github.io/katharineme.com/posts/encoding-basics/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.github.io/katharineme.com/posts/encoding-basics/</guid>
+      <description>ASCII  Character to number mapping 0-32 are non-written symbols like breaks, sounds, etc. 33 is the first written character and is the exclamation point (!) There are 128 total ASCII characters  UTF-8  UTF-8 is capable of encoding all 1,112,064 valid character code points in Unicode using one to four one-byte code units As of November 2020, UTF-8 accounts on average for 95.8% of all web pages The first 128 characters correspond 1 to 1 with ASCII characters, a big reason for its popularity  </description>
+    </item>
+    
+    <item>
+      <title>Library Preparation</title>
+      <link>https://katharineme.github.io/katharineme.com/beginnings/library-preparation/</link>
+      <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.github.io/katharineme.com/beginnings/library-preparation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Web Design</title>
       <link>https://katharineme.github.io/katharineme.com/posts/web-design/</link>
       <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.github.io/katharineme.com/posts/web-design/</guid>
-      <description>Fonts Serif
- Has “serifs” at the end of the letters Its the oldest font, from 15th century Gives a trustworthy classic feeling Times New Roman Baskerville  Sans-serif
- Simpler, cleaner, modern, no serifs Helvetica Rubik Arial  Slab serif
- Courier New Rockwell  Pair a bold serif header with a nondescript sans-serif subheader for an approachabe yet sophisticated look.
-General Concepts 1. Visual Hierarchy 2. Golden Ratio 1.</description>
+      <description>Fonts Pair a bold serif header with a nondescript sans-serif subheader for an approachabe yet sophisticated look.
+Serif
+ Has “serifs” at the end of the letters Its the oldest font, from 15th century Gives a trustworthy classic feeling  Sans-serif
+ Simpler, cleaner, modern, no serifs  Slab serif
+ Has thick slab -like serifs  Visual Hierarchy Golden Ratio 1.618 Golden ratio typography
+Hick’s Law Hicks law says that with every additional choice increases the time required to make a decision.</description>
     </item>
     
     <item>

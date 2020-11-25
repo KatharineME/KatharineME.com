@@ -9,50 +9,40 @@ categories = []
 
 ## Fonts
 
-Serif
-- Has “serifs” at the end of the letters
-- Its the oldest font, from 15th century
-- Gives a trustworthy classic feeling
-- Times New Roman
-- Baskerville
-
-Sans-serif
-- Simpler, cleaner, modern, no serifs
-- Helvetica
-- Rubik
-- Arial
-
-Slab serif
-- Courier New
-- Rockwell
-
-
 Pair a bold serif header with a nondescript sans-serif subheader for an approachabe yet sophisticated look.
 
 {{< rawhtml >}}
   <img class="square-image"src="../../images/font_pairing.png" alt="font pairing">
 {{< /rawhtml >}}
 
+Serif
+- Has “serifs” at the end of the letters
+- Its the oldest font, from 15th century
+- Gives a trustworthy classic feeling
 
-## General Concepts
+Sans-serif
+- Simpler, cleaner, modern, no serifs
 
-#### 1. Visual Hierarchy
+Slab serif
+- Has thick slab -like serifs
+
+## Visual Hierarchy
 
 {{< rawhtml >}}
   <img class="post-image"src="../../images/visual_hierarchy.png" alt="font pairing">
 {{< /rawhtml >}}
 
-#### 2. Golden Ratio
+## Golden Ratio
 
 1.618 
 
 [Golden ratio typography](https://pearsonified.com/golden-ratio-typography-intro/)
 
-#### 3. Hick’s Law
+## Hick’s Law
 
 Hicks law says that with every additional choice increases the time required to make a decision.
 
-#### 4. Fitt’s Law
+## Fitt’s Law
 
 The time required to move to a target area is a function of the distance to the target area and the size of the target.
 
@@ -60,7 +50,7 @@ Make things physically easy to use. Make buttons close and big, easy to click. B
 
 The size of a button should be proportional to how often its clicked.
 
-#### 5. The Law of Thirds
+## The Law of Thirds
 
 An image should be divided into nine equal parts by two equally spaced horizontal lines and two equally spaced vertical lines. Important compositional elements should be placed along these lines or at their intersections.
 
@@ -68,14 +58,11 @@ An image should be divided into nine equal parts by two equally spaced horizonta
   <img class="square-image"src="../../images/visual_in_thirds.png" alt="font pairing">
 {{< /rawhtml >}}
 
-
-#### 6. Don’t Skimp on Whitespace
-
-#### 7. Occam’s Razor
+## Occam’s Razor
 
 The simplest solution is usually the best.
 
-#### 8. Gestalt Design Laws
+## Gestalt Design Laws
 
 The whole is a separate entity from its parts, and the whole is perceived first.
 
@@ -87,7 +74,7 @@ People prefer symmetry.
 
 People eyes finish unfinished or incomplete shapes naturally. 
 
-
+## Whitespace is Good
 
 
 

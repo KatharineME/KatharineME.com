@@ -96,9 +96,46 @@
 </li>
 <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2881125/">Source</a></li>
 </ul>
+<h2 id="ways-to-trim-reads">Ways to Trim Reads</h2>
+<ul>
+<li>Hard Trim
+<ul>
+<li>Cut off reads after certain number of bases</li>
+<li>Computational easy</li>
+<li>Makes all reads same length</li>
+</ul>
+</li>
+<li>Soft Trim
+<ul>
+<li>Trimming that considers quality scores in a sliding window that is usually ~10bp wide</li>
+<li>Tools that do this
+<ul>
+<li>Sickle from UC Davis Bioinformatics</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="sequence-duplicaiton">Sequence Duplicaiton</h2>
+<ul>
+<li>Duplicates should be remeved</li>
+<li>There are two ways duplication can happen:
+<ul>
+<li>PCR duplication from uneven amplification</li>
+<li>Optical duplication
+<ul>
+<li>One sequencing colony can look like two colonies to the sequencing machine</li>
+<li>Illumina made this less of an issue on the NovaSeq by adding millions of microwells to the flowcells</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="adapter-trimming">Adapter trimming</h2>
 <ul>
 <li>Adapters are almost always trimmed from 3’ end instead of 5’ end. Illumina reads don’t need to have the 5’ end adapter trimmed because there is a primer sequence that binds to the 5’ end and sequencing by synthesis begins with the first base on the DNA insert.</li>
+<li>Most adapter trimmers will take into account the quiality of the sequences on the 3' end to better determine whether there is adapter sequence or not</li>
+<li>It&rsquo;s good practice to run FASTQC before and after trimming for comparison</li>
 <li><a href="https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/experiment-design/illumina-adapter-sequences-1000000002694-14.pdf">Illumina adapter sequences</a></li>
 </ul>
 <h2 id="most-popular-pre-processors">Most popular pre-processors</h2>
