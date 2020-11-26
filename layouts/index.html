@@ -38,8 +38,8 @@
       <link rel="stylesheet" href="{{ . | absURL }}">
     {{ end }}
 
-    <link rel="icon" type="image/png" href="{{ "images/favicon-32x32.png" | relURL }}" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ "images/favicon-16x16.png" | relURL }}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}" sizes="16x16">
 
     {{ with .Site.Home.AlternativeOutputFormats.Get "RSS" }}
       <link rel="alternate" href="{{ .Permalink }}" type="application/rss+xml" title="{{ $.Site.Title | plainify }}">
