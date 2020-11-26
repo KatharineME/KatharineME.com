@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Beginnings on Genome Analysis Blog</title>
-    <link>https://katharineme.github.io/katharineme.com/beginnings/</link>
+    <link>https://katharineme.com/beginnings/</link>
     <description>Recent content in Beginnings on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.github.io/katharineme.com/beginnings/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/beginnings/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sequence Analysis</title>
-      <link>https://katharineme.github.io/katharineme.com/beginnings/sequence-analysis/</link>
+      <link>https://katharineme.com/beginnings/sequence-analysis/</link>
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://katharineme.github.io/katharineme.com/beginnings/sequence-analysis/</guid>
+      <guid>https://katharineme.com/beginnings/sequence-analysis/</guid>
       <description>The human genome is 3.3 billion base pairs long.
 75% of RNA-Seq sequences will be ribosomal.
 Replicates
@@ -21,10 +21,10 @@ Replicates
     
     <item>
       <title></title>
-      <link>https://katharineme.github.io/katharineme.com/beginnings/question/</link>
+      <link>https://katharineme.com/beginnings/question/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://katharineme.github.io/katharineme.com/beginnings/question/</guid>
+      <guid>https://katharineme.com/beginnings/question/</guid>
       <description>Assuming that the reference genome is not a true human average (or even if it is) it must contain mutations that are causing a significant portion of humans problems (or at least a phenotype that makes a difference in daily life) that we aren’t paying attention to because they’re defined as “reference”, right?</description>
     </item>
     
