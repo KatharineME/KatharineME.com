@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Katharine Medetgul-Ernar</title>
+    <title>Genome Analysis Blog</title>
     <link>https://katharineme.github.io/katharineme.com/</link>
-    <description>Recent content on Katharine Medetgul-Ernar</description>
+    <description>Recent content on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.github.io/katharineme.com/index.xml" rel="self" type="application/rss+xml" />
@@ -30,10 +30,10 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
     
     <item>
       <title>Sequence Analysis</title>
-      <link>https://katharineme.github.io/katharineme.com/posts/sequence-analysis/</link>
+      <link>https://katharineme.github.io/katharineme.com/beginnings/sequence-analysis/</link>
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://katharineme.github.io/katharineme.com/posts/sequence-analysis/</guid>
+      <guid>https://katharineme.github.io/katharineme.com/beginnings/sequence-analysis/</guid>
       <description>The human genome is 3.3 billion base pairs long.
 75% of RNA-Seq sequences will be ribosomal.
 Replicates
@@ -78,9 +78,9 @@ Sequencing Biases  Batch effects include any errors that occur after random frag
       <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.github.io/katharineme.com/posts/fastq/</guid>
-      <description>FASTQ File Naming Conventions SampleName_S1_L001_R1_001.fastq.gz
+      <description>File Names SampleName_S1_L001_R1_001.fastq.gz
  SampleName &amp;gt; sample name provided S1 &amp;gt; sample number based on order in list of samples. S1 is first sample on the list. L001 &amp;gt; Lane number R1 &amp;gt; Read number. Paired end sequencing must have at least one R1 file and 1 R2 file. 001 &amp;gt; The last segment is always 001.  Illumina FASTQ naming convention
-FASTQ Format For a single-read run, one Read 1 (R1) FASTQ file is created for each sample per flow cell lane.</description>
+Format For a single-read run, one Read 1 (R1) FASTQ file is created for each sample per flow cell lane.</description>
     </item>
     
     <item>

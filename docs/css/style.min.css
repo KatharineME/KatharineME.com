@@ -760,6 +760,39 @@ code {
   color: #9dabae;
 }
 
+.homepage {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-image: url(../images/cells.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homepage-text {
+    margin: 37% 0%;
+}
+
+.homepage-title {
+    text-align: center;
+    font-size: 350%;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.homepage-subtitle {
+    font-size: 120%;
+    text-align: center;
+    padding-top: 1.5%;
+    color: #fff;
+}
+
+.dna-base {
+    color: #FF1968;
+}
+
 .post-image {
     display: flex;
     max-width: 60%;
@@ -769,3 +802,4 @@ code {
     display: flex;
     max-width: 30%;
 }
+

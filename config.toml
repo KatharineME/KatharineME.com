@@ -50,7 +50,7 @@ disqusShortname = "yourdiscussshortname"
     [languages.en]
         languagecode = "en"
         languagename = "English" # The language name to be displayed in the selector.
-        title = "Katharine Medetgul-Ernar"
+        title = "Genome Analysis Blog"
 
         # You can configure the theme parameter for each language.
         [languages.en.params]
@@ -62,6 +62,6 @@ disqusShortname = "yourdiscussshortname"
         [languages.en.menu] # It is possible to change the menu too.
 
             [[languages.en.menu.main]]
-                name = "Blog"
+                name = "Posts"
                 weight = 2.0
                 url = "posts"

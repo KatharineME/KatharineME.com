@@ -74,7 +74,7 @@ AMPure beads
 
 ## PCR 
 
-To make the minimum amount of DNA required for sequencing, usually PCR needs to be done. The fewer cycles the because PCR doesnt amplify all strands equally - biases are introduced.
+To make the minimum amount of DNA required for sequencing, usually PCR needs to be done. The fewer cycles the better because PCR doesnt amplify all strands equally - biases are introduced.
 
 Some library preparation workflows use the PCR step to attach the index and P5/P7 adapters to the fragments.
 

@@ -8,7 +8,7 @@ categories = []
 +++
 
 
-## FASTQ File Naming Conventions
+## File Names
 
 SampleName_S1_L001_R1_001.fastq.gz
 
@@ -20,7 +20,7 @@ SampleName_S1_L001_R1_001.fastq.gz
 
 [Illumina FASTQ naming convention](https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/NamingConvention_FASTQ-files-swBS.htm)
 
-## FASTQ Format
+## Format
 
 For a single-read run, one Read 1 (R1) FASTQ file is created for each sample per flow cell lane. For each cluster that passes filter, a single sequence is written to that samples's R1 FASTQ file. So you can think of a single read as the sequence produced by a single cluster in one flowcell during one sequencing run.
 
