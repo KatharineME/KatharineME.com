@@ -94,11 +94,12 @@ FASTQ Format For a single-read run, one Read 1 (R1) FASTQ file is created for ea
     
     <item>
       <title>Library Preparation</title>
-      <link>https://katharineme.github.io/katharineme.com/beginnings/library-preparation/</link>
+      <link>https://katharineme.github.io/katharineme.com/posts/library-preparation/</link>
       <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://katharineme.github.io/katharineme.com/beginnings/library-preparation/</guid>
-      <description></description>
+      <guid>https://katharineme.github.io/katharineme.com/posts/library-preparation/</guid>
+      <description>Initial Quality Check  Check DNA purity on Nanodrop (260/280 ratio shows RNA contamination) Check DNA concentration on Qubit Fluorometer  Fragmentation Two main options for fragmenting the DNA
+ Sonication  Uses a sonication machine Pros: very little base bias in cuts made Cons: Sonication machines are expensive, difficult to cut DNA fragments smaller than 300bp   Enzyme digestion  Pros: cheaper, doesnt require large sonication machine Cons: Produces minor base % bias in first 10 bases of fragments  This bias can be easily seen in FastQC results      End Repair and A Tailing In order to ligate the necessary adapters to the fragmented sequences, the ends of the fragments need to be made compatible with those adapters.</description>
     </item>
     
     <item>
