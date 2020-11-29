@@ -40,7 +40,7 @@ Slab serif
 
 ## Hick’s Law
 
-Hicks law says that with every additional choice increases the time required to make a decision.
+With every additional choice increases the time required to make a decision.
 
 ## Fitt’s Law
 
