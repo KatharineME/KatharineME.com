@@ -172,7 +172,7 @@ services:
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker stop &lt;container_id&gt;
 </code></pre></div><p>Remove a container.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker rm &lt;container_id&gt;
-</code></pre></div><p>Remove all stopped containers.</p>
+</code></pre></div><p>Remove all stopped containers and cached image layers, and dangling images (all things you dont need).</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker system prune
 </code></pre></div><p>Execute a command in a running container.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker <span class="nb">exec</span> &lt;container_id&gt; cat file_in_container
@@ -183,11 +183,9 @@ services:
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker images -f <span class="nv">dangling</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div><p>Remove an image.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker rmi &lt;image_name&gt;
-</code></pre></div><p>Tag an image.</p>
+</code></pre></div><p>Tag an image. Tagging an image doesnt rename an image, it creates a copy of the image and give it the new name.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker tag &lt;source_image_name&gt;:&lt;tag&gt; &lt;target_image_name&gt;:&lt;tag&gt;
-</code></pre></div><p>Rename an image.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker tag &lt;old_image_name&gt; &lt;new_image_name&gt;
-</code></pre></div><p>Build an iamge off of the Dockerfile in the current directory and tag it <code>-t</code> with <code>image_name</code>.</p>
+</code></pre></div><p>Build an iamge off of the Dockerfile in the current directory <code>.</code> and tag it <code>-t</code> with <code>image_name</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker build -t &lt;image_name&gt; . 
 </code></pre></div><p>See image layer information.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker <span class="nb">history</span> &lt;image_name&gt;

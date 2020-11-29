@@ -148,7 +148,7 @@ Remove a container.
 docker rm <container_id>
 ```
 
-Remove all stopped containers.
+Remove all stopped containers and cached image layers, and dangling images (all things you dont need).
 ```sh
 docker system prune
 ```
@@ -175,17 +175,12 @@ Remove an image.
 docker rmi <image_name>
 ```
 
-Tag an image. 
+Tag an image. Tagging an image doesnt rename an image, it creates a copy of the image and give it the new name. 
 ```sh
 docker tag <source_image_name>:<tag> <target_image_name>:<tag>
 ```
 
-Rename an image.
-```sh
-docker tag <old_image_name> <new_image_name>
-```
-
-Build an iamge off of the Dockerfile in the current directory and tag it `-t` with `image_name`.
+Build an iamge off of the Dockerfile in the current directory `.` and tag it `-t` with `image_name`.
 ```sh
 docker build -t <image_name> . 
 ```
