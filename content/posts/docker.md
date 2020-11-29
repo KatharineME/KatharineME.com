@@ -8,7 +8,7 @@ categories = []
 
 [Best Docker tutorial](https://www.youtube.com/watch?v=zJ6WbK9zFpI&t=1s)
 
-Its purpose is to make a process, with unique environment requirments, run anywhere.
+Docker's makes a process with unique environment requirments run anywhere.
 
 It's built on the Linux kernal. To run on Windows, Docker creates a Linux VM and runs containers in that VM. When the host kernal is Windows or Unix, Docker can interact with it directly.
 
@@ -28,17 +28,90 @@ Containers are not like VMs in that they don't just run on standby, they are not
 
 ## Dockerfile and Image
 
-A Dockerfile is a set of isntructions for building an image. When an image is built it can then be run. Running an image creates a container. The dockerfile is composed of commands that create image layers. A Dockerfile must be built off a previous image. This is done with the FROM command like this:
+A Dockerfile is a set of isntructions for building an image. When an image is built it can then be run. Running an image creates a container. The Dockerfile is composed of commands that create image layers like this:
+
+- OS
+- source repos
+- depedencies with apt
+- python dependencies
+- copy source to /opt
+- run web server command
+
+A Dockerfile must be built off a previous image. That is why there is a default base image for docker: its Alpine (a lightweight Linux distro). Interestingly, the Dockerfile is not included in the image that made it. The best way to get more information about an image is docker inspect <image_name>.
+
+Here is what a minimal Dockerfile looks like.
 
 ```
-FROM ubuntu
+FROM Ubuntu
 
 RUN apt-get update
+RUN apt-get install python
+
+COPY . . 
+
+ENTRYPOINT ["sleep"]
+
+WORKDIR /home/work
+
+CMD ["5"]
+
 ```
 
-That is why there is a default base image for docker: its Alpine (a lightweight Linux distro). Interestingly, the Dockerfile is not included in the image that made it. The best way to get more information about an image is docker inspect <image_name>.
+FROM
+- Specify the image to build off of.
 
-## Basic Commands
+ENTRYPOINT
+- When you __docker run__ the container, you can pass in a parameter, which will be added the command you set as the entrypoint. For example if the entrypoint is: __ENTRYPOINT ["sleep"]__ and you run __docker run ubuntu-sleeper 10__, the ubuntu-sleeper container will run the sleep command for 10 seconds, and then exit.
+
+CMD
+- The process that is run in the container. When this process is finished, the container exits. If your Dockerfile has __CMD ["sleep", "5"]__ but you run __docker run ubunutu-sleeper sleep 10__ the contianer will run sleep for 10 seconds, then exit, becuase the command you pass in overides the CMD in the Dockerfile.
+
+## docker-compose
+
+docker-compose is a command line tool that reads a file called __docker-compose.yml__ and has only two commands `docker-compose up` and `docker-compose down`. docker-compose makes the process of building, running, and linking multiple containers easier. This might be done to create different containers for parts of a single application (one container for the frontend, and one for the sql database). However, docker-compose can also be used to start a single container. docker-compose runs all the containers with their specificed parameters in docker-compose.yml and connects them so they can access each other.
+
+__docker-compose.yml__
+
+```sh
+version: 3
+services:
+    redis:
+        image: my_redis_image
+    db:
+        image: postgres:9.4
+    vote:
+        image: voting-app
+        ports:
+            -5000:80
+```
+
+Run containers in __docker-compose.yml__
+```sh
+docker-compose up
+```
+
+Exit and remove containers in __docker-compose.yml__ 
+```sh
+docker-compose down
+```
+
+## .dockerignore
+
+While building an image from a Dockerfile, the Docker client will send everything the entire directory the Dockerfile is in to the Docker daemon. So if your project has a lot of data, use __.dockerignore__ to tell the Docker client what not to send to the daemon. This will speed up image building significantly for large projects.
+
+
+{{< rawhtml >}}
+    <br>
+    <br>
+{{< /rawhtml >}}
+
+# Commands
+
+{{< rawhtml >}}
+    <br>
+{{< /rawhtml >}}
+
+### Basics
 
 Run the container in the background __-d__ and map port __-p__ 80 of the host to 80 in the container. Without __-d__ you won't get your prompt back and STDOUT of the container will be printed to the terminal.
 ```sh
@@ -85,7 +158,7 @@ Execute a command in a running container.
 docker exec <container_id> cat file_in_container
 ```
 
-## Image
+### Image
 
 List images.
 ```sh
@@ -122,7 +195,7 @@ See image layer information.
 docker history <image_name>
 ```
 
-## Registry
+### Registry
 
 Login to Docker Hub. 
 ```sh
@@ -146,7 +219,7 @@ Push image. It will push to Docker Hub unless a different registry is specified.
 docker push katharineme/myimage
 ```
 
-## Volume
+### Volume
 
 Map host data to container to create a __bind-mount__. When the container is running, the data will be accessible by the container at the mapped location. The container will listen to changes made the data and changes made to the data in the container will be saved on the host.
 ```sh
@@ -163,7 +236,7 @@ List named volumes.
 docker volume ls
 ```
 
-## Container Status
+### Container Status
 
 See container details.
 ```sh
@@ -175,7 +248,7 @@ See container logs (STDOUT).
 docker logs <container_name>
 ```
 
-## Container Power
+### Container Power
 
 Give a container 50% of host CPU
 ```sh
@@ -187,76 +260,9 @@ Give a container 100Mb of host Memory
 docker run --memory=100m ubuntu
 ```
 
-## Environment Variables
+### Environment Variables
 
 Run container with environment variable. See a containers current environment variables by running `docker inspect`.
 ```sh
 docker run -e APP_COLOR=blue <image_name>
 ```
-
-## Dockerfile
-
-Plan Layers
-- OS
-- source repos
-- depedencies with apt
-- python dependencies
-- copy source to /opt
-- run web server command
-
-Write Dockerfile
-
-```
-FROM Ubuntu
-
-RUN apt-get update
-RUN apt-get install python
-
-COPY . . 
-
-ENTRYPOINT ["sleep"]
-
-WORKDIR /home/work
-
-CMD ["5"]
-
-```
-
-ENTRYPOINT
-- when you __docker run__ the container, you can pass in a parameter, which will be added the command you set as the entrypoint. For example if the entrypoint is: __ENTRYPOINT ["sleep"]__ and you run __docker run ubuntu-sleeper 10__, the ubuntu-sleeper container will run the sleep command for 10 seconds, and then exit.
-
-CMD
-- the process that is run in the container. When this process is finished, the container exits. If your Dockerfile has __CMD ["sleep", "5"]__ but you run __docker run ubunutu-sleeper sleep 10__ the contianer will run sleep for 10 seconds, then exit, becuase the command you pass in overides the CMD in the Dockerfile.
-
-## docker-compose
-
-docker-compose makes the process of building, running, and linking multiple containers easier. This might be done to create different containers for parts of a single application (one container for the frontend, and one for the sql database). However, docker-compose can also be used to start a single container. docker-compose runs all the containers with their specificed parameters in docker-compose.yml and connects them so they can access each other.
-
-__docker-compose.yml__
-
-```sh
-version: 3
-services:
-    redis:
-        image: my_redis_image
-    db:
-        image: postgres:9.4
-    vote:
-        image: voting-app
-        ports:
-            -5000:80
-```
-
-Run containers in __docker-compose.yml__
-```sh
-docker-compose up
-```
-
-Exit and remove containers in __docker-compose.yml__ 
-```sh
-docker-compose down
-```
-
-## .dockerignore
-
-While building an image from a Dockerfile, the Docker client will send everything the entire directory the Dockerfile is in to the Docker daemon. So if your project has a lot of data, use __.dockerignore__ to tell the Docker client what not to send to the daemon. This will speed up image building significantly for large projects.

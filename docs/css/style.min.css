@@ -778,6 +778,7 @@ code {
 .homepage-title {
     text-align: center;
     font-size: 350%;
+    line-height: 1.2em;
     text-transform: uppercase;
     color: #fff;
 }
