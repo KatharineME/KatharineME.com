@@ -10,7 +10,7 @@ categories = []
 
 Docker's makes a process with unique environment requirments run anywhere.
 
-It's built on the Linux kernal. When the host kernal is Windows or Unix, Docker can interact with it directly. To run on Windows or Mac (Unix kernal), Docker creates a Linux VM and runs containers in that VM. 
+It's built on the Linux kernal. When the host kernal is Windows or Unix, Docker can't interact with it directly. To run on Windows or Mac (Unix kernal), Docker creates a Linux VM and runs containers in that VM. 
 
 To run Docker on Mac specifically, the newest and best option is to get Docker Desktop for Mac. Docker Desktop for Mac uses HyperKit (virtualization software) to create a Linux OS. Then Docker runs inside of that Linux OS.
 
@@ -22,8 +22,7 @@ A process on your machine that is isolated from all other processes.
 
 It uses various layers from its image for its filesystem. However, each container gets a scratch space to add/update/remove files. This scratch space is isolated in each container, even containers built from the same image. When the container exits, all files and changes made in the scratch space are gone.
 
-Docker Volumes allow you to connect the filesystem of the host OS filesystem with the filesystem of a container. __named volumes__ are volumes are like buckets of data that are saved in a docker controlled directory close to root of the Linux OS that Docker is running on. If the host OS is Linux, __named volumes__ can be accessed by the host OS CLI. But if the host OS is Windows or Mac, __named volumes__ cannot be accessed by the host OS CLI, instead you would need to enter the Linux virtual machine to access them outside a container. __bind mounts__ are another type of volume and way to persist data in docker, and are preferable to __named volumes__ in most cases. With __bind mounts__ you can control where the data sits on the host. For example, if your project is in `/home/github/my_project`, you can simply mount that directory into a container using the `-v` flag to be able to access and edit `my_project` code in a container.
-
+Docker Volumes allow you to connect the filesystem of the host OS filesystem with the filesystem of a container. __named volumes__ are like buckets of data that are saved in a docker controlled directory close to root of the Linux OS that Docker is running on. If the host OS is Linux, __named volumes__ can be accessed by the host OS CLI. But if the host OS is Windows or Mac, __named volumes__ cannot be accessed by the host OS CLI, instead you would need to enter the Linux virtual machine to access them outside a container. __bind mounts__ are another type of volume and way to persist data in docker, and are preferable to __named volumes__ in most cases. With __bind mounts__ you can control where the data sits on the host. For example, if your project is in `/home/github/my_project`, you can simply mount that directory into a container using the `-v` flag to be able to access and edit `my_project` code in a container.
 
 Containers are not like VMs in that they don't just run on standby, they are not meant to run full operating systems. Containers are environments for running processes. Therefore a contianer only lives as long as the process inside it is alive. When the process finishes, the container exits.
 
