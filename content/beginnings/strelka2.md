@@ -14,6 +14,24 @@ All methods are optimized by default for whole genome DNA-Seq. RNA-Seq is still 
 
 For best somatic indel performance, Strelka is deisgned to be run with Manta.
 
+## Run
+
+Strelka is run ina two step procedure: 1) configuration and 2) execution.
+
+Configuration creates a workflow.py script using Pyflow that is then run in the execution step. In the configuration step you pas in the alignment file, reference data, output directory, and other strelka settings like this:
+
+```sh
+${STRELKA_INSTALL_PATH}/bin/configureStrelkaGermlineWorkflow.py \
+--bam NA12878.bam \
+--referenceFasta hg19.fa \
+--runDir ${STRELKA_ANALYSIS_PATH}
+```
+
+The execute the script while passing in run settings like number of jobs:
+
+
+
+
 ## Manta
 
 A structural variant and indel caller. Manta provides additional indel candidates to Strelka up to a given maximum indel size (49 by default).
@@ -22,13 +40,34 @@ A structural variant and indel caller. Manta provides additional indel candidate
 
 Strelka accepts BAM or CRAM.
 
-Input other than paired-end reads are ignored by default.
-
 Reads lengths above 400bp have not been tested.
 
-## How it Works
+The default settings in all workflows assume a whole genome DNA-Seq analysis. Input other than paired-end reads are ignored by default.
+
+All input alignment and reference sequence files must contain the same chromosome names in the same order. 
+
+- Alignments cannot contain the "=" character in the SEQ field.
+- RG (read group) tags are ignored -- each alignment file must represent one sample.
+- Alignments with basecall quality values greater than 70 will trigger a runtime error (these are not supported on the assumption that the high basecall quality indicates an offset error)
 
 ## Outputs
 
+Put in `output/strelka/results/variants/`
+
 VCF 4.1 format.
 
+Germline
+
+Germline analysis is reported to the following variant files:
+- variants.vcf.gz
+    - This describes all potential variant loci across all samples. Note this file includes non-variant loci if they have a non-trivial level of variant evidence or contain one or more alleles for which genotyping has been forced. Please see the multi-sample variants VCF section below for additional details on interpreting this file.
+
+- genome.S${N}.vcf.gz
+This is the genome VCF output for sample ${N}, which includes both variant records and compressed non-variant blocks. The sample index, ${N} is 1-indexed and corresponds to the input order of alignment files on the configuration command-line.
+
+Somatic analysis provides somatic variants in the following two files:
+
+- somatic.snvs.vcf.gz
+    - All somatic SNVs inferred in the tumor sample.
+- somatic.indels.vcf.gz
+    - All somatic indels inferred in the tumor sample.
