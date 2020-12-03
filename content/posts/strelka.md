@@ -1,36 +1,12 @@
 +++ 
-date = "2020-11-10"
-title = "Strelka2"
-slug = "strelka2" 
+date = "2020-12-03"
+title = "Strelka"
+slug = "strelka" 
 tags = []
 categories = []
 +++
 
-Germline and somatic variant caller made by Illumina.
-
-Somatic calls require a matched normal sample to ake variant calls. The matached normal sample helps Strelka identify the germline variants versus somatic variants.
-
-All methods are optimized by default for whole genome DNA-Seq. RNA-Seq is still in development and not fully supported.
-
-For best somatic indel performance, Strelka is deisgned to be run with Manta.
-
-## Run
-
-Strelka is run ina two step procedure: 1) configuration and 2) execution.
-
-Configuration creates a workflow.py script using Pyflow that is then run in the execution step. In the configuration step you pas in the alignment file, reference data, output directory, and other strelka settings like this:
-
-```sh
-${STRELKA_INSTALL_PATH}/bin/configureStrelkaGermlineWorkflow.py \
---bam NA12878.bam \
---referenceFasta hg19.fa \
---runDir ${STRELKA_ANALYSIS_PATH}
-```
-
-The execute the script while passing in run settings like number of jobs:
-
-
-
+Germline and somatic variant caller made by Illumina. All methods are optimized by default for whole genome DNA-Seq. RNA-Seq is still in development and not fully supported. For best somatic indel performance, Strelka is deisgned to be run with Manta. Somatic calls require a matched normal sample to ake variant calls. The matached normal sample helps Strelka identify the germline variants versus somatic variants.
 
 ## Manta
 
@@ -38,25 +14,18 @@ A structural variant and indel caller. Manta provides additional indel candidate
 
 ## Input
 
-Strelka accepts BAM or CRAM.
+Strelka accepts BAM or CRAM. Reads lengths above 400bp have not been tested. The default settings in all workflows assume a whole genome DNA-Seq analysis. Input other than paired-end reads are ignored by default.
 
-Reads lengths above 400bp have not been tested.
-
-The default settings in all workflows assume a whole genome DNA-Seq analysis. Input other than paired-end reads are ignored by default.
-
-All input alignment and reference sequence files must contain the same chromosome names in the same order. 
-
+- All input alignment and reference sequence files must contain the same chromosome names in the same order. 
 - Alignments cannot contain the "=" character in the SEQ field.
 - RG (read group) tags are ignored -- each alignment file must represent one sample.
 - Alignments with basecall quality values greater than 70 will trigger a runtime error (these are not supported on the assumption that the high basecall quality indicates an offset error)
 
-## Outputs
+## Output
 
-Put in `output/strelka/results/variants/`
+Put in `output/strelka/results/variants/`.
 
 VCF 4.1 format.
-
-Germline
 
 Germline analysis is reported to the following variant files:
 - variants.vcf.gz
@@ -71,3 +40,22 @@ Somatic analysis provides somatic variants in the following two files:
     - All somatic SNVs inferred in the tumor sample.
 - somatic.indels.vcf.gz
     - All somatic indels inferred in the tumor sample.
+
+## Run
+
+Strelka is run in a two step procedure: 1) configuration and 2) execution.
+
+In the configure step, you pass in the alignment file, reference data, output directory, and more like this:
+
+```sh
+{STRELKA_INSTALL_PATH}/bin/configureStrelkaGermlineWorkflow.py \
+--bam NA12878.bam \
+--referenceFasta hg19.fa \
+--runDir ${STRELKA_ANALYSIS_PATH}
+```
+
+which creates a `runWorkflow.py` script with those settings in `output/strelka/` using Pyflow. `runWorkflow.py` is then run in the execution step where you can pass in parameters like number of jobs:
+
+```sh
+{STRELKA_ANALYSIS_PATH}/runWorkflow.py -m local -j 8
+```

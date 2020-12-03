@@ -6,7 +6,17 @@
     <description>Recent content on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Strelka</title>
+      <link>https://katharineme.com/posts/strelka/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/strelka/</guid>
+      <description>Germline and somatic variant caller made by Illumina. All methods are optimized by default for whole genome DNA-Seq. RNA-Seq is still in development and not fully supported. For best somatic indel performance, Strelka is deisgned to be run with Manta. Somatic calls require a matched normal sample to ake variant calls. The matached normal sample helps Strelka identify the germline variants versus somatic variants.
+Manta A structural variant and indel caller.</description>
+    </item>
+    
     <item>
       <title>Docker</title>
       <link>https://katharineme.com/posts/docker/</link>

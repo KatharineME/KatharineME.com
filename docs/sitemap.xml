@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://katharineme.com/posts/docker/</loc>
-    <lastmod>2020-11-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://katharineme.com/</loc>
-    <lastmod>2020-11-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://katharineme.com/posts/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://katharineme.com/posts/strelka/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://katharineme.com/posts/docker/</loc>
     <lastmod>2020-11-10T00:00:00+00:00</lastmod>
   </url>
   
