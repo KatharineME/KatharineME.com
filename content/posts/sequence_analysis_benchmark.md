@@ -38,3 +38,12 @@ HG001 is female, HG002 is male.
     - Son is what giab recommends using at this time, because its being actively updated
 - Ashkenazi Jew family trio
 - [Giab benchmark data paper](https://www.nature.com/articles/sdata201625)
+
+## Running the Benchmark
+
+-vcfeval 
+    - vcfeval is made by Real Time Genomics
+    - It comes as one utility in a utility package called [RTG Tools](https://github.com/RealTimeGenomics/rtg-tools)
+    - Overall it performs sophisticated comparisons of VCF files
+    - It performs variant comparisons at the haplotype level. It determines whether or not the genotypes asserted by the VCFs result in the same genomic sequence when applied to the reference. In other words, vcfeval evaluates the VCFs its comparing in order to compare the actual sequences.
+
