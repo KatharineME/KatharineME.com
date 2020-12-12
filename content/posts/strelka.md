@@ -6,7 +6,7 @@ tags = []
 categories = []
 +++
 
-Germline and somatic variant caller made by Illumina. All methods are optimized by default for whole genome DNA-Seq. RNA-Seq is still in development and not fully supported. For best somatic indel performance, Strelka is deisgned to be run with Manta. Somatic calls require a matched normal sample to ake variant calls. The matached normal sample helps Strelka identify the germline variants versus somatic variants.
+Germline and somatic variant caller made by Illumina. All methods are optimized by default for whole genome DNA-Seq. RNA-Seq is still in development and not fully supported. For best somatic indel performance, Strelka is deisgned to be run with Manta. Somatic calls require a matched normal sample to make variant calls. The matached normal sample helps Strelka identify the germline variants versus somatic variants.
 
 ## Manta
 
