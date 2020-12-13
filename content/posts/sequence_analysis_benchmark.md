@@ -46,4 +46,6 @@ HG001 is female, HG002 is male.
     - It comes as one utility in a utility package called [RTG Tools](https://github.com/RealTimeGenomics/rtg-tools)
     - Overall it performs sophisticated comparisons of VCF files
     - It performs variant comparisons at the haplotype level. It determines whether or not the genotypes asserted by the VCFs result in the same genomic sequence when applied to the reference. In other words, vcfeval evaluates the VCFs its comparing in order to compare the actual sequences.
+    - It is supposedly the fastest tool to perform this kind of anlaysis as of 20201211.
+    - It outputs VCF files containing the results of the comparison as well as summary metrics and ROC curve files.
 
