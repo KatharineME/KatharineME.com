@@ -18,7 +18,8 @@ HG001 is female, HG002 is male.
 - When the challenge was over GiaB published the truth VCF for HG002.
 - Some pipelines are gender aware for the x chromosome and won’t call an snp on chromosome x heterozygous for an XY male, but other tools will (which is incorrect).
 - They used Real Time Genomics’ vcfeval and Illuminas hap.py to compare vcfs.
-- Vcfeval generates an intermediate vcd and hap.py counts indels and snp.
+- Vcfeval generates an intermediate vcf and hap.py counts indels and snp.
+- The ga4gh benchmarking workflow that the Precision FDA Truth Challenge developed is [here](https://github.com/ga4gh/benchmarking-tools/tree/master/doc/ref-impl)
 - [Precision FDA Truth Challenge site](https://precision.fda.gov/challenges/truth)
 
 
