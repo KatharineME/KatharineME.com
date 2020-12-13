@@ -20,6 +20,7 @@ HG001 is female, HG002 is male.
 - They used Real Time Genomics’ vcfeval and Illuminas hap.py to compare vcfs.
 - Vcfeval generates an intermediate vcf and hap.py counts indels and snp.
 - The ga4gh benchmarking workflow that the Precision FDA Truth Challenge developed is [here](https://github.com/ga4gh/benchmarking-tools/tree/master/doc/ref-impl)
+- In the `tools` folder of G4agh's benchmarking repository, there are pointers to specific versions of vcfeval and hap.py that were used in the Precision FDA Truth Challenge.
 - [Precision FDA Truth Challenge site](https://precision.fda.gov/challenges/truth)
 
 
