@@ -10,16 +10,33 @@ categories = []
 ## Git LFS 
 
 Pros
-- Very easy to setup, manage which files are tracked, and to remove if need be
+- Very easy to setup, manage which files are tracked, and remove if need be
+- Naturally integrated with git so you can manage your code and data storage on one platform
 
 Cons
 - Maximum of 2GiB file size
     - This is not encouraging when thinking about genomic data
-- Difficult to remove from your Github account once you've added it
-- Not included when someone forks your repo
-    - Kind of defeating the shareable / reproducible value proposition of Github
+
+Pricing
+- https://aws.amazon.com/s3/pricing/
+- $5 / month per data pack, where a data pack is 50GB storage with 50GB bandwidth
+- If you have 3 data packs, you would pay $15 / month and have 150GB of storage with 150GB bandwidth
 
 ## Other Options Please?
+
+### Amazon S3
+
+Pricing
+- $0.023 / month per GB for the first 50TB. This is equal to $1.15 / month for 50GB storage
+- Much cheaper than Git LFS
+
+### Google Cloud
+
+Pricing
+- About $0.20 / month per GB which is about $1 / month for 50GB
+- But adding in costs from interacting with the storage it is $1.19 / month per 50GB.
+- About the same as Amazon S3
+- Cost per GB goes down as amount of data stored increaes.
 
 ### DVC
 - https://dvc.org
