@@ -7,18 +7,18 @@ categories = []
 +++
 
 ## VMs
-- virtualize the hardware
-- come with complete OS and kernal
-- interact with the hardware via a hypervisor
-- run on standby
-- start in minutes
-- usually GBs in size
+- Virtualize the hardware
+- Come with complete OS and kernal
+- Interact with the hardware via a hypervisor
+- Run on standby
+- Start in minutes
+- Usually GBs in size
 
 ## Containers
-- virtualize the OS
-- interact with and use the host OS and host kernal
+- Virtualize the OS
+- Interact with and use the host OS and host kernal
     - Docker does this via Docker Daemon
-- will exit without an active process
-- start in seconds
-- usually MBs in size
+- Will exit without an active process
+- Start in seconds
+- Usually MBs in size
 
