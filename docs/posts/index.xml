@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git LFS vs Others</title>
+      <link>https://katharineme.com/posts/git-lfs-vs-others/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/git-lfs-vs-others/</guid>
+      <description>Git LFS Git Large File Storage is a CLI and server made by Github to store large files. It integrates very nicely into the git workflow, making it easy for git users to adopt. Git LFS stores your repoistory&amp;rsquo;s large files in the Git LFS server and adds a link to your repository that points there. Which files in your repository are managed by Git LFS is specified in .gitattributes and manages by git lfs track and git lfs untrack commands.</description>
+    </item>
+    
     <item>
       <title>Strelka</title>
       <link>https://katharineme.com/posts/strelka/</link>
@@ -35,7 +44,7 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
       <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/virtualization/</guid>
-      <description>VMs  virtualize the hardware come with complete OS and kernal interact with the hardware via a hypervisor run on standby start in minutes usually GBs in size  Containers  virtualize the OS interact with and use the host OS and host kernal  Docker does this via Docker Daemon   will exit without an active process start in seconds usually MBs in size  </description>
+      <description>VMs  Virtualize the hardware Come with complete OS and kernal Interact with the hardware via a hypervisor Run on standby Start in minutes Usually GBs in size  Containers  Virtualize the OS Interact with and use the host OS and host kernal  Docker does this via Docker Daemon   Will exit without an active process Start in seconds Usually MBs in size  </description>
     </item>
     
     <item>

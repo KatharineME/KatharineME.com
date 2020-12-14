@@ -93,7 +93,9 @@ HG001 is female, HG002 is male.</li>
 <li>When the challenge was over GiaB published the truth VCF for HG002.</li>
 <li>Some pipelines are gender aware for the x chromosome and won’t call an snp on chromosome x heterozygous for an XY male, but other tools will (which is incorrect).</li>
 <li>They used Real Time Genomics’ vcfeval and Illuminas hap.py to compare vcfs.</li>
-<li>Vcfeval generates an intermediate vcd and hap.py counts indels and snp.</li>
+<li>Vcfeval generates an intermediate vcf and hap.py counts indels and snp.</li>
+<li>The ga4gh benchmarking workflow that the Precision FDA Truth Challenge developed is <a href="https://github.com/ga4gh/benchmarking-tools/tree/master/doc/ref-impl">here</a></li>
+<li>In the <code>tools</code> folder of G4agh&rsquo;s benchmarking repository, there are pointers to specific versions of vcfeval and hap.py that were used in the Precision FDA Truth Challenge.</li>
 <li><a href="https://precision.fda.gov/challenges/truth">Precision FDA Truth Challenge site</a></li>
 </ul>
 <h2 id="genome-in-a-bottle-giab">Genome in a Bottle (Giab)</h2>
@@ -125,6 +127,14 @@ HG001 is female, HG002 is male.</li>
 <p><a href="https://www.nature.com/articles/sdata201625">Giab benchmark data paper</a></p>
 </li>
 </ul>
+<h2 id="running-the-benchmark">Running the Benchmark</h2>
+<p>-vcfeval
+- vcfeval is made by Real Time Genomics
+- It comes as one utility in a utility package called <a href="https://github.com/RealTimeGenomics/rtg-tools">RTG Tools</a>
+- Overall it performs sophisticated comparisons of VCF files
+- It performs variant comparisons at the haplotype level. It determines whether or not the genotypes asserted by the VCFs result in the same genomic sequence when applied to the reference. In other words, vcfeval evaluates the VCFs its comparing in order to compare the actual sequences.
+- It is supposedly the fastest tool to perform this kind of anlaysis as of 20201211.
+- It outputs VCF files containing the results of the comparison as well as summary metrics and ROC curve files.</p>
 
   </article>
 
