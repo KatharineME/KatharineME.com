@@ -13,9 +13,10 @@ Pros
 - Very easy to setup, manage which files are tracked, and to remove if need be
 
 Cons
-- maximum of 2GB storage
+- Maximum of 2GiB file size
+    - This is not encouraging when thinking about genomic data
 - Difficult to remove from your Github account once you've added it
-- Not included when someone forks your repo.
+- Not included when someone forks your repo
     - Kind of defeating the shareable / reproducible value proposition of Github
 
 ## Other Options Please?
