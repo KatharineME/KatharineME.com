@@ -31,6 +31,8 @@ EIGENSTRAT (Price et al., 2006) was applied to infer the global genetic structur
 
  is a method to study human diversity based on Principal Component Analysis (PCA), which reduces the information contained in SNP frequencies to components that capture most genetic variability. The EIGENSOFT package (EIGENSTRAT algorithms included) version 6.1.4 was downloaded from GitHub (https://github.com/DReichLab/EIG).
 
+
+
  The smartpca program was applied to run PCA on the combined genotype data of TCGA and the reference populations. 
 
  we adopted the default value K=10 for running the smartpca program.

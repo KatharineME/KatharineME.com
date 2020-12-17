@@ -6,7 +6,7 @@ tags = []
 categories = []
 +++
 
-## VMs
+## Virtual Machines
 - Virtualize the hardware
 - Come with complete OS and kernal
 - Interact with the hardware via a hypervisor
