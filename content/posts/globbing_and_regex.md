@@ -40,16 +40,19 @@ Regex is for searching text.
 
 ## grep and fgrep Come to Play
 
-Grep is a command line tool for searching text. Grep never uses globbing. Grep uses regex. However, with a command like this one:
+`grep` is a command line tool for searching text. `grep` never uses globbing. `grep` uses regex. However, with a command like this one:
 
 ```sh
 grep file* README.md
 ```
 
-the shell will do globbing before passing the command to grep. The shell will find `filename.txt` in the curernt directory (assuming it exists) and then grep will look for "filename.txt" in the README.md. However, by adding quotes like this:
+the shell will do globbing before passing the command to grep. The shell will find `filename.txt` in the current directory (assuming it exists) and then grep will look for "filename.txt" in the README.md. However, adding quotes like this:
 
 ```sh
 grep "file*" README.md
 ```
 
-will prevent the shell from globbing and then grep will look for "fil" ending with zero or more "e" in README.md.
+will prevent the shell from globbing and then `file*` will be interpretted as regex and grep will look for "fil" ending with zero or more "e" in README.md.
+
+
+
