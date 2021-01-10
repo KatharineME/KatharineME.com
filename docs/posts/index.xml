@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Globbing and Regex</title>
+      <link>https://katharineme.com/posts/globbing-and-regex/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/globbing-and-regex/</guid>
+      <description>Globbing Lists all files ending in .md.
+ls *.md Lists all files starting with A and ending with .md.
+ls A*.md </description>
+    </item>
+    
     <item>
       <title>Git LFS vs Others</title>
       <link>https://katharineme.com/posts/git-lfs-vs-others/</link>
@@ -44,7 +55,7 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
       <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/virtualization/</guid>
-      <description>VMs  Virtualize the hardware Come with complete OS and kernal Interact with the hardware via a hypervisor Run on standby Start in minutes Usually GBs in size  Containers  Virtualize the OS Interact with and use the host OS and host kernal  Docker does this via Docker Daemon   Will exit without an active process Start in seconds Usually MBs in size  </description>
+      <description>Virtual Machines  Virtualize the hardware Come with complete OS and kernal Interact with the hardware via a hypervisor Run on standby Start in minutes Usually GBs in size  Containers  Virtualize the OS Interact with and use the host OS and host kernal  Docker does this via Docker Daemon   Will exit without an active process Start in seconds Usually MBs in size  </description>
     </item>
     
     <item>

@@ -6,7 +6,32 @@
     <description>Recent content on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Globbing and Regex</title>
+      <link>https://katharineme.com/beginnings/globbing-and-regex/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/beginnings/globbing-and-regex/</guid>
+      <description>Globbing The asterisk means &amp;ldquo;zero or more characters&amp;rdquo; in the file glob.
+Lists all files ending in .md.
+ls *.md Lists all files starting with A and ending with .md.
+ls A*.md The question mark means a single unknown character.
+Will list All.md but won&amp;rsquo;t list About.md or A.md.
+ls A??.md Where Globbing and Regex Overlap Sometimes the shell will interpret regex and globbing and globbing as regex because they have syntax overlap.</description>
+    </item>
+    
+    <item>
+      <title>Globbing and Regex</title>
+      <link>https://katharineme.com/posts/globbing-and-regex/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/globbing-and-regex/</guid>
+      <description>Globbing Lists all files ending in .md.
+ls *.md Lists all files starting with A and ending with .md.
+ls A*.md </description>
+    </item>
+    
     <item>
       <title>Git LFS vs Others</title>
       <link>https://katharineme.com/posts/git-lfs-vs-others/</link>
@@ -44,7 +69,7 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
       <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/virtualization/</guid>
-      <description>VMs  Virtualize the hardware Come with complete OS and kernal Interact with the hardware via a hypervisor Run on standby Start in minutes Usually GBs in size  Containers  Virtualize the OS Interact with and use the host OS and host kernal  Docker does this via Docker Daemon   Will exit without an active process Start in seconds Usually MBs in size  </description>
+      <description>Virtual Machines  Virtualize the hardware Come with complete OS and kernal Interact with the hardware via a hypervisor Run on standby Start in minutes Usually GBs in size  Containers  Virtualize the OS Interact with and use the host OS and host kernal  Docker does this via Docker Daemon   Will exit without an active process Start in seconds Usually MBs in size  </description>
     </item>
     
     <item>
@@ -57,6 +82,17 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
 75% of RNA-Seq sequences will be ribosomal.
 Replicates
  Technical replicate: sequence same sample 2x  NGS technical replicates are usually 97% matching or better   Biological replicate: different individual sequenced under same conditions  Reference Genomes  2 major verisons  GRCh  NIH Genome Reference Consortium Latest release is GRCh38   UCSC  Latest release is hg38 Previous release was hg19 After hg19 they decided to jump release number to match GRCh      Decoy Genomes When you sequence a human genome, you dont just get human DNA.</description>
+    </item>
+    
+    <item>
+      <title>Trace Ancestry Through DNA</title>
+      <link>https://katharineme.com/beginnings/trace-ancestry-through-dna/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/beginnings/trace-ancestry-through-dna/</guid>
+      <description>Has Julia Made VCF Queries Easier? This is one of the central questions I aim to answer here.
+Method 1: BioJulia&amp;rsquo;s GeneticVariation.jl https://github.com/BioJulia/GeneticVariation.jl/blob/master/docs/src/man/io/vcf-bcf.md
+BioJulia is an open source project / organization that makes biology tools with Julia. They are actively maintaining many of their repositories. However GeneticVariation.jl has less commit and hasnt been updated much in the last two years. It only has 20 stars and is overall not a very active project.</description>
     </item>
     
     <item>

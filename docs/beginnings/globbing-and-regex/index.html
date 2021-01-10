@@ -6,23 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="author" content="Katharine Medetgul-Ernar">
-    <meta name="description" content="Computational Genomics Blog">
+    <meta name="description" content="https://katharineme.com/">
     <meta name="keywords" content="blog,developer,personal">
 
     <meta property="og:site_name" content="Genome Analysis Blog">
-    <meta property="og:title" content="Genome Analysis Blog">
-    <meta property="og:description" content="Computational Genomics Blog">
+    <meta property="og:title" content="
+  Globbing and Regex - Genome Analysis Blog
+">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://katharineme.com/404.html">
-    <meta property="og:image" content="https://katharineme.com/images/cells.jpg">
+    <meta property="og:url" content="https://katharineme.com/beginnings/globbing-and-regex/">
+    <meta property="og:image" content="https://katharineme.com/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="https://katharineme.com/404.html">
-    <meta name="twitter:image" content="https://katharineme.com/images/cells.jpg">
+    <meta name="twitter:site" content="https://katharineme.com/beginnings/globbing-and-regex/">
+    <meta name="twitter:image" content="https://katharineme.com/">
 
-    <base href="https://katharineme.com/404.html">
-    <title>Genome Analysis Blog</title>
+    <base href="https://katharineme.com/beginnings/globbing-and-regex/">
+    <title>
+  Globbing and Regex - Genome Analysis Blog
+</title>
 
-    <link rel="canonical" href="https://katharineme.com/404.html">
+    <link rel="canonical" href="https://katharineme.com/beginnings/globbing-and-regex/">
     
     <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
     <link rel="stylesheet" href="/css/normalize.min.css">
@@ -68,12 +72,25 @@
 
       <div class="content">
         
-  <section class="container centered">
-  <div class="error">
-    <h1>404</h1>
-    <h2>Page Not Found</h2>
-    <p>Sorry, this page does not exist.<br />You can head back to <a href="https://katharineme.com/">homepage</a>.</p>
-  </div>
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Globbing and Regex</h1>
+    </header>
+
+    <h2 id="globbing">Globbing</h2>
+<p>The asterisk means &ldquo;zero or more characters&rdquo; in the file glob.</p>
+<p>Lists all files ending in <code>.md</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls *.md
+</code></pre></div><p>Lists all files starting with <code>A</code> and ending with <code>.md</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls A*.md
+</code></pre></div><p>The question mark means a single unknown character.</p>
+<p>Will list <code>All.md</code> but won&rsquo;t list <code>About.md</code> or <code>A.md</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls A??.md
+</code></pre></div><h2 id="where-globbing-and-regex-overlap">Where Globbing and Regex Overlap</h2>
+<p>Sometimes the shell will interpret regex and globbing and globbing as regex because they have syntax overlap.</p>
+
+  </article>
 </section>
 
 

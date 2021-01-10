@@ -3,17 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://katharineme.com/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://katharineme.com/beginnings/</loc>
+    <lastmod>2021-01-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://katharineme.com/posts/git-lfs-vs-others/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://katharineme.com/</loc>
+    <lastmod>2021-01-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://katharineme.com/beginnings/globbing-and-regex/</loc>
+    <lastmod>2021-01-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://katharineme.com/posts/globbing-and-regex/</loc>
+    <lastmod>2021-01-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://katharineme.com/posts/</loc>
+    <lastmod>2021-01-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://katharineme.com/posts/git-lfs-vs-others/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,12 +48,12 @@
   </url>
   
   <url>
-    <loc>https://katharineme.com/beginnings/</loc>
+    <loc>https://katharineme.com/beginnings/sequence-analysis/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://katharineme.com/beginnings/sequence-analysis/</loc>
+    <loc>https://katharineme.com/beginnings/trace-ancestry-through-dna/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
   </url>
   
