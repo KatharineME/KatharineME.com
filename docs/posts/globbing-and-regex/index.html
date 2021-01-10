@@ -81,8 +81,9 @@
       
     </header>
 
-    <h2 id="globbing">Globbing</h2>
-<p>Globbing in for filename completion in command line.</p>
+    <p>Globbs are for filenames and regex is for searching text.</p>
+<h2 id="globbing">Globbing</h2>
+<p>Globbing is for filename completion in command line.</p>
 <p>The asterisk means &ldquo;zero or more characters&rdquo; in the file glob.</p>
 <p>Lists all files ending in <code>.md</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls *.md
@@ -93,6 +94,12 @@
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls A??.md
 </code></pre></div><h2 id="regex">Regex</h2>
 <p>Regex is for searching text.</p>
+<h2 id="grep-and-fgrep-come-to-play">grep and fgrep Come to Play</h2>
+<p>Grep is a command line tool for searching text. Grep never uses globbing. Grep uses regex. However, with a command like this one:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep file* README.md
+</code></pre></div><p>the shell will do globbing before passing the command to grep. The shell will find <code>filename.txt</code> in the curernt directory (assuming it exists) and then grep will look for &ldquo;filename.txt&rdquo; in the README.md. However, by adding quotes like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;file*&#34;</span> README.md
+</code></pre></div><p>will prevent the shell from globbing and then grep will look for &ldquo;fil&rdquo; ending with zero or more &ldquo;e&rdquo; in README.md.</p>
 
   </article>
 
