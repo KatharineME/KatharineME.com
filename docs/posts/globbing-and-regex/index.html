@@ -82,11 +82,18 @@
     </header>
 
     <h2 id="globbing">Globbing</h2>
+<p>Globbing in for filename completion in command line.</p>
+<p>The asterisk means &ldquo;zero or more characters&rdquo; in the file glob.</p>
 <p>Lists all files ending in <code>.md</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls *.md
 </code></pre></div><p>Lists all files starting with <code>A</code> and ending with <code>.md</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls A*.md
-</code></pre></div>
+</code></pre></div><p>The question mark means one unknown character in the file glob.</p>
+<p>Will list <code>All.md</code> but not <code>About.md</code> or <code>A.md</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls A??.md
+</code></pre></div><h2 id="regex">Regex</h2>
+<p>Regex is for searching text.</p>
+
   </article>
 
   <br/>
