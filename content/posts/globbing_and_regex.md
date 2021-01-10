@@ -6,13 +6,11 @@ tags = []
 categories = []
 +++
 
+Globbing is for filename completion in shell and regex is for searching text.
 
 Globbs are for filenames and regex is for searching text.
 
 ## Globbing
-
-Globbing is for filename completion in command line.
-
 
 The asterisk means "zero or more characters" in the file glob.
 
@@ -35,7 +33,6 @@ ls A??.md
 
 ## Regex
 
-Regex is for searching text.
 
 
 ## grep and fgrep Come to Play
@@ -53,6 +50,14 @@ grep "file*" README.md
 ```
 
 will prevent the shell from globbing and then `file*` will be interpretted as regex and grep will look for "fil" ending with zero or more "e" in README.md.
+
+`fgrep` or `grep -F` on the other hand allows you to search for exactly what you type. For example, this command:
+
+```sh
+grep -F "$" file.txt
+```
+
+will return all the lines with the "$" character in file.txt.
 
 
 
