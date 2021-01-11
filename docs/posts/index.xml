@@ -13,10 +13,10 @@
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/globbing-and-regex/</guid>
-      <description>Globbing is for filename completion in shell and regex is for searching text.
+      <description>This post is all about time saving tools. Globbing is for filename completion in shell and regex is for searching text.
 Globbing The asterisk means &amp;ldquo;zero or more characters&amp;rdquo; in the file glob. So this command returns all files ending in .md.
 ls *.md This command returns all files starting with A and ending with .md.
-ls A*.md The question mark means one unknown character in the file glob. So this command will return All.md but not About.md or A.</description>
+ls A*.md The question mark means one unknown character in the file glob. So this command will return All.</description>
     </item>
     
     <item>

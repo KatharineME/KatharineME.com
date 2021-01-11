@@ -6,7 +6,8 @@ tags = []
 categories = []
 +++
 
-Globbing is for filename completion in shell and regex is for searching text.
+
+This post is all about time saving tools. Globbing is for filename completion in shell and regex is for searching text. 
 
 ## Globbing
 
@@ -27,14 +28,12 @@ ls A??.md
 
 ## Regex
 
-`^` means "at the beginning of the line" and `$` means "at the end of the line".
-
-This commmand returns lines beginning with "moose".
+`^` means "at the beginning of the line" and `$` means "at the end of the line". So this commmand returns lines beginning with "moose".
 ```sh
 grep "^moose" file.txt
 ```
 
-This command returns lines ending with "moose".
+And this command returns lines ending with "mojo".
 ```sh
 grep "mojo$" file.txt
 ```
@@ -47,7 +46,13 @@ grep "^moose.*mojo$" file.txt
 
 More:
 
-
+| Regex Symbol | Utility                                                                  |
+|--------------|--------------------------------------------------------------------------|
+| \            | negate special-ness of character after                                   |
+| \s           | whitespace (a space, tab, or newline)                                    |
+| .*           | zero or more of any characters                                           |
+| vertical line| or                                                                       |
+| []           | within a range, for example ^[A-Z] to search line starting with capital  | 
 
 
 ## grep and fgrep Come to Play

@@ -81,7 +81,7 @@
       
     </header>
 
-    <p>Globbing is for filename completion in shell and regex is for searching text.</p>
+    <p>This post is all about time saving tools. Globbing is for filename completion in shell and regex is for searching text.</p>
 <h2 id="globbing">Globbing</h2>
 <p>The asterisk means &ldquo;zero or more characters&rdquo; in the file glob. So this command returns all files ending in <code>.md</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls *.md
@@ -90,14 +90,43 @@
 </code></pre></div><p>The question mark means one unknown character in the file glob. So this command will return <code>All.md</code> but not <code>About.md</code> or <code>A.md</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls A??.md
 </code></pre></div><h2 id="regex">Regex</h2>
-<p><code>^</code> means &ldquo;at the beginning of the line&rdquo; and <code>$</code> means &ldquo;at the end of the line&rdquo;.</p>
-<p>This commmand returns lines beginning with &ldquo;moose&rdquo;.</p>
+<p><code>^</code> means &ldquo;at the beginning of the line&rdquo; and <code>$</code> means &ldquo;at the end of the line&rdquo;. So this commmand returns lines beginning with &ldquo;moose&rdquo;.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;^moose&#34;</span> file.txt
-</code></pre></div><p>This command returns lines ending with &ldquo;moose&rdquo;.</p>
+</code></pre></div><p>And this command returns lines ending with &ldquo;mojo&rdquo;.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;mojo</span>$<span class="s2">&#34;</span> file.txt
 </code></pre></div><p>This command returns lines beginning with &ldquo;moose&rdquo; and ending with &ldquo;mojo&rdquo;. The <code>.*</code> means zero or more (<code>*</code>) of any character (<code>.</code>).</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;^moose.*mojo</span>$<span class="s2">&#34;</span> file.txt
 </code></pre></div><p>More:</p>
+<table>
+<thead>
+<tr>
+<th>Regex Symbol</th>
+<th>Utility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>negate special-ness of character after</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>whitespace (a space, tab, or newline)</td>
+</tr>
+<tr>
+<td>.*</td>
+<td>zero or more of any characters</td>
+</tr>
+<tr>
+<td>vertical line</td>
+<td>or</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>within a range, for example ^[A-Z] to search line starting with capital</td>
+</tr>
+</tbody>
+</table>
 <h2 id="grep-and-fgrep-come-to-play">grep and fgrep Come to Play</h2>
 <p><code>grep</code> is a command line tool for searching text. <code>grep</code> never uses globbing. <code>grep</code> uses regex. However, with a command like this one:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep file* README.md
