@@ -28,12 +28,12 @@ ls A??.md Where Globbing and Regex Overlap Sometimes the shell will interpret re
       
       <guid>https://katharineme.com/posts/globbing-and-regex/</guid>
       <description>Globbing is for filename completion in shell and regex is for searching text.
-Globbs are for filenames and regex is for searching text.
 Globbing The asterisk means &amp;ldquo;zero or more characters&amp;rdquo; in the file glob.
 Lists all files ending in .md.
 ls *.md Lists all files starting with A and ending with .md.
 ls A*.md The question mark means one unknown character in the file glob.
-Will list All.md but not About.</description>
+Will list All.md but not About.md or A.md.
+ls A??.md Regex ^ means &amp;ldquo;at the beginning of the line&amp;rdquo; and $ means &amp;ldquo;at the end of the line&amp;rdquo;.</description>
     </item>
     
     <item>

@@ -8,8 +8,6 @@ categories = []
 
 Globbing is for filename completion in shell and regex is for searching text.
 
-Globbs are for filenames and regex is for searching text.
-
 ## Globbing
 
 The asterisk means "zero or more characters" in the file glob.
@@ -32,6 +30,27 @@ ls A??.md
 ```
 
 ## Regex
+
+`^` means "at the beginning of the line" and `$` means "at the end of the line".
+
+Return lines beginning with "moose".
+```sh
+grep "^moose" file.txt
+```
+
+Return lines ending with "moose".
+```sh
+grep "mojo$" file.txt
+```
+
+Return lines beginning with "moose" and ending with "mojo". The `.*` means zero or more (`*`) of any character (`.`).
+```sh
+grep "^moose.*mojo$" file.txt
+```
+
+
+More:
+
 
 
 
