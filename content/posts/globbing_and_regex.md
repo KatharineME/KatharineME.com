@@ -10,21 +10,17 @@ Globbing is for filename completion in shell and regex is for searching text.
 
 ## Globbing
 
-The asterisk means "zero or more characters" in the file glob.
-
-Lists all files ending in `.md`.
+The asterisk means "zero or more characters" in the file glob. So this command returns all files ending in `.md`.
 ```sh
 ls *.md
 ```
 
-Lists all files starting with `A` and ending with `.md`.
+This command returns all files starting with `A` and ending with `.md`.
 ```sh
 ls A*.md
 ```
 
-The question mark means one unknown character in the file glob.
-
-Will list `All.md` but not `About.md` or `A.md`.
+The question mark means one unknown character in the file glob. So this command will return `All.md` but not `About.md` or `A.md`.
 ```sh
 ls A??.md
 ```
@@ -33,17 +29,17 @@ ls A??.md
 
 `^` means "at the beginning of the line" and `$` means "at the end of the line".
 
-Return lines beginning with "moose".
+This commmand returns lines beginning with "moose".
 ```sh
 grep "^moose" file.txt
 ```
 
-Return lines ending with "moose".
+This command returns lines ending with "moose".
 ```sh
 grep "mojo$" file.txt
 ```
 
-Return lines beginning with "moose" and ending with "mojo". The `.*` means zero or more (`*`) of any character (`.`).
+This command returns lines beginning with "moose" and ending with "mojo". The `.*` means zero or more (`*`) of any character (`.`).
 ```sh
 grep "^moose.*mojo$" file.txt
 ```
