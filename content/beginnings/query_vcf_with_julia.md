@@ -23,3 +23,7 @@ They are query in a very manual way. THey didnt rea the vcf into a dataframe, or
 There are some posts that complain Query.jl is too slow:
 - https://discourse.julialang.org/t/speeding-up-query-with-a-big-dataset/19508
 - https://discourse.julialang.org/t/large-dataframe-fast-row-selection/14849
+
+
+How do other data objects compare in speed?
+- https://github.com/queryverse/IterableTables.jl
