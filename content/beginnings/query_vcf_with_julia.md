@@ -18,6 +18,8 @@ But ...
 They are query in a very manual way. THey didnt rea the vcf into a dataframe, or create an index. they just search row by row and output a dictionary. So this tool isn't very useful.
 
 
+Verdict: NOT HELPFUL, JUST WRAPPED QUERYING
+
 ### Method 2: Query.jl applied on vcf loaded into DataFrame
 
 There are some posts that complain Query.jl is too slow:
@@ -27,3 +29,7 @@ There are some posts that complain Query.jl is too slow:
 
 How do other data objects compare in speed?
 - https://github.com/queryverse/IterableTables.jl
+
+
+Verdict: NOT HELPFUL, JUST WRAPPED QUERYING
+
