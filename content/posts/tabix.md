@@ -17,7 +17,7 @@ The index file is called `.tbi` and will be put adjacent to your `.gz` file.
 
 ![command line](/images/tabix_index_made.png)
 
-Now you can check for the existence of a variant like so. However, its important to remember in general that being in the VCF file is not synonymous with being interesting or important or rare. There are lots of harmful/interesting/important polymorphisms that are in the reference genome. But more on that in another post.
+Now you can check for the existence of a variant like so. Its important to remember, while you're doing this, that a polymorphism being in the VCF file is not synonymous with being interesting or important or rare. There are lots of harmful/interesting/important polymorphisms that are in the reference genome. But more on that in another post.
 
 ![command line](/images/tabix_one_variant.png)
 
@@ -25,7 +25,7 @@ And you can look for variants in region in the same way.
 
 ![command line](/images/tabix_region.png)
 
-You can also do other useful / cool this with tabix.
+You can also do other useful / cool things with tabix, like these.
 
 Return Header of VCF.
 ```sh
@@ -40,6 +40,11 @@ tabix -l vcf.gz
 Return regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns, where positions are 1-based and inclusive
 ```sh
 tabix -R vcf.gz
+```
+
+I like to use .bed files, here is an example of a .bed file.
+
+```txt
 ```
 
 
