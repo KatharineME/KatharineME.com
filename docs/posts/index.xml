@@ -6,7 +6,21 @@
     <description>Recent content in Posts on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tabix</title>
+      <link>https://katharineme.com/posts/tabix/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/tabix/</guid>
+      <description>Tabix indexes a tab-delimted genome position file (
+Return genomic region.
+tabix vcf.gz chr20:28986977-28986977 tabix vcf.gz chr20:200000-3000000 Return Header of VCF.
+tabix -H vcf.gz Return chromosome names in VCF.
+tabix -l vcf.gz Return regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns, where positions are 1-based and inclusive
+tabix -R vcf.gz Careful with that .</description>
+    </item>
+    
     <item>
       <title>Globbing and Regex</title>
       <link>https://katharineme.com/posts/globbing-and-regex/</link>

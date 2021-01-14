@@ -6,7 +6,21 @@
     <description>Recent content on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tabix</title>
+      <link>https://katharineme.com/posts/tabix/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/tabix/</guid>
+      <description>Tabix indexes a tab-delimted genome position file (
+Return genomic region.
+tabix vcf.gz chr20:28986977-28986977 tabix vcf.gz chr20:200000-3000000 Return Header of VCF.
+tabix -H vcf.gz Return chromosome names in VCF.
+tabix -l vcf.gz Return regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns, where positions are 1-based and inclusive
+tabix -R vcf.gz Careful with that .</description>
+    </item>
+    
     <item>
       <title>Globbing and Regex</title>
       <link>https://katharineme.com/beginnings/globbing-and-regex/</link>
@@ -91,9 +105,10 @@ Replicates
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/beginnings/trace-ancestry-through-dna/</guid>
-      <description>Has Julia Made VCF Queries Easier? This is one of the central questions I aim to answer here.
-Method 1: BioJulia&amp;rsquo;s GeneticVariation.jl https://github.com/BioJulia/GeneticVariation.jl/blob/master/docs/src/man/io/vcf-bcf.md
-BioJulia is an open source project / organization that makes biology tools with Julia. They are actively maintaining many of their repositories. However GeneticVariation.jl has less commit and hasnt been updated much in the last two years. It only has 20 stars and is overall not a very active project.</description>
+      <description>Method 1: BioJulia&amp;rsquo;s GeneticVariation.jl https://github.com/BioJulia/GeneticVariation.jl/blob/master/docs/src/man/io/vcf-bcf.md
+BioJulia is an open source project / organization that makes biology tools with Julia. They are actively maintaining many of their repositories. However GeneticVariation.jl has less commit and hasnt been updated much in the last two years. It only has 20 stars and is overall not a very active project. However, it seems to work.
+But &amp;hellip;
+They are query in a very manual way. THey didnt rea the vcf into a dataframe, or create an index.</description>
     </item>
     
     <item>

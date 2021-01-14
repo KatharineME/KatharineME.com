@@ -39,9 +39,10 @@ Replicates
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/beginnings/trace-ancestry-through-dna/</guid>
-      <description>Has Julia Made VCF Queries Easier? This is one of the central questions I aim to answer here.
-Method 1: BioJulia&amp;rsquo;s GeneticVariation.jl https://github.com/BioJulia/GeneticVariation.jl/blob/master/docs/src/man/io/vcf-bcf.md
-BioJulia is an open source project / organization that makes biology tools with Julia. They are actively maintaining many of their repositories. However GeneticVariation.jl has less commit and hasnt been updated much in the last two years. It only has 20 stars and is overall not a very active project.</description>
+      <description>Method 1: BioJulia&amp;rsquo;s GeneticVariation.jl https://github.com/BioJulia/GeneticVariation.jl/blob/master/docs/src/man/io/vcf-bcf.md
+BioJulia is an open source project / organization that makes biology tools with Julia. They are actively maintaining many of their repositories. However GeneticVariation.jl has less commit and hasnt been updated much in the last two years. It only has 20 stars and is overall not a very active project. However, it seems to work.
+But &amp;hellip;
+They are query in a very manual way. THey didnt rea the vcf into a dataframe, or create an index.</description>
     </item>
     
     <item>
