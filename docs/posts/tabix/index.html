@@ -81,12 +81,17 @@
       
     </header>
 
-    <p>Tabix indexes a tab-delimted genome position file (VCF file for example). Once indexed, tabix can quickly retrieve data from any part of the file without decompressing it. Thank you Heng Li 🙏 (tabix author). Here are some things you can do with tabix to a <code>vcf.gz</code> file.</p>
-<p>Return genomic region.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">tabix vcf.gz chr20:28986977-28986977
-
-tabix vcf.gz chr20:200000-3000000
-</code></pre></div><p>Return Header of VCF.</p>
+    <p>Tabix indexes a tab-delimted genome position file (<code>.vcf</code> file for example). Once indexed, tabix can quickly retrieve data from any part of the file without decompressing it. Thank you Heng Li 🙏 (tabix author). Here are some things you can do with tabix to a <code>vcf.gz</code> file.</p>
+<p>First, you&rsquo;ll want to index your VCF like this.</p>
+<p><img src="/images/tabix_make_index.png" alt="command line"></p>
+<p>The index file is called <code>.tbi</code> and will be put adjacent to your <code>.gz</code> file.</p>
+<p><img src="/images/tabix_index_made.png" alt="command line"></p>
+<p>Now you can check for the existence of a variant like so. However, its important to remember in general that being in the VCF file is not synonymous with being interesting or important or rare. There are lots of harmful/interesting/important polymorphisms that are in the reference genome. But more on that in another post.</p>
+<p><img src="/images/tabix_one_variant.png" alt="command line"></p>
+<p>And you can look for variants in region in the same way.</p>
+<p><img src="/images/tabix_region.png" alt="command line"></p>
+<p>You can also do other useful / cool this with tabix.</p>
+<p>Return Header of VCF.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">tabix -H vcf.gz
 </code></pre></div><p>Return chromosome names in VCF.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">tabix -l vcf.gz
@@ -94,7 +99,8 @@ tabix vcf.gz chr20:200000-3000000
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">tabix -R vcf.gz
 </code></pre></div><h2 id="careful-with-that-gz-file-">Careful with that .gz file &hellip;</h2>
 <p><code>gzip</code> and <code>bgzip</code> are not the same thing. Wait &hellip; what is <code>bgzip</code>? Good question. <code>bgzip</code> is a compression algorithm that creates a series of <code>gzip</code> compressed blocks which are each 64kb in size. To go along with all these little blocks is whats called a &ldquo;virtual offset&rdquo;. The vitual offset is actually an unsigned (meaning nonnegative) 64 bit integer. And this integer holds information which acts like a map of the <code>bgzip</code> file. Its because of the &ldquo;block + map&rdquo; structure that <code>bgzip</code> files can be accessed without unzipping the entire file. And this is why tabix can access lets say <code>chr1:452923-452923</code> without unzipping the whole <code>variants.vcf.gz</code> (a bgzipped file).</p>
-<p>But why did I say be careful? It&rsquo;s because <code>bgzip</code> files and <code>gzip</code> files both end with <code>.gz</code>. So how do you know if a <code>.gz</code> file is bgzipped or just gzipped? Because for the reasons explained above, you cannot access a part of a <code>gzip</code> file without unzipping it, which is why like tabix requires <code>bgzip</code> compression.</p>
+<p>But why did I say be careful? It&rsquo;s because <code>bgzip</code> files and <code>gzip</code> files both end with <code>.gz</code>. So how do you know if a <code>.gz</code> file is bgzipped or just gzipped? Because for the reasons explained above, you cannot access a part of a <code>gzip</code> file without unzipping it, which is why like tabix requires <code>bgzip</code> compression. Luckily its easy to tell if your <code>.gz</code> file is in fact bgzipped. Just try to tabix it (create an index) and if its not bgzipped, tabi will tell you like this:</p>
+<p><img src="/images/tabix_not_bgzipped.png" alt="command line"></p>
 <p>Learn more about <code>bgzip</code> and <code>gzip</code> in <a href="https://blastedbio.blogspot.com/2011/11/bgzf-blocked-bigger-better-gzip.html">Peter Cock&rsquo;s in depth post</a>.</p>
 
   </article>

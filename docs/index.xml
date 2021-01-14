@@ -26,11 +26,9 @@ tabix -l vcf.gz Return regions listed in a file. The file can be a bed (.</descr
       <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/tabix/</guid>
-      <description>Tabix indexes a tab-delimted genome position file (VCF file for example). Once indexed, tabix can quickly retrieve data from any part of the file without decompressing it. Thank you Heng Li 🙏 (tabix author). Here are some things you can do with tabix to a vcf.gz file.
-Return genomic region.
-tabix vcf.gz chr20:28986977-28986977 tabix vcf.gz chr20:200000-3000000 Return Header of VCF.
-tabix -H vcf.gz Return chromosome names in VCF.
-tabix -l vcf.</description>
+      <description>Tabix indexes a tab-delimted genome position file (.vcf file for example). Once indexed, tabix can quickly retrieve data from any part of the file without decompressing it. Thank you Heng Li 🙏 (tabix author). Here are some things you can do with tabix to a vcf.gz file.
+First, you&amp;rsquo;ll want to index your VCF like this.
+The index file is called .tbi and will be put adjacent to your .gz file.</description>
     </item>
     
     <item>
