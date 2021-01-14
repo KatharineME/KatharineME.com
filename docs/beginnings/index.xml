@@ -6,7 +6,20 @@
     <description>Recent content in Beginnings on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/beginnings/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/beginnings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tabix</title>
+      <link>https://katharineme.com/beginnings/tabix/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/beginnings/tabix/</guid>
+      <description>Tabix indexes a tab-delimted genome position file (a VCF files for example). Once indexed, tabix can quickly retrieve data from any part of the file without decompressing it. Thank you Heng Li :prayer: (tabix author).
+Return genomic region.
+tabix vcf.gz chr20:28986977-28986977 tabix vcf.gz chr20:200000-3000000 Return Header of VCF.
+tabix -H vcf.gz Return chromosome names in VCF.
+tabix -l vcf.gz Return regions listed in a file. The file can be a bed (.</description>
+    </item>
+    
     <item>
       <title>Globbing and Regex</title>
       <link>https://katharineme.com/beginnings/globbing-and-regex/</link>

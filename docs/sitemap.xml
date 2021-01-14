@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://katharineme.com/beginnings/</loc>
+    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://katharineme.com/</loc>
     <lastmod>2021-01-13T00:00:00+00:00</lastmod>
   </url>
@@ -13,13 +18,13 @@
   </url>
   
   <url>
-    <loc>https://katharineme.com/posts/tabix/</loc>
+    <loc>https://katharineme.com/beginnings/tabix/</loc>
     <lastmod>2021-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://katharineme.com/beginnings/</loc>
-    <lastmod>2021-01-09T00:00:00+00:00</lastmod>
+    <loc>https://katharineme.com/posts/tabix/</loc>
+    <lastmod>2021-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
