@@ -32,9 +32,8 @@ You can look for variants in a region in the same way.
 
 ![command line](/images/tabix_region.png)
 
-You can also do other useful / cool things with tabix, like these.
+You can also do other useful / cool things with tabix, like return the header of the VCF.
 
-Return Header of VCF.
 ```sh
 tabix -H vcf.gz
 ```
@@ -44,15 +43,21 @@ Return chromosome names in VCF.
 tabix -l vcf.gz
 ```
 
-Return regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns, where positions are 1-based and inclusive
+You can also return variants found in regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns, where positions are 1-based and inclusive.
+
+I like to use BED files. BED files have only 3 required columns: chromosome, start position, and end position. They have 9 more optional columns. The only additional column I use is the 4th one, which is name. I use it because it helps me remember what that locus is. More on the BED file format [here](https://m.ensembl.org/info/website/upload/bed.html). Here is a .bed file I might use. 
+
+```tsv
+chr7    150999023    150999023   rs1799983
+chr19   51354484     51354484    rs79338777
+chr21   36146408     36146408    rs1056892
+```
+
+So to search for variants in the locations listed in that BED file, we enter:
 ```sh
-tabix -R vcf.gz
+tabix -R test.bed vcf.gz
 ```
 
-I like to use .bed files, here is an example of a .bed file.
-
-```txt
-```
 
 
 ## Careful with that .gz file ...
