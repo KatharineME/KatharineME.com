@@ -45,7 +45,7 @@ tabix -l vcf.gz
 
 You can also return variants found in regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns, where positions are 1-based and inclusive.
 
-I like to use BED files. BED files have only 3 required columns: chromosome, start position, and end position. They have 9 more optional columns. The only additional column I use is the 4th one, which is name. I use it because it helps me remember what that locus is. More on the BED file format [here](https://m.ensembl.org/info/website/upload/bed.html). Here is a .bed file I might use. 
+I like to use BED files. BED files have only 3 required columns: chromosome, start position, and end position. They have 9 more optional columns. The only optional column I use is the 4th one, which is `name`. I use it because it helps me remember what that locus is. More on the BED file format [here](https://m.ensembl.org/info/website/upload/bed.html). Here is a .bed file I might use. 
 
 ```tsv
 chr7    150999023    150999023   rs1799983
@@ -68,4 +68,4 @@ But why did I say be careful? Because `bgzip` files and `gzip` files both have t
 
 ![command line](/images/tabix_not_bgzipped.png)
 
-Learn more about `bgzip` and `gzip` in [Peter Cock's in depth post](https://blastedbio.blogspot.com/2011/11/bgzf-blocked-bigger-better-gzip.html).
+Learn more about `bgzip` and `gzip` in [Peter Cock's detailed post](https://blastedbio.blogspot.com/2011/11/bgzf-blocked-bigger-better-gzip.html).
