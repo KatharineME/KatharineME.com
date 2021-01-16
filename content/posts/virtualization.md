@@ -6,7 +6,6 @@ tags = []
 categories = []
 +++
 
-![command line](/images/virtualization_virtual_machine.jpeg)
 
 ## Virtual Machines
 - Virtualize the hardware
@@ -16,7 +15,7 @@ categories = []
 - Start in minutes
 - Usually GBs in size
 
-![command line](/images/virtualization_container.jpeg)
+![command line](/images/virtualization_virtual_machine.jpeg)
 
 ## Containers
 - Virtualize the OS
@@ -25,4 +24,6 @@ categories = []
 - Will exit without an active process
 - Start in seconds
 - Usually MBs in size
+
+![command line](/images/virtualization_container.jpeg)
 
