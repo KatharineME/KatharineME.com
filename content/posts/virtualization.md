@@ -6,6 +6,8 @@ tags = []
 categories = []
 +++
 
+![command line](/images/virtualization_virtual_machine.jpeg)
+
 ## Virtual Machines
 - Virtualize the hardware
 - Come with complete OS and kernal
@@ -13,6 +15,8 @@ categories = []
 - Run on standby
 - Start in minutes
 - Usually GBs in size
+
+![command line](/images/virtualization_container.jpeg)
 
 ## Containers
 - Virtualize the OS

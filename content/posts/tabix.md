@@ -10,7 +10,7 @@ If tabix were a character, it would be the swordsman Roronoa Zoro from One Piece
 
 ![command line](/images/zoro.jpeg)
 
-Tabix is part of Samtools. It indexes a tab-delimted genome position file (`.vcf` file for example). Once indexed, it can quickly retrieve data from any part of the file without decompressing it. Thank you Heng Li 🙏 (tabix author). Here are some things you can do with tabix to a `vcf.gz` file.
+Tabix is part of Samtools. It indexes a tab-delimted genome position file (VCF file for example). Once indexed, it can quickly retrieve data from any part of the file without decompressing it. Thank you Heng Li 🙏 (tabix author). Here are some things you can do with tabix to a `vcf.gz` file.
 
 
 First, you'll want to index your VCF like this.
@@ -32,20 +32,20 @@ You can look for variants in a region in the same way.
 
 ![command line](/images/tabix_region.png)
 
-You can also do other useful / cool things with tabix, like return the header of the VCF.
+You can also do other useful / cool things with tabix, like return the header of a VCF.
 
 ```sh
 tabix -H vcf.gz
 ```
 
-Return chromosome names in VCF.
+Return chromosome names of a VCF.
 ```sh
 tabix -l vcf.gz
 ```
 
 You can also return variants found in regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns, where positions are 1-based and inclusive.
 
-I like to use BED files. BED files have only 3 required columns: chromosome, start position, and end position. They have 9 more optional columns. The only optional column I use is the 4th one, which is `name`. I use it because it helps me remember what that locus is. More on the BED file format [here](https://m.ensembl.org/info/website/upload/bed.html). Here is a .bed file I might use. 
+I like to use BED files. BED files have only 3 required columns: chromosome, start position, and end position. They have 9 more optional columns. The only optional column I use is the 4th one, which is `name`. I use it because it helps me remember what that locus is. More on the BED file format [here](https://m.ensembl.org/info/website/upload/bed.html). Here is a BED file I might use. 
 
 ```tsv
 chr7    150999023    150999023   rs1799983
