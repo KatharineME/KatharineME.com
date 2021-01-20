@@ -43,15 +43,17 @@ Return chromosome names of a VCF.
 tabix -l vcf.gz
 ```
 
-You can also return variants found in regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns, where positions are 1-based and inclusive.
+You can also return variants found in regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns.
 
 I like to use BED files. BED files have only 3 required columns: chromosome, start position, and end position. They have 9 more optional columns. The only optional column I use is the 4th one, which is `name`. I use it because it helps me remember what that locus is. More on the BED file format [here](https://m.ensembl.org/info/website/upload/bed.html). Here is a BED file I might use. 
 
 ```tsv
-chr7    150999023    150999023   rs1799983
-chr19   51354484     51354484    rs79338777
-chr21   36146408     36146408    rs1056892
+chr7    150999022    150999023   rs1799983
+chr19   51354483     51354484    rs79338777
+chr21   36146407     36146408    rs1056892
 ```
+
+_NOTE_:This bed file is searching for three SNPs. Do you notice how the positions are one base apart in the BED file? That is different from when we search for a SNP directly where we enter `tabix test.vcf.gz chr7:150999023-150999023` for example, where the position range is from one position to the same position. I don't know why this is the case, but its certainly must-know behavior.
 
 So to search for variants in the locations listed in that BED file, we enter:
 ```sh
