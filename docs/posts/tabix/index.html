@@ -97,12 +97,13 @@
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">tabix -H vcf.gz
 </code></pre></div><p>Return chromosome names of a VCF.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">tabix -l vcf.gz
-</code></pre></div><p>You can also return variants found in regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns, where positions are 1-based and inclusive.</p>
+</code></pre></div><p>You can also return variants found in regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns.</p>
 <p>I like to use BED files. BED files have only 3 required columns: chromosome, start position, and end position. They have 9 more optional columns. The only optional column I use is the 4th one, which is <code>name</code>. I use it because it helps me remember what that locus is. More on the BED file format <a href="https://m.ensembl.org/info/website/upload/bed.html">here</a>. Here is a BED file I might use.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">chr7    150999023    150999023   rs1799983
-chr19   51354484     51354484    rs79338777
-chr21   36146408     36146408    rs1056892
-</code></pre></div><p>So to search for variants in the locations listed in that BED file, we enter:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">chr7    150999022    150999023   rs1799983
+chr19   51354483     51354484    rs79338777
+chr21   36146407     36146408    rs1056892
+</code></pre></div><p><strong>NOTE</strong>:This bed file is searching for three SNPs. Do you notice how the positions are one base apart in the BED file? That is different from when we search for a SNP directly where we enter <code>tabix test.vcf.gz chr7:150999023-150999023</code> for example, where the position range is from one position to the same position. I don&rsquo;t know why this is the case, but its certainly must-know behavior.</p>
+<p>So to search for variants in the locations listed in that BED file, we enter:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">tabix -R test.bed vcf.gz
 </code></pre></div><h2 id="careful-with-that-gz-file-">Careful with that .gz file &hellip;</h2>
 <p><code>gzip</code> and <code>bgzip</code> are not the same thing. Wait &hellip; what is <code>bgzip</code>? Good question. <code>bgzip</code> is a compression algorithm that creates a series of <code>gzip</code> compressed blocks which are each 64kb in size. To go along with all these little blocks is whats called a &ldquo;virtual offset&rdquo;. The vitual offset is actually an unsigned (meaning nonnegative) 64 bit integer. And this integer holds information which acts like a map of the <code>bgzip</code> file. Its because of the &ldquo;block + map&rdquo; structure that <code>bgzip</code> files can be accessed without unzipping the entire file. And this is why tabix can access lets say <code>chr1:452923-452923</code> without unzipping the whole <code>variants.vcf.gz</code> (a bgzipped file).</p>
