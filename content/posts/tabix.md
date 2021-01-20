@@ -55,9 +55,14 @@ chr21   36146407     36146408    rs1056892
 
 __NOTE__:This bed file is searching for three SNPs. Do you notice how the positions are one base apart in the BED file? That is different from when we search for a SNP directly where we enter `tabix test.vcf.gz chr7:150999023-150999023` for example, where the position range is from one position to the same position. I don't know why this is the case, but its certainly must-know behavior.
 
-So to search for variants in the locations listed in that BED file, we enter:
+To return variants in regions listed in a file, enter:
 ```sh
 tabix -R test.bed vcf.gz
+```
+
+Tabix doesn't have a stdout option, so you would save the output to a file like this:
+```sh
+tabix -R test.bed vcf.gz > results.tsv
 ```
 
 
