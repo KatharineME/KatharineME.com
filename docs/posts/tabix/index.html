@@ -102,7 +102,7 @@
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">chr7    150999022    150999023   rs1799983
 chr19   51354483     51354484    rs79338777
 chr21   36146407     36146408    rs1056892
-</code></pre></div><p><strong>NOTE</strong>:This bed file is searching for three SNPs. Do you notice how the positions are one base apart in the BED file? That is different from when we search for a SNP directly where we enter <code>tabix test.vcf.gz chr7:150999023-150999023</code> for example, where the position range is from one position to the same position. I don&rsquo;t know why this is the case, but its certainly must-know behavior.</p>
+</code></pre></div><p><strong>NOTE</strong>:This bed file is searching for three SNPs. Notice how the positions are one base apart in the BED file? The position range regions listed in a file need to start one base before where the expected variant is. That is different from when we search for a SNP directly like <code>tabix test.vcf.gz chr7:150999023-150999023</code> for example, where the position range is from one position to the same position. If you were to do this in the BED file and a variant actually existed at position 150999023 on chromosome 7, it wouldn&rsquo;t be returned. I don&rsquo;t know why this is the case, but its certainly must-know behavior.</p>
 <p>To return variants in regions listed in a file, enter:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">tabix -R test.bed vcf.gz
 </code></pre></div><p>Tabix doesn&rsquo;t have a stdout option, so you would save the output to a file like this:</p>
