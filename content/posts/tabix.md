@@ -53,7 +53,7 @@ chr19   51354483     51354484    rs79338777
 chr21   36146407     36146408    rs1056892
 ```
 
-__NOTE__:This bed file is searching for three SNPs. Notice how the positions are one base apart in the BED file? The position range regions listed in a file need to start one base before where the expected variant is. That is different from when we search for a SNP directly like `tabix test.vcf.gz chr7:150999023-150999023` for example, where the position range is from one position to the same position. If you were to do this in the BED file and a variant actually existed at position 150999023 on chromosome 7, it wouldn't be returned. I don't know why this is the case, but its certainly must-know behavior.
+__NOTE__:This bed file is searching for three SNPs. Notice how the positions are one base apart? The position range in regions listed in a file need to start one base before where the expected variant is. That is different from when we search for a SNP directly like `tabix test.vcf.gz chr7:150999023-150999023` for example, where the position range is from one position to the same position. If you were to do this in the BED file and a variant actually existed at position 150999023 on chromosome 7, it wouldn't be returned. I don't know why this is the case, but its certainly must-know behavior.
 
 To return variants in regions listed in a file, enter:
 ```sh
