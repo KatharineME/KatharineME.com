@@ -84,7 +84,7 @@
     <p>If tabix were a character, it would be the swordsman Roronoa Zoro from One Piece, slicing through your genome data to deliver you the result you want.</p>
 <p><img src="/images/zoro.jpeg" alt="command line"></p>
 <p>Tabix is part of Samtools. It indexes a tab-delimted genome position file (VCF file for example). Once indexed, it can quickly retrieve data from any part of the file without decompressing it. Thank you Heng Li 🙏 (tabix author). Here are some things you can do with tabix to a <code>vcf.gz</code> file.</p>
-<p>First, you&rsquo;ll want to index your VCF like this.</p>
+<p>First, you&rsquo;ll want to index your VCF like this. This index acts lke a table of contents, helping tabix jump around the <code>.gz</code> file quickly.</p>
 <p><img src="/images/tabix_make_index.png" alt="command line"></p>
 <p>The index file is called <code>.tbi</code> and will be put adjacent to your <code>.gz</code> file.</p>
 <p><img src="/images/tabix_index_made.png" alt="command line"></p>
