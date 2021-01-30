@@ -6,34 +6,7 @@
     <description>Recent content in Beginnings on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/beginnings/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Tabix</title>
-      <link>https://katharineme.com/beginnings/tabix/</link>
-      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.com/beginnings/tabix/</guid>
-      <description>Tabix indexes a tab-delimted genome position file (a VCF files for example). Once indexed, tabix can quickly retrieve data from any part of the file without decompressing it. Thank you Heng Li :prayer: (tabix author).
-Return genomic region.
-tabix vcf.gz chr20:28986977-28986977 tabix vcf.gz chr20:200000-3000000 Return Header of VCF.
-tabix -H vcf.gz Return chromosome names in VCF.
-tabix -l vcf.gz Return regions listed in a file. The file can be a bed (.</description>
-    </item>
-    
-    <item>
-      <title>Globbing and Regex</title>
-      <link>https://katharineme.com/beginnings/globbing-and-regex/</link>
-      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.com/beginnings/globbing-and-regex/</guid>
-      <description>Globbing The asterisk means &amp;ldquo;zero or more characters&amp;rdquo; in the file glob.
-Lists all files ending in .md.
-ls *.md Lists all files starting with A and ending with .md.
-ls A*.md The question mark means a single unknown character.
-Will list All.md but won&amp;rsquo;t list About.md or A.md.
-ls A??.md Where Globbing and Regex Overlap Sometimes the shell will interpret regex and globbing and globbing as regex because they have syntax overlap.</description>
-    </item>
-    
+    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/beginnings/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sequence Analysis</title>
       <link>https://katharineme.com/beginnings/sequence-analysis/</link>
