@@ -6,7 +6,16 @@
     <description>Recent content on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JuliaDB</title>
+      <link>https://katharineme.com/beginnings/juliadb/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/beginnings/juliadb/</guid>
+      <description>In this post I&amp;rsquo;m going to explore juliaDB.jl and how it might be used to quickly retrieve results from a VCF file.</description>
+    </item>
+    
     <item>
       <title>Tabix</title>
       <link>https://katharineme.com/posts/tabix/</link>
