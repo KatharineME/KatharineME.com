@@ -88,7 +88,8 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
 SAM format tutorial
 Samtools commands tutorial
 BAM is the compressed version of SAM.
-However the newest format is CRAM. A CRAM file is about 30% the size of a BAM file. CRAM is now being adopted by important bioinformatics tools like Samtools.</description>
+However the newest format is CRAM. A CRAM file is about 30% the size of a BAM file. CRAM is now being adopted by important bioinformatics tools like Samtools.
+Size, why are SAM /BAM files so big?</description>
     </item>
     
     <item>

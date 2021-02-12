@@ -86,6 +86,9 @@
 <p><a href="http://quinlanlab.org/tutorials/samtools/samtools.html">Samtools commands tutorial</a></p>
 <p>BAM is the compressed version of SAM.</p>
 <p>However the newest format is CRAM. A CRAM file is about 30% the size of a BAM file. CRAM is now being adopted by important bioinformatics tools like Samtools.</p>
+<h1 id="size-why-are-sam-bam-files-so-big">Size, why are SAM /BAM files so big?</h1>
+<p>Roughly speaking, a SAM file is about 1 byte per base, a BAM file is about 4 bits per base, and a CRAM file is 1-2 bits per base.</p>
+<p>The human genome has about 3.3 billion base pairs, meaning that whole genome sequencing at only 10x would result in a SAM file with 33 bilion bytes of data (aka 33Gb of data). Therefore a 30X whole genome sequencing would produce a SAM file of 90Gbs at a minimum. HOWEVER, that is taking into account the genome sequence only. SAM files also contain quality scores for each base call, cigar strings, and etc.</p>
 
   </article>
 
