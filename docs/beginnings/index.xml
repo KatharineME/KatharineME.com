@@ -13,7 +13,9 @@
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/beginnings/juliadb/</guid>
-      <description>In this post I&amp;rsquo;m going to explore juliaDB.jl and how it might be used to quickly retrieve results from a VCF file.</description>
+      <description>In this post I&amp;rsquo;m going to explore juliaDB.jl and how it might be used to quickly retrieve results from a VCF file.
+Julia DB has two main data structures:
+ tables   tables store data in columns     tables are typed   NDSparse  </description>
     </item>
     
     <item>
