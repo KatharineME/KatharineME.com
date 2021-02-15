@@ -11,5 +11,8 @@ In this post I'm going to explore juliaDB.jl and how it might be used to quickly
 Julia DB has two main data structures:
 - tables
 -   - tables store data in columns
--   - tables are typed
+-   - tables are typed, meaning changing a table requires returning a new table
+-   - julidb has few mutating operations because a new table is necessary in most cases
 - NDSparse
+    - Behaves like a sparse array with arbitrary indices
+    - The keys of an NDSparse array are sorted
