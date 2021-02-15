@@ -89,10 +89,20 @@
 </li>
 <li>
 <ul>
-<li>tables are typed</li>
+<li>tables are typed, meaning changing a table requires returning a new table</li>
 </ul>
 </li>
-<li>NDSparse</li>
+<li>
+<ul>
+<li>julidb has few mutating operations because a new table is necessary in most cases</li>
+</ul>
+</li>
+<li>NDSparse
+<ul>
+<li>Behaves like a sparse array with arbitrary indices</li>
+<li>The keys of an NDSparse array are sorted</li>
+</ul>
+</li>
 </ul>
 
   </article>
