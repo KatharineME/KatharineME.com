@@ -8,7 +8,7 @@ categories = []
 
 In this post I'm going to explore juliaDB.jl and how it might be used to quickly retrieve results from a VCF file.
 
-Julia DB has two main data structures:
+JuliaDB has two main data structures:
 - tables
 -   - tables store data in columns
 -   - tables are typed, meaning changing a table requires returning a new table
