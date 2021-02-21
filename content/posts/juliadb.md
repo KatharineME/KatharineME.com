@@ -10,14 +10,14 @@ JuliaDB has two main data structures: Table and NDSparse.
 
 
 ### Table
-    - Tables store data in columns
-    - Tables are typed, meaning changing a table requires returning a new table
-    - Julidb has few mutating operations because a new table is necessary in most 
+- Tables store data in columns
+- Tables are typed, meaning changing a table requires returning a new table
+- Julidb has few mutating operations because a new table is necessary in most 
 
 #### Indexed Table
-    - Basically a named tuple of vectors which __behaves__ like a vector of named tuples.
-    - Table can be sorted by any number of primary keys (aka column names).
-    - Can be created from scratch with `table` function or made from existing data with `loadtable`
+- Basically a named tuple of vectors which __behaves__ like a vector of named tuples.
+- Table can be sorted by any number of primary keys (defined using parameter `pkey`).
+- Can be created from scratch with `table` function or made from existing data with `loadtable`
 
 ```sh
 julia > x = 1:5
@@ -37,7 +37,15 @@ x  y    z
 6  'b'  0.669536
 ```
 
+```sh
+julia > t[1]
+
+(x = 1, y = 'a', z = 1.069356265804105)
+```
+
 ### NDSparse
-    - Behaves like a sparse array with arbitrary indices
-    - The keys of an NDSparse array are sorted
+- Behaves like a sparse array with arbitrary indices
+- The keys of an NDSparse array are sorted
+
+
 
