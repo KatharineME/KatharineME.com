@@ -6,6 +6,12 @@ tags = []
 categories = []
 +++
 
+## Julia Concepts
+
+Macro
+- A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.
+
+
 #### Tuple
 Built in data structure with __fixed-length__ that can hold __any values__ but cannot be changed (__immutable__)
 
@@ -35,7 +41,6 @@ julia > x[:protein]
 
 "beef"
 ```
-
 
 ### Core Essentials
 
