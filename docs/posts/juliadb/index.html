@@ -83,15 +83,17 @@
 
     <p>JuliaDB has two main data structures: Table and NDSparse.</p>
 <h3 id="table">Table</h3>
-<pre><code>- Tables store data in columns
-- Tables are typed, meaning changing a table requires returning a new table
-- Julidb has few mutating operations because a new table is necessary in most 
-</code></pre>
+<ul>
+<li>Tables store data in columns</li>
+<li>Tables are typed, meaning changing a table requires returning a new table</li>
+<li>Julidb has few mutating operations because a new table is necessary in most</li>
+</ul>
 <h4 id="indexed-table">Indexed Table</h4>
-<pre><code>- Basically a named tuple of vectors which __behaves__ like a vector of named tuples.
-- Table can be sorted by any number of primary keys (aka column names).
-- Can be created from scratch with `table` function or made from existing data with `loadtable`
-</code></pre>
+<ul>
+<li>Basically a named tuple of vectors which <strong>behaves</strong> like a vector of named tuples.</li>
+<li>Table can be sorted by any number of primary keys (defined using parameter <code>pkey</code>).</li>
+<li>Can be created from scratch with <code>table</code> function or made from existing data with <code>loadtable</code></li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; <span class="nv">x</span> <span class="o">=</span> 1:5
 julia &gt; <span class="nv">y</span> <span class="o">=</span> vcat<span class="o">(</span>fill<span class="o">(</span><span class="s1">&#39;a&#39;</span>, 3<span class="o">)</span>, fill<span class="o">(</span><span class="s1">&#39;b&#39;</span>, 3<span class="o">))</span>
 julia &gt; <span class="nv">z</span> <span class="o">=</span> randn<span class="o">(</span>6<span class="o">)</span><span class="p">;</span>
@@ -107,10 +109,14 @@ x  y    z
 <span class="m">4</span>  <span class="s1">&#39;b&#39;</span>  -0.422334
 <span class="m">5</span>  <span class="s1">&#39;b&#39;</span>  0.0246361
 <span class="m">6</span>  <span class="s1">&#39;b&#39;</span>  0.669536
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; t<span class="o">[</span>1<span class="o">]</span>
+
+<span class="o">(</span><span class="nv">x</span> <span class="o">=</span> 1, <span class="nv">y</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>, <span class="nv">z</span> <span class="o">=</span> 1.069356265804105<span class="o">)</span>
 </code></pre></div><h3 id="ndsparse">NDSparse</h3>
-<pre><code>- Behaves like a sparse array with arbitrary indices
-- The keys of an NDSparse array are sorted
-</code></pre>
+<ul>
+<li>Behaves like a sparse array with arbitrary indices</li>
+<li>The keys of an NDSparse array are sorted</li>
+</ul>
 
   </article>
 

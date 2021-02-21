@@ -14,7 +14,7 @@
       
       <guid>https://katharineme.com/posts/juliadb/</guid>
       <description>JuliaDB has two main data structures: Table and NDSparse.
-Table - Tables store data in columns - Tables are typed, meaning changing a table requires returning a new table - Julidb has few mutating operations because a new table is necessary in most  Indexed Table - Basically a named tuple of vectors which __behaves__ like a vector of named tuples. - Table can be sorted by any number of primary keys (aka column names).</description>
+Table  Tables store data in columns Tables are typed, meaning changing a table requires returning a new table Julidb has few mutating operations because a new table is necessary in most  Indexed Table  Basically a named tuple of vectors which behaves like a vector of named tuples. Table can be sorted by any number of primary keys (defined using parameter pkey).</description>
     </item>
     
     <item>
