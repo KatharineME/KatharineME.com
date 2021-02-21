@@ -14,7 +14,7 @@
       
       <guid>https://katharineme.com/posts/juliadb/</guid>
       <description>JuliaDB has two main data structures: Table and NDSparse.
-Table  Tables store data in columns Tables are typed, meaning changing a table requires returning a new table Julidb has few mutating operations because a new table is necessary in most  Indexed Table  Basically a named tuple of vectors which behaves like a vector of named tuples Table can be sorted by any number of primary keys (defined using parameter pkey) Use table function to create or loadtable to load existing data  julia &amp;gt; x = 1:6 julia &amp;gt; y = vcat(fill(&amp;#39;a&amp;#39;, 3), fill(&amp;#39;b&amp;#39;, 3)) julia &amp;gt; z = randn(6); julia &amp;gt; t = table((x=x, y=y, z=z); pkey = [:x, :y]) Table with 6 rows, 3 columns: x y z ───────────────── 1 &amp;#39;a&amp;#39; 1.</description>
+Table  Tables store data in columns Tables are typed, meaning changing a table requires returning a new table Julidb has few mutating operations because a new table is necessary in most  Indexed Table  Basically a named tuple of vectors which behaves like a vector of named tuples Table can be sorted by any number of primary keys (defined using parameter pkey).</description>
     </item>
     
     <item>
@@ -24,8 +24,8 @@ Table  Tables store data in columns Tables are typed, meaning changing a table r
       
       <guid>https://katharineme.com/posts/julia/</guid>
       <description>Tuple Built in data structure with fixed-length that can hold any values but cannot be changed (immutable)
-julia &amp;gt; x = (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) julia &amp;gt; x[2] &amp;#34;soy sauce&amp;#34; Named Tuple Elements in tuple can be given names. If so, then its a named tuple.
-julia &amp;gt; x = (protein=&amp;#34;beef&amp;#34;, carb=&amp;#34;rice&amp;#34;) (protein = &amp;#34;beef&amp;#34;, carb = &amp;#34;rice&amp;#34;) Core Essentials Core.Array: N-dimensional dense array with elements of type T</description>
+julia &amp;gt; x = (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) julia &amp;gt; x[2] &amp;#34;soy sauce&amp;#34; Named Tuple Elements in tuple can be given names. If so, then its a named tuple. Allowd you to access via names.
+julia &amp;gt; x = (protein=&amp;#34;beef&amp;#34;, carb=&amp;#34;rice&amp;#34;) (protein = &amp;#34;beef&amp;#34;, carb = &amp;#34;rice&amp;#34;) julia &amp;gt; x[:protein] &amp;#34;beef&amp;#34; Core Essentials Core.</description>
     </item>
     
     <item>

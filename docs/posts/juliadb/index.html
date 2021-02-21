@@ -91,7 +91,7 @@
 <h4 id="indexed-table">Indexed Table</h4>
 <ul>
 <li>Basically a named tuple of vectors which <strong>behaves</strong> like a vector of named tuples</li>
-<li>Table can be sorted by any number of primary keys (defined using parameter <code>pkey</code>)</li>
+<li>Table can be sorted by any number of primary keys (defined using parameter <code>pkey</code>). The table will be sorted by the first priamry key, then the second, and so on.</li>
 <li>Use <code>table</code> function to create or <code>loadtable</code> to load existing data</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">6</span>
