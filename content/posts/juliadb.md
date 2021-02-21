@@ -16,7 +16,7 @@ JuliaDB has two main data structures: Table and NDSparse.
 
 #### Indexed Table
 - Basically a named tuple of vectors which __behaves__ like a vector of named tuples
-- Table can be sorted by any number of primary keys (defined using parameter `pkey`)
+- Table can be sorted by any number of primary keys (defined using parameter `pkey`). The table will be sorted by the first priamry key, then the second, and so on.
 - Use `table` function to create or `loadtable` to load existing data
 
 ```julia

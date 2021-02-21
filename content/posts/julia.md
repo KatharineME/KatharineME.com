@@ -22,13 +22,20 @@ julia > x[2]
 ```
 
 #### Named Tuple
-Elements in tuple can be given names. If so, then its a named tuple.
+Elements in tuple can be given names. If so, then its a named tuple. Allowd you to access via names.
 
 ```julia
 julia > x = (protein="beef", carb="rice")
 
 (protein = "beef", carb = "rice")
 ```
+
+```julia
+julia > x[:protein]
+
+"beef"
+```
+
 
 ### Core Essentials
 
