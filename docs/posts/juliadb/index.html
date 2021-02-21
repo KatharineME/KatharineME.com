@@ -92,9 +92,9 @@
 - Table can be sorted by any number of primary keys (aka column names).
 - Can be created from scratch with `table` function or made from existing data with `loadtable`
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; <span class="nv">x</span> <span class="o">=</span> 1:10
-julia &gt; <span class="nv">y</span> <span class="o">=</span> vcat<span class="o">(</span>fill<span class="o">(</span><span class="s1">&#39;a&#39;</span>, 4<span class="o">)</span>, fill<span class="o">(</span><span class="s1">&#39;b&#39;</span>, 6<span class="o">))</span>
-julia &gt; <span class="nv">z</span> <span class="o">=</span> randn<span class="o">(</span>10<span class="o">)</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; <span class="nv">x</span> <span class="o">=</span> 1:5
+julia &gt; <span class="nv">y</span> <span class="o">=</span> vcat<span class="o">(</span>fill<span class="o">(</span><span class="s1">&#39;a&#39;</span>, 3<span class="o">)</span>, fill<span class="o">(</span><span class="s1">&#39;b&#39;</span>, 3<span class="o">))</span>
+julia &gt; <span class="nv">z</span> <span class="o">=</span> randn<span class="o">(</span>6<span class="o">)</span><span class="p">;</span>
 
 julia &gt; <span class="nv">t</span> <span class="o">=</span> table<span class="o">((</span><span class="nv">x</span><span class="o">=</span>x, <span class="nv">y</span><span class="o">=</span>y, <span class="nv">z</span><span class="o">=</span>z<span class="o">)</span><span class="p">;</span> <span class="nv">pkey</span> <span class="o">=</span> <span class="o">[</span>:x, :y<span class="o">])</span>
 
@@ -111,6 +111,8 @@ x  y    z
 <pre><code>- Behaves like a sparse array with arbitrary indices
 - The keys of an NDSparse array are sorted
 </code></pre>
+<h3 id="base-essentials">Base Essentials</h3>
+<p>Base.vcat - concatenate along 1 dimension</p>
 
   </article>
 
