@@ -19,7 +19,7 @@ JuliaDB has two main data structures: Table and NDSparse.
 - Table can be sorted by any number of primary keys (defined using parameter `pkey`)
 - Use `table` function to create or `loadtable` to load existing data
 
-```sh
+```julia
 julia > x = 1:6
 julia > y = vcat(fill('a', 3), fill('b', 3))
 julia > z = randn(6);
@@ -37,7 +37,7 @@ x  y    z
 6  'b'  0.669536
 ```
 
-```sh
+```julia
 julia > t[1]
 
 (x = 1, y = 'a', z = 1.069356265804105)
@@ -48,7 +48,7 @@ julia > t[1]
 - The keys of an NDSparse array are sorted
 - Use `loadndsparse` to load existing data
 
-```sh
+```julia
 nd = ndsparse((x=x, y=y), (z=z,))
 
 2-d NDSparse with 6 values (1 field named tuples):
@@ -61,12 +61,12 @@ x  y   │ z
 5  'b' │ 0.299526
 6  'b' │ 0.787615
 ```
-```sh
+```julia
 nd[1, 'a']
 
 (z = 1.0548018299672375,)
 ```
-```sh
+```julia
 nd[:, 'a']
 
 1-d NDSparse with 3 values (1 field named tuples):
@@ -82,13 +82,28 @@ x │ z
 
 There are a few JuliaDB functions used for selecting data: `select`, `reduce`, `groupreduce`, `groupby`, `join`, `transform`, and `reindex`.
 
+Selecting a column. This is the same as `select(t, :x)`
+```julia
+julia > select(t, 1)
+
+6-element Array{Int64,1}:
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+```
+
+
+
 ### API
 [More on JuliaDB API.](https://juliadb.juliadata.org/latest/api/)
 
 ### Statistics
 JuliaDB integrates with OnlineStats (a julia stats package) using the functions `reduce` and `groupreduce`.
 
-```sh
+```julia
 julia > using JuliaDB, OnlineStats
 julia > t = table(1:100, rand(Bool, 100), randn(100));
 julia > reduce(Mean(), t; select = 3)

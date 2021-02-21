@@ -9,13 +9,13 @@ categories = []
 #### Tuple
 Built in data structure with __fixed-length__ that can hold __any values__ but cannot be changed (__immutable__)
 
-```sh
+```julia
 julia > x = (2, "soy sauce", "mirin")
 
 (2, "soy sauce", "mirin")
 ```
 
-```sh
+```julia
 julia > x[2]
 
 "soy sauce"
@@ -24,7 +24,7 @@ julia > x[2]
 #### Named Tuple
 Elements in tuple can be given names. If so, then its a named tuple.
 
-```sh
+```julia
 julia > x = (protein="beef", carb="rice")
 
 (protein = "beef", carb = "rice")
@@ -34,7 +34,7 @@ julia > x = (protein="beef", carb="rice")
 
 __Core.Array__: N-dimensional dense array with elements of type T
 
-```sh
+```julia
 julia > Array{T, N}
 ```
 
@@ -42,7 +42,7 @@ julia > Array{T, N}
 
 __Base.vcat__: concatenate along 1 dimension
 
-```sh
+```julia
 julia > a = [1 2 3]
 julia > b = [4 5 6; 7 8 9]
 julia > vcat(a,b)
