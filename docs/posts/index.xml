@@ -25,7 +25,7 @@ Table - Tables store data in columns - Tables are typed, meaning changing a tabl
       <guid>https://katharineme.com/posts/julia/</guid>
       <description>Tuple Built in data structure with fixed-length that can hold any values but cannot be changed (immutable)
 julia &amp;gt; x = (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) julia &amp;gt; x[2] &amp;#34;soy sauce&amp;#34; Named Tuple Elements in tuple can be given names. If so, then its a named tuple.
-julia &amp;gt; x = (protein=&amp;#34;beef&amp;#34;, carb=&amp;#34;rice&amp;#34;) (protein = &amp;#34;beef&amp;#34;, carb = &amp;#34;rice&amp;#34;) </description>
+julia &amp;gt; x = (protein=&amp;#34;beef&amp;#34;, carb=&amp;#34;rice&amp;#34;) (protein = &amp;#34;beef&amp;#34;, carb = &amp;#34;rice&amp;#34;) Core Essentials Core.Array: N-dimensional dense array with elements of type T</description>
     </item>
     
     <item>

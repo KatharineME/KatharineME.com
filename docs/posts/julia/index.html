@@ -91,6 +91,19 @@
 <p>Elements in tuple can be given names. If so, then its a named tuple.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; <span class="nv">x</span> <span class="o">=</span> <span class="o">(</span><span class="nv">protein</span><span class="o">=</span><span class="s2">&#34;beef&#34;</span>, <span class="nv">carb</span><span class="o">=</span><span class="s2">&#34;rice&#34;</span><span class="o">)</span>
 <span class="o">(</span><span class="nv">protein</span> <span class="o">=</span> <span class="s2">&#34;beef&#34;</span>, <span class="nv">carb</span> <span class="o">=</span> <span class="s2">&#34;rice&#34;</span><span class="o">)</span>
+</code></pre></div><h3 id="core-essentials">Core Essentials</h3>
+<p><strong>Core.Array</strong>: N-dimensional dense array with elements of type T</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; Array<span class="o">{</span>T, N<span class="o">}</span>
+</code></pre></div><h3 id="base-essentials">Base Essentials</h3>
+<p><strong>Base.vcat</strong>: concatenate along 1 dimension</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; <span class="nv">a</span> <span class="o">=</span> <span class="o">[</span><span class="m">1</span> <span class="m">2</span> 3<span class="o">]</span>
+julia &gt; <span class="nv">b</span> <span class="o">=</span> <span class="o">[</span><span class="m">4</span> <span class="m">5</span> 6<span class="p">;</span> <span class="m">7</span> <span class="m">8</span> 9<span class="o">]</span>
+julia &gt; vcat<span class="o">(</span>a,b<span class="o">)</span>
+
+3×3 Array<span class="o">{</span>Int64,2<span class="o">}</span>:
+ <span class="m">1</span>  <span class="m">2</span>  <span class="m">3</span>
+ <span class="m">4</span>  <span class="m">5</span>  <span class="m">6</span>
+ <span class="m">7</span>  <span class="m">8</span>  <span class="m">9</span>
 </code></pre></div>
   </article>
 
