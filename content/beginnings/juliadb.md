@@ -19,7 +19,6 @@ JuliaDB has two main data structures: Table and NDSparse.
 
 
 
-
 ### NDSparse
     - Behaves like a sparse array with arbitrary indices
     - The keys of an NDSparse array are sorted
