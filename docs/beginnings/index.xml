@@ -6,16 +6,7 @@
     <description>Recent content in Beginnings on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/beginnings/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Julia</title>
-      <link>https://katharineme.com/beginnings/julia/</link>
-      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.com/beginnings/julia/</guid>
-      <description>Tuple  built in data structure with fixed-length that can hold any values but cannot be changed (immutable)  julia &amp;gt; x = (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) </description>
-    </item>
-    
+    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/beginnings/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JuliaDB</title>
       <link>https://katharineme.com/beginnings/juliadb/</link>

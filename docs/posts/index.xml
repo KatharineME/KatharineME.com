@@ -13,7 +13,8 @@
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/julia/</guid>
-      <description>Tuple  built in data structure with fixed-length that can hold any values but cannot be changed (immutable)  julia &amp;gt; x = (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) </description>
+      <description>Tuple Built in data structure with fixed-length that can hold any values but cannot be changed (immutable)
+julia &amp;gt; x = (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) julia &amp;gt; x[2] &amp;#34;soy sauce&amp;#34; </description>
     </item>
     
     <item>
