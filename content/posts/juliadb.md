@@ -20,9 +20,9 @@ JuliaDB has two main data structures: Table and NDSparse.
     - Can be created from scratch with `table` function or made from existing data with `loadtable`
 
 ```sh
-julia > x = 1:10
-julia > y = vcat(fill('a', 4), fill('b', 6))
-julia > z = randn(10);
+julia > x = 1:5
+julia > y = vcat(fill('a', 3), fill('b', 3))
+julia > z = randn(6);
 
 julia > t = table((x=x, y=y, z=z); pkey = [:x, :y])
 
@@ -40,4 +40,9 @@ x  y    z
 ### NDSparse
     - Behaves like a sparse array with arbitrary indices
     - The keys of an NDSparse array are sorted
+
+
+### Base Essentials
+
+Base.vcat - concatenate along 1 dimension
 
