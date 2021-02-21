@@ -7,10 +7,14 @@ categories = []
 +++
 
 #### Tuple
-- built in data structure with fixed-length that can hold any values but cannot be changed (immutable)
+Built in data structure with __fixed-length__ that can hold __any values__ but cannot be changed (__immutable__)
 
 ```sh
 julia > x = (2, "soy sauce", "mirin")
+(2, "soy sauce", "mirin")
 ```
 
-
+```sh
+julia > x[2]
+"soy sauce"
+```
