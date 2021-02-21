@@ -42,7 +42,25 @@ x  y    z
     - The keys of an NDSparse array are sorted
 
 
+### Core Essentials
+
+__Core.Array__: N-dimensional dense array with elements of type T
+
+```sh
+julia > Array{T, N}
+```
+
 ### Base Essentials
 
-Base.vcat - concatenate along 1 dimension
+__Base.vcat__: concatenate along 1 dimension
 
+```sh
+julia > a = [1 2 3]
+julia > b = [4 5 6; 7 8 9]
+julia > vcat(a,b)
+
+3×3 Array{Int64,2}:
+ 1  2  3
+ 4  5  6
+ 7  8  9
+```
