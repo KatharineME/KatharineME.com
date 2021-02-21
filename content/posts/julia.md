@@ -18,3 +18,13 @@ julia > x = (2, "soy sauce", "mirin")
 julia > x[2]
 "soy sauce"
 ```
+
+#### Named Tuple
+Elements in tuple can be given names. If so, then its a named tuple.
+
+```sh
+julia > x = (protein="beef", carb="rice")
+(protein = "beef", carb = "rice")
+```
+
+
