@@ -6,18 +6,7 @@
     <description>Recent content in Beginnings on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/beginnings/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>JuliaDB</title>
-      <link>https://katharineme.com/beginnings/juliadb/</link>
-      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.com/beginnings/juliadb/</guid>
-      <description>In this post I&amp;rsquo;m going to explore juliaDB.jl and how it might be used to quickly retrieve results from a VCF file.
-JuliaDB has two main data structures: Table and NDSparse.
-Table - tables store data in columns - tables are typed, meaning changing a table requires returning a new table - julidb has few mutating operations because a new table is necessary in most  NDSparse - Behaves like a sparse array with arbitrary indices - The keys of an NDSparse array are sorted  </description>
-    </item>
-    
+    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/beginnings/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sequence Analysis</title>
       <link>https://katharineme.com/beginnings/sequence-analysis/</link>

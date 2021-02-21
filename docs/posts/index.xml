@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Genome Analysis Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JuliaDB</title>
+      <link>https://katharineme.com/posts/juliadb/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/juliadb/</guid>
+      <description>JuliaDB has two main data structures: Table and NDSparse.
+Table - Tables store data in columns - Tables are typed, meaning changing a table requires returning a new table - Julidb has few mutating operations because a new table is necessary in most  Indexed Table - Basically a named tuple of vectors which __behaves__ like a vector of named tuples. - Table can be sorted by any number of primary keys (aka column names).</description>
+    </item>
+    
     <item>
       <title>Julia</title>
       <link>https://katharineme.com/posts/julia/</link>
@@ -14,7 +24,8 @@
       
       <guid>https://katharineme.com/posts/julia/</guid>
       <description>Tuple Built in data structure with fixed-length that can hold any values but cannot be changed (immutable)
-julia &amp;gt; x = (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) julia &amp;gt; x[2] &amp;#34;soy sauce&amp;#34; </description>
+julia &amp;gt; x = (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) julia &amp;gt; x[2] &amp;#34;soy sauce&amp;#34; Named Tuple Elements in tuple can be given names. If so, then its a named tuple.
+julia &amp;gt; x = (protein=&amp;#34;beef&amp;#34;, carb=&amp;#34;rice&amp;#34;) (protein = &amp;#34;beef&amp;#34;, carb = &amp;#34;rice&amp;#34;) </description>
     </item>
     
     <item>
