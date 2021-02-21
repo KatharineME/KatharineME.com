@@ -90,11 +90,11 @@
 </ul>
 <h4 id="indexed-table">Indexed Table</h4>
 <ul>
-<li>Basically a named tuple of vectors which <strong>behaves</strong> like a vector of named tuples.</li>
-<li>Table can be sorted by any number of primary keys (defined using parameter <code>pkey</code>).</li>
-<li>Can be created from scratch with <code>table</code> function or made from existing data with <code>loadtable</code></li>
+<li>Basically a named tuple of vectors which <strong>behaves</strong> like a vector of named tuples</li>
+<li>Table can be sorted by any number of primary keys (defined using parameter <code>pkey</code>)</li>
+<li>Use <code>table</code> function to create or <code>loadtable</code> to load existing data</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; <span class="nv">x</span> <span class="o">=</span> 1:5
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; <span class="nv">x</span> <span class="o">=</span> 1:6
 julia &gt; <span class="nv">y</span> <span class="o">=</span> vcat<span class="o">(</span>fill<span class="o">(</span><span class="s1">&#39;a&#39;</span>, 3<span class="o">)</span>, fill<span class="o">(</span><span class="s1">&#39;b&#39;</span>, 3<span class="o">))</span>
 julia &gt; <span class="nv">z</span> <span class="o">=</span> randn<span class="o">(</span>6<span class="o">)</span><span class="p">;</span>
 
@@ -116,8 +116,42 @@ x  y    z
 <ul>
 <li>Behaves like a sparse array with arbitrary indices</li>
 <li>The keys of an NDSparse array are sorted</li>
+<li>Use <code>loadndsparse</code> to load existing data</li>
 </ul>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">nd</span> <span class="o">=</span> ndsparse<span class="o">((</span><span class="nv">x</span><span class="o">=</span>x, <span class="nv">y</span><span class="o">=</span>y<span class="o">)</span>, <span class="o">(</span><span class="nv">z</span><span class="o">=</span>z,<span class="o">))</span>
 
+2-d NDSparse with <span class="m">6</span> values <span class="o">(</span><span class="m">1</span> field named tuples<span class="o">)</span>:
+x  y   │ z
+───────┼──────────
+<span class="m">1</span>  <span class="s1">&#39;a&#39;</span> │ 1.0548
+<span class="m">2</span>  <span class="s1">&#39;a&#39;</span> │ 1.64493
+<span class="m">3</span>  <span class="s1">&#39;a&#39;</span> │ -0.738508
+<span class="m">4</span>  <span class="s1">&#39;b&#39;</span> │ 0.325126
+<span class="m">5</span>  <span class="s1">&#39;b&#39;</span> │ 0.299526
+<span class="m">6</span>  <span class="s1">&#39;b&#39;</span> │ 0.787615
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">nd<span class="o">[</span>1, <span class="s1">&#39;a&#39;</span><span class="o">]</span>
+
+<span class="o">(</span><span class="nv">z</span> <span class="o">=</span> 1.0548018299672375,<span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">nd<span class="o">[</span>:, <span class="s1">&#39;a&#39;</span><span class="o">]</span>
+
+1-d NDSparse with <span class="m">3</span> values <span class="o">(</span><span class="m">1</span> field named tuples<span class="o">)</span>:
+x │ z
+──┼──────────
+<span class="m">1</span> │ 1.0548
+<span class="m">2</span> │ 1.64493
+<span class="m">3</span> │ -0.738508
+</code></pre></div><h3 id="select">Select</h3>
+<p>There are a few main JuliaDB functions used for selecting data: <code>select</code>, <code>reduce</code>, <code>groupreduce</code>, <code>groupby</code>, <code>join</code>, <code>transform</code>, and <code>reindex</code>.</p>
+<h3 id="api">API</h3>
+<p><a href="https://juliadb.juliadata.org/latest/api/">More on JuliaDB API.</a></p>
+<h3 id="statistics">Statistics</h3>
+<p>JuliaDB integrates with OnlineStats (a julia stats package) using the functions <code>reduce</code> and <code>groupreduce</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; using JuliaDB, OnlineStats
+julia &gt; <span class="nv">t</span> <span class="o">=</span> table<span class="o">(</span>1:100, rand<span class="o">(</span>Bool, 100<span class="o">)</span>, randn<span class="o">(</span>100<span class="o">))</span><span class="p">;</span>
+julia &gt; reduce<span class="o">(</span>Mean<span class="o">()</span>, t<span class="p">;</span> <span class="k">select</span> <span class="o">=</span> 3<span class="o">)</span>
+
+Mean: <span class="nv">n</span><span class="o">=</span><span class="m">100</span> <span class="p">|</span> <span class="nv">value</span><span class="o">=</span>0.159962
+</code></pre></div>
   </article>
 
   <br/>

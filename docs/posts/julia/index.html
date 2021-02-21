@@ -84,12 +84,15 @@
     <h4 id="tuple">Tuple</h4>
 <p>Built in data structure with <strong>fixed-length</strong> that can hold <strong>any values</strong> but cannot be changed (<strong>immutable</strong>)</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; <span class="nv">x</span> <span class="o">=</span> <span class="o">(</span>2, <span class="s2">&#34;soy sauce&#34;</span>, <span class="s2">&#34;mirin&#34;</span><span class="o">)</span>
+
 <span class="o">(</span>2, <span class="s2">&#34;soy sauce&#34;</span>, <span class="s2">&#34;mirin&#34;</span><span class="o">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; x<span class="o">[</span>2<span class="o">]</span>
+
 <span class="s2">&#34;soy sauce&#34;</span>
 </code></pre></div><h4 id="named-tuple">Named Tuple</h4>
 <p>Elements in tuple can be given names. If so, then its a named tuple.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">julia &gt; <span class="nv">x</span> <span class="o">=</span> <span class="o">(</span><span class="nv">protein</span><span class="o">=</span><span class="s2">&#34;beef&#34;</span>, <span class="nv">carb</span><span class="o">=</span><span class="s2">&#34;rice&#34;</span><span class="o">)</span>
+
 <span class="o">(</span><span class="nv">protein</span> <span class="o">=</span> <span class="s2">&#34;beef&#34;</span>, <span class="nv">carb</span> <span class="o">=</span> <span class="s2">&#34;rice&#34;</span><span class="o">)</span>
 </code></pre></div><h3 id="core-essentials">Core Essentials</h3>
 <p><strong>Core.Array</strong>: N-dimensional dense array with elements of type T</p>
