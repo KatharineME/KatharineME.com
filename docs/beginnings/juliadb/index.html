@@ -79,31 +79,16 @@
     </header>
 
     <p>In this post I&rsquo;m going to explore juliaDB.jl and how it might be used to quickly retrieve results from a VCF file.</p>
-<p>JuliaDB has two main data structures:</p>
-<ul>
-<li>tables</li>
-<li>
-<ul>
-<li>tables store data in columns</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>tables are typed, meaning changing a table requires returning a new table</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>julidb has few mutating operations because a new table is necessary in most cases</li>
-</ul>
-</li>
-<li>NDSparse
-<ul>
-<li>Behaves like a sparse array with arbitrary indices</li>
-<li>The keys of an NDSparse array are sorted</li>
-</ul>
-</li>
-</ul>
+<p>JuliaDB has two main data structures: Table and NDSparse.</p>
+<h3 id="table">Table</h3>
+<pre><code>- tables store data in columns
+- tables are typed, meaning changing a table requires returning a new table
+- julidb has few mutating operations because a new table is necessary in most 
+</code></pre>
+<h3 id="ndsparse">NDSparse</h3>
+<pre><code>- Behaves like a sparse array with arbitrary indices
+- The keys of an NDSparse array are sorted
+</code></pre>
 
   </article>
 </section>
