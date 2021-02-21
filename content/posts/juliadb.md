@@ -78,9 +78,9 @@ x │ z
 ```
 
 
-### Select
+### Select Data
 
-There are a few main JuliaDB functions used for selecting data: `select`, `reduce`, `groupreduce`, `groupby`, `join`, `transform`, and `reindex`.
+There are a few JuliaDB functions used for selecting data: `select`, `reduce`, `groupreduce`, `groupby`, `join`, `transform`, and `reindex`.
 
 ### API
 [More on JuliaDB API.](https://juliadb.juliadata.org/latest/api/)
@@ -95,3 +95,5 @@ julia > reduce(Mean(), t; select = 3)
 
 Mean: n=100 | value=0.159962
 ```
+
+
