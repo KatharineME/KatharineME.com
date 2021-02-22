@@ -218,7 +218,17 @@
  <span class="mi">1</span>
  <span class="mi">1</span>
  <span class="mi">1</span>
-</code></pre></div><h4 id="summarize">Summarize</h4>
+</code></pre></div><h4 id="columns">columns</h4>
+<p>Gives you a NamedTuple of Vectors where each name is the column name and each vector is the column data.</p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">columns</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">],</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5812131489064223</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5545552318128536</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5490833373597503</span><span class="p">,</span> <span class="mf">0.291760065744581</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.411530524868723</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.449557749618286</span><span class="p">])</span>
+</code></pre></div><h4 id="rows">rows</h4>
+<p>Gvies you a StructArray which is basically a Vector of NamedTuples. Each row is one NamedTuple.</p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">rows</span><span class="p">(</span><span class="n">t</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">1.5812131489064223</span><span class="p">)</span>
+</code></pre></div><h4 id="summarize">summarize</h4>
 <p>Applies a function (or functions) column-wise.</p>
 <p><code>summarize(function, table, by: select)</code></p>
 <h3 id="statistics">Statistics</h3>
