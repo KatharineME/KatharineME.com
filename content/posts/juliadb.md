@@ -8,6 +8,8 @@ categories = []
 
 JuliaDB has two main data structures: Table and NDSparse.
 
+### General Wisdom
+- Be as specific as possible when selecting data to minimize the amount of data you are passing around.
 
 ### Table
 - Tables store data in columns
@@ -19,6 +21,10 @@ JuliaDB has two main data structures: Table and NDSparse.
 - Basically a named tuple of vectors which __behaves__ like a vector of named tuples
 - Table can be sorted by any number of primary keys (defined using parameter `pkey`). The table will be sorted by the first priamry key, then the second, and so on.
 - Use `table` function to create or `loadtable` to load existing data
+- `loadtable` should only be used once, then the `save` function should be used to save the table in bianry format to then be quickly loaded using `load` in the next session.
+- Use `IndexedTabled.set_show_compact!(false)` to overide Julia hiding big tables
+-
+
 
 ```julia
 x = 1:6
@@ -59,7 +65,6 @@ end
 (x = 5, y = 'b', z = 1.0156881097767552)
 (x = 6, y = 'b', z = 0.7371713978290413)
 ```
-
 
 ### NDSparse
 - Behaves like a sparse array with arbitrary indices
@@ -127,6 +132,19 @@ julia > select(t, 1)
 ```
 
 ### API
+
+`reduce`
+
+Applies a function pairwise. For a table that is four rows long, reduce(+, t) is the same as:
+
+out = +(row1, row2)
+
+out = +(out, row3)
+
+out = +(out, row4)
+
+Which will get the sum of the four rows.
+
 [More on JuliaDB API.](https://juliadb.juliadata.org/latest/api/)
 
 ### Statistics
