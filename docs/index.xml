@@ -14,7 +14,7 @@
       
       <guid>https://katharineme.com/posts/juliadb/</guid>
       <description>JuliaDB has two main data structures: Table and NDSparse.
-General Wisdom  Be as specific as possible when selecting data to minimize the amount of data you are passing around.  Table  Tables store data in columns Tables are typed, meaning changing a table requires returning a new table Julidb has few mutating operations because a new table is necessary in most Iterates over NamedTuples of rows  Indexed Table  Basically a named tuple of vectors which behaves like a vector of named tuples Table can be sorted by any number of primary keys (defined using parameter pkey).</description>
+General Wisdom  Be as specific as possible when selecting data to minimize the amount of data you are passing around.  When To Use a Table or NDSparse?  NDSparse cases  Stocks. First two columns are stock name and date. You will often want to know the clopsing price of a particular stock on a particular day. In a table, you would need to query where the apple stock has that particular date.</description>
     </item>
     
     <item>
