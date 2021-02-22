@@ -87,6 +87,7 @@
 <li>Tables store data in columns</li>
 <li>Tables are typed, meaning changing a table requires returning a new table</li>
 <li>Julidb has few mutating operations because a new table is necessary in most</li>
+<li>Iterate over NamedTuples of <strong>rows</strong></li>
 </ul>
 <h4 id="indexed-table">Indexed Table</h4>
 <ul>
@@ -94,11 +95,11 @@
 <li>Table can be sorted by any number of primary keys (defined using parameter <code>pkey</code>). The table will be sorted by the first priamry key, then the second, and so on.</li>
 <li>Use <code>table</code> function to create or <code>loadtable</code> to load existing data</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">6</span>
-<span class="n">julia</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vcat</span><span class="p">(</span><span class="n">fill</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">fill</span><span class="p">(</span><span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="n">julia</span> <span class="o">&gt;</span> <span class="n">z</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">6</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">vcat</span><span class="p">(</span><span class="n">fill</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">fill</span><span class="p">(</span><span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
 
-<span class="n">julia</span> <span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">table</span><span class="p">((</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">);</span> <span class="n">pkey</span> <span class="o">=</span> <span class="p">[</span><span class="o">:</span><span class="n">x</span><span class="p">,</span> <span class="o">:</span><span class="n">y</span><span class="p">])</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">table</span><span class="p">((</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">);</span> <span class="n">pkey</span> <span class="o">=</span> <span class="p">[</span><span class="o">:</span><span class="n">x</span><span class="p">,</span> <span class="o">:</span><span class="n">y</span><span class="p">])</span>
 
 <span class="n">Table</span> <span class="n">with</span> <span class="mi">6</span> <span class="n">rows</span><span class="p">,</span> <span class="mi">3</span> <span class="n">columns</span><span class="o">:</span>
 <span class="n">x</span>  <span class="n">y</span>    <span class="n">z</span>
@@ -109,14 +110,19 @@
 <span class="mi">4</span>  <span class="sc">&#39;b&#39;</span>  <span class="o">-</span><span class="mf">0.422334</span>
 <span class="mi">5</span>  <span class="sc">&#39;b&#39;</span>  <span class="mf">0.0246361</span>
 <span class="mi">6</span>  <span class="sc">&#39;b&#39;</span>  <span class="mf">0.669536</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">1.069356265804105</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">y</span>
+
+<span class="sc">&#39;a&#39;</span>
 </code></pre></div><h3 id="ndsparse">NDSparse</h3>
 <ul>
 <li>Behaves like a sparse array with arbitrary indices</li>
 <li>The keys of an NDSparse array are sorted</li>
 <li>Use <code>loadndsparse</code> to load existing data</li>
+<li>Its made for working with data that is sparse over the domain of the index (stock data)</li>
+<li>Iterate over NamedTuples of <strong>values</strong></li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">nd</span> <span class="o">=</span> <span class="n">ndsparse</span><span class="p">((</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,))</span>
 
@@ -140,6 +146,16 @@
 <span class="mi">1</span> <span class="n">│</span> <span class="mf">1.0548</span>
 <span class="mi">2</span> <span class="n">│</span> <span class="mf">1.64493</span>
 <span class="mi">3</span> <span class="n">│</span> <span class="o">-</span><span class="mf">0.738508</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">for</span> <span class="n">item</span> <span class="kp">in</span> <span class="n">nd</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">1.0548018299672375</span><span class="p">,)</span>
+<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">1.6449349801308328</span><span class="p">,)</span>
+<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.7385076399317578</span><span class="p">,)</span>
+<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.3251263120611191</span><span class="p">,)</span>
+<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.2995262607206383</span><span class="p">,)</span>
+<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.7876150538404173</span><span class="p">,)</span>
 </code></pre></div><h3 id="select-data">Select Data</h3>
 <p>There are a few JuliaDB functions used for selecting data: <code>select</code>, <code>reduce</code>, <code>groupreduce</code>, <code>groupby</code>, <code>join</code>, <code>transform</code>, and <code>reindex</code>.</p>
 <p>Selecting a column. This is the same as <code>select(t, :x)</code></p>
