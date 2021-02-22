@@ -218,7 +218,10 @@
  <span class="mi">1</span>
  <span class="mi">1</span>
  <span class="mi">1</span>
-</code></pre></div><h3 id="statistics">Statistics</h3>
+</code></pre></div><h4 id="summarize">Summarize</h4>
+<p>Applies a function (or functions) column-wise.</p>
+<p><code>summarize(function, table, by: select)</code></p>
+<h3 id="statistics">Statistics</h3>
 <p>JuliaDB integrates with OnlineStats (a julia stats package) using the functions <code>reduce</code> and <code>groupreduce</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="k">using</span> <span class="n">JuliaDB</span><span class="p">,</span> <span class="n">OnlineStats</span>
 <span class="n">julia</span> <span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span> <span class="n">rand</span><span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
