@@ -82,6 +82,10 @@
     </header>
 
     <p>JuliaDB has two main data structures: Table and NDSparse.</p>
+<h3 id="general-wisdom">General Wisdom</h3>
+<ul>
+<li>Be as specific as possible when selecting data to minimize the amount of data you are passing around.</li>
+</ul>
 <h3 id="table">Table</h3>
 <ul>
 <li>Tables store data in columns</li>
@@ -94,6 +98,9 @@
 <li>Basically a named tuple of vectors which <strong>behaves</strong> like a vector of named tuples</li>
 <li>Table can be sorted by any number of primary keys (defined using parameter <code>pkey</code>). The table will be sorted by the first priamry key, then the second, and so on.</li>
 <li>Use <code>table</code> function to create or <code>loadtable</code> to load existing data</li>
+<li><code>loadtable</code> should only be used once, then the <code>save</code> function should be used to save the table in bianry format to then be quickly loaded using <code>load</code> in the next session.</li>
+<li>Use <code>IndexedTabled.set_show_compact!(false)</code> to overide Julia hiding big tables</li>
+<li></li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">6</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">vcat</span><span class="p">(</span><span class="n">fill</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">fill</span><span class="p">(</span><span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -179,6 +186,12 @@
  <span class="mi">5</span>
  <span class="mi">6</span>
 </code></pre></div><h3 id="api">API</h3>
+<p><code>reduce</code></p>
+<p>Applies a function pairwise. For a table that is four rows long, reduce(+, t) is the same as:</p>
+<p>out = +(row1, row2)</p>
+<p>out = +(out, row3)</p>
+<p>out = +(out, row4)</p>
+<p>Which will get the sum of the four rows.</p>
 <p><a href="https://juliadb.juliadata.org/latest/api/">More on JuliaDB API.</a></p>
 <h3 id="statistics">Statistics</h3>
 <p>JuliaDB integrates with OnlineStats (a julia stats package) using the functions <code>reduce</code> and <code>groupreduce</code>.</p>
