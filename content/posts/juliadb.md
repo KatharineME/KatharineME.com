@@ -13,7 +13,7 @@ JuliaDB has two main data structures: Table and NDSparse.
 - Tables store data in columns
 - Tables are typed, meaning changing a table requires returning a new table
 - Julidb has few mutating operations because a new table is necessary in most
-- Iterate over NamedTuples of __rows__
+- Iterates over NamedTuples of __rows__
 
 #### Indexed Table
 - Basically a named tuple of vectors which __behaves__ like a vector of named tuples
@@ -37,25 +37,36 @@ x  y    z
 5  'b'  0.0246361
 6  'b'  0.669536
 ```
-
 ```julia
 t[1]
 
 (x = 1, y = 'a', z = 1.069356265804105)
 ```
-
 ```julia
 t[1].y
 
 'a'
 ```
+```julia
+for item in t
+    println(item)
+end
+
+(x = 1, y = 'a', z = -0.5856775236297086)
+(x = 2, y = 'a', z = -1.8225049388821863)
+(x = 3, y = 'a', z = 0.2538693543229162)
+(x = 4, y = 'b', z = 3.0769831992975276)
+(x = 5, y = 'b', z = 1.0156881097767552)
+(x = 6, y = 'b', z = 0.7371713978290413)
+```
+
 
 ### NDSparse
 - Behaves like a sparse array with arbitrary indices
 - The keys of an NDSparse array are sorted
 - Use `loadndsparse` to load existing data
 - Its made for working with data that is sparse over the domain of the index (stock data)
-- Iterate over NamedTuples of __values__
+- Iterates over NamedTuples of __values__
 
 ```julia
 nd = ndsparse((x=x, y=y), (z=z,))
@@ -114,8 +125,6 @@ julia > select(t, 1)
  5
  6
 ```
-
-
 
 ### API
 [More on JuliaDB API.](https://juliadb.juliadata.org/latest/api/)

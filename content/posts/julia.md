@@ -6,7 +6,7 @@ tags = []
 categories = []
 +++
 
-## Julia Concepts
+## Concepts
 
 Macro
 - A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.
