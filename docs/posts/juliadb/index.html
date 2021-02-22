@@ -82,18 +82,6 @@
     </header>
 
     <p>JuliaDB has two main data structures: Table and NDSparse.</p>
-<h3 id="general-wisdom">General Wisdom</h3>
-<ul>
-<li>Be as specific as possible when selecting data to minimize the amount of data you are passing around.</li>
-</ul>
-<h3 id="when-to-use-a-table-or-ndsparse">When To Use a Table or NDSparse?</h3>
-<ul>
-<li>NDSparse cases
-<ul>
-<li>Stocks. First two columns are stock name and date. You will often want to know the closing price of a particular stock on a particular day. In a table, you would need to query where the apple stock has that particular date. In an NDSparse, it is just getting the index with apple and that date.</li>
-</ul>
-</li>
-</ul>
 <h3 id="table">Table</h3>
 <ul>
 <li>Tables store data in columns</li>
@@ -181,20 +169,16 @@
 <span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.3251263120611191</span><span class="p">,)</span>
 <span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.2995262607206383</span><span class="p">,)</span>
 <span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.7876150538404173</span><span class="p">,)</span>
-</code></pre></div><h3 id="select-data">Select Data</h3>
-<p>There are a few JuliaDB functions used for selecting data: <code>select</code>, <code>reduce</code>, <code>groupreduce</code>, <code>groupby</code>, <code>join</code>, <code>transform</code>, and <code>reindex</code>.</p>
-<p>Selecting a column. This is the same as <code>select(t, :x)</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="mi">6</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">1</span>
- <span class="mi">2</span>
- <span class="mi">3</span>
- <span class="mi">4</span>
- <span class="mi">5</span>
- <span class="mi">6</span>
-</code></pre></div><h3 id="api">API</h3>
-<p><code>select</code></p>
+</code></pre></div><h3 id="when-to-use-a-table-or-ndsparse">When To Use a Table or NDSparse?</h3>
+<ul>
+<li>NDSparse cases
+<ul>
+<li>Stocks. First two columns are stock name and date. You will often want to know the closing price of a particular stock on a particular day. In a table, you would need to query where the apple stock has that particular date. In an NDSparse, it is just getting the index with apple and that date.</li>
+</ul>
+</li>
+</ul>
+<h2 id="api">API</h2>
+<h4 id="select">select</h4>
 <p>Selects particular data and optionally applies function on it.</p>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="o">:</span><span class="n">x</span><span class="p">,</span> <span class="o">:</span><span class="n">z</span><span class="p">))</span>
 
@@ -216,21 +200,36 @@
  <span class="mi">1</span>
  <span class="mi">1</span>
  <span class="mi">1</span>
-</code></pre></div><p><code>reduce</code></p>
+</code></pre></div><h4 id="reduce">reduce</h4>
 <p>Applies a function pairwise. Its good for functions with the associative property, meaning order doesnt matter. For a table that is four rows long, reduce(+, t) is the same as:</p>
 <p>out = +(row1, row2)</p>
 <p>out = +(out, row3)</p>
 <p>out = +(out, row4)</p>
 <p>Which will get the sum of the four rows.</p>
 <p><a href="https://juliadb.juliadata.org/latest/api/">More on JuliaDB API.</a></p>
-<h3 id="statistics">Statistics</h3>
+<h4 id="map">map</h4>
+<p>Map function. <code>map</code> and <code>select</code> have overlapping functionality.</p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">map</span><span class="p">(</span><span class="n">row</span> <span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="mi">6</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Bool</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">0</span>
+ <span class="mi">1</span>
+ <span class="mi">1</span>
+ <span class="mi">1</span>
+ <span class="mi">1</span>
+ <span class="mi">1</span>
+</code></pre></div><h3 id="statistics">Statistics</h3>
 <p>JuliaDB integrates with OnlineStats (a julia stats package) using the functions <code>reduce</code> and <code>groupreduce</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="k">using</span> <span class="n">JuliaDB</span><span class="p">,</span> <span class="n">OnlineStats</span>
 <span class="n">julia</span> <span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span> <span class="n">rand</span><span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
 <span class="n">julia</span> <span class="o">&gt;</span> <span class="n">reduce</span><span class="p">(</span><span class="n">Mean</span><span class="p">(),</span> <span class="n">t</span><span class="p">;</span> <span class="n">select</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="n">Mean</span><span class="o">:</span> <span class="n">n</span><span class="o">=</span><span class="mi">100</span> <span class="o">|</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.159962</span>
-</code></pre></div>
+</code></pre></div><h3 id="general-wisdom">General Wisdom</h3>
+<ul>
+<li>Be as specific as possible when selecting to minimize the amount of data you are passing around.</li>
+</ul>
+
   </article>
 
   <br/>
