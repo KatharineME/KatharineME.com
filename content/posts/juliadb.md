@@ -181,11 +181,34 @@ map(row -> row.x > row.z, t)
  1
 ````
 
-#### Summarize
+#### columns
+
+Gives you a NamedTuple of Vectors where each name is the column name and each vector is the column data.
+
+```julia
+columns(t)
+
+(x = [1, 2, 3, 4, 5, 6], y = ['a', 'a', 'a', 'b', 'b', 'b'], z = [1.5812131489064223, -0.5545552318128536, -0.5490833373597503, 0.291760065744581, -1.411530524868723, -1.449557749618286])
+```
+
+#### rows
+
+Gvies you a StructArray which is basically a Vector of NamedTuples. Each row is one NamedTuple.
+
+```julia
+rows(t)[1]
+
+(x = 1, y = 'a', z = 1.5812131489064223)
+```
+
+#### summarize
 
 Applies a function (or functions) column-wise. 
 
 `summarize(function, table, by: select)`
+
+
+
 
 ### Statistics
 JuliaDB integrates with OnlineStats (a julia stats package) using the functions `reduce` and `groupreduce`.
