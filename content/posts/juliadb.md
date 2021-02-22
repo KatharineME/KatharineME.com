@@ -11,6 +11,11 @@ JuliaDB has two main data structures: Table and NDSparse.
 ### General Wisdom
 - Be as specific as possible when selecting data to minimize the amount of data you are passing around.
 
+
+### When To Use a Table or NDSparse?
+- NDSparse cases
+    - Stocks. First two columns are stock name and date. You will often want to know the clopsing price of a particular stock on a particular day. In a table, you would need to query where the apple stock has that particular date. In an NDSparse, it is just getting the index with apple and that date.
+
 ### Table
 - Tables store data in columns
 - Tables are typed, meaning changing a table requires returning a new table
@@ -135,7 +140,7 @@ julia > select(t, 1)
 
 `reduce`
 
-Applies a function pairwise. For a table that is four rows long, reduce(+, t) is the same as:
+Applies a function pairwise. Its good for functions with the associative property, meaning order doesnt matter. For a table that is four rows long, reduce(+, t) is the same as:
 
 out = +(row1, row2)
 
