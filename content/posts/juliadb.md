@@ -181,6 +181,12 @@ map(row -> row.x > row.z, t)
  1
 ````
 
+#### Summarize
+
+Applies a function (or functions) column-wise. 
+
+`summarize(function, table, by: select)`
+
 ### Statistics
 JuliaDB integrates with OnlineStats (a julia stats package) using the functions `reduce` and `groupreduce`.
 
