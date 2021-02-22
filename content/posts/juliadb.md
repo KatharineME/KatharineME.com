@@ -8,13 +8,6 @@ categories = []
 
 JuliaDB has two main data structures: Table and NDSparse.
 
-### General Wisdom
-- Be as specific as possible when selecting data to minimize the amount of data you are passing around.
-
-
-### When To Use a Table or NDSparse?
-- NDSparse cases
-    - Stocks. First two columns are stock name and date. You will often want to know the closing price of a particular stock on a particular day. In a table, you would need to query where the apple stock has that particular date. In an NDSparse, it is just getting the index with apple and that date.
 
 ### Table
 - Tables store data in columns
@@ -119,27 +112,16 @@ end
 (z = 0.7876150538404173,)
 ```
 
-### Select Data
 
-There are a few JuliaDB functions used for selecting data: `select`, `reduce`, `groupreduce`, `groupby`, `join`, `transform`, and `reindex`.
-
-Selecting a column. This is the same as `select(t, :x)`
-```julia
-julia > select(t, 1)
-
-6-element Array{Int64,1}:
- 1
- 2
- 3
- 4
- 5
- 6
-```
-
-### API
+### When To Use a Table or NDSparse?
+- NDSparse cases
+    - Stocks. First two columns are stock name and date. You will often want to know the closing price of a particular stock on a particular day. In a table, you would need to query where the apple stock has that particular date. In an NDSparse, it is just getting the index with apple and that date.
 
 
-`select`
+## API
+
+
+#### select
 
 Selects particular data and optionally applies function on it.
 
@@ -168,7 +150,7 @@ select(t, (:x, :z) => row -> row.x > row.z)
  1
 ```
 
-`reduce`
+#### reduce
 
 Applies a function pairwise. Its good for functions with the associative property, meaning order doesnt matter. For a table that is four rows long, reduce(+, t) is the same as:
 
@@ -182,6 +164,23 @@ Which will get the sum of the four rows.
 
 [More on JuliaDB API.](https://juliadb.juliadata.org/latest/api/)
 
+
+#### map
+
+Map function. `map` and `select` have overlapping functionality.
+
+```julia
+map(row -> row.x > row.z, t)
+
+6-element Array{Bool,1}:
+ 0
+ 1
+ 1
+ 1
+ 1
+ 1
+````
+
 ### Statistics
 JuliaDB integrates with OnlineStats (a julia stats package) using the functions `reduce` and `groupreduce`.
 
@@ -192,5 +191,8 @@ julia > reduce(Mean(), t; select = 3)
 
 Mean: n=100 | value=0.159962
 ```
+
+### General Wisdom
+- Be as specific as possible when selecting to minimize the amount of data you are passing around.
 
 
