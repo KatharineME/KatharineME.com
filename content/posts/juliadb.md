@@ -14,7 +14,7 @@ JuliaDB has two main data structures: Table and NDSparse.
 
 ### When To Use a Table or NDSparse?
 - NDSparse cases
-    - Stocks. First two columns are stock name and date. You will often want to know the clopsing price of a particular stock on a particular day. In a table, you would need to query where the apple stock has that particular date. In an NDSparse, it is just getting the index with apple and that date.
+    - Stocks. First two columns are stock name and date. You will often want to know the closing price of a particular stock on a particular day. In a table, you would need to query where the apple stock has that particular date. In an NDSparse, it is just getting the index with apple and that date.
 
 ### Table
 - Tables store data in columns
@@ -137,6 +137,36 @@ julia > select(t, 1)
 ```
 
 ### API
+
+
+`select`
+
+Selects particular data and optionally applies function on it.
+
+```julia
+select(t, (:x, :z))
+
+Table with 6 rows, 2 columns:
+x  z
+─────────────
+1  1.37942
+2  0.525809
+3  0.754992
+4  -0.0998402
+5  -1.43908
+6  1.96262
+```
+```julia
+select(t, (:x, :z) => row -> row.x > row.z)
+
+6-element Array{Bool,1}:
+ 0
+ 1
+ 1
+ 1
+ 1
+ 1
+```
 
 `reduce`
 
