@@ -87,7 +87,7 @@
 <li>Tables store data in columns</li>
 <li>Tables are typed, meaning changing a table requires returning a new table</li>
 <li>Julidb has few mutating operations because a new table is necessary in most</li>
-<li>Iterate over NamedTuples of <strong>rows</strong></li>
+<li>Iterates over NamedTuples of <strong>rows</strong></li>
 </ul>
 <h4 id="indexed-table">Indexed Table</h4>
 <ul>
@@ -116,13 +116,23 @@
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">y</span>
 
 <span class="sc">&#39;a&#39;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">for</span> <span class="n">item</span> <span class="kp">in</span> <span class="n">t</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5856775236297086</span><span class="p">)</span>
+<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.8225049388821863</span><span class="p">)</span>
+<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.2538693543229162</span><span class="p">)</span>
+<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">3.0769831992975276</span><span class="p">)</span>
+<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">1.0156881097767552</span><span class="p">)</span>
+<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.7371713978290413</span><span class="p">)</span>
 </code></pre></div><h3 id="ndsparse">NDSparse</h3>
 <ul>
 <li>Behaves like a sparse array with arbitrary indices</li>
 <li>The keys of an NDSparse array are sorted</li>
 <li>Use <code>loadndsparse</code> to load existing data</li>
 <li>Its made for working with data that is sparse over the domain of the index (stock data)</li>
-<li>Iterate over NamedTuples of <strong>values</strong></li>
+<li>Iterates over NamedTuples of <strong>values</strong></li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">nd</span> <span class="o">=</span> <span class="n">ndsparse</span><span class="p">((</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,))</span>
 
