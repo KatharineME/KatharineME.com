@@ -90,7 +90,7 @@
 <ul>
 <li>NDSparse cases
 <ul>
-<li>Stocks. First two columns are stock name and date. You will often want to know the clopsing price of a particular stock on a particular day. In a table, you would need to query where the apple stock has that particular date. In an NDSparse, it is just getting the index with apple and that date.</li>
+<li>Stocks. First two columns are stock name and date. You will often want to know the closing price of a particular stock on a particular day. In a table, you would need to query where the apple stock has that particular date. In an NDSparse, it is just getting the index with apple and that date.</li>
 </ul>
 </li>
 </ul>
@@ -194,7 +194,29 @@
  <span class="mi">5</span>
  <span class="mi">6</span>
 </code></pre></div><h3 id="api">API</h3>
-<p><code>reduce</code></p>
+<p><code>select</code></p>
+<p>Selects particular data and optionally applies function on it.</p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="o">:</span><span class="n">x</span><span class="p">,</span> <span class="o">:</span><span class="n">z</span><span class="p">))</span>
+
+<span class="n">Table</span> <span class="n">with</span> <span class="mi">6</span> <span class="n">rows</span><span class="p">,</span> <span class="mi">2</span> <span class="n">columns</span><span class="o">:</span>
+<span class="n">x</span>  <span class="n">z</span>
+<span class="n">─────────────</span>
+<span class="mi">1</span>  <span class="mf">1.37942</span>
+<span class="mi">2</span>  <span class="mf">0.525809</span>
+<span class="mi">3</span>  <span class="mf">0.754992</span>
+<span class="mi">4</span>  <span class="o">-</span><span class="mf">0.0998402</span>
+<span class="mi">5</span>  <span class="o">-</span><span class="mf">1.43908</span>
+<span class="mi">6</span>  <span class="mf">1.96262</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="o">:</span><span class="n">x</span><span class="p">,</span> <span class="o">:</span><span class="n">z</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">row</span> <span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+
+<span class="mi">6</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Bool</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">0</span>
+ <span class="mi">1</span>
+ <span class="mi">1</span>
+ <span class="mi">1</span>
+ <span class="mi">1</span>
+ <span class="mi">1</span>
+</code></pre></div><p><code>reduce</code></p>
 <p>Applies a function pairwise. Its good for functions with the associative property, meaning order doesnt matter. For a table that is four rows long, reduce(+, t) is the same as:</p>
 <p>out = +(row1, row2)</p>
 <p>out = +(out, row3)</p>
