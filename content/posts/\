@@ -13,7 +13,7 @@ JuliaDB has two main data structures: Table and NDSparse.
 - Tables store data in columns
 - Tables are typed, meaning changing a table requires returning a new table
 - Julidb has few mutating operations because a new table is necessary in most
-- Iterate over NamedTuples of __rows__
+- Tables iterate over NamedTuples of rows
 
 #### Indexed Table
 - Basically a named tuple of vectors which __behaves__ like a vector of named tuples
@@ -21,11 +21,11 @@ JuliaDB has two main data structures: Table and NDSparse.
 - Use `table` function to create or `loadtable` to load existing data
 
 ```julia
-x = 1:6
-y = vcat(fill('a', 3), fill('b', 3))
-z = randn(6);
+julia > x = 1:6
+julia > y = vcat(fill('a', 3), fill('b', 3))
+julia > z = randn(6);
 
-t = table((x=x, y=y, z=z); pkey = [:x, :y])
+julia > t = table((x=x, y=y, z=z); pkey = [:x, :y])
 
 Table with 6 rows, 3 columns:
 x  y    z
@@ -39,13 +39,13 @@ x  y    z
 ```
 
 ```julia
-t[1]
+julia > t[1]
 
 (x = 1, y = 'a', z = 1.069356265804105)
 ```
 
 ```julia
-t[1].y
+julia > t[1].y
 
 'a'
 ```
@@ -55,7 +55,6 @@ t[1].y
 - The keys of an NDSparse array are sorted
 - Use `loadndsparse` to load existing data
 - Its made for working with data that is sparse over the domain of the index (stock data)
-- Iterate over NamedTuples of __values__
 
 ```julia
 nd = ndsparse((x=x, y=y), (z=z,))
@@ -85,18 +84,7 @@ x │ z
 2 │ 1.64493
 3 │ -0.738508
 ```
-```julia
-for item in nd
-    println(item)
-end
 
-(z = 1.0548018299672375,)
-(z = 1.6449349801308328,)
-(z = -0.7385076399317578,)
-(z = 0.3251263120611191,)
-(z = 0.2995262607206383,)
-(z = 0.7876150538404173,)
-```
 
 ### Select Data
 
