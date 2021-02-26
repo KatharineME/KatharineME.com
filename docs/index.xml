@@ -13,8 +13,9 @@
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/juliadb/</guid>
-      <description>JuliaDB has two main data structures: Table and NDSparse.
-Table  Tables store data in columns Tables are typed, meaning changing a table requires returning a new table Julidb has few mutating operations because a new table is necessary in most Iterates over NamedTuples of rows  Indexed Table  Basically a named tuple of vectors which behaves like a vector of named tuples Table can be sorted by any number of primary keys (defined using parameter pkey).</description>
+      <description>JuliaDB can work with data that is larger than the machine RAM.
+addprocs() will add as many workers as there are CPU cores available. addprocs(2) would add two working processes. When there are multiple processes, tables will be loaded as distributed tables across all the workers. So oyu cant index a row based on row number or iterate over all rows.
+JuliaDB has two main data structures: Table and NDSparse.</description>
     </item>
     
     <item>
@@ -185,6 +186,17 @@ Format For a single-read run, one Read 1 (R1) FASTQ file is created for each sam
       <guid>https://katharineme.com/posts/library-preparation/</guid>
       <description>Initial Quality Check  Check DNA purity on Nanodrop (260/280 ratio shows RNA contamination) Check DNA concentration on Qubit Fluorometer  Fragmentation Two main options for fragmenting the DNA
  Sonication  Uses a sonication machine Pros: very little base bias in cuts made Cons: Sonication machines are expensive, difficult to cut DNA fragments smaller than 300bp   Enzyme digestion  Pros: cheaper, doesnt require large sonication machine Cons: Produces minor base % bias in first 10 bases of fragments  This bias can be easily seen in FastQC results      End Repair and A Tailing In order to ligate the necessary adapters to the fragmented sequences, the ends of the fragments need to be made compatible with those adapters.</description>
+    </item>
+    
+    <item>
+      <title>Kinship Estimation</title>
+      <link>https://katharineme.com/posts/kinship-estimation/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/kinship-estimation/</guid>
+      <description>![siblings][/images/siblings.jpg]
+Take two people who think they may be related based on anecdotal evidence. How do we know for sure? Thats the topic of this post.
+Something interesting to consider is that there is no set amount of DNA that biologically related people share. For examlpe, two biological siblings could have been passed many of the same bits of DNA from their parents, or they could been passed many different bits.</description>
     </item>
     
     <item>

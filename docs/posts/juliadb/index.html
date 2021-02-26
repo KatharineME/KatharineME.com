@@ -81,7 +81,9 @@
       
     </header>
 
-    <p>JuliaDB has two main data structures: Table and NDSparse.</p>
+    <p>JuliaDB can work with data that is larger than the machine RAM.</p>
+<p>addprocs() will add as many workers as there are CPU cores available. <code>addprocs(2)</code> would add two working processes. When there are multiple processes, tables will be loaded as distributed tables across all the workers. So oyu cant index a row based on row number or iterate over all rows.</p>
+<p>JuliaDB has two main data structures: Table and NDSparse.</p>
 <h3 id="table">Table</h3>
 <ul>
 <li>Tables store data in columns</li>
