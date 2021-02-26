@@ -8,19 +8,25 @@ categories = []
 
 ![siblings](/images/siblings.jpg)
 
-Take two people who think they may be related based on anecdotal evidence. How do we know for sure? Thats the topic of this post.
+Two people who think they may be related based off old records and photos. How do we know for sure? Thats the topic of this post.
 
-Something interesting to consider is that there is no set amount of DNA that biologically related people share. For examlpe, two biological siblings could have been passed many of the same bits of DNA from their parents, or they could been passed many different bits. This is why biological siblings can share between 38%-61% of DNA, with an average of 50%. Then a half siblings should share between 19%-30% of DNA.
+Something interesting to consider is that there is no set amount of DNA that biologically related people share. For examlpe, two biological siblings could have been passed many of the same bits of DNA from their parents, or they could been passed many different bits. This is why biological siblings can share between 38%-61% of DNA, with an average of 50%.
 
 
 | Relationship | Average % Shared DNA | Range % Shared DNA |
-| ------------ | -------------------- | ------------------ |
-| Header      | Title       |
-| Paragraph   | Text        |
+| ----------------- | -------------------- | ------------------ |
+| Mother / Son      | 52.5% | NA |
+| Father / Son      | 47.5% | NA |
+| Mother / Daughter | 50%   | NA |
+| Father / Daughter | 50%   | NA |
+| Full Sibling      | 50%   | 38%-61% |
+| Grandparent / Grandchild | 25%   | 17%-34% |
+| Aunt or Uncle / Niece or Nephew | 25%   | 17%-34% |
+| Half Sibling | 25%   | 17%-34% |
+| Great-grandparent / Great-grandchild | 12.5%   | 4%-23% |
 
 
-
-
+Side note: Some DNA we can only get from one of our parents. For boys obviously, the Y chromosome comes from their father. But in all cases, mitochondrial DNA comes from the mother. Whatever mitochondrial DNA the fertilized egg held, is the mitochondrial DNA the child will have.
 
 
 
