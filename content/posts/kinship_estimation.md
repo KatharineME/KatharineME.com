@@ -42,9 +42,10 @@ _Side note: Some DNA we can only get from one of our parents. For boys obviously
 
 So how do we check genetic relatedness? Can't we just check the percent of matching DNA? Easy right? Yes and no.
 
-Here we're going to apply the KING kinship estimator. First we use bcftools to merge the VCFs of the people we want to  compare, then use Plink to create the necessary input files: .bed (binary genotype file), .fam (family file), and .bim (map file). Finally we run the KING program to calculate the pair-wise kinship coefficient where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17 and 3rd degree relatives are between 0.04 and 0.08.
+Here we're going to apply the KING kinship estimator. First we use bcftools to merge the VCFs of the people we want to  compare, then use Plink to create the necessary input files: .bed (binary genotype file), .fam (family file), and .bim (map file). Finally we run the KING program to calculate the pair-wise kinship coefficient where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17, 3rd degree relatives are between 0.04 and 0.08, and a negative number indicates an unrelated relationship.
 
 ```sh
 plink2 --vcf example.vcf.gz --make-bed --out ex
 ```
+
 
