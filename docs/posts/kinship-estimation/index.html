@@ -147,7 +147,9 @@
 <p><em>Side note: Some DNA we can only get from one of our parents. For boys obviously, the Y chromosome comes from their father. And for everyone, mitochondrial DNA comes from the mother. Whatever mitochondrial DNA the fertilized egg held, is the mitochondrial DNA the child will have.</em></p>
 <h2 id="method">Method</h2>
 <p>So how do we check genetic relatedness? Can&rsquo;t we just check the percent of matching DNA? Easy right? Yes and no.</p>
-
+<p>Here we&rsquo;re going to apply the KING kinship estimator. First we use bcftools to merge the VCFs of the people we want to  compare, then use Plink to create the necessary input files: .bed (binary genotype file), .fam (family file), and .bim (map file). Finally we run the KING program to calculate the pair-wise kinship coefficient where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17 and 3rd degree relatives are between 0.04 and 0.08.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">plink2 --vcf example.vcf.gz --make-bed --out ex
+</code></pre></div>
   </article>
 
   <br/>
