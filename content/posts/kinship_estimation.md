@@ -62,9 +62,9 @@ chr1	10250	.	A	C	1	LowGQX;NoPassedVariantGTs	SNVHPOL=4;MQ=11	GT:GQ:GQX:DP:DPF:AD
 chr1	51898	.	C	A	6	LowGQX;NoPassedVariantGTs	SNVHPOL=2;MQ=35	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:17:0:7:0:6,1:3,1:3,0:0:LowGQX:19,0,146
 ```
 
-This is the merge command. Note the `-m none` is a setting for no new multialleles to be created and for multiple records to be output instead. We are using this option because Plink in step two doesn't like multiallelic inputs. 
+Merge command:
 ```sh
-bcftools merge -m none person1.vcf.gz person2.vcf.gz > merged.vcf
+bcftools merge person1.vcf.gz person2.vcf.gz > merged.vcf
 ```
 
 Merged VCF:
