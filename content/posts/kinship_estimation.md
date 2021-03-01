@@ -44,15 +44,47 @@ So how do we check genetic relatedness? Can't we just check the percent of match
 
 Here we're going to apply the KING kinship estimator. First we use bcftools to merge the VCFs of the people we want to  compare, then use Plink to create the necessary input files: .bed (binary genotype file), .fam (family file), and .bim (map file). Finally we run the KING program to calculate the pair-wise kinship coefficient where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17, 3rd degree relatives are between 0.04 and 0.08, and a negative number indicates an unrelated relationship.
 
+
+#### 1. bcftools merge
+
+`bcftools merge` by default will merge VCF1 with VCF2 to make the merged VCF in the manner below. The merged VCF will have both sample columns and variants that either sample has. Before merging, make sure the sample names in the header of each VCF (column names 10 and beyond) are what you want them to be. If they are not, one option is manually changing them in a text editor.
+
+Person1 VCF:
 ```sh
-plink2 --vcf example.vcf.gz --make-bed --out ex
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	Person1
+chr1	10120	.	T	C	1	LowGQX;LowDepth;NoPassedVariantGTs	SNVHPOL=4;MQ=6	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:22:0:2:2:1,1:0,1:1,0:0:LowGQX;LowDepth:30,0,22
+chr1	51898	.	C	A	6	LowGQX;NoPassedVariantGTs	SNVHPOL=2;MQ=35	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:38:5:6:0:4,2:1,2:3,0:2.1:PASS:40,0,101
+```
+Person2 VCF:
+```sh
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	Person2
+chr1	10250	.	A	C	1	LowGQX;NoPassedVariantGTs	SNVHPOL=4;MQ=11	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:23:0:4:0:3,1:1,0:2,1:0:LowGQX:26,0,80
+chr1	51898	.	C	A	6	LowGQX;NoPassedVariantGTs	SNVHPOL=2;MQ=35	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:17:0:7:0:6,1:3,1:3,0:0:LowGQX:19,0,146
 ```
 
-`bcftools merge` uses the sample names in the header (columns 10 and beyond), so make sure they are correct before merging. If they are not, one option is to manually change the header sample names in a text editor. 
+This is the merge command. Note the `-m none` is a setting for no new multialleles to be created and for multiple records to be output instead. We are using this option because Plink in step two doesn't like multiallelic inputs. 
+```sh
+bcftools merge -m none person1.vcf.gz person2.vcf.gz > merged.vcf
+```
 
-Now merge the VCF file of the people I want to compare.
+Merged VCF:
+```sh
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	Person1	Person2
+chr1	10120	.	T	C	1	LowGQX;LowDepth;NoPassedVariantGTs	SNVHPOL=4;MQ=6	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:22:0:2:2:1,1:0,1:1,0:0:LowGQX;LowDepth:30,0,22	./.:.:.:.:.:.:.:.:.:.:.
+chr1	10250	.	A	C	1	LowGQX;NoPassedVariantGTs	SNVHPOL=4;MQ=11	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	./.:.:.:.:.:.:.:.:.:.:.	0/1:23:0:4:0:3,1:1,0:2,1:0:LowGQX:26,0,80
+chr1	51898	.	C	A	6	LowGQX;NoPassedVariantGTs	SNVHPOL=2;MQ=35	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:38:5:6:0:4,2:1,2:3,0:2.1:PASS:40,0,101	0/1:17:0:7:0:6,1:3,1:3,0:0:LowGQX:19,0,146
+```
+
+Take a look at the three rows of the merged VCF. The first row is a variant that only Person1 has, the second row is a variant that only Person2 has, and the third row is a variant that both people have.
+
+#### 2. Plink
 
 ```sh
-bcftools merge person_1.vcf.gz person_2.vcf.gz
+plink --vcf example.vcf.gz --make-bed --out ex
 ```
+
+This command will create four files.
+
+#### 3. KING kinship estimator
+
 
