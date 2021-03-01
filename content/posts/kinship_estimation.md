@@ -47,7 +47,7 @@ Here we're going to apply the KING kinship estimator. First we use bcftools to m
 
 #### 1. bcftools merge
 
-`bcftools merge` by default will merge VCF1 with VCF2 to make the merged VCF in the manner below. The merged VCF will have both sample columns and variants that either sample has. Before merging, make sure the sample names in the header of each VCF (column names 10 and beyond) are what you want them to be. If they are not, one option is manually changing them in a text editor.
+`bcftools merge` by default will merge VCF1 with VCF2 to make the merged VCF in the manner below. Before merging, make sure the sample names in the header of each VCF (column names 10 and beyond) are what you want them to be. If they are not, one option is manually changing them in a text editor.
 
 Person1 VCF:
 ```sh
