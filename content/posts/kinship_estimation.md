@@ -48,4 +48,9 @@ Here we're going to apply the KING kinship estimator. First we use bcftools to m
 plink2 --vcf example.vcf.gz --make-bed --out ex
 ```
 
+Before merging the VCF files to compare, I'm going to change to the sample names in each file. That way when thay are merged I can tell easily which sample is which.
+
+```sh
+bcftools reheader -s old_bad_name new_good_name
+```
 
