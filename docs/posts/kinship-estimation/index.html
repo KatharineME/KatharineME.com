@@ -152,7 +152,7 @@
 </code></pre></div><p>Before merging the VCF files to compare, I&rsquo;m going to change to the sample names in each file. That way when thay are merged I can tell easily which sample is which.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">bcftools reheader -s old_bad_name new_good_name
 </code></pre></div><p>Now merge the VCF file of the people I want to compare.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">bcftools reheader -s old_bad_name new_good_name
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">bcftools merge person_1.vcf.gz person_2.vcf.gz
 </code></pre></div>
   </article>
 

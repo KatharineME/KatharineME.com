@@ -56,6 +56,6 @@ bcftools reheader -s old_bad_name new_good_name
 Now merge the VCF file of the people I want to compare.
 
 ```sh
-bcftools reheader -s old_bad_name new_good_name
+bcftools merge person_1.vcf.gz person_2.vcf.gz
 ```
 
