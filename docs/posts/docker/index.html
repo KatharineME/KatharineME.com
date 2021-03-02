@@ -203,7 +203,7 @@ docker pull ubuntu/ubuntu:latest
 </code></pre></div><h3 id="volume">Volume</h3>
 <p>Map host data to container to create a <strong>bind-mount</strong>. When the container is running, the data will be accessible by the container at the mapped location. The container will listen to changes made the data and changes made to the data in the container will be saved on the host.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -v &lt;/host/data/dir&gt;:&lt;/container/dir&gt; &lt;image_name&gt;
-</code></pre></div><p>To move a file or directory on the host into a running container, in a more one-off fashion, you can use the <code>cp</code> command.</p>
+</code></pre></div><p>To move a file or directory on the host into a running container (in a more one-off fashion) you can use the <code>cp</code> command.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker cp /Downloads/file.txt &lt;container_name&gt;:&lt;container_directory&gt;
 
 docker cp /Downloads/file.txt sad_burnell:/home/
