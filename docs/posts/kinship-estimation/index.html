@@ -166,11 +166,15 @@ chr1	10120	.	T	C	1	LowGQX<span class="p">;</span>LowDepth<span class="p">;</span
 chr1	10250	.	A	C	1	LowGQX<span class="p">;</span>NoPassedVariantGTs	<span class="nv">SNVHPOL</span><span class="o">=</span>4<span class="p">;</span><span class="nv">MQ</span><span class="o">=</span>11	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	./.:.:.:.:.:.:.:.:.:.:.	0/1:23:0:4:0:3,1:1,0:2,1:0:LowGQX:26,0,80
 chr1	51898	.	C	A	6	LowGQX<span class="p">;</span>NoPassedVariantGTs	<span class="nv">SNVHPOL</span><span class="o">=</span>2<span class="p">;</span><span class="nv">MQ</span><span class="o">=</span>35	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:38:5:6:0:4,2:1,2:3,0:2.1:PASS:40,0,101	0/1:17:0:7:0:6,1:3,1:3,0:0:LowGQX:19,0,146
 </code></pre></div><p>Take a look at the three rows of the merged VCF. The first row is a variant that only Person1 has, the second row is a variant that only Person2 has, and the third row is a variant that both people have.</p>
-<h4 id="2-plink">2. Plink</h4>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">plink --vcf example.vcf.gz --make-bed --out plink_output
+<h4 id="2-plink-file-preparation">2. Plink File Preparation</h4>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">plink --vcf example.vcf.gz --make-bed --out people_kinship_check
 </code></pre></div><p>This command will create four files.</p>
-<h4 id="3-king-kinship-estimator">3. KING kinship estimator</h4>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">king -b plink_output.bed --kinship
+<h4 id="3-plink-kinship-check">3. Plink Kinship Check</h4>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">plink2 --bfile people_kinship_check --make-king --out people_kinship_check 
+</code></pre></div><p>This command will make three files:</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">people_kinship_check</span><span class="p">.</span><span class="nc">king</span>
+<span class="nt">people_kinship_check</span><span class="p">.</span><span class="nc">king</span><span class="p">.</span><span class="nc">id</span>
+<span class="nt">people_kinship_check</span><span class="p">.</span><span class="nc">log</span>
 </code></pre></div>
   </article>
 

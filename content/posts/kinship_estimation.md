@@ -77,16 +77,27 @@ chr1	51898	.	C	A	6	LowGQX;NoPassedVariantGTs	SNVHPOL=2;MQ=35	GT:GQ:GQX:DP:DPF:AD
 
 Take a look at the three rows of the merged VCF. The first row is a variant that only Person1 has, the second row is a variant that only Person2 has, and the third row is a variant that both people have.
 
-#### 2. Plink
+#### 2. Plink File Preparation
 
 ```sh
-plink --vcf example.vcf.gz --make-bed --out plink_output
+plink --vcf example.vcf.gz --make-bed --out people_kinship_check
 ```
 
 This command will create four files.
 
-#### 3. KING kinship estimator
+
+
+#### 3. Plink Kinship Check
 
 ```sh
-king -b plink_output.bed --kinship
+plink2 --bfile people_kinship_check --make-king --out people_kinship_check 
 ```
+
+This command will make three files:
+
+```css
+people_kinship_check.king
+people_kinship_check.king.id
+people_kinship_check.log
+```
+
