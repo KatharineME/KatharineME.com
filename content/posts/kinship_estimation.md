@@ -80,11 +80,13 @@ Take a look at the three rows of the merged VCF. The first row is a variant that
 #### 2. Plink
 
 ```sh
-plink --vcf example.vcf.gz --make-bed --out ex
+plink --vcf example.vcf.gz --make-bed --out plink_output
 ```
 
 This command will create four files.
 
 #### 3. KING kinship estimator
 
-
+```sh
+king -b plink_output.bed --kinship
+```

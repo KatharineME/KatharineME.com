@@ -221,6 +221,13 @@ Map host data to container to create a __bind-mount__. When the container is run
 docker run -v </host/data/dir>:</container/dir> <image_name>
 ```
 
+To move a file or directory on the host into a running container, in a more one-off fashion, you can use the `cp` command.
+```sh
+docker cp /Downloads/file.txt <container_name>:<container_directory>
+
+docker cp /Downloads/file.txt sad_burnell:/home/
+```
+
 Create a __named volume__. named volumes are stored in a directory in the virtual machine docker is running. So they arent accessible in the host CLI.
 ```sh
 docker volume create <volume_name>
