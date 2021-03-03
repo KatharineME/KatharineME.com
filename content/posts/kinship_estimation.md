@@ -42,12 +42,16 @@ _Side note: Some DNA we can only get from one of our parents. For boys obviously
 
 So how do we check genetic relatedness? Can't we just check the percent of matching DNA? Easy right? Yes and no.
 
-Here we're going to apply the KING kinship estimator. First we use bcftools to merge the VCFs of the people we want to  compare, then use Plink to create the necessary input files: .bed (binary genotype file), .fam (family file), and .bim (map file). Finally we run the KING program to calculate the pair-wise kinship coefficient where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17, 3rd degree relatives are between 0.04 and 0.08, and a negative number indicates an unrelated relationship.
+Here we're going to apply the KING kinship estimator. First we use bcftools to merge the VCFs of all the people we want to  compare. In this example, we'll only compare two people. Then use Plink to create the necessary input files: .bed (binary genotype file), .fam (family file), and .bim (map file). Finally we'll call the KING program via Plink to calculate the pair-wise kinship coefficient where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17, 3rd degree relatives are between 0.04 and 0.08, and a negative number indicates an unrelated relationship.
 
 
 #### 1. bcftools merge
 
-`bcftools merge` by default will merge VCF1 with VCF2 to make the merged VCF in the manner below. Before merging, make sure the sample names in the header of each VCF (column names 10 and beyond) are what you want them to be. If they are not, one option is manually changing them in a text editor.
+First we need to merge all the variants from all the people we want to compare into one VCF file. Here we are going to check the kinship of two people, however this method will work with more than two people as well. To merge the VCF's of the people we want to comapre, we'll use trusty `bcftools`.
+
+If you don't have bcftools and your on a Mac, `brew install bcftools` is a good way to get it. If you like using conda, `conda install -c bioconda bcftools` is another way to get it.
+
+`bcftools merge` by default will merge VCF1 with VCF2 to make a merged VCF in the manner below. Before merging, make sure the sample names in the header of each VCF (column names 10 and beyond) are what you want them to be. If they are not, one option is manually changing them in a text editor. At a minimum, sample names must be unique before merging.
 
 Person1 VCF:
 ```sh
@@ -62,8 +66,12 @@ chr1	10250	.	A	C	1	LowGQX;NoPassedVariantGTs	SNVHPOL=4;MQ=11	GT:GQ:GQX:DP:DPF:AD
 chr1	51898	.	C	A	6	LowGQX;NoPassedVariantGTs	SNVHPOL=2;MQ=35	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:17:0:7:0:6,1:3,1:3,0:0:LowGQX:19,0,146
 ```
 
-Merge command:
+Merge command (must create indices for each VCF first).
 ```sh
+bcftools index person 1.vcf.gz
+
+bcftools index person 2.vcf.gz
+
 bcftools merge person1.vcf.gz person2.vcf.gz > merged.vcf
 ```
 
@@ -75,29 +83,46 @@ chr1	10250	.	A	C	1	LowGQX;NoPassedVariantGTs	SNVHPOL=4;MQ=11	GT:GQ:GQX:DP:DPF:AD
 chr1	51898	.	C	A	6	LowGQX;NoPassedVariantGTs	SNVHPOL=2;MQ=35	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:38:5:6:0:4,2:1,2:3,0:2.1:PASS:40,0,101	0/1:17:0:7:0:6,1:3,1:3,0:0:LowGQX:19,0,146
 ```
 
-Take a look at the three rows of the merged VCF. The first row is a variant that only Person1 has, the second row is a variant that only Person2 has, and the third row is a variant that both people have.
+Take a look at the three rows of the merged VCF. The first row is a variant that only Person1 has, the second row is a variant that only Person2 has, and the third row is a variant that both people have. This is great, because variant information for either person wasn't lost in the merge.
 
 #### 2. Plink File Preparation
 
+We are going to now use Plink for file preparation and to call the KING kinship estimator. We use Plink1.9 to prep the files. Then Plink2.0 to call the kinship estimator.
+
+_Side note: As of February 2021, Plink1.9 and Plink2.0 are not completely independent. Some Plink2.0 commands require input made by Plink1.9. And that is the case for the command we'll run, so you need both._
+
+[Get Plink1.9 here](https://www.cog-genomics.org/plink/1.9/)
+
+[Get Plink2.0 here](https://www.cog-genomics.org/plink/2.0/)
+
+Now, we feed Plink1.9 our merged VCF and ask it to make us a .bed and other accompanying files with the file prefix "people_kinship_check".
+
 ```sh
-plink --vcf example.vcf.gz --make-bed --out people_kinship_check
+plink --vcf merged.vcf.gz --make-bed --out people_kinship_check
 ```
 
-This command will create four files.
+This command will create four files:
 
+```css
+people_kinship_check.bed
+people_kinship_check.bim
+people_kinship_check.fam
+people_kinship_check.log
+```
 
+[Read more about these file formats here](https://www.cog-genomics.org/plink/1.9/formats)
 
 #### 3. Plink Kinship Check
 
 ```sh
-plink2 --bfile people_kinship_check --make-king --out people_kinship_check 
+plink2 --bfile people_kinship_check --make-king --out people_kinship_check_result
 ```
 
 This command will make three files:
 
 ```css
-people_kinship_check.king
-people_kinship_check.king.id
-people_kinship_check.log
+people_kinship_check_result.king
+people_kinship_check_result.king.id
+people_kinship_check_result.log
 ```
 
