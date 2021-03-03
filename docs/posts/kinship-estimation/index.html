@@ -146,8 +146,7 @@
 <p><em>Side note: Sons and mothers share more DNA simply because the X chromosome is much larger than the Y chromosome.</em></p>
 <p><em>Side note: Some DNA we can only get from one of our parents. For boys obviously, the Y chromosome comes from their father. And for everyone, mitochondrial DNA comes from the mother. Whatever mitochondrial DNA the fertilized egg held, is the mitochondrial DNA the child will have.</em></p>
 <h2 id="method">Method</h2>
-<p>So how do we check genetic relatedness? Can&rsquo;t we just check the percent of matching DNA? Easy right? Yes and no.</p>
-<p>Here we&rsquo;re going to apply the KING kinship estimator. First we use bcftools to merge the VCFs of all the people we want to  compare. In this example, we&rsquo;ll only compare two people. Then use Plink to create the necessary input files: .bed (binary genotype file), .fam (family file), and .bim (map file). Finally we&rsquo;ll call the KING program via Plink to calculate the pair-wise kinship coefficient where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17, 3rd degree relatives are between 0.04 and 0.08, and a negative number indicates an unrelated relationship.</p>
+<p>Here we&rsquo;re going to apply the KING kinship estimator. First we use bcftools to merge the VCFs of all the people we want to compare. In this example, we&rsquo;ll only compare two people. Then use Plink to create the necessary input files. Finally we&rsquo;ll call the KING program via Plink to calculate the pair-wise kinship coefficient where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17, 3rd degree relatives are between 0.04 and 0.08, and a negative number indicates an unrelated relationship.</p>
 <h4 id="1-bcftools-merge">1. bcftools merge</h4>
 <p>First we need to merge all the variants from all the people we want to compare into one VCF file. Here we are going to check the kinship of two people, however this method will work with more than two people as well. To merge the VCF&rsquo;s of the people we want to comapre, we&rsquo;ll use trusty <code>bcftools</code>.</p>
 <p>If you don&rsquo;t have bcftools and your on a Mac, <code>brew install bcftools</code> is a good way to get it. If you like using conda, <code>conda install -c bioconda bcftools</code> is another way to get it.</p>
@@ -184,14 +183,18 @@ chr1	51898	.	C	A	6	LowGQX<span class="p">;</span>NoPassedVariantGTs	<span class=
 <span class="nt">people_kinship_check</span><span class="p">.</span><span class="nc">bim</span>
 <span class="nt">people_kinship_check</span><span class="p">.</span><span class="nc">fam</span>
 <span class="nt">people_kinship_check</span><span class="p">.</span><span class="nc">log</span>
-</code></pre></div><p><a href="https://www.cog-genomics.org/plink/1.9/formats">Read more about these file formats here</a></p>
+</code></pre></div><p>In short, .log is just the plink STDOUT saved to a file, .bed is a binary genotype file, .fam is a family file, and .bim is a map file. Its worth checking the .bim file and comparing it to the merged VCF to make sure they agree. You should also look at and edit the .fam file as needed. You may need to adjsut the sex code or other family IDs. <a href="https://www.cog-genomics.org/plink/1.9/formats#fam">Here is the .fam format explained</a>.</p>
+<p><a href="https://www.cog-genomics.org/plink/1.9/formats">Read more about these file formats here</a></p>
 <h4 id="3-plink-kinship-check">3. Plink Kinship Check</h4>
+<p>We have the input files we need. Now we call the KING kinship estimator via Plink with the <code>make-king</code> command:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">plink2 --bfile people_kinship_check --make-king --out people_kinship_check_result
-</code></pre></div><p>This command will make three files:</p>
+</code></pre></div><p><em>Note: the <code>bfile</code> flag tells plink2 what type of input data we are passing (.bed, .bim, .fam). Then we only need to give the prefix for these files (&ldquo;people_kinship_check&rdquo;).</em></p>
+<p>This command will make three files:</p>
 <div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">people_kinship_check_result</span><span class="p">.</span><span class="nc">king</span>
 <span class="nt">people_kinship_check_result</span><span class="p">.</span><span class="nc">king</span><span class="p">.</span><span class="nc">id</span>
 <span class="nt">people_kinship_check_result</span><span class="p">.</span><span class="nc">log</span>
-</code></pre></div>
+</code></pre></div><p>The .king file holds the kinship estimation coefficient for the two people we are comparing: what we have been striving for. In my case, the kinship coefficeint was higher than 2.0, indicating a first degree relationship. It is amazing to see the answer as a single number. I hope if you&rsquo;re reading this and you followed the steps here, you get a result just as satisfying.</p>
+
   </article>
 
   <br/>

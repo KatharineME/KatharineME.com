@@ -40,9 +40,7 @@ _Side note: Some DNA we can only get from one of our parents. For boys obviously
 
 ## Method
 
-So how do we check genetic relatedness? Can't we just check the percent of matching DNA? Easy right? Yes and no.
-
-Here we're going to apply the KING kinship estimator. First we use bcftools to merge the VCFs of all the people we want to  compare. In this example, we'll only compare two people. Then use Plink to create the necessary input files: .bed (binary genotype file), .fam (family file), and .bim (map file). Finally we'll call the KING program via Plink to calculate the pair-wise kinship coefficient where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17, 3rd degree relatives are between 0.04 and 0.08, and a negative number indicates an unrelated relationship.
+Here we're going to apply the KING kinship estimator. First we use bcftools to merge the VCFs of all the people we want to compare. In this example, we'll only compare two people. Then use Plink to create the necessary input files. Finally we'll call the KING program via Plink to calculate the pair-wise kinship coefficient where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17, 3rd degree relatives are between 0.04 and 0.08, and a negative number indicates an unrelated relationship.
 
 
 #### 1. bcftools merge
@@ -110,13 +108,18 @@ people_kinship_check.fam
 people_kinship_check.log
 ```
 
+In short, .log is just the plink STDOUT saved to a file, .bed is a binary genotype file, .fam is a family file, and .bim is a map file. Its worth checking the .bim file and comparing it to the merged VCF to make sure they agree. You should also look at and edit the .fam file as needed. You may need to adjsut the sex code or other family IDs. [Here is the .fam format explained](https://www.cog-genomics.org/plink/1.9/formats#fam).
+
 [Read more about these file formats here](https://www.cog-genomics.org/plink/1.9/formats)
 
 #### 3. Plink Kinship Check
 
+We have the input files we need. Now we call the KING kinship estimator via Plink with the `make-king` command:
+
 ```sh
 plink2 --bfile people_kinship_check --make-king --out people_kinship_check_result
 ```
+_Note: the `bfile` flag tells plink2 what type of input data we are passing (.bed, .bim, .fam). Then we only need to give the prefix for these files ("people_kinship_check")._ 
 
 This command will make three files:
 
@@ -126,3 +129,4 @@ people_kinship_check_result.king.id
 people_kinship_check_result.log
 ```
 
+The .king file holds the kinship estimation coefficient for the two people we are comparing: what we have been striving for. In my case, the kinship coefficeint was higher than 2.0, indicating a first degree relationship. It is amazing to see the answer as a single number. I hope if you're reading this and you followed the steps here, you get a result just as satisfying.
