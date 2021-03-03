@@ -40,8 +40,11 @@ _Side note: Some DNA we can only get from one of our parents. For boys obviously
 
 ## Method
 
-Here we're going to apply the KING kinship estimator. First we use bcftools to merge the VCFs of all the people we want to compare. In this example, we'll only compare two people. Then use Plink to create the necessary input files. Finally we'll call the KING program via Plink to calculate the pair-wise kinship coefficient where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17, 3rd degree relatives are between 0.04 and 0.08, and a negative number indicates an unrelated relationship.
+Here we're going to apply the KING kinship estimator. KING stands for Kinship based INference for Genome-wide association studies. [This is the paper that descsribes KING's algorithm](https://academic.oup.com/bioinformatics/article/26/22/2867/228512?login=true).
 
+The KING method calculates a "kinship coefficient" which they define as "the probability that two alleles sampled at random from two individuals are identical by descent," where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17, 3rd degree relatives are between 0.04 and 0.08, and a negative number indicates an unrelated relationship.
+
+First we use bcftools to merge the VCFs of all the people we want to compare. In this example, we'll only compare two people. Then use Plink to create the necessary input files. Finally we'll call the KING program via Plink to calculate the pair-wise kinship coefficient.
 
 #### 1. bcftools merge
 
