@@ -133,3 +133,5 @@ people_kinship_check_result.log
 ```
 
 The .king file holds the kinship estimation coefficient for the two people we are comparing: what we have been striving for. In my case, the kinship coefficeint was higher than 2.0, indicating a first degree relationship. It is amazing to see the answer as a single number. I hope if you're reading this and you followed the steps here, you get a result just as satisfying.
+
+

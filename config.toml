@@ -17,7 +17,7 @@ disqusShortname = "yourdiscussshortname"
 
 [params]
     author = "Katharine Medetgul-Ernar"
-    description = "Genomics and Computer Science Blog"
+    description = "Genomics and Computer Science"
     keywords = "blog,developer,personal"
     info = "Genomics and Computer Science Blog"
     avatarurl = "images/profile.jpg"
@@ -50,7 +50,7 @@ disqusShortname = "yourdiscussshortname"
     [languages.en]
         languagecode = "en"
         languagename = "English" # The language name to be displayed in the selector.
-        title = "Genome Analysis Blog"
+        title = "The Art of Genome Analysis"
 
         # You can configure the theme parameter for each language.
         [languages.en.params]
