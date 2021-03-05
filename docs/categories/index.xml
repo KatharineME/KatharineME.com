@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Genome Analysis Blog</title>
+    <title>Categories on The Art of Genome Analysis</title>
     <link>https://katharineme.com/categories/</link>
-    <description>Recent content in Categories on Genome Analysis Blog</description>
+    <description>Recent content in Categories on The Art of Genome Analysis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://katharineme.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
