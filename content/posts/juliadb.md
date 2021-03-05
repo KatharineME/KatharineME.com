@@ -27,13 +27,12 @@ JuliaDB has two main data structures: Table and NDSparse.
 - Use `IndexedTabled.set_show_compact!(false)` to overide Julia hiding big tables
 -
 
-
 ```julia
 x = 1:6
 y = vcat(fill('a', 3), fill('b', 3))
 z = randn(6);
 
-t = table((x=x, y=y, z=z); pkey = [:x, :y])
+t = table(x=x, y=y, z=z); pkey = [:x, :y])
 
 Table with 6 rows, 3 columns:
 x  y    z
