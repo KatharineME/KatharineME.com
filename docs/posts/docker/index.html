@@ -81,8 +81,12 @@
       
     </header>
 
-    <p><a href="https://www.youtube.com/watch?v=zJ6WbK9zFpI&amp;t=1s">Best Docker tutorial</a></p>
-<p>Docker&rsquo;s makes a process with unique environment requirments run anywhere.</p>
+    <p><img src="/images/docker_art.png" alt="docker art"></p>
+
+
+<p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Medium.com</p>
+
+<p>Docker makes a process with unique environment requirments run anywhere.</p>
 <p>It&rsquo;s built on the Linux kernal. When the host kernal is Windows or Unix, Docker can&rsquo;t interact with it directly. To run on Windows or Mac (Unix kernal), Docker creates a Linux VM and runs containers in that VM.</p>
 <p>To run Docker on Mac specifically, the newest and best option is to get Docker Desktop for Mac. Docker Desktop for Mac uses HyperKit (virtualization software) to create a Linux OS. Then Docker runs inside of that Linux OS.</p>
 <p>Docker acheives its sandbox effect using namespaces. Operating systems have process numbers starting with 1. Each process that opens gets a subsequent number. No two processes can have the same number (hence namespace). So the Docker process actually has a process number of say 6 on the host OS. But Docker creates a new namespace for itself and assigns its own process number 1. Therefore achieving a kind of sandbox. Everything that dockers needs to do, like create containers, networks, mounts, and etc, use separate namespaces to isolate themselves from the host OS.</p>
@@ -224,7 +228,9 @@ docker cp /Downloads/file.txt sad_burnell:/home/
 </code></pre></div><h3 id="environment-variables">Environment Variables</h3>
 <p>Run container with environment variable. See a containers current environment variables by running <code>docker inspect</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -e <span class="nv">APP_COLOR</span><span class="o">=</span>blue &lt;image_name&gt;
-</code></pre></div>
+</code></pre></div><h2 id="more">More</h2>
+<p><a href="https://www.youtube.com/watch?v=zJ6WbK9zFpI&amp;t=1s">Best Docker tutorial</a></p>
+
   </article>
 
   <br/>

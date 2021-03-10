@@ -74,10 +74,10 @@ Manta A structural variant and indel caller.</description>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/docker/</guid>
-      <description>Best Docker tutorial
-Docker&amp;rsquo;s makes a process with unique environment requirments run anywhere.
+      <description>Photo credit to Medium.com
+Docker makes a process with unique environment requirments run anywhere.
 It&amp;rsquo;s built on the Linux kernal. When the host kernal is Windows or Unix, Docker can&amp;rsquo;t interact with it directly. To run on Windows or Mac (Unix kernal), Docker creates a Linux VM and runs containers in that VM.
-To run Docker on Mac specifically, the newest and best option is to get Docker Desktop for Mac. Docker Desktop for Mac uses HyperKit (virtualization software) to create a Linux OS.</description>
+To run Docker on Mac specifically, the newest and best option is to get Docker Desktop for Mac.</description>
     </item>
     
     <item>

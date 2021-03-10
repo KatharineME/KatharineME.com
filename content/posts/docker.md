@@ -6,9 +6,14 @@ tags = []
 categories = []
 +++
 
-[Best Docker tutorial](https://www.youtube.com/watch?v=zJ6WbK9zFpI&t=1s)
+![docker art](/images/docker_art.png)
 
-Docker's makes a process with unique environment requirments run anywhere.
+{{< rawhtml >}}
+<p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Medium.com</p>
+{{< /rawhtml >}}
+
+
+Docker makes a process with unique environment requirments run anywhere.
 
 It's built on the Linux kernal. When the host kernal is Windows or Unix, Docker can't interact with it directly. To run on Windows or Mac (Unix kernal), Docker creates a Linux VM and runs containers in that VM. 
 
@@ -268,3 +273,9 @@ Run container with environment variable. See a containers current environment va
 ```sh
 docker run -e APP_COLOR=blue <image_name>
 ```
+
+
+## More
+
+[Best Docker tutorial](https://www.youtube.com/watch?v=zJ6WbK9zFpI&t=1s)
+
