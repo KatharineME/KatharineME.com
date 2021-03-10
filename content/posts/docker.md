@@ -23,21 +23,30 @@ Docker acheives its sandbox effect using namespaces. Operating systems have proc
 
 ## Container
 
+![docker container](/images/docker_container.jpeg)
+
 A process on your machine that is isolated from all other processes.
+
+Containers are not like VMs in that they don't just run on standby, they are not meant to run full operating systems. Containers are environments for running processes. Therefore a container only lives as long as the process inside it is alive. When the process finishes, the container exits.
+
+## Container Filesystem
 
 It uses various layers from its image for its filesystem. However, each container gets a scratch space to add/update/remove files. This scratch space is isolated in each container, even containers built from the same image. When the container exits, all files and changes made in the scratch space are gone.
 
 Docker Volumes allow you to connect the filesystem of the host OS filesystem with the filesystem of a container. __named volumes__ are like buckets of data that are saved in a docker controlled directory close to root of the Linux OS that Docker is running on. If the host OS is Linux, __named volumes__ can be accessed by the host OS CLI. But if the host OS is Windows or Mac, __named volumes__ cannot be accessed by the host OS CLI, instead you would need to enter the Linux virtual machine to access them outside a container. __bind mounts__ are another type of volume and way to persist data in docker, and are preferable to __named volumes__ in most cases. With __bind mounts__ you can control where the data sits on the host. For example, if your project is in `/home/github/my_project`, you can simply mount that directory into a container using the `-v` flag to be able to access and edit `my_project` code in a container.
 
-Containers are not like VMs in that they don't just run on standby, they are not meant to run full operating systems. Containers are environments for running processes. Therefore a contianer only lives as long as the process inside it is alive. When the process finishes, the container exits.
 
 ## Dockerfile and Image
 
-A Dockerfile is a set of isntructions for building an image. When an image is built it can then be run. Running an image creates a container. The Dockerfile is composed of commands that create image layers like this:
+{{< rawhtml >}}
+<p style="font-size: 130%; font-weight:600; color: #3489eb; line-height: 1.2em; padding-bottom:1.5%;">
+A Dockerfile is a set of instructions for building an image. When an image is built it can then be run. Running an image creates a container. The Dockerfile is composed of commands that create image layers like this:
+</p>
+{{< /rawhtml >}}
 
 - OS
 - source repos
-- depedencies with apt
+- depedencies
 - python dependencies
 - copy source to /opt
 - run web server command
@@ -195,7 +204,16 @@ See image layer information.
 docker history <image_name>
 ```
 
+
 ### Registry
+
+The predominant registry for docker images is [Docker Hub](https://hub.docker.com).
+
+![docker registry](/images/docker_registry.png)
+
+{{< rawhtml >}}
+<p style="font-size:18%; color: #8f8f8f; margin: 0;"> Image credit to IT'zGeek</p>
+{{< /rawhtml >}}
 
 Login to Docker Hub. 
 ```sh
@@ -277,5 +295,5 @@ docker run -e APP_COLOR=blue <image_name>
 
 ## More
 
-[Best Docker tutorial](https://www.youtube.com/watch?v=zJ6WbK9zFpI&t=1s)
+[Best Video Docker tutorial](https://www.youtube.com/watch?v=zJ6WbK9zFpI&t=1s)
 

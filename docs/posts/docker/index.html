@@ -91,16 +91,23 @@
 <p>To run Docker on Mac specifically, the newest and best option is to get Docker Desktop for Mac. Docker Desktop for Mac uses HyperKit (virtualization software) to create a Linux OS. Then Docker runs inside of that Linux OS.</p>
 <p>Docker acheives its sandbox effect using namespaces. Operating systems have process numbers starting with 1. Each process that opens gets a subsequent number. No two processes can have the same number (hence namespace). So the Docker process actually has a process number of say 6 on the host OS. But Docker creates a new namespace for itself and assigns its own process number 1. Therefore achieving a kind of sandbox. Everything that dockers needs to do, like create containers, networks, mounts, and etc, use separate namespaces to isolate themselves from the host OS.</p>
 <h2 id="container">Container</h2>
+<p><img src="/images/docker_container.jpeg" alt="docker container"></p>
 <p>A process on your machine that is isolated from all other processes.</p>
+<p>Containers are not like VMs in that they don&rsquo;t just run on standby, they are not meant to run full operating systems. Containers are environments for running processes. Therefore a container only lives as long as the process inside it is alive. When the process finishes, the container exits.</p>
+<h2 id="container-filesystem">Container Filesystem</h2>
 <p>It uses various layers from its image for its filesystem. However, each container gets a scratch space to add/update/remove files. This scratch space is isolated in each container, even containers built from the same image. When the container exits, all files and changes made in the scratch space are gone.</p>
 <p>Docker Volumes allow you to connect the filesystem of the host OS filesystem with the filesystem of a container. <strong>named volumes</strong> are like buckets of data that are saved in a docker controlled directory close to root of the Linux OS that Docker is running on. If the host OS is Linux, <strong>named volumes</strong> can be accessed by the host OS CLI. But if the host OS is Windows or Mac, <strong>named volumes</strong> cannot be accessed by the host OS CLI, instead you would need to enter the Linux virtual machine to access them outside a container. <strong>bind mounts</strong> are another type of volume and way to persist data in docker, and are preferable to <strong>named volumes</strong> in most cases. With <strong>bind mounts</strong> you can control where the data sits on the host. For example, if your project is in <code>/home/github/my_project</code>, you can simply mount that directory into a container using the <code>-v</code> flag to be able to access and edit <code>my_project</code> code in a container.</p>
-<p>Containers are not like VMs in that they don&rsquo;t just run on standby, they are not meant to run full operating systems. Containers are environments for running processes. Therefore a contianer only lives as long as the process inside it is alive. When the process finishes, the container exits.</p>
 <h2 id="dockerfile-and-image">Dockerfile and Image</h2>
-<p>A Dockerfile is a set of isntructions for building an image. When an image is built it can then be run. Running an image creates a container. The Dockerfile is composed of commands that create image layers like this:</p>
+
+
+<p style="font-size: 130%; font-weight:600; color: #3489eb; line-height: 1.2em; padding-bottom:1.5%;">
+A Dockerfile is a set of instructions for building an image. When an image is built it can then be run. Running an image creates a container. The Dockerfile is composed of commands that create image layers like this:
+</p>
+
 <ul>
 <li>OS</li>
 <li>source repos</li>
-<li>depedencies with apt</li>
+<li>depedencies</li>
 <li>python dependencies</li>
 <li>copy source to /opt</li>
 <li>run web server command</li>
@@ -194,6 +201,12 @@ services:
 </code></pre></div><p>See image layer information.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker <span class="nb">history</span> &lt;image_name&gt;
 </code></pre></div><h3 id="registry">Registry</h3>
+<p>The predominant registry for docker images is <a href="https://hub.docker.com">Docker Hub</a>.</p>
+<p><img src="/images/docker_registry.png" alt="docker registry"></p>
+
+
+<p style="font-size:18%; color: #8f8f8f; margin: 0;"> Image credit to IT'zGeek</p>
+
 <p>Login to Docker Hub.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker login -u &lt;user_name&gt;
 </code></pre></div><p>Pull image. It will pull from Docker Hub unless a different registry is specified. If you dont specifiy a username, docker will assume the username is the same as the image name. So these two commands will do the same thing:</p>
@@ -229,7 +242,7 @@ docker cp /Downloads/file.txt sad_burnell:/home/
 <p>Run container with environment variable. See a containers current environment variables by running <code>docker inspect</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker run -e <span class="nv">APP_COLOR</span><span class="o">=</span>blue &lt;image_name&gt;
 </code></pre></div><h2 id="more">More</h2>
-<p><a href="https://www.youtube.com/watch?v=zJ6WbK9zFpI&amp;t=1s">Best Docker tutorial</a></p>
+<p><a href="https://www.youtube.com/watch?v=zJ6WbK9zFpI&amp;t=1s">Best Video Docker tutorial</a></p>
 
   </article>
 
