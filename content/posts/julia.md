@@ -8,12 +8,18 @@ categories = []
 
 ![julia](/images/julia_banner.png)
 
+{{< rawhtml >}}
+<p style="font-size:110%; color: #6f439c; margin: 0; font-style: italic; padding-top:2%;">
+The words that we have available change what we will do.
+</p>
+{{< /rawhtml >}}
+
 ## Why Learn Julia? What are the Value Propositions?
 
 - A combination of Python's usability and C++ speed.
     - Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste.
     - Now these strengths are in one language.
-- Focus is on scientific computing
+- Focuses on scientific computing.
 - Readable
     - Designed to be easy to understand. 
 - Multiple Dispatch
@@ -30,27 +36,29 @@ categories = []
 - Optional arguments in functions.
 - Functions can be combined.
 
-_The words that we have available change what we will do._
 
 ## Weaknesses
+
 - Just in time compilation
-    - Although its also a strength.
+    - Its also a strength.
     - When you run something for the first time it will take surprisingly long to run.
-    - This is because all the julia code you're calling (including julia that you called / included) get compiled into a static julia (like C++ which is static from the start). 
+    - This is because all the julia code you're calling (including julia packages that you called / included) get compiled into a static julia (like C++ which is static from the start). 
     - However, after the compilation is done, it is super fast.
-    - The work-around for this is to keep your Julia session running.
+    - The work-around for this is to keep your Julia session running for as long as possible.
+- Community and packages are still maturing
+    - Being a young language, we expect this.
 
+## Key Features
 
-## History
-
-- Launched in 2012
-
-
-## Key Packages
-
+Packages
 - DataFrames.jl
 - Plots.jl
-- 
+- Gadfly.jl
+- Vegalite.jl
+
+IDE
+- Juno
+- IJulia for Jupyter
 
 ## Concepts
 
@@ -59,6 +67,7 @@ Macro
 
 
 #### Tuple
+
 Built in data structure with __fixed-length__ that can hold __any values__ but cannot be changed (__immutable__)
 
 ```julia
@@ -74,6 +83,7 @@ julia > x[2]
 ```
 
 #### Named Tuple
+
 Elements in tuple can be given names. If so, then its a named tuple. Allowd you to access via names.
 
 ```julia
