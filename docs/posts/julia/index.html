@@ -84,17 +84,21 @@
     <p><img src="/images/julia_banner.png" alt="julia"></p>
 <h2 id="why-learn-julia-what-are-the-value-propositions">Why Learn Julia? What are the Value Propositions?</h2>
 <ul>
-<li>A combination of Python&rsquo;s usability and C++ speed .
+<li>A combination of Python&rsquo;s usability and C++ speed.
 <ul>
 <li>Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste.</li>
 <li>Now these strengths are in one language.</li>
 </ul>
 </li>
+<li>Focus is on scientific computing</li>
 <li>Readable
 <ul>
 <li>Designed to be easy to understand.</li>
 </ul>
 </li>
+<li>Multiple Dispatch</li>
+<li>Asynchronous I/O</li>
+<li>Compiled</li>
 <li>Dynamic
 <ul>
 <li>Meaning you don&rsquo;t have to define data types, Julia will do that for you.</li>
@@ -116,9 +120,27 @@
 <li>Functions can be combined.</li>
 </ul>
 <p><em>The words that we have available change what we will do.</em></p>
-<h2 id="how-does-julia-work">How Does Julia work?</h2>
+<h2 id="weaknesses">Weaknesses</h2>
 <ul>
-<li>When Julia starts it will look through all your code and define data types, converting the dynamic language to a static one. This takes some time. After this, Julia is super fast.</li>
+<li>Just in time compilation
+<ul>
+<li>Although its also a strength.</li>
+<li>When you run something for the first time it will take surprisingly long to run.</li>
+<li>This is because all the julia code you&rsquo;re calling (including julia that you called / included) get compiled into a static julia (like C++ which is static from the start).</li>
+<li>However, after the compilation is done, it is super fast.</li>
+<li>The work-around for this is to keep your Julia session running.</li>
+</ul>
+</li>
+</ul>
+<h2 id="history">History</h2>
+<ul>
+<li>Launched in 2012</li>
+</ul>
+<h2 id="key-packages">Key Packages</h2>
+<ul>
+<li>DataFrames.jl</li>
+<li>Plots.jl</li>
+<li></li>
 </ul>
 <h2 id="concepts">Concepts</h2>
 <p>Macro</p>

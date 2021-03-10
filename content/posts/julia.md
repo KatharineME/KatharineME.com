@@ -10,11 +10,15 @@ categories = []
 
 ## Why Learn Julia? What are the Value Propositions?
 
-- A combination of Python's usability and C++ speed .
+- A combination of Python's usability and C++ speed.
     - Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste.
     - Now these strengths are in one language.
+- Focus is on scientific computing
 - Readable
     - Designed to be easy to understand. 
+- Multiple Dispatch
+- Asynchronous I/O
+- Compiled
 - Dynamic
     - Meaning you don't have to define data types, Julia will do that for you.
     - However you have the option of defining them if you want.
@@ -28,12 +32,25 @@ categories = []
 
 _The words that we have available change what we will do._
 
+## Weaknesses
+- Just in time compilation
+    - Although its also a strength.
+    - When you run something for the first time it will take surprisingly long to run.
+    - This is because all the julia code you're calling (including julia that you called / included) get compiled into a static julia (like C++ which is static from the start). 
+    - However, after the compilation is done, it is super fast.
+    - The work-around for this is to keep your Julia session running.
 
-## How Does Julia work?
 
-- When Julia starts it will look through all your code and define data types, converting the dynamic language to a static one. This takes some time. After this, Julia is super fast.
+## History
+
+- Launched in 2012
 
 
+## Key Packages
+
+- DataFrames.jl
+- Plots.jl
+- 
 
 ## Concepts
 
