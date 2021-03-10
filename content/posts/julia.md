@@ -10,17 +10,21 @@ categories = []
 
 ## Why Learn Julia? What are the Value Propositions?
 
-- Usability pf python combined with speed of C++.
+- A combination of Python's usability and C++ speed .
     - Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste.
-- Its a dynamic language. Meaning you don't have to define data types, Julia will do that for you. However you have the option of defining them if you want.
-- Supports and was developed for parallel processing.
-- Julia doesnt have dependencies in other languages. However Julia can call other languages easily. 
-- Julia uses math and data science symbols. So an equation can become a line of code instantly.
-- Optional arguments in functions are supported.
+    - Now these strengths are in one language.
+- Readable
+    - Designed to be easy to understand. 
+- Dynamic
+    - Meaning you don't have to define data types, Julia will do that for you.
+    - However you have the option of defining them if you want.
+- Developed for parallel processing.
+- No dependencies on other languages.
+    - However, Julia can call other languages easily. 
+- Includes math and data science symbols.
+    - So an equation can become a line of code.
+- Optional arguments in functions.
 - Functions can be combined.
-- Designed to be easy for other people to understand your code and pickup where you left off.
-
-
 
 _The words that we have available change what we will do._
 

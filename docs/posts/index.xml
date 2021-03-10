@@ -24,9 +24,7 @@ JuliaDB has two main data structures: Table and NDSparse.</description>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/julia/</guid>
-      <description>Concepts Macro
- A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.  Tuple Built in data structure with fixed-length that can hold any values but cannot be changed (immutable)
-julia &amp;gt; x = (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) (2, &amp;#34;soy sauce&amp;#34;, &amp;#34;mirin&amp;#34;) julia &amp;gt; x[2] &amp;#34;soy sauce&amp;#34; Named Tuple Elements in tuple can be given names.</description>
+      <description>Why Learn Julia? What are the Value Propositions?  A combination of Python&amp;rsquo;s usability and C++ speed .  Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste. Now these strengths are in one language.   Readable  Designed to be easy to understand.   Dynamic  Meaning you don&amp;rsquo;t have to define data types, Julia will do that for you.</description>
     </item>
     
     <item>
