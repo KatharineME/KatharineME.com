@@ -6,6 +6,10 @@ tags = []
 categories = []
 +++
 
+{{< rawhtml >}}
+<img src="/images/julia_db_gorilla.png" style="max-height: 400px;">
+{{< /rawhtml >}}
+
 
 JuliaDB can work with data that is larger than the machine RAM.
 
