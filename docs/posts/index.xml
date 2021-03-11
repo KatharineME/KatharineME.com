@@ -24,7 +24,7 @@ JuliaDB has two main data structures: Table and NDSparse.</description>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/julia/</guid>
-      <description>The words that we have available change what we will do. Why Learn Julia? What are the Value Propositions?  A combination of Python&amp;rsquo;s usability and C++ speed  Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste. Now these strengths are in one language. This is accomplished using just in time compilation. The way this works is: you write dynamic Julia code, then Julia compiles it into static Julia, then everything runs super fast.</description>
+      <description>The words that we have available change what we will do. Why Learn Julia? What Are the Value Propositions?  A combination of Python&amp;rsquo;s usability and C++ speed  Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste. Now these strengths are in one language. This is accomplished using just in time compilation. The way this works is: you write dynamic Julia code, then Julia compiles it into static Julia, then everything runs super fast.</description>
     </item>
     
     <item>
