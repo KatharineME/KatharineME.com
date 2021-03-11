@@ -90,53 +90,66 @@ The words that we have available change what we will do.
 
 <h2 id="why-learn-julia-what-are-the-value-propositions">Why Learn Julia? What are the Value Propositions?</h2>
 <ul>
-<li>A combination of Python&rsquo;s usability and C++ speed.
+<li><strong>A combination of Python&rsquo;s usability and C++ speed</strong>
 <ul>
 <li>Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste.</li>
 <li>Now these strengths are in one language.</li>
+<li>This is accomplished using just in time compilation. The way this works is: you write dynamic Julia code, then Julia compiles it into static Julia, then everything runs super fast.</li>
 </ul>
 </li>
-<li>Focuses on scientific computing.</li>
-<li>Readable
-<ul>
-<li>Designed to be easy to understand.</li>
-</ul>
-</li>
-<li>Multiple Dispatch</li>
-<li>Asynchronous I/O</li>
-<li>Compiled</li>
-<li>Dynamic
+<li><strong>Dynamic</strong>
 <ul>
 <li>Meaning you don&rsquo;t have to define data types, Julia will do that for you.</li>
 <li>However you have the option of defining them if you want.</li>
 </ul>
 </li>
-<li>Developed for parallel processing.</li>
-<li>No dependencies on other languages.
+<li><strong>Readable</strong>
+<ul>
+<li>Designed to be easy to understand.</li>
+</ul>
+</li>
+<li><strong>Flexible</strong>
+<ul>
+<li>There are optional arugments in functions.</li>
+<li>Functions can be combined.</li>
+</ul>
+</li>
+<li><strong>Multiple Dispatch</strong>
+<ul>
+<li>Where a function or method can be dynamically dispatched at runtime based on the type of the object the function is being called on, or attributes of one or more of its arguments. An example would be a function whose arguments can be a either integers or strings, and where multiple arguments are string values, the function is dispatched in a certain way.</li>
+<li>Single dispatch, on the other hand, is when the way that a function is dispatched at runtime is determined by a single data type, or a single function argument. This <em>special</em> argument is highlighted syntactically in some languages.</li>
+</ul>
+</li>
+<li><strong>Asynchronous I/O</strong>
+<ul>
+<li>This simply means processes are allowed to continue running before data transmission is finished.</li>
+<li>This is contrasted with Synchronous I/O or Blocking I/O where processes need to wait for data transfers to finish before they can continue.</li>
+</ul>
+</li>
+<li><strong>Developed for parallel processing</strong></li>
+<li><strong>No dependencies on other languages</strong>
 <ul>
 <li>However, Julia can call other languages easily.</li>
 </ul>
 </li>
-<li>Includes math and data science symbols.
+<li><strong>Includes math and data science symbols</strong>
 <ul>
 <li>So an equation can become a line of code.</li>
 </ul>
 </li>
-<li>Optional arguments in functions.</li>
-<li>Functions can be combined.</li>
+<li><strong>Focus on scientific computing</strong></li>
 </ul>
 <h2 id="weaknesses">Weaknesses</h2>
 <ul>
-<li>Just in time compilation
+<li><strong>Just in time compilation</strong>
 <ul>
-<li>Its also a strength.</li>
-<li>When you run something for the first time it will take surprisingly long to run.</li>
-<li>This is because all the julia code you&rsquo;re calling (including julia packages that you called / included) get compiled into a static julia (like C++ which is static from the start).</li>
+<li>It is the reason Julia is easy to use and also lightening fast. So its also a plus.</li>
+<li>When you run something for the first time it will take surprisingly long to run. This is because all the Julia code you&rsquo;re calling (including julia packages that you called / included) get compiled into a static Julia (like C++ which is static from the start).</li>
 <li>However, after the compilation is done, it is super fast.</li>
 <li>The work-around for this is to keep your Julia session running for as long as possible.</li>
 </ul>
 </li>
-<li>Community and packages are still maturing
+<li><strong>Community and packages are still maturing</strong>
 <ul>
 <li>Being a young language, we expect this.</li>
 </ul>
