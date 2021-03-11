@@ -15,7 +15,7 @@ The words that we have available change what we will do.
 </p>
 {{< /rawhtml >}}
 
-## Why Learn Julia? What are the Value Propositions?
+## Why Learn Julia? What Are the Value Propositions?
 
 - __A combination of Python's usability and C++ speed__
     - Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste.
@@ -29,6 +29,7 @@ The words that we have available change what we will do.
 - __Flexible__
     - There are optional arugments in functions.
     - Functions can be combined.
+    - There is a rich language of types for contructing and describing objects.
 - __Multiple Dispatch__
     - Where a function or method can be dynamically dispatched at runtime based on the type of the object the function is being called on, or attributes of one or more of its arguments. An example would be a function whose arguments can be a either integers or strings, and where multiple arguments are string values, the function is dispatched in a certain way.
     - Single dispatch, on the other hand, is when the way that a function is dispatched at runtime is determined by a single data type, or a single function argument. This _special_ argument is highlighted syntactically in some languages.
