@@ -17,7 +17,7 @@ The words that we have available change what we will do.
 
 ## Why Learn Julia? What Are the Value Propositions?
 
-- __A combination of Python's usability and C++ speed__
+- __Combines Python's usability with C++ speed__
     - Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste.
     - Now these strengths are in one language.
     - This is accomplished using just in time compilation. The way this works is: you write dynamic Julia code, then Julia compiles it into static Julia, then everything runs super fast.
