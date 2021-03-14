@@ -53,6 +53,7 @@ The words that we have available change what we will do.
     - The work-around for this is to keep your Julia session running for as long as possible.
 - __Community and packages are still maturing__
     - Being a young language, we expect this.
+- __Code errors can be difficult to interpret__
 
 ## Key Features
 

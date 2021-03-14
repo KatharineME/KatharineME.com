@@ -7,7 +7,7 @@ categories = []
 +++
 
 {{< rawhtml >}}
-<img src="/images/julia_db_gorilla.png" style="max-height: 400px;">
+<img src="/images/julia_db_logo.png" style="max-height: 400px;">
 {{< /rawhtml >}}
 
 
