@@ -83,11 +83,17 @@
 
     
 
-<img src="/images/julia_db_gorilla.png" style="max-height: 400px;">
+<img src="/images/julia_db_logo.png" style="max-height: 400px;">
 
-<p>JuliaDB can work with data that is larger than the machine RAM.</p>
-<p>addprocs() will add as many workers as there are CPU cores available. <code>addprocs(2)</code> would add two working processes. When there are multiple processes, tables will be loaded as distributed tables across all the workers. So oyu cant index a row based on row number or iterate over all rows.</p>
-<p>JuliaDB has two main data structures: Table and NDSparse.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li>JuliaDB can work with data that is larger than the machine RAM.</li>
+<li>JuliaDB has two main data structures: Table and NDSparse.</li>
+</ul>
+
+
+<br>
+
 <h3 id="table">Table</h3>
 <ul>
 <li>Tables store data in columns</li>
@@ -237,6 +243,8 @@
 </code></pre></div><h4 id="summarize">summarize</h4>
 <p>Applies a function (or functions) column-wise.</p>
 <p><code>summarize(function, table, by: select)</code></p>
+<h4 id="addprocs">addprocs</h4>
+<p>Adds as many workers as there are CPU cores available. <code>addprocs(2)</code> would add two working processes. When there are multiple processes, tables will be loaded as distributed tables across all the workers. So oyu cant index a row based on row number or iterate over all rows.</p>
 <h3 id="statistics">Statistics</h3>
 <p>JuliaDB integrates with OnlineStats (a julia stats package) using the functions <code>reduce</code> and <code>groupreduce</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="k">using</span> <span class="n">JuliaDB</span><span class="p">,</span> <span class="n">OnlineStats</span>
