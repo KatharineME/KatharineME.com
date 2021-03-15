@@ -105,6 +105,21 @@ julia > x[:protein]
 "beef"
 ```
 
+#### DataFrame.jl
+
+This is definitely a key package. The most surpirisng thing I've learned so far is that in order to see the whole dataframe (as in all rows and columns) instead of a summary you need to execute something like this (where df is a dataframe you already defined):
+
+```julia
+using DataFrames
+
+ENV["COLUMNS"]=100
+ENV["LINES"]=200
+
+DataFrame(df)
+```
+
+You can change the numbers to your liking.
+
 ### Core Essentials
 
 __Core.Array__: N-dimensional dense array with elements of type T

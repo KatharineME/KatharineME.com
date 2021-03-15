@@ -11,11 +11,13 @@ categories = []
 {{< /rawhtml >}}
 
 
-JuliaDB can work with data that is larger than the machine RAM.
+## Key Features
+- JuliaDB can work with data that is larger than the machine RAM.
+- JuliaDB has two main data structures: Table and NDSparse.
 
-addprocs() will add as many workers as there are CPU cores available. `addprocs(2)` would add two working processes. When there are multiple processes, tables will be loaded as distributed tables across all the workers. So oyu cant index a row based on row number or iterate over all rows.
-
-JuliaDB has two main data structures: Table and NDSparse.
+{{< rawhtml >}}
+<br>
+{{< /rawhtml >}}
 
 ### Table
 - Tables store data in columns
@@ -215,6 +217,9 @@ Applies a function (or functions) column-wise.
 `summarize(function, table, by: select)`
 
 
+#### addprocs
+
+Adds as many workers as there are CPU cores available. `addprocs(2)` would add two working processes. When there are multiple processes, tables will be loaded as distributed tables across all the workers. So oyu cant index a row based on row number or iterate over all rows.
 
 
 ### Statistics
