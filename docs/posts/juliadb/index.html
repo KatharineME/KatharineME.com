@@ -87,20 +87,22 @@
 
 <h2 id="key-features">Key Features</h2>
 <ul>
-<li>JuliaDB can work with data that is larger than the machine RAM.</li>
-<li>JuliaDB has two main data structures: Table and NDSparse.</li>
+<li>Can work with data that is larger than the machine RAM.</li>
+<li>Has two main data structures: IndexedTable and NDSparse.</li>
+<li>Works with Dagger.jl&rsquo;s <code>save</code> and <code>load</code> function to make a sort of index file adjacent to your big data file which allows for fast loading and access</li>
 </ul>
-
-
-<br>
-
 <h3 id="table">Table</h3>
 <ul>
+<li>&ldquo;Table&rdquo; refers to both an IndexedTable and NDSparse</li>
 <li>Tables store data in columns</li>
 <li>Tables are typed, meaning changing a table requires returning a new table</li>
 <li>Julidb has few mutating operations because a new table is necessary in most</li>
 <li>Iterates over NamedTuples of <strong>rows</strong></li>
 </ul>
+
+
+<br>
+
 <h4 id="indexed-table">Indexed Table</h4>
 <ul>
 <li>Basically a named tuple of vectors which <strong>behaves</strong> like a vector of named tuples</li>

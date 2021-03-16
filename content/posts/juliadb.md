@@ -12,18 +12,22 @@ categories = []
 
 
 ## Key Features
-- JuliaDB can work with data that is larger than the machine RAM.
-- JuliaDB has two main data structures: Table and NDSparse.
-
-{{< rawhtml >}}
-<br>
-{{< /rawhtml >}}
-
+- Can work with data that is larger than the machine RAM.
+- Has two main data structures: IndexedTable and NDSparse.
+- Works with Dagger.jl's `save` and `load` function to make a sort of index file adjacent to your big data file which allows for fast loading and access
+ 
+ 
 ### Table
+- "Table" refers to both an IndexedTable and NDSparse
 - Tables store data in columns
 - Tables are typed, meaning changing a table requires returning a new table
 - Julidb has few mutating operations because a new table is necessary in most
 - Iterates over NamedTuples of __rows__
+
+
+{{< rawhtml >}}
+<br>
+{{< /rawhtml >}}
 
 #### Indexed Table
 - Basically a named tuple of vectors which __behaves__ like a vector of named tuples
