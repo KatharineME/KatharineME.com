@@ -13,7 +13,7 @@
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/juliadb/</guid>
-      <description>Key Features  Can work with data that is larger than the machine RAM. Has two main data structures: IndexedTable and NDSparse. Works with Dagger.jl&amp;rsquo;s save and load function to make a sort of index file adjacent to your big data file which allows for fast loading and access  Table  &amp;ldquo;Table&amp;rdquo; refers to both an IndexedTable and NDSparse Tables store data in columns Tables are typed, meaning changing a table requires returning a new table Julidb has few mutating operations because a new table is necessary in most Iterates over NamedTuples of rows  Indexed Table  Basically a named tuple of vectors which behaves like a vector of named tuples Table can be sorted by any number of primary keys (defined using parameter pkey).</description>
+      <description>Key Features  Can work with data that is larger than the machine RAM. Has two main data structures: IndexedTable and NDSparse. Works with Dagger.jl&amp;rsquo;s save and load functions to make a sort of index file adjacent to your table which allows for fast loading and access.  Table  &amp;ldquo;Table&amp;rdquo; refers to both an IndexedTable and NDSparse Tables store data in columns Tables are typed, meaning changing a table requires returning a new table Julidb has few mutating operations because a new table is necessary in most Iterates over NamedTuples of rows  Indexed Table  Basically a named tuple of vectors which behaves like a vector of named tuples Table can be sorted by any number of primary keys (defined using parameter pkey).</description>
     </item>
     
     <item>

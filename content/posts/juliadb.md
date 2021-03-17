@@ -14,7 +14,7 @@ categories = []
 ## Key Features
 - Can work with data that is larger than the machine RAM.
 - Has two main data structures: IndexedTable and NDSparse.
-- Works with Dagger.jl's `save` and `load` function to make a sort of index file adjacent to your big data file which allows for fast loading and access
+- Works with Dagger.jl's `save` and `load` functions to make a sort of index file adjacent to your table which allows for fast loading and access.
  
  
 ### Table
