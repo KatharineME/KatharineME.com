@@ -157,24 +157,37 @@ The words that we have available change what we will do.
 </li>
 <li><strong>Code errors can be difficult to interpret</strong></li>
 </ul>
-<h2 id="key-features">Key Features</h2>
-<p>Packages</p>
-<ul>
-<li>DataFrames.jl</li>
-<li>Plots.jl</li>
-<li>Gadfly.jl</li>
-<li>Vegalite.jl</li>
-</ul>
-<p>IDE</p>
-<ul>
-<li>Juno</li>
-<li>IJulia for Jupyter</li>
-</ul>
-<h2 id="concepts">Concepts</h2>
+<h2 id="working-with-julia-in-jupyter">Working with Julia in Jupyter</h2>
+<p>Jupyter Lab is where I develop Julia packages. With the right settings, this works great. Some people complain about the slowness of Julia&rsquo;s JIT compiling. But once you understand how it works, you can organize your notebook to maximize your session length and enjoy the speedy compiled Julia code.</p>
+<p>First, you&rsquo;ll need <a href="https://github.com/JuliaLang/IJulia.jl">IJulia</a>, which is the Julia kernal for Jupyter. Once its installed, you&rsquo;ll be able to create a Julia notebook, just like you would create a Python notebook. From the Julia REPL, enter <code>]</code> to access pkg mode, then:</p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">add</span> <span class="n">IJulia</span>
+</code></pre></div><p>Once its running, I would add these lines at the top of every Julia notebook you work in:</p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="c"># For viewing DataFrames</span>
+
+<span class="nb">ENV</span><span class="p">[</span><span class="s">&#34;COLUMNS&#34;</span><span class="p">]</span><span class="o">=</span><span class="mi">100</span>
+
+<span class="nb">ENV</span><span class="p">[</span><span class="s">&#34;LINES&#34;</span><span class="p">]</span><span class="o">=</span><span class="mi">200</span>
+
+<span class="c"># For viewing JuliaDB tables and arrays</span>
+
+<span class="k">using</span> <span class="n">IndexedTables</span>
+
+<span class="n">IndexedTables</span><span class="o">.</span><span class="n">set_show_compact!</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+</code></pre></div><p>By default, only summaries of tables and dataframes are shown, running these commands will allow full data to be printed.</p>
+<h2 id="how-tos-to-get-started">How To&rsquo;s to Get Started</h2>
+<h4 id="change-strings-to-ints">Change strings to ints</h4>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">parse</span><span class="o">.</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="p">[</span><span class="s">&#34;1&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span><span class="p">])</span>
+
+<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">1</span>
+ <span class="mi">2</span>
+</code></pre></div><h2 id="concepts">Concepts</h2>
 <p>Macro</p>
 <ul>
 <li>A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.</li>
 </ul>
+<h2 id="data-types">Data Types</h2>
+<p>Julia has lots of datatypes, and yet if you dont specify a data type, Julia will do that for you. Having a solid understanding of the basic data types will save you lots of time and headaches.</p>
 <h4 id="tuple">Tuple</h4>
 <p>Built in data structure with <strong>fixed-length</strong> that can hold <strong>any values</strong> but cannot be changed (<strong>immutable</strong>)</p>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#34;soy sauce&#34;</span><span class="p">,</span> <span class="s">&#34;mirin&#34;</span><span class="p">)</span>
@@ -191,16 +204,7 @@ The words that we have available change what we will do.
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="o">:</span><span class="n">protein</span><span class="p">]</span>
 
 <span class="s">&#34;beef&#34;</span>
-</code></pre></div><h4 id="dataframejl">DataFrame.jl</h4>
-<p>This is definitely a key package. The most surpirisng thing I&rsquo;ve learned so far is that in order to see the whole dataframe (as in all rows and columns) instead of a summary you need to execute something like this (where df is a dataframe you already defined):</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">using</span> <span class="n">DataFrames</span>
-
-<span class="nb">ENV</span><span class="p">[</span><span class="s">&#34;COLUMNS&#34;</span><span class="p">]</span><span class="o">=</span><span class="mi">100</span>
-<span class="nb">ENV</span><span class="p">[</span><span class="s">&#34;LINES&#34;</span><span class="p">]</span><span class="o">=</span><span class="mi">200</span>
-
-<span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</code></pre></div><p>You can change the numbers to your liking.</p>
-<h3 id="core-essentials">Core Essentials</h3>
+</code></pre></div><h3 id="core-essentials">Core Essentials</h3>
 <p><strong>Core.Array</strong>: N-dimensional dense array with elements of type T</p>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="kt">Array</span><span class="p">{</span><span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">}</span>
 </code></pre></div><h3 id="base-essentials">Base Essentials</h3>

@@ -55,23 +55,57 @@ The words that we have available change what we will do.
     - Being a young language, we expect this.
 - __Code errors can be difficult to interpret__
 
-## Key Features
 
-Packages
-- DataFrames.jl
-- Plots.jl
-- Gadfly.jl
-- Vegalite.jl
+## Working with Julia in Jupyter
 
-IDE
-- Juno
-- IJulia for Jupyter
+Jupyter Lab is where I develop Julia packages. With the right settings, this works great. Some people complain about the slowness of Julia's JIT compiling. But once you understand how it works, you can organize your notebook to maximize your session length and enjoy the speedy compiled Julia code.
+
+First, you'll need [IJulia](https://github.com/JuliaLang/IJulia.jl), which is the Julia kernal for Jupyter. Once its installed, you'll be able to create a Julia notebook, just like you would create a Python notebook. From the Julia REPL, enter `]` to access pkg mode, then:
+
+```julia
+add IJulia
+```
+
+Once its running, I would add these lines at the top of every Julia notebook you work in:
+
+```julia
+# For viewing DataFrames
+
+ENV["COLUMNS"]=100
+
+ENV["LINES"]=200
+
+# For viewing JuliaDB tables and arrays
+
+using IndexedTables
+
+IndexedTables.set_show_compact!(false)
+```
+
+By default, only summaries of tables and dataframes are shown, running these commands will allow full data to be printed.
+
+
+## How To's to Get Started
+
+#### Change strings to ints
+```julia
+parse.(Int, ["1", "2"])
+
+2-element Array{Int64,1}:
+ 1
+ 2
+```
+ 
 
 ## Concepts
 
 Macro
 - A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.
 
+
+## Data Types
+
+Julia has lots of datatypes, and yet if you dont specify a data type, Julia will do that for you. Having a solid understanding of the basic data types will save you lots of time and headaches.
 
 #### Tuple
 
@@ -104,21 +138,6 @@ julia > x[:protein]
 
 "beef"
 ```
-
-#### DataFrame.jl
-
-This is definitely a key package. The most surpirisng thing I've learned so far is that in order to see the whole dataframe (as in all rows and columns) instead of a summary you need to execute something like this (where df is a dataframe you already defined):
-
-```julia
-using DataFrames
-
-ENV["COLUMNS"]=100
-ENV["LINES"]=200
-
-DataFrame(df)
-```
-
-You can change the numbers to your liking.
 
 ### Core Essentials
 
