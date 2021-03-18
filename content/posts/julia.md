@@ -56,7 +56,7 @@ The words that we have available change what we will do.
 - __Code errors can be difficult to interpret__
 
 
-## Working with Julia in Jupyter
+## Julia in Jupyter
 
 Jupyter Lab is where I develop Julia packages. With the right settings, this works great. Some people complain about the slowness of Julia's JIT compiling. But once you understand how it works, you can organize your notebook to maximize your session length and enjoy the speedy compiled Julia code.
 
@@ -95,7 +95,6 @@ parse.(Int, ["1", "2"])
  1
  2
 ```
- 
 
 ## Concepts
 
