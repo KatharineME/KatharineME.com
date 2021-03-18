@@ -87,8 +87,9 @@
 
 <h2 id="key-features">Key Features</h2>
 <ul>
-<li>Can work with data that is larger than the machine RAM.</li>
 <li>Has two main data structures: IndexedTable and NDSparse.</li>
+<li>Can work with data that is larger than the machine RAM.</li>
+<li>Allows parallel processing with the <code>addprocs</code> function.</li>
 <li>Works with Dagger.jl&rsquo;s <code>save</code> and <code>load</code> functions to make a sort of index file adjacent to your table which allows for fast loading and access.</li>
 </ul>
 <h3 id="table">Table</h3>
@@ -96,8 +97,7 @@
 <li>&ldquo;Table&rdquo; refers to both an IndexedTable and NDSparse</li>
 <li>Tables store data in columns</li>
 <li>Tables are typed, meaning changing a table requires returning a new table</li>
-<li>Julidb has few mutating operations because a new table is necessary in most</li>
-<li>Iterates over NamedTuples of <strong>rows</strong></li>
+<li>JuliaDB has few mutating operations because a new table is necessary in most cases</li>
 </ul>
 
 
@@ -106,11 +106,10 @@
 <h4 id="indexed-table">Indexed Table</h4>
 <ul>
 <li>Basically a named tuple of vectors which <strong>behaves</strong> like a vector of named tuples</li>
-<li>Table can be sorted by any number of primary keys (defined using parameter <code>pkey</code>). The table will be sorted by the first priamry key, then the second, and so on.</li>
+<li>IndexedTable can be sorted by any number of primary keys (defined using parameter <code>pkey</code>). The table will be sorted by the first priamry key, then the second, and so on.</li>
+<li>Iterates over NamedTuples of <strong>rows</strong></li>
 <li>Use <code>table</code> function to create or <code>loadtable</code> to load existing data</li>
-<li><code>loadtable</code> should only be used once, then the <code>save</code> function should be used to save the table in bianry format to then be quickly loaded using <code>load</code> in the next session.</li>
-<li>Use <code>IndexedTabled.set_show_compact!(false)</code> to overide Julia hiding big tables</li>
-<li></li>
+<li><code>loadtable</code> should only be used once, then the <code>save</code> function should be used to save the table in bianry format to then be quickly loaded using <code>load</code> in the next session. The <code>save</code> and <code>load</code> functions are Dagger.jl fucntions.</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">6</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">vcat</span><span class="p">(</span><span class="n">fill</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">fill</span><span class="p">(</span><span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -257,6 +256,7 @@
 </code></pre></div><h3 id="general-wisdom">General Wisdom</h3>
 <ul>
 <li>Be as specific as possible when selecting to minimize the amount of data you are passing around.</li>
+<li>After loading a table for the first time, use Dagger.jl&rsquo;s <code>save</code> and <code>load</code> functions to work with the table.</li>
 </ul>
 
   </article>

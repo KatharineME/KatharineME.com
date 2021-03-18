@@ -90,6 +90,10 @@
 </code></pre></div><p>The question mark means one unknown character in the file glob. So this command will return <code>All.md</code> but not <code>About.md</code> or <code>A.md</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls A??.md
 </code></pre></div><h2 id="regex">Regex</h2>
+
+
+<img src="/images/regex_trex.png" style="max-height: 300px;">
+
 <p><code>^</code> means &ldquo;at the beginning of the line&rdquo; and <code>$</code> means &ldquo;at the end of the line&rdquo;. So this commmand returns lines beginning with &ldquo;moose&rdquo;.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;^moose&#34;</span> file.txt
 </code></pre></div><p>And this command returns lines ending with &ldquo;mojo&rdquo;.</p>
@@ -114,6 +118,10 @@
 <td>whitespace (a space, tab, or newline)</td>
 </tr>
 <tr>
+<td>?</td>
+<td>one or more of the character that precedes it</td>
+</tr>
+<tr>
 <td>.*</td>
 <td>zero or more of any characters</td>
 </tr>
@@ -124,6 +132,10 @@
 <tr>
 <td>[]</td>
 <td>within a range, for example ^[A-Z] to search line starting with capital</td>
+</tr>
+<tr>
+<td>/i</td>
+<td>makes regex before it case insensitive</td>
 </tr>
 </tbody>
 </table>

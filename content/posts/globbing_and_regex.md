@@ -28,6 +28,11 @@ ls A??.md
 
 ## Regex
 
+{{< rawhtml >}}
+<img src="/images/regex_trex.png" style="max-height: 300px;">
+{{< /rawhtml >}}
+
+
 `^` means "at the beginning of the line" and `$` means "at the end of the line". So this commmand returns lines beginning with "moose".
 ```sh
 grep "^moose" file.txt
@@ -50,9 +55,11 @@ More:
 |--------------|--------------------------------------------------------------------------|
 | \            | negate special-ness of character after                                   |
 | \s           | whitespace (a space, tab, or newline)                                    |
+| ?            | one or more of the character that precedes it                            |
 | .*           | zero or more of any characters                                           |
 | vertical line| or                                                                       |
 | []           | within a range, for example ^[A-Z] to search line starting with capital  | 
+| /i           | makes regex before it case insensitive  | 
 
 
 ## grep and fgrep Come to Play

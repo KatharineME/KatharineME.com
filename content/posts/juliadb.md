@@ -12,8 +12,9 @@ categories = []
 
 
 ## Key Features
-- Can work with data that is larger than the machine RAM.
 - Has two main data structures: IndexedTable and NDSparse.
+- Can work with data that is larger than the machine RAM.
+- Allows parallel processing with the `addprocs` function.
 - Works with Dagger.jl's `save` and `load` functions to make a sort of index file adjacent to your table which allows for fast loading and access.
  
  
@@ -21,8 +22,7 @@ categories = []
 - "Table" refers to both an IndexedTable and NDSparse
 - Tables store data in columns
 - Tables are typed, meaning changing a table requires returning a new table
-- Julidb has few mutating operations because a new table is necessary in most
-- Iterates over NamedTuples of __rows__
+- JuliaDB has few mutating operations because a new table is necessary in most cases
 
 
 {{< rawhtml >}}
@@ -31,11 +31,10 @@ categories = []
 
 #### Indexed Table
 - Basically a named tuple of vectors which __behaves__ like a vector of named tuples
-- Table can be sorted by any number of primary keys (defined using parameter `pkey`). The table will be sorted by the first priamry key, then the second, and so on.
+- IndexedTable can be sorted by any number of primary keys (defined using parameter `pkey`). The table will be sorted by the first priamry key, then the second, and so on.
+- Iterates over NamedTuples of __rows__
 - Use `table` function to create or `loadtable` to load existing data
-- `loadtable` should only be used once, then the `save` function should be used to save the table in bianry format to then be quickly loaded using `load` in the next session.
-- Use `IndexedTabled.set_show_compact!(false)` to overide Julia hiding big tables
--
+- `loadtable` should only be used once, then the `save` function should be used to save the table in bianry format to then be quickly loaded using `load` in the next session. The `save` and `load` functions are Dagger.jl fucntions.
 
 ```julia
 x = 1:6
@@ -239,5 +238,6 @@ Mean: n=100 | value=0.159962
 
 ### General Wisdom
 - Be as specific as possible when selecting to minimize the amount of data you are passing around.
+- After loading a table for the first time, use Dagger.jl's `save` and `load` functions to work with the table.
 
 
