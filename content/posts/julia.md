@@ -53,6 +53,8 @@ The words that we have available change what we will do.
     - The work-around for this is to keep your Julia session running for as long as possible.
 - __Community and packages are still maturing__
     - Being a young language, we expect this.
+- __Often not backward compatible__
+    - Julia is developing rapidly, and as a consequence, a solution that was posted on Stack Overflow six months ago may already by deprecated, forcing you to actually read the documentation 😝.
 - __Code errors can be difficult to interpret__
 
 
@@ -101,6 +103,8 @@ parse.(Int, ["1", "2"])
 Macro
 - A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.
 
+The !
+- A function name ending with a ! indicates that it will mutate or destroy the value of one or more of its arguments (compare, for example, sort and sort!) 
 
 ## Data Types
 
