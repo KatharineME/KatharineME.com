@@ -53,7 +53,7 @@ The words that we have available change what we will do.
     - The work-around for this is to keep your Julia session running for as long as possible.
 - __Community and packages are still maturing__
     - Being a young language, we expect this.
-- __Often not backward compatible__
+- __Often not backwards compatible__
     - Julia is developing rapidly, and as a consequence, a solution that was posted on Stack Overflow six months ago may already by deprecated, forcing you to actually read the documentation 😝.
 - __Code errors can be difficult to interpret__
 
