@@ -167,7 +167,11 @@ The words that we have available change what we will do.
 <p>First, you&rsquo;ll need <a href="https://github.com/JuliaLang/IJulia.jl">IJulia</a>, which is the Julia kernal for Jupyter. Once its installed, you&rsquo;ll be able to create a Julia notebook, just like you would create a Python notebook. From the Julia REPL, enter <code>]</code> to access pkg mode, then:</p>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">add</span> <span class="n">IJulia</span>
 </code></pre></div><p>Once its running, I would add these lines at the top of every Julia notebook you work in:</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="c"># For viewing DataFrames</span>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">using</span> <span class="n">JuliDB</span>
+
+<span class="k">using</span> <span class="n">IndexedTables</span>
+
+<span class="c"># For viewing DataFrames</span>
 
 <span class="nb">ENV</span><span class="p">[</span><span class="s">&#34;COLUMNS&#34;</span><span class="p">]</span><span class="o">=</span><span class="mi">100</span>
 
@@ -175,11 +179,13 @@ The words that we have available change what we will do.
 
 <span class="c"># For viewing JuliaDB tables and arrays</span>
 
-<span class="k">using</span> <span class="n">IndexedTables</span>
-
 <span class="n">IndexedTables</span><span class="o">.</span><span class="n">set_show_compact!</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div><p>By default, only summaries of tables and dataframes are shown, running these commands will allow full data to be printed.</p>
-<h2 id="how-tos-to-get-started">How To&rsquo;s to Get Started</h2>
+<p>To run a shell command in a Julia Jupyter notebook (or in the Julia REPL), use the <code>;</code> key binding.</p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="p">;</span><span class="n">pwd</span>
+
+<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">kate</span><span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">Project</span><span class="o">/</span><span class="n">notebook</span>
+</code></pre></div><h2 id="basics-to-get-started">Basics To Get Started</h2>
 <h4 id="change-strings-to-ints">Change strings to ints</h4>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">parse</span><span class="o">.</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="p">[</span><span class="s">&#34;1&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span><span class="p">])</span>
 
@@ -187,15 +193,33 @@ The words that we have available change what we will do.
  <span class="mi">1</span>
  <span class="mi">2</span>
 </code></pre></div><h2 id="concepts">Concepts</h2>
-<p>Macro</p>
+<p><strong>@ Macro</strong></p>
 <ul>
 <li>A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.</li>
+<li>My favorite macro is <code>@time</code> which wil print how long a process took, how much memory was used, and percent gc if applicable.</li>
 </ul>
-<p>The !</p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="nd">@time</span> <span class="n">A</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}(</span><span class="n">undef</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+  <span class="mf">0.000001</span> <span class="n">seconds</span> <span class="p">(</span><span class="mi">1</span> <span class="n">allocation</span><span class="o">:</span> <span class="mi">128</span> <span class="n">bytes</span><span class="p">)</span>
+
+<span class="mi">2</span><span class="n">×3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
+ <span class="mf">2.23877e-314</span>  <span class="mf">0.0</span>    <span class="mf">0.0</span>
+ <span class="mf">2.23832e-314</span>  <span class="mf">0.0</span>  <span class="nb">NaN</span>
+</code></pre></div><p><strong>!</strong></p>
 <ul>
-<li>A function name ending with a ! indicates that it will mutate or destroy the value of one or more of its arguments (compare, for example, sort and sort!)</li>
+<li>It means &ldquo;not&rdquo; is Julia. For example <code>!=</code> codes for &ldquo;not equal to.&rdquo;</li>
+<li>A function name ending with a <code>!</code> indicates that it will mutate or destroy the value of one or more of its arguments (compare, for example, <code>sort</code> and <code>sort!</code>)</li>
 </ul>
-<h2 id="data-types">Data Types</h2>
+<p><strong>;</strong></p>
+<ul>
+<li>The semicolon has multiple uses in Julia.</li>
+<li>First, it activates shell mode in the Julia REPL. <code>;pwd</code> for example will print the working directory.</li>
+<li>Next, when the semicolon is placed at the end of a piece of code, it stops Julia from printing variables defined in that code. However if a function is called in that piece of code, the output of the function will still be printed. The semilon at the end of this code prevents the filtered indexedtable from being printed, however the time function still prints its output.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="nd">@time</span> <span class="n">filter</span><span class="p">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">CHROM</span> <span class="o">==</span> <span class="n">benchmark_variant</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">vcf_table</span><span class="p">);</span>
+
+<span class="mf">0.102539</span> <span class="n">seconds</span> <span class="p">(</span><span class="mf">81.61</span> <span class="n">k</span> <span class="n">allocations</span><span class="o">:</span> <span class="mf">4.294</span> <span class="n">MiB</span><span class="p">)</span>
+</code></pre></div><h2 id="data-types">Data Types</h2>
 <p>Julia has lots of datatypes, and yet if you dont specify a data type, Julia will do that for you. Having a solid understanding of the basic data types will save you lots of time and headaches.</p>
 <h4 id="tuple">Tuple</h4>
 <p>Built in data structure with <strong>fixed-length</strong> that can hold <strong>any values</strong> but cannot be changed (<strong>immutable</strong>)</p>
