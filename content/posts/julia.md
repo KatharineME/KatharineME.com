@@ -71,6 +71,10 @@ add IJulia
 Once its running, I would add these lines at the top of every Julia notebook you work in:
 
 ```julia
+using JuliDB
+
+using IndexedTables
+
 # For viewing DataFrames
 
 ENV["COLUMNS"]=100
@@ -79,15 +83,20 @@ ENV["LINES"]=200
 
 # For viewing JuliaDB tables and arrays
 
-using IndexedTables
-
 IndexedTables.set_show_compact!(false)
 ```
 
 By default, only summaries of tables and dataframes are shown, running these commands will allow full data to be printed.
 
+To run a shell command in a Julia Jupyter notebook (or in the Julia REPL), use the `;` key binding.
 
-## How To's to Get Started
+```julia
+;pwd
+
+/Users/kate/github/Project/notebook
+```
+
+## Basics To Get Started
 
 #### Change strings to ints
 ```julia
@@ -100,11 +109,35 @@ parse.(Int, ["1", "2"])
 
 ## Concepts
 
-Macro
+__@ Macro__
 - A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.
+- My favorite macro is `@time` which wil print how long a process took, how much memory was used, and percent gc if applicable.
 
-The !
-- A function name ending with a ! indicates that it will mutate or destroy the value of one or more of its arguments (compare, for example, sort and sort!) 
+```julia
+@time A = Array{Float64,2}(undef, 2, 3)
+
+  0.000001 seconds (1 allocation: 128 bytes)
+
+2×3 Array{Float64,2}:
+ 2.23877e-314  0.0    0.0
+ 2.23832e-314  0.0  NaN
+```
+
+__!__
+- It means "not" is Julia. For example `!=` codes for "not equal to."
+- A function name ending with a `!` indicates that it will mutate or destroy the value of one or more of its arguments (compare, for example, `sort` and `sort!`) 
+
+
+__;__
+- The semicolon has multiple uses in Julia.
+- First, it activates shell mode in the Julia REPL. `;pwd` for example will print the working directory.
+- Next, when the semicolon is placed at the end of a piece of code, it stops Julia from printing variables defined in that code. However if a function is called in that piece of code, the output of the function will still be printed. The semilon at the end of this code prevents the filtered indexedtable from being printed, however the time function still prints its output.
+
+```julia
+@time filter(i -> (i.CHROM == benchmark_variant[1]), vcf_table);
+
+0.102539 seconds (81.61 k allocations: 4.294 MiB)
+```
 
 ## Data Types
 
