@@ -96,9 +96,19 @@ To run a shell command in a Julia Jupyter notebook (or in the Julia REPL), use t
 /Users/kate/github/Project/notebook
 ```
 
-## Basics To Get Started
+## Basics For Getting Started
 
-#### Change strings to ints
+#### Using Modules
+In most cases, you'll need to use a few Julia packages, also known as modules. JuliaDB.jl is one such module. To get started using the module, you first need to add it to your environment by entering the Julia REPL and pressing `]` to enter pkg mode, then:
+
+```julia
+add JuliaDB
+```
+
+Once you're back in the Julia REPL, or in a notebook, and you want to use the module you can either enter `import JuliaDB` or `using JuliaDB`. If you `import` the package, you're only importing the module's name, to call its function you would need to enter `JuliaDB.loadtable()` for instance. But if you use `using` than the modules name and all of its function names are imported so you could call `loadtable()` directly.
+
+
+#### Changing strings to ints
 ```julia
 parse.(Int, ["1", "2"])
 
@@ -107,7 +117,7 @@ parse.(Int, ["1", "2"])
  2
 ```
 
-## Concepts
+## Symbols
 
 __@ Macro__
 - A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.

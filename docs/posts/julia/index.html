@@ -185,14 +185,18 @@ The words that we have available change what we will do.
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="p">;</span><span class="n">pwd</span>
 
 <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">kate</span><span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">Project</span><span class="o">/</span><span class="n">notebook</span>
-</code></pre></div><h2 id="basics-to-get-started">Basics To Get Started</h2>
-<h4 id="change-strings-to-ints">Change strings to ints</h4>
+</code></pre></div><h2 id="basics-for-getting-started">Basics For Getting Started</h2>
+<h4 id="using-modules">Using Modules</h4>
+<p>In most cases, you&rsquo;ll need to use a few Julia packages, also known as modules. JuliaDB.jl is one such module. To get started using the module, you first need to add it to your environment by entering the Julia REPL and pressing <code>]</code> to enter pkg mode, then:</p>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">add</span> <span class="n">JuliaDB</span>
+</code></pre></div><p>Once you&rsquo;re back in the Julia REPL, or in a notebook, and you want to use the module you can either enter <code>import JuliaDB</code> or <code>using JuliaDB</code>. If you <code>import</code> the package, you&rsquo;re only importing the module&rsquo;s name, to call its function you would need to enter <code>JuliaDB.loadtable()</code> for instance. But if you use <code>using</code> than the modules name and all of its function names are imported so you could call <code>loadtable()</code> directly.</p>
+<h4 id="changing-strings-to-ints">Changing strings to ints</h4>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">parse</span><span class="o">.</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="p">[</span><span class="s">&#34;1&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span><span class="p">])</span>
 
 <span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
  <span class="mi">1</span>
  <span class="mi">2</span>
-</code></pre></div><h2 id="concepts">Concepts</h2>
+</code></pre></div><h2 id="symbols">Symbols</h2>
 <p><strong>@ Macro</strong></p>
 <ul>
 <li>A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.</li>
