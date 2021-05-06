@@ -33,15 +33,36 @@ What kind of RNA will be in the sample?
 - 2-3% is mRNA
 - <3% is lncRNA, miRNA, ncRNA, circRNA
 
-
 #### Library Preparation
+
+If mRNA is degraded, special treatments to repair transcript need to be done first.
+
+1. Enrich for mRNA
+
+- Poly-A Enrichment
+    - Beads that bind to the poly A tails on mRNA trancripts and pull them down, isolating them from other RNAs.
+    - Cant be used in prokaryotic cells becuase they typically dont have poly A tails on their mRNA transcripts.
+- rRNA depletion
+    - Selectively remove rRNA sequences.
+
+2. Convert to cDNA
+
+Why? Increases stability and its easier for sequencing.
+
+3. Fragment
+
+After conversion, fragments will be many different sizes, because transcripts vary in length. To fix this, we do fragmentation (enzymatic or via sonication). As usual, small biases in per base sequence content in the first ~10 bases can be introduced here.
+
+4. Ligate Adapters
 
 #### Sequencing
 
+75 bp is a common length for RNA-Seq reads. Single end sequencing is more common in RNA-Seq than DNA-Seq.
+
+single end is sually enough for differential expression analysis. De novo sequencing or splice variant anlaysis would require paried end longer reads at greater depth.
 
 ## RNA-Seq Alignment
 
-75 bp is a common length for RNA-Seq reads. Single end sequencing is more common in RNA-Seq than DNA-Seq.
 
 
 ## Interpretation

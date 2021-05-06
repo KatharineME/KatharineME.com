@@ -95,9 +95,38 @@
 <li>&lt;3% is lncRNA, miRNA, ncRNA, circRNA</li>
 </ul>
 <h4 id="library-preparation">Library Preparation</h4>
+<p>If mRNA is degraded, special treatments to repair transcript need to be done first.</p>
+<ol>
+<li>Enrich for mRNA</li>
+</ol>
+<ul>
+<li>Poly-A Enrichment
+<ul>
+<li>Beads that bind to the poly A tails on mRNA trancripts and pull them down, isolating them from other RNAs.</li>
+<li>Cant be used in prokaryotic cells becuase they typically dont have poly A tails on their mRNA transcripts.</li>
+</ul>
+</li>
+<li>rRNA depletion
+<ul>
+<li>Selectively remove rRNA sequences.</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Convert to cDNA</li>
+</ol>
+<p>Why? Increases stability and its easier for sequencing.</p>
+<ol start="3">
+<li>Fragment</li>
+</ol>
+<p>After conversion, fragments will be many different sizes, because transcripts vary in length. To fix this, we do fragmentation (enzymatic or via sonication). As usual, small biases in per base sequence content in the first ~10 bases can be introduced here.</p>
+<ol start="4">
+<li>Ligate Adapters</li>
+</ol>
 <h4 id="sequencing">Sequencing</h4>
-<h2 id="rna-seq-alignment">RNA-Seq Alignment</h2>
 <p>75 bp is a common length for RNA-Seq reads. Single end sequencing is more common in RNA-Seq than DNA-Seq.</p>
+<p>single end is sually enough for differential expression analysis. De novo sequencing or splice variant anlaysis would require paried end longer reads at greater depth.</p>
+<h2 id="rna-seq-alignment">RNA-Seq Alignment</h2>
 <h2 id="interpretation">Interpretation</h2>
 
   </article>
