@@ -6,7 +6,7 @@ tags = []
 categories = []
 +++
 
-Here we discuss how RNA-Seq alignment diverages from DNA-Seq alignment. But first, we need to fully understand RNA-Seq itself. 
+Here we discuss how RNA-Seq alignment diverages from DNA-Seq alignment. But first, we need to fully understand RNA and RNA-Seq. 
 
 
 ## RNA vs. DNA 
@@ -32,6 +32,8 @@ Its a bit of a misnomer because we don't actually sequence the RNA. We first con
 
 
 ## RNA-Seq Alignment
+
+## Interpretation
 
 
 
