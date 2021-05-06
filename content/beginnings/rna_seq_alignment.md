@@ -26,12 +26,23 @@ Its a bit of a misnomer because we don't actually sequence the RNA. We first con
 
 #### Sampling
 
+What kind of RNA will be in the sample?
+
+- 85% is ribosomal RNA (rRNA)
+- 10-12% is transfer RNA (tRNA)
+- 2-3% is mRNA
+- <3% is lncRNA, miRNA, ncRNA, circRNA
+
+
 #### Library Preparation
 
 #### Sequencing
 
 
 ## RNA-Seq Alignment
+
+75 bp is a common length for RNA-Seq reads. Single end sequencing is more common in RNA-Seq than DNA-Seq.
+
 
 ## Interpretation
 
