@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.83.1" />
   </head>
 
   <body class="">
@@ -179,7 +179,7 @@ The words that we have available change what we will do.
 
 <span class="c"># For viewing JuliaDB tables and arrays</span>
 
-<span class="n">IndexedTables</span><span class="o">.</span><span class="n">set_show_compact!</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<span class="n">IndexedTables</span><span class="o">.</span><span class="n">set_show_compact!</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span>
 </code></pre></div><p>By default, only summaries of tables and dataframes are shown, running these commands will allow full data to be printed.</p>
 <p>To run a shell command in a Julia Jupyter notebook (or in the Julia REPL), use the <code>;</code> key binding.</p>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="p">;</span><span class="n">pwd</span>
@@ -202,11 +202,11 @@ The words that we have available change what we will do.
 <li>A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.</li>
 <li>My favorite macro is <code>@time</code> which wil print how long a process took, how much memory was used, and percent gc if applicable.</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="nd">@time</span> <span class="n">A</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}(</span><span class="n">undef</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="nd">@time</span> <span class="n">A</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}(</span><span class="nb">undef</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
   <span class="mf">0.000001</span> <span class="n">seconds</span> <span class="p">(</span><span class="mi">1</span> <span class="n">allocation</span><span class="o">:</span> <span class="mi">128</span> <span class="n">bytes</span><span class="p">)</span>
 
-<span class="mi">2</span><span class="n">×3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
+<span class="mi">2</span><span class="o">×</span><span class="mi">3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
  <span class="mf">2.23877e-314</span>  <span class="mf">0.0</span>    <span class="mf">0.0</span>
  <span class="mf">2.23832e-314</span>  <span class="mf">0.0</span>  <span class="nb">NaN</span>
 </code></pre></div><p><strong>!</strong></p>
@@ -238,19 +238,19 @@ The words that we have available change what we will do.
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">protein</span><span class="o">=</span><span class="s">&#34;beef&#34;</span><span class="p">,</span> <span class="n">carb</span><span class="o">=</span><span class="s">&#34;rice&#34;</span><span class="p">)</span>
 
 <span class="p">(</span><span class="n">protein</span> <span class="o">=</span> <span class="s">&#34;beef&#34;</span><span class="p">,</span> <span class="n">carb</span> <span class="o">=</span> <span class="s">&#34;rice&#34;</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="o">:</span><span class="n">protein</span><span class="p">]</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="ss">:protein</span><span class="p">]</span>
 
 <span class="s">&#34;beef&#34;</span>
 </code></pre></div><h3 id="core-essentials">Core Essentials</h3>
 <p><strong>Core.Array</strong>: N-dimensional dense array with elements of type T</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="kt">Array</span><span class="p">{</span><span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">T</span><span class="p">,</span> <span class="kt">N</span><span class="p">}</span>
 </code></pre></div><h3 id="base-essentials">Base Essentials</h3>
 <p><strong>Base.vcat</strong>: concatenate along 1 dimension</p>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">julia</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">]</span>
 <span class="n">julia</span> <span class="o">&gt;</span> <span class="n">vcat</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 
-<span class="mi">3</span><span class="n">×3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
+<span class="mi">3</span><span class="o">×</span><span class="mi">3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
  <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>
  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>
  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span>

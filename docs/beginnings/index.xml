@@ -8,6 +8,16 @@
     <language>en</language>
     <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/beginnings/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>RNA-Seq Alignment</title>
+      <link>https://katharineme.com/beginnings/rna-seq-alignment/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/beginnings/rna-seq-alignment/</guid>
+      <description>Here we discuss how RNA-Seq alignment diverages from DNA-Seq alignment. But first, we need to fully understand RNA-Seq itself.
+What is RNA-Seq Its a bit of a misnomer because we don&amp;rsquo;t actually sequence the RNA. We first convert it into cDNA, which is much more stable, then sequence it.</description>
+    </item>
+    
+    <item>
       <title>Sequence Analysis</title>
       <link>https://katharineme.com/beginnings/sequence-analysis/</link>
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
