@@ -11,7 +11,7 @@ Here we discuss how RNA-Seq alignment diverages from DNA-Seq alignment. But firs
 
 ## RNA vs. DNA 
 
-RNA and DNA are different molecules and provide different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.
+RNA and DNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.
 
 From acetylaion to methylation, alternative splicing, and other regulatory mechanisms, our cells use a bunch of different strategies to specialize the way they read and transcribe the genome, resulting in very different functions (why our skin cells are so different from heart cells).
 
