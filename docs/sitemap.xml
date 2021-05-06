@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://katharineme.com/posts/juliadb/</loc>
-    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://katharineme.com/posts/</loc>
-    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/posts/rna-seq-alignment/</loc>
+    <lastmod>2021-05-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/</loc>
+    <lastmod>2021-05-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/posts/juliadb/</loc>
     <lastmod>2021-02-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/posts/julia/</loc>
@@ -33,9 +36,6 @@
     <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/beginnings/</loc>
-    <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://katharineme.com/beginnings/rna-seq-alignment/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/beginnings/sequence-analysis/</loc>

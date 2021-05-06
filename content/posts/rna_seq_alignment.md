@@ -1,5 +1,5 @@
 +++ 
-date = "2020-10-15"
+date = "2021-05-05"
 title = "RNA-Seq Alignment"
 slug = "rna-seq-alignment"
 tags = []

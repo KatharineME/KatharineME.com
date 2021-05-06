@@ -6,7 +6,17 @@
     <description>Recent content on The Art of Genome Analysis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RNA-Seq Alignment</title>
+      <link>https://katharineme.com/posts/rna-seq-alignment/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/rna-seq-alignment/</guid>
+      <description>Here we discuss how RNA-Seq alignment diverages from DNA-Seq alignment. But first, we need to fully understand RNA and RNA-Seq.
+RNA vs. DNA RNA and DNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.</description>
+    </item>
+    
     <item>
       <title>JuliaDB</title>
       <link>https://katharineme.com/posts/juliadb/</link>
@@ -85,16 +95,6 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
       
       <guid>https://katharineme.com/posts/virtualization/</guid>
       <description>Virtual Machines  Virtualize the hardware Come with complete OS and kernal Interact with the hardware via a hypervisor Run on standby Start in minutes Usually GBs in size  Containers  Virtualize the OS Interact with and use the host OS and host kernal  Docker does this via Docker Daemon   Will exit without an active process Start in seconds Usually MBs in size  </description>
-    </item>
-    
-    <item>
-      <title>RNA-Seq Alignment</title>
-      <link>https://katharineme.com/beginnings/rna-seq-alignment/</link>
-      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.com/beginnings/rna-seq-alignment/</guid>
-      <description>Here we discuss how RNA-Seq alignment diverages from DNA-Seq alignment. But first, we need to fully understand RNA and RNA-Seq.
-RNA vs. DNA RNA and DNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.</description>
     </item>
     
     <item>
