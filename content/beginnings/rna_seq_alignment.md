@@ -35,9 +35,11 @@ What kind of RNA will be in the sample?
 
 #### Library Preparation
 
-If mRNA is degraded, special treatments to repair transcript need to be done first.
+1. Check for Degredation
 
-1. Enrich for mRNA
+Can be done with RNA gel. If mRNA is degraded, special treatments need to be done to repair transcripts first.
+
+2. Enrich for mRNA
 
 - Poly-A Enrichment
     - Beads that bind to the poly A tails on mRNA trancripts and pull them down, isolating them from other RNAs.
@@ -45,15 +47,17 @@ If mRNA is degraded, special treatments to repair transcript need to be done fir
 - rRNA depletion
     - Selectively remove rRNA sequences.
 
-2. Convert to cDNA
+3. Convert to cDNA
 
 Why? Increases stability and its easier for sequencing.
 
-3. Fragment
+4. Fragment
 
 After conversion, fragments will be many different sizes, because transcripts vary in length. To fix this, we do fragmentation (enzymatic or via sonication). As usual, small biases in per base sequence content in the first ~10 bases can be introduced here.
 
-4. Ligate Adapters
+Agilent bioanalyzer can tell you how efficient fragmentation was and the distribution of fragement size in your sample. 
+
+5. Ligate Adapters
 
 #### Sequencing
 
@@ -61,9 +65,15 @@ After conversion, fragments will be many different sizes, because transcripts va
 
 single end is sually enough for differential expression analysis. De novo sequencing or splice variant anlaysis would require paried end longer reads at greater depth.
 
-## RNA-Seq Alignment
+## Alignment
 
+## Normalization
 
+1. Normalize the number of reads per sample. 
+
+![sample depth](/images/sample_depth.png)
+
+1. Normalize by gene length.
 
 ## Interpretation
 
