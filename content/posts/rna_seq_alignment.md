@@ -49,7 +49,7 @@ However, assuming RNA was successfully isolated, what kind of RNA will be recove
 - 2-3% is messenger RNA (mRNA)
 - <3% is lncRNA, miRNA, ncRNA, and circRNA
 
-Some researches are interested in studying the ribosomal RNA, in which case this is good. For researchers interested RNA other than ribosomal, enrichment techniques can be applied to increase the signal. See below. 
+Some researches are interested in studying the ribosomal RNA, in which case this is good. For researchers interested in RNAs other than ribosomal, enrichment techniques can be applied to increase those signals. See below. 
 
 #### Library Preparation
 
