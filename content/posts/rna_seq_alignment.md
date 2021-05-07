@@ -18,19 +18,18 @@ The goal of this post is to describe how we can extract meaning from RNA-Seq dat
 </div>
 {{< /rawhtml >}}
 
-RNA and DNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.
+DNA and RNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.
 
-From acetylation to methylation, alternative splicing, and other regulatory mechanisms, our cells use a bunch of different strategies to specialize the way they read and transcribe the genome, resulting in very different functions (why our skin cells are so different from heart cells).
-
-RNA is like a snapshot of the cell. Results of RNA-Seq will be vastly different between cell types and over time in the same cell. For example, a cell might be fighting a pathogan or in the process of division, these will produce vastly different results. Even you may give a very different impression if someone meets you at work versus out at home. Its the same concept. Cell type dependent and time dependent.
-
+From acetylation to methylation, alternative splicing, and other regulatory mechanisms, our cells use a bunch of different strategies to specialize the way they read and transcribe the genome, resulting in very different functions (why skin cells are so different from heart cells).
 
 {{< rawhtml >}}
 <div style="text-align:center">
-<img style="height: 230px;" src="/images/work_vs_home.png">
-<p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to me.me</p>
+<img style="height: 220px;" src="/images/skin_heart_cell.png">
+<p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Biorender</p>
 </div>
 {{< /rawhtml >}}
+
+RNA is like a snapshot of the cell. Results of RNA-Seq will be vastly different between cell types and over time in the same cell. For example, a cell might be fighting a pathogen or in the process of division, these will produce vastly different results. Even you may give a very different impression if someone meets you at work versus out at home. Its the same concept. Cell type dependent and time dependent.
 
 In sum: DNA tells you what the cells are working with, RNA tells you what they're up to.
 
