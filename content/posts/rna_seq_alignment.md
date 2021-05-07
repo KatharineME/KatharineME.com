@@ -40,12 +40,16 @@ Whether we are trying to figure out how cells respond to a drug or delineate the
 
 #### Sampling
 
-What kind of RNA will be in the sample?
+The main challenge with isolating RNA from a sample is RNA's instability. Compared to DNA, RNA is less stable because it is single stranded and because it has a  reactive hydroxyl group (OH) on the second carbon of its sugar ring instead of a hydrogren.
+
+However, assuming RNA was successfully isolated, what kind of RNA will be recovered? This is the typical breakdown:
 
 - 85% is ribosomal RNA (rRNA)
 - 10-12% is transfer RNA (tRNA)
 - 2-3% is messenger RNA (mRNA)
-- <3% is lncRNA, miRNA, ncRNA, circRNA
+- <3% is lncRNA, miRNA, ncRNA, and circRNA
+
+Some researches are interested in studying the ribosomal RNA, in which case this is good. For researchers interested RNA other than ribosomal, enrichment techniques can be applied to increase the signal. See below. 
 
 #### Library Preparation
 

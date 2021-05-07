@@ -104,13 +104,15 @@
 <h2 id="rna-seq">RNA-Seq</h2>
 <p>Whether we are trying to figure out how cells respond to a drug or delineate the cell states of a tumor, RNA-Seq is currently the best way to assess the gene expression of cells. However it is a bit of a misnomer because we don&rsquo;t actually sequence the RNA. We first convert it into cDNA, which is more stable, then sequence it. Let&rsquo;s break it down step by step.</p>
 <h4 id="sampling">Sampling</h4>
-<p>What kind of RNA will be in the sample?</p>
+<p>The main challenge with isolating RNA from a sample is RNA&rsquo;s instability. Compared to DNA, RNA is less stable because it is single stranded and because it has a  reactive hydroxyl group (OH) on the second carbon of its sugar ring instead of a hydrogren.</p>
+<p>However, assuming RNA was successfully isolated, what kind of RNA will be recovered? This is the typical breakdown:</p>
 <ul>
 <li>85% is ribosomal RNA (rRNA)</li>
 <li>10-12% is transfer RNA (tRNA)</li>
 <li>2-3% is messenger RNA (mRNA)</li>
-<li>&lt;3% is lncRNA, miRNA, ncRNA, circRNA</li>
+<li>&lt;3% is lncRNA, miRNA, ncRNA, and circRNA</li>
 </ul>
+<p>Some researches are interested in studying the ribosomal RNA, in which case this is good. For researchers interested RNA other than ribosomal, enrichment techniques can be applied to increase the signal. See below.</p>
 <h4 id="library-preparation">Library Preparation</h4>
 <p><strong>1. Check for Degredation</strong></p>
 <p>Can be done with RNA gel. If mRNA is degraded, special treatments need to be done to repair transcripts first.</p>
