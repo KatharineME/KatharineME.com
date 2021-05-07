@@ -49,7 +49,7 @@ However, assuming RNA was successfully isolated, what kind of RNA will be recove
 - 2-3% is messenger RNA (mRNA)
 - <3% is lncRNA, miRNA, ncRNA, and circRNA
 
-Some researches are interested in studying the ribosomal RNA, in which case this is good. For researchers interested in RNAs other than ribosomal, enrichment techniques can be applied to increase those signals. See below. 
+Some researches are interested in studying the ribosomal RNA, in which case this is good. For researchers interested in different RNAs, enrichment techniques can be applied to increase those signals. See below. 
 
 #### Library Preparation
 
@@ -145,8 +145,6 @@ Lets say we performed RNA-Seq on two samples: a normal and a tumor.
 After performing RPKM, the expression for a single gene cannot be directly compared across samples, whereas with TPM they can be.
 
 Joshua Starmer has [a fantastic video](https://www.youtube.com/watch?v=TTUrtCY2k-w&t=495s) on these methods if you're looking for more. 
-
-## Interpretation
 
 
 
