@@ -1,7 +1,7 @@
 +++ 
 date = "2021-05-05"
-title = "RNA-Seq Alignment"
-slug = "rna-seq-alignment"
+title = "RNA-Seq Analysis"
+slug = "rna-seq-analysis"
 tags = []
 categories = []
 +++
@@ -21,14 +21,14 @@ RNA and DNA are different molecules and hold different information. DNA is more 
 
 From acetylation to methylation, alternative splicing, and other regulatory mechanisms, our cells use a bunch of different strategies to specialize the way they read and transcribe the genome, resulting in very different functions (why our skin cells are so different from heart cells).
 
-RNA is a bit like a snapshot of the cell. Results of RNA-Seq will be vastly different between cell types and over time in the same cell. For example, the cells might be fighting a pathogan or in the process of division, these will produce vastly different results. Even you may give off a very different impression if someone meets you at work versus out at a bar. Its the same concept. Cell type dependent and time dependent.
+RNA is a bit like a snapshot of the cell. Results of RNA-Seq will be vastly different between cell types and over time in the same cell. For example, a cell might be fighting a pathogan or in the process of division, these will produce vastly different results. Even you may give a very different impression if someone meets you at work versus out at a bar. Its the same concept. Cell type dependent and time dependent.
 
 In sum: DNA tells you what the cells are working with, RNA tells you what they're up to.
 
 
 ## RNA-Seq
 
-Its a bit of a misnomer because we don't actually sequence the RNA. We first convert it into cDNA, which is much more stable, then sequence it. But lets break it down step by step.
+Its a bit of a misnomer because we don't actually sequence the RNA. We first convert it into cDNA, which is more stable, then sequence it. Let's break it down step by step.
 
 #### Sampling
 
@@ -65,6 +65,8 @@ Agilent bioanalyzer can tell you how efficient fragmentation was and the distrib
 
 __5. Ligate Adapters__
 
+__6. QC Library__
+
 #### Sequencing
 
 75 bp is a common length for RNA-Seq reads. Single end sequencing is more common in RNA-Seq than DNA-Seq.
@@ -73,16 +75,60 @@ single end is sually enough for differential expression analysis. De novo sequen
 
 ## Alignment
 
+This is where it gets interesting. RNA-Seq alignment presents challenges on top of those that already existed with DNA-Seq.
+
+
+
+
 ## Normalization
 
-1. Normalize the number of reads per sample. If you didnt do this, you would think the gene expression of sample B is double the gene expression of sample C. Wherein reality, their gene expression maybe almost identical.
+__1. Normalize the number of reads per sample__
+
+Without this normalization, you would think the gene expression of sample B is double the gene expression of sample C. Wherein reality, their gene expression maybe almost identical.
 
 {{< rawhtml >}}
 <img style="height: 230px;" src="/images/sample_depth.png">
 <p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Biorender</p>
 {{< /rawhtml >}}
 
-1. Normalize by gene length.
+__2. Normalize the number of reads per gene__
+
+Genes vary in length. If you counted the number of reads mapped to genes A and B below, you would think gene B has twice the expression of gene A. Normalizing by gene length sovles this.
+
+{{< rawhtml >}}
+<img style="height: 280px;" src="/images/genes_different_length.png">
+{{< /rawhtml >}}
+
+
+__Common normalization methods that accomplish these__
+- RPKM (Reads Per Kilobase Million)
+    - For single end RNA-Seq
+    - Steps for a single sample:
+        - Step 1: Divide total number of reads by 1,000,000
+            - We call this number the per million scaling factor
+        - Step 2: Divide the read count for each gene by the per million scaling factor
+            - We call this reads per million
+        - Step 3: Divide the reads per million of each gene by the length of the gene in kilobases (divide by 1 if gene length is 1kb).
+- FPKM (Fragments Per Kilobase Million)
+    - For paired end RNA-Seq
+    - It is the same as RPKM except that is avoids counting forward and reverse reads twice for a given fragment on the flow cell.
+- TPM (Transcript Per Million)
+    - Uses the same steps as RPKM but in a different order.
+    - Steps for a single sample:
+        - Step 1: Divide the read count for each gene by the length of the gene in kilobases (divide by 1 if gene length is 1kb).
+            - We call this reads per kilobase
+        - Step 2: Calculate total reads per kilobase
+        - Step 3: Divde total reads per kilobase by 1,000,000
+
+__Whats the best method to use?__
+
+Probably TPM. Here's why.
+
+Lets say we performed RNA-Seq on two samples: a normal and a tumor.
+
+After performing RPKM, the expression for a single gene cannot be directly compared across samples, whereas with TPM they can be.
+
+Joshua Starmer has [a fantastic video](https://www.youtube.com/watch?v=TTUrtCY2k-w&t=495s) on these methods if you're looking for more. 
 
 ## Interpretation
 

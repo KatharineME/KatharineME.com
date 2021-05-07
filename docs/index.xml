@@ -8,11 +8,11 @@
     <language>en</language>
     <lastBuildDate>Wed, 05 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>RNA-Seq Alignment</title>
-      <link>https://katharineme.com/posts/rna-seq-alignment/</link>
+      <title>RNA-Seq Analysis</title>
+      <link>https://katharineme.com/posts/rna-seq-analysis/</link>
       <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://katharineme.com/posts/rna-seq-alignment/</guid>
+      <guid>https://katharineme.com/posts/rna-seq-analysis/</guid>
       <description>Here we discuss how RNA-Seq alignment diverages from DNA-Seq alignment. But first, we need to fully understand RNA and RNA-Seq.
 DNA vs. RNA Photo credit to biologydictionary.net
 RNA and DNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.</description>
