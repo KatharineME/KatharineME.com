@@ -75,9 +75,12 @@ single end is sually enough for differential expression analysis. De novo sequen
 
 ## Normalization
 
-1. Normalize the number of reads per sample. 
+1. Normalize the number of reads per sample. If you didnt do this, you would think the gene expression of sample B is double the gene expression of sample C. Wherein reality, their gene expression maybe almost identical.
 
-![sample depth](/images/sample_depth.png)
+{{< rawhtml >}}
+<img style="height: 230px;" src="/images/sample_depth.png">
+<p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Biorender</p>
+{{< /rawhtml >}}
 
 1. Normalize by gene length.
 
