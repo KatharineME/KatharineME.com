@@ -6,29 +6,38 @@ tags = []
 categories = []
 +++
 
-Here we discuss how RNA-Seq alignment diverages from DNA-Seq alignment. But first, we need to fully understand RNA and RNA-Seq. 
+The goal of this post is to describe how we can extract meaning from RNA-Seq data. In order to do so, we first need to understand RNA and how its sequenced.
 
 
 ## DNA vs. RNA
 
-![sample depth](/images/dna_vs_rna.jpg)
-
 {{< rawhtml >}}
+<div style="text-align:center">
+<img style="height: 250px;" src="/images/dna_vs_rna.jpg">
 <p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to biologydictionary.net</p>
+</div>
 {{< /rawhtml >}}
 
 RNA and DNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.
 
 From acetylation to methylation, alternative splicing, and other regulatory mechanisms, our cells use a bunch of different strategies to specialize the way they read and transcribe the genome, resulting in very different functions (why our skin cells are so different from heart cells).
 
-RNA is a bit like a snapshot of the cell. Results of RNA-Seq will be vastly different between cell types and over time in the same cell. For example, a cell might be fighting a pathogan or in the process of division, these will produce vastly different results. Even you may give a very different impression if someone meets you at work versus out at a bar. Its the same concept. Cell type dependent and time dependent.
+RNA is like a snapshot of the cell. Results of RNA-Seq will be vastly different between cell types and over time in the same cell. For example, a cell might be fighting a pathogan or in the process of division, these will produce vastly different results. Even you may give a very different impression if someone meets you at work versus out at home. Its the same concept. Cell type dependent and time dependent.
+
+
+{{< rawhtml >}}
+<div style="text-align:center">
+<img style="height: 230px;" src="/images/work_vs_home.png">
+<p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to me.me</p>
+</div>
+{{< /rawhtml >}}
 
 In sum: DNA tells you what the cells are working with, RNA tells you what they're up to.
 
 
 ## RNA-Seq
 
-Its a bit of a misnomer because we don't actually sequence the RNA. We first convert it into cDNA, which is more stable, then sequence it. Let's break it down step by step.
+Whether we are trying to figure out how cells respond to a drug or delineate the cell states of a tumor, RNA-Seq is currently the best way to assess the gene expression of cells. However it is a bit of a misnomer because we don't actually sequence the RNA. We first convert it into cDNA, which is more stable, then sequence it. Let's break it down step by step.
 
 #### Sampling
 
@@ -87,16 +96,20 @@ __1. Normalize the number of reads per sample__
 Without this normalization, you would think the gene expression of sample B is double the gene expression of sample C. Wherein reality, their gene expression maybe almost identical.
 
 {{< rawhtml >}}
+<div style="text-align:center">
 <img style="height: 230px;" src="/images/sample_depth.png">
 <p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Biorender</p>
+</div>
 {{< /rawhtml >}}
 
 __2. Normalize the number of reads per gene__
 
-Genes vary in length. If you counted the number of reads mapped to genes A and B below, you would think gene B has twice the expression of gene A. Normalizing by gene length sovles this.
+Genes vary in length. If you counted the number of reads mapped to genes A and B below, you would think gene B has twice the expression of gene A. Normalizing by gene length sovles this problem.
 
 {{< rawhtml >}}
+<div style="text-align:center">
 <img style="height: 280px;" src="/images/genes_different_length.png">
+</div>
 {{< /rawhtml >}}
 
 

@@ -13,9 +13,9 @@
       <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/rna-seq-analysis/</guid>
-      <description>Here we discuss how RNA-Seq alignment diverages from DNA-Seq alignment. But first, we need to fully understand RNA and RNA-Seq.
+      <description>The goal of this post is to describe how we can extract meaning from RNA-Seq data. In order to do so, we first need to understand RNA and how its sequenced.
 DNA vs. RNA Photo credit to biologydictionary.net
-RNA and DNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.</description>
+ RNA and DNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.</description>
     </item>
     
     <item>
