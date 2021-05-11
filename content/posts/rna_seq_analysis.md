@@ -78,7 +78,16 @@ __6. QC Library__
 
 #### Sequencing
 
-Recommended sequencing depth and read length for RNA-Seq varies depending on the project goal. 
+Recommended sequencing depth, read length, number of replicates, and single versus paired-end sequencing are all variables that change depending on the project goal. For example in the image below you can the consequences of varying sequencing depth.
+
+{{< rawhtml >}}
+<div style="text-align:center">
+<img style="height: 320px;" src="/images/rna_seq_depth_consequences.png">
+<p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Iowa Institute of Human Genetics</p>
+</div>
+{{< /rawhtml >}}
+
+Here we are focusing on RNA-Seq for the purpose of differential expression analysis and gene set enrichment analysis
 
 75 bp is a common length for RNA-Seq reads to minimize the number of reads that will flank splice-junctions. Reads like that are more difficult to align.
 
@@ -86,11 +95,22 @@ Single end sequencing is more common in RNA-Seq than DNA-Seq.
 
 single end is sually enough for differential expression analysis. De novo sequencing or splice variant anlaysis would require paried end longer reads at greater depth.
 
+
+
 ## Alignment
 
 This is where it gets interesting. Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. It was already diffcult to match a 150bp reads of DNA to the reference genome, but now we are mapping ~75 bp reads where a good percentage of them are flanking splice junctions. Yikes. Enter "splice-aware" aligners.
 
-Splice aware aligner's are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic.
+Splice aware aligner's are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic. Here are some splice-aware aligners:
+
+- STAR
+    - https://github.com/alexdobin/STAR
+- HISAT2
+- Minimap2
+    - https://academic.oup.com/bioinformatics/article/34/18/3094/4994778
+    - https://github.com/lh3/minimap2
+- TopHat2
+
 
 Stats
 
@@ -117,7 +137,7 @@ Genes vary in length. If you counted the number of reads mapped to genes A and B
 
 {{< rawhtml >}}
 <div style="text-align:center">
-<img style="height: 280px;" src="/images/genes_different_length.png">
+<img style="height: 250px;" src="/images/genes_different_length.png">
 </div>
 {{< /rawhtml >}}
 

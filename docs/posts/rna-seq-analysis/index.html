@@ -137,13 +137,36 @@
 <p><strong>5. Ligate Adapters</strong></p>
 <p><strong>6. QC Library</strong></p>
 <h4 id="sequencing">Sequencing</h4>
-<p>Recommended sequencing depth and read length for RNA-Seq varies depending on the project goal.</p>
+<p>Recommended sequencing depth, read length, number of replicates, and single versus paired-end sequencing are all variables that change depending on the project goal. For example in the image below you can the consequences of varying sequencing depth.</p>
+
+
+<div style="text-align:center">
+<img style="height: 320px;" src="/images/rna_seq_depth_consequences.png">
+<p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Iowa Institute of Human Genetics</p>
+</div>
+
+<p>Here we are focusing on RNA-Seq for the purpose of differential expression analysis and gene set enrichment analysis</p>
 <p>75 bp is a common length for RNA-Seq reads to minimize the number of reads that will flank splice-junctions. Reads like that are more difficult to align.</p>
 <p>Single end sequencing is more common in RNA-Seq than DNA-Seq.</p>
 <p>single end is sually enough for differential expression analysis. De novo sequencing or splice variant anlaysis would require paried end longer reads at greater depth.</p>
 <h2 id="alignment">Alignment</h2>
 <p>This is where it gets interesting. Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. It was already diffcult to match a 150bp reads of DNA to the reference genome, but now we are mapping ~75 bp reads where a good percentage of them are flanking splice junctions. Yikes. Enter &ldquo;splice-aware&rdquo; aligners.</p>
-<p>Splice aware aligner&rsquo;s are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic.</p>
+<p>Splice aware aligner&rsquo;s are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic. Here are some splice-aware aligners:</p>
+<ul>
+<li>STAR
+<ul>
+<li><a href="https://github.com/alexdobin/STAR">https://github.com/alexdobin/STAR</a></li>
+</ul>
+</li>
+<li>HISAT2</li>
+<li>Minimap2
+<ul>
+<li><a href="https://academic.oup.com/bioinformatics/article/34/18/3094/4994778">https://academic.oup.com/bioinformatics/article/34/18/3094/4994778</a></li>
+<li><a href="https://github.com/lh3/minimap2">https://github.com/lh3/minimap2</a></li>
+</ul>
+</li>
+<li>TopHat2</li>
+</ul>
 <p>Stats</p>
 <ul>
 <li>There are ~7-8 exons per gene on average.</li>
@@ -165,7 +188,7 @@
 
 
 <div style="text-align:center">
-<img style="height: 280px;" src="/images/genes_different_length.png">
+<img style="height: 250px;" src="/images/genes_different_length.png">
 </div>
 
 <h4 id="common-normalization-methods">Common normalization methods</h4>
