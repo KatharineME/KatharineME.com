@@ -147,7 +147,7 @@
 
 
 <div style="text-align:center">
-<img style="height: 230px;" src="/images/sample_depth.png">
+<img style="height: 220px;" src="/images/sample_depth.png">
 <p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Biorender</p>
 </div>
 
@@ -159,7 +159,8 @@
 <img style="height: 280px;" src="/images/genes_different_length.png">
 </div>
 
-<p><strong>Common normalization methods that accomplish these</strong></p>
+<h4 id="common-normalization-methods">Common normalization methods</h4>
+<p>The methods below normalize by the number of reads per sample and by the number of reads per gene. They differ in the order of operations and few other minor details.</p>
 <ul>
 <li>RPKM (Reads Per Kilobase Million)
 <ul>
@@ -204,10 +205,10 @@
 </ul>
 </li>
 </ul>
-<p><strong>Whats the best method to use?</strong></p>
+<h4 id="whats-the-best-method-to-use">Whats the best method to use?</h4>
 <p>Probably TPM. Here&rsquo;s why.</p>
 <p>Lets say we performed RNA-Seq on three samples (each sample gets one pie in the pictures below).</p>
-<h4 id="rpkm">RPKM</h4>
+<p><strong>RPKM</strong></p>
 <p>If we normalize our data with RPKM, for each sample, the total RPKM is different. As you can see below, One sample has a total RPKM of 10, while the other two are 8 and 9. Because of this, we can&rsquo;t directly compare the RPKM of Gene B across the three samples. For example if we compare the RPKM of Gene in samples 1 and 2, we would think it&rsquo;s the same, even though it accounts for a larger percentage of total expression in sample 2.</p>
 
 
@@ -216,7 +217,7 @@
 <img style="height: 280px;" src="/images/rpkm.png">
 </div>
 
-<h4 id="tpm">TPM</h4>
+<p><strong>TPM</strong></p>
 <p>If we normalize our data with TPM, for each sample, the total TPM is the same. That means that when Gene B&rsquo;s TPM is greater in sample 2 than sample 1, its expression is actually greater in sample 2 than sample 1. Isn&rsquo;t that nice?</p>
 
 

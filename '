@@ -86,8 +86,6 @@ single end is sually enough for differential expression analysis. De novo sequen
 
 This is where it gets interesting. RNA-Seq alignment presents challenges on top of those that already existed with DNA-Seq.
 
-
-
 ## Normalization
 
 __1. Normalize the number of reads per sample__
@@ -96,7 +94,7 @@ Without this normalization, you would think the gene expression of sample B is d
 
 {{< rawhtml >}}
 <div style="text-align:center">
-<img style="height: 220px;" src="/images/sample_depth.png">
+<img style="height: 230px;" src="/images/sample_depth.png">
 <p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Biorender</p>
 </div>
 {{< /rawhtml >}}
