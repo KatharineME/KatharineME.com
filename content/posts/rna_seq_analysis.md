@@ -134,8 +134,24 @@ __Whats the best method to use?__
 
 Probably TPM. Here's why.
 
-Lets say we performed RNA-Seq on two samples: a normal and a tumor.
+Lets say we performed RNA-Seq on three samples (each sample gets one pie in the pictures below).
+
+#### RPKM
 
 After performing RPKM, the expression for a single gene cannot be directly compared across samples, whereas with TPM they can be.
+
+{{< rawhtml >}}
+<div style="text-align:center">
+<img style="height: 260px;" src="/images/rpkm.png">
+</div>
+{{< /rawhtml >}}
+
+#### TPM
+
+{{< rawhtml >}}
+<div style="text-align:center">
+<img style="height: 260px;" src="/images/tpm.png">
+</div>
+{{< /rawhtml >}}
 
 Joshua Starmer has [a fantastic video](https://www.youtube.com/watch?v=TTUrtCY2k-w&t=495s) on these methods if you're looking for more. 
