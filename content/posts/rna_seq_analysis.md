@@ -26,14 +26,14 @@ From acetylation to methylation, alternative splicing, and other regulatory mech
 </div>
 {{< /rawhtml >}}
 
-RNA is like a snapshot of the cell. Results of RNA-Seq will be vastly different between cell types and over time in the same cell. For example, a cell might be fighting a pathogen or in the process of division, these will produce vastly different results. Even you may give a very different impression if someone meets you at work versus out at home. Its the same concept. Cell type dependent and time dependent.
+RNA is like a snapshot of the cell. Results of RNA-Seq will be vastly different between cell types and over time in the same cell. For example, a cell might be fighting a pathogen or in the process of division, these will produce different results. Even you may give a different impression if someone meets you at work versus out at a bar. It's the same concept. Cell type dependent and time dependent.
 
 In sum: DNA tells you what the cells are working with, RNA tells you what they're up to.
 
 
 ## RNA-Seq
 
-Whether we are trying to figure out how cells respond to a drug or delineate the cell states of a tumor, RNA-Seq is currently the best way to assess the gene expression of cells. However it is a bit of a misnomer because we don't actually sequence the RNA. We first convert it into cDNA, which is more stable, then sequence it. Let's break it down step by step.
+Whether we are trying to figure out how cells respond to a drug or delineate the cell states of a tumor, RNA-Seq is currently the best way to assess the gene expression of cells. However, it's a bit of a misnomer because we don't actually sequence the RNA. We first convert it into cDNA, which is more stable, then sequence it. Let's break it down step by step.
 
 #### Sampling
 
