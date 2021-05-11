@@ -138,7 +138,7 @@ Lets say we performed RNA-Seq on three samples (each sample gets one pie in the 
 
 #### RPKM
 
-If we normalize our data with RPKM, for each sample, the total RPKM is different. As you can see below, One sample has a total RPKM of 10, while the other two are 8 and 9. Because of this, we can't directly compare the RPKM of Gene B across the three samples.
+If we normalize our data with RPKM, for each sample, the total RPKM is different. As you can see below, One sample has a total RPKM of 10, while the other two are 8 and 9. Because of this, we can't directly compare the RPKM of Gene B across the three samples. For example if we compare the RPKM of Gene B between samples 2 and 3, we would think Gene B's expression is higher in sample 2 even though it accounts for a larger percentage in sample 3.
 
 {{< rawhtml >}}
 <div style="text-align:center">
@@ -147,6 +147,8 @@ If we normalize our data with RPKM, for each sample, the total RPKM is different
 {{< /rawhtml >}}
 
 #### TPM
+
+
 
 {{< rawhtml >}}
 <div style="text-align:center">
