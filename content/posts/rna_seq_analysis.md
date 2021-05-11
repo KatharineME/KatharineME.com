@@ -15,9 +15,9 @@ categories = []
 </div>
 {{< /rawhtml >}}
 
-DNA and RNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.
+To review, DNA and RNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.
 
-From acetylation to methylation, alternative splicing, and other regulatory mechanisms, our cells use a bunch of different strategies to specialize the way they read and transcribe the genome, resulting in very different functions (why skin cells are so different from heart cells).
+From acetylation to methylation, alternative splicing, and other regulatory mechanisms, our cells use many different strategies to specialize the way they transcribe and utilize the genome, resulting in different functions (why skin cells are different from heart cells).
 
 {{< rawhtml >}}
 <div style="text-align:center">
@@ -78,13 +78,17 @@ __6. QC Library__
 
 #### Sequencing
 
-75 bp is a common length for RNA-Seq reads. Single end sequencing is more common in RNA-Seq than DNA-Seq.
+Recommended sequencing depth and read length for RNA-Seq varies depending on the project goal. 
+
+75 bp is a common length for RNA-Seq reads to minimize the number of reads that will flank splice-junctions. Reads like that are more difficult to align.
+
+Single end sequencing is more common in RNA-Seq than DNA-Seq.
 
 single end is sually enough for differential expression analysis. De novo sequencing or splice variant anlaysis would require paried end longer reads at greater depth.
 
 ## Alignment
 
-This is where it gets interesting. Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. It was already diffcult to match a 150bp reads of DNA to the reference genome, but now we are mapping ~75 bp reads where a good percentage of them are flanking a region where a piece of DNA was removed. Yikes. Enter "splice-aware" aligners.
+This is where it gets interesting. Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. It was already diffcult to match a 150bp reads of DNA to the reference genome, but now we are mapping ~75 bp reads where a good percentage of them are flanking splice junctions. Yikes. Enter "splice-aware" aligners.
 
 Splice aware aligner's are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic.
 
