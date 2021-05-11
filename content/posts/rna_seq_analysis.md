@@ -142,7 +142,7 @@ If we normalize our data with RPKM, for each sample, the total RPKM is different
 
 {{< rawhtml >}}
 <div style="text-align:center">
-<img style="height: 260px;" src="/images/rpkm.png">
+<img style="height: 280px;" src="/images/rpkm.png">
 </div>
 {{< /rawhtml >}}
 
@@ -152,7 +152,7 @@ If we normalize our data with TPM, for each sample, the total TPM is the same. T
 
 {{< rawhtml >}}
 <div style="text-align:center">
-<img style="height: 260px;" src="/images/tpm.png">
+<img style="height: 280px;" src="/images/tpm.png">
 </div>
 {{< /rawhtml >}}
 
