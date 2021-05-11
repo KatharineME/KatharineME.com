@@ -6,9 +6,6 @@ tags = []
 categories = []
 +++
 
-The goal of this post is to describe how we can extract meaning from RNA-Seq data. In order to do so, we first need to understand RNA and how its sequenced.
-
-
 ## DNA vs. RNA
 
 {{< rawhtml >}}
@@ -89,9 +86,6 @@ single end is sually enough for differential expression analysis. De novo sequen
 
 This is where it gets interesting. RNA-Seq alignment presents challenges on top of those that already existed with DNA-Seq.
 
-
-
-
 ## Normalization
 
 __1. Normalize the number of reads per sample__
@@ -145,7 +139,3 @@ Lets say we performed RNA-Seq on two samples: a normal and a tumor.
 After performing RPKM, the expression for a single gene cannot be directly compared across samples, whereas with TPM they can be.
 
 Joshua Starmer has [a fantastic video](https://www.youtube.com/watch?v=TTUrtCY2k-w&t=495s) on these methods if you're looking for more. 
-
-
-
-
