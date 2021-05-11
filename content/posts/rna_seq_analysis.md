@@ -84,9 +84,15 @@ single end is sually enough for differential expression analysis. De novo sequen
 
 ## Alignment
 
-This is where it gets interesting. RNA-Seq alignment presents challenges on top of those that already existed with DNA-Seq.
+This is where it gets interesting. Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. It was already diffcult to match a 150bp reads of DNA to the reference genome, but now we are mapping ~75 bp reads where a good percentage of them are flanking a region where a piece of DNA was removed. Yikes. Enter "splice-aware" aligners.
 
+Splice aware aligner's are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic.
 
+Stats
+
+- There are ~7-8 exons per gene on average.
+- The average exon size in eukaryotes is 150bp.
+- About 80% of exons are less than 200bp in length.
 
 ## Normalization
 
@@ -114,7 +120,7 @@ Genes vary in length. If you counted the number of reads mapped to genes A and B
 
 #### Common normalization methods 
 
-The methods below normalize by the number of reads per sample and by the number of reads per gene. They differ in the order of operations and few other minor details.
+The methods below normalize by the number of reads per sample and by the number of reads per gene. They differ in the order of operations and few other details.
 
 - RPKM (Reads Per Kilobase Million)
     - For single end RNA-Seq

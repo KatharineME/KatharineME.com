@@ -140,7 +140,14 @@
 <p>75 bp is a common length for RNA-Seq reads. Single end sequencing is more common in RNA-Seq than DNA-Seq.</p>
 <p>single end is sually enough for differential expression analysis. De novo sequencing or splice variant anlaysis would require paried end longer reads at greater depth.</p>
 <h2 id="alignment">Alignment</h2>
-<p>This is where it gets interesting. RNA-Seq alignment presents challenges on top of those that already existed with DNA-Seq.</p>
+<p>This is where it gets interesting. Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. It was already diffcult to match a 150bp reads of DNA to the reference genome, but now we are mapping ~75 bp reads where a good percentage of them are flanking a region where a piece of DNA was removed. Yikes. Enter &ldquo;splice-aware&rdquo; aligners.</p>
+<p>Splice aware aligner&rsquo;s are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic.</p>
+<p>Stats</p>
+<ul>
+<li>There are ~7-8 exons per gene on average.</li>
+<li>The average exon size in eukaryotes is 150bp.</li>
+<li>About 80% of exons are less than 200bp in length.</li>
+</ul>
 <h2 id="normalization">Normalization</h2>
 <p><strong>1. Normalize the number of reads per sample</strong></p>
 <p>Without this normalization, you would think the gene expression of sample B is double the gene expression of sample C. Wherein reality, their gene expression maybe almost identical.</p>
@@ -160,7 +167,7 @@
 </div>
 
 <h4 id="common-normalization-methods">Common normalization methods</h4>
-<p>The methods below normalize by the number of reads per sample and by the number of reads per gene. They differ in the order of operations and few other minor details.</p>
+<p>The methods below normalize by the number of reads per sample and by the number of reads per gene. They differ in the order of operations and few other details.</p>
 <ul>
 <li>RPKM (Reads Per Kilobase Million)
 <ul>
