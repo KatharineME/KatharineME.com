@@ -138,7 +138,7 @@ Lets say we performed RNA-Seq on three samples (each sample gets one pie in the 
 
 #### RPKM
 
-After performing RPKM, the expression for a single gene cannot be directly compared across samples, whereas with TPM they can be.
+If we normalize our data with RPKM, for each sample, the total RPKM is different. As you can see below, One sample has a total RPKM of 10, while the other two are 8 and 9. Because of this, we can't directly compare the RPKM of Gene B across the three samples.
 
 {{< rawhtml >}}
 <div style="text-align:center">
