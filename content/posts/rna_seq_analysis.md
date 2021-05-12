@@ -101,7 +101,7 @@ single end is sually enough for differential expression analysis. De novo sequen
 
 This is where it gets interesting. 
 
-There is alignment and there is _pseudo-alignment_. Alignment is maping RNA-Seq reads to the human reference genome. After doing this you can call variants or quantify expression by counting the reads aligned to the genes. Pseudo-alignment maps RNA-Seq reads to a reference transcriptome, and therefore doesn't need to be splice-aware. Pseudo-alignment can be used for quanitfying expression but not for variant calling. However it's much faster and less computationally expensive than regular alignment. So how you align the reads depends on your goal. 
+There is alignment and there is _pseudo-alignment_. Alignment is maping RNA-Seq reads to the human reference genome. After doing this you can call variants or quantify expression by counting the reads aligned to the genes. Pseudo-alignment maps RNA-Seq reads to a reference transcriptome. Pseudo-alignment can be used for quanitfying expression but not for variant calling. However it's much faster and less computationally expensive than regular alignment. So how you align the reads depends on your goal. 
 
 __Pseudo Aligners__
 - Salmon
@@ -112,7 +112,7 @@ Here we'll focus on alignment to the reference genome. Aligning cDNA to the geno
 Splice aware aligner's are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic. Here are some splice-aware aligners:
 
 
-__Splice-aware Aligners__
+__Splice-Aware Aligners__
 - STAR
     - https://github.com/alexdobin/STAR
 - HISAT2
