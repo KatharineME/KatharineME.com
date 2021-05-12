@@ -99,20 +99,12 @@ single end is sually enough for differential expression analysis. De novo sequen
 
 ## Alignment
 
-This is where it gets interesting. 
+There is alignment and there is pseudo-alignment. Here when I say alignment, I'm talking about maping RNA-Seq reads to the human reference genome. 
 
-There is alignment and there is _pseudo-alignment_. Alignment is maping RNA-Seq reads to the human reference genome. After doing this you can call variants or quantify expression by counting the reads aligned to the genes. Pseudo-alignment maps RNA-Seq reads to a reference transcriptome, and therefore doesn't need to be splice-aware. Pseudo-alignment can be used for quanitfying expression but not for variant calling. However it's much faster and less computationally expensive than regular alignment. So how you align the reads depends on your goal. 
-
-__Pseudo Aligners__
-- Salmon
-- Kallisto
-
-Here we'll focus on alignment to the reference genome. Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. Enter "splice-aware" aligners.
+This is where it gets interesting. Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. It was already diffcult to match a 150bp reads of DNA to the reference genome, but now we are mapping ~75 bp reads where a good percentage of them are flanking splice junctions. Yikes. Enter "splice-aware" aligners.
 
 Splice aware aligner's are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic. Here are some splice-aware aligners:
 
-
-__Splice-aware Aligners__
 - STAR
     - https://github.com/alexdobin/STAR
 - HISAT2

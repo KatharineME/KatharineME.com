@@ -150,8 +150,16 @@
 <p>Single end sequencing is more common in RNA-Seq than DNA-Seq.</p>
 <p>single end is sually enough for differential expression analysis. De novo sequencing or splice variant anlaysis would require paried end longer reads at greater depth.</p>
 <h2 id="alignment">Alignment</h2>
-<p>This is where it gets interesting. Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. It was already diffcult to match a 150bp reads of DNA to the reference genome, but now we are mapping ~75 bp reads where a good percentage of them are flanking splice junctions. Yikes. Enter &ldquo;splice-aware&rdquo; aligners.</p>
+<p>This is where it gets interesting.</p>
+<p>There is alignment and there is <em>pseudo-alignment</em>. Alignment is maping RNA-Seq reads to the human reference genome. After doing this you can call variants or quantify expression by counting the reads aligned to the genes. Pseudo-alignment maps RNA-Seq reads to a reference transcriptome, and therefore doesn&rsquo;t need to be splice-aware. Pseudo-alignment can be used for quanitfying expression but not for variant calling. However it&rsquo;s much faster and less computationally expensive than regular alignment. So how you align the reads depends on your goal.</p>
+<p><strong>Pseudo Aligners</strong></p>
+<ul>
+<li>Salmon</li>
+<li>Kallisto</li>
+</ul>
+<p>Here we&rsquo;ll focus on alignment to the reference genome. Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. Enter &ldquo;splice-aware&rdquo; aligners.</p>
 <p>Splice aware aligner&rsquo;s are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic. Here are some splice-aware aligners:</p>
+<p><strong>Splice-aware Aligners</strong></p>
 <ul>
 <li>STAR
 <ul>
