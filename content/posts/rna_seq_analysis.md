@@ -58,7 +58,7 @@ __2. Enrich for mRNA__
 
 - Poly-A Enrichment
     - Beads that bind to the poly A tails on mRNA trancripts and pull them down, isolating them from other RNAs.
-    - Can't be used in prokaryotic cells becuase they typically dont have poly A tails on their mRNA transcripts.
+    - Can't be used in prokaryotic cells becuase they typically don't have poly A tails on their mRNA transcripts.
 - rRNA depletion
     - Selectively remove rRNA sequences.
 
