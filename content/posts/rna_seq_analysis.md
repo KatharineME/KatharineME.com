@@ -37,7 +37,7 @@ Whether we are trying to figure out how cells respond to a drug or delineate the
 
 #### Sampling
 
-The main challenge with isolating RNA from a sample is RNA's instability. Compared to DNA, RNA is less stable because it is single stranded and because it has a  reactive hydroxyl group (OH) on the second carbon of its sugar ring instead of a hydrogren.
+The main challenge with isolating RNA from a sample is it's instability. Compared to DNA, RNA is less stable because it is single stranded and because it has a reactive hydroxyl group (OH) on the second carbon of its sugar ring instead of a hydrogren.
 
 However, assuming RNA was successfully isolated, what kind of RNA will be recovered? This is the typical breakdown:
 
@@ -78,7 +78,7 @@ __6. QC Library__
 
 #### Sequencing
 
-Recommended sequencing depth, read length, number of replicates, and single versus paired-end sequencing are all variables that change depending on the project goal. For example in the image below you can the consequences of varying sequencing depth.
+Recommended sequencing depth, read length, number of replicates, and single versus paired-end sequencing are all variables that change depending on the project goal. For example, in this image you can the consequences of varying sequencing depths.
 
 {{< rawhtml >}}
 <div style="text-align:center">
@@ -87,21 +87,16 @@ Recommended sequencing depth, read length, number of replicates, and single vers
 </div>
 {{< /rawhtml >}}
 
-Here we are focusing on RNA-Seq for the purpose of differential expression analysis and gene set enrichment analysis
+In terms of read length, if the end goal is differential expression analysis or variant calling, 75 bp is a commonly used. This will lower the number of reads that flank splice-junctions which are more difficult to align.
 
-75 bp is a common length for RNA-Seq reads to minimize the number of reads that will flank splice-junctions. Reads like that are more difficult to align.
-
-Single end sequencing is more common in RNA-Seq than DNA-Seq.
-
-single end is sually enough for differential expression analysis. De novo sequencing or splice variant anlaysis would require paried end longer reads at greater depth.
-
+Single-end is usually enough for differential expression analysis. De novo sequencing or splice variant anlaysis would require paried-end longer reads at greater depth.
 
 
 ## Alignment
 
 This is where it gets interesting. 
 
-There is alignment and there is _pseudo-alignment_. Alignment is maping RNA-Seq reads to the human reference genome. After doing this you can call variants or quantify expression by counting the reads aligned to the genes. Pseudo-alignment maps RNA-Seq reads to a reference transcriptome. Pseudo-alignment can be used for quanitfying expression but not for variant calling. However it's much faster and less computationally expensive than regular alignment. So how you align the reads depends on your goal. 
+There is alignment and there is _pseudo-alignment_. Alignment is maping RNA-Seq reads to the human reference genome. After doing this you can call variants or quantify expression. Pseudo-alignment maps RNA-Seq reads to a reference transcriptome. Pseudo-alignment can be used for quanitfying expression but not for variant calling. However it's much faster and less computationally expensive than regular alignment. So how you align the reads depends on your goal. 
 
 __Pseudo Aligners__
 - Salmon
