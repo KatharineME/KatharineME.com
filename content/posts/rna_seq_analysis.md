@@ -58,7 +58,7 @@ __2. Enrich for mRNA__
 
 - Poly-A Enrichment
     - Beads that bind to the poly A tails on mRNA trancripts and pull them down, isolating them from other RNAs.
-    - Cant be used in prokaryotic cells becuase they typically dont have poly A tails on their mRNA transcripts.
+    - Can't be used in prokaryotic cells becuase they typically dont have poly A tails on their mRNA transcripts.
 - rRNA depletion
     - Selectively remove rRNA sequences.
 
@@ -96,18 +96,19 @@ Single-end is usually enough for differential expression analysis. De novo seque
 
 This is where it gets interesting. 
 
-There is alignment and there is _pseudo-alignment_. Alignment is maping RNA-Seq reads to the human reference genome. After doing this you can call variants or quantify expression. Pseudo-alignment maps RNA-Seq reads to a reference transcriptome. Pseudo-alignment can be used for quanitfying expression but not for variant calling. However it's much faster and less computationally expensive than regular alignment. So how you align the reads depends on your goal. 
+There is alignment and there is _pseudo-alignment_. Alignment is maping RNA-Seq reads to the human reference genome. After doing this you can call variants or quantify expression. Pseudo-alignment maps RNA-Seq reads to a reference transcriptome. It can be used to quantify expression but not for variant calling. However, it's much faster and less computationally expensive than regular alignment. So how you align the reads depends on your goal. 
 
-__Pseudo Aligners__
+__Pseudo (Transcriptome) Aligners__
 - Salmon
 - Kallisto
 
-Here we'll focus on alignment to the reference genome. Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. Enter "splice-aware" aligners.
+But here we'll focus on alignment to the reference genome.
+
+Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. Enter "splice-aware" aligners.
 
 Splice aware aligner's are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic. Here are some splice-aware aligners:
 
-
-__Splice-Aware Aligners__
+__Splice-Aware (Genome) Aligners__
 - STAR
     - https://github.com/alexdobin/STAR
 - HISAT2
@@ -115,7 +116,6 @@ __Splice-Aware Aligners__
     - https://academic.oup.com/bioinformatics/article/34/18/3094/4994778
     - https://github.com/lh3/minimap2
 - TopHat2
-
 
 Stats
 

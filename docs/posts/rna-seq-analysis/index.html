@@ -120,7 +120,7 @@
 <li>Poly-A Enrichment
 <ul>
 <li>Beads that bind to the poly A tails on mRNA trancripts and pull them down, isolating them from other RNAs.</li>
-<li>Cant be used in prokaryotic cells becuase they typically dont have poly A tails on their mRNA transcripts.</li>
+<li>Can&rsquo;t be used in prokaryotic cells becuase they typically dont have poly A tails on their mRNA transcripts.</li>
 </ul>
 </li>
 <li>rRNA depletion
@@ -149,15 +149,16 @@
 <p>Single-end is usually enough for differential expression analysis. De novo sequencing or splice variant anlaysis would require paried-end longer reads at greater depth.</p>
 <h2 id="alignment">Alignment</h2>
 <p>This is where it gets interesting.</p>
-<p>There is alignment and there is <em>pseudo-alignment</em>. Alignment is maping RNA-Seq reads to the human reference genome. After doing this you can call variants or quantify expression. Pseudo-alignment maps RNA-Seq reads to a reference transcriptome. Pseudo-alignment can be used for quanitfying expression but not for variant calling. However it&rsquo;s much faster and less computationally expensive than regular alignment. So how you align the reads depends on your goal.</p>
-<p><strong>Pseudo Aligners</strong></p>
+<p>There is alignment and there is <em>pseudo-alignment</em>. Alignment is maping RNA-Seq reads to the human reference genome. After doing this you can call variants or quantify expression. Pseudo-alignment maps RNA-Seq reads to a reference transcriptome. It can be used to quantify expression but not for variant calling. However, it&rsquo;s much faster and less computationally expensive than regular alignment. So how you align the reads depends on your goal.</p>
+<p><strong>Pseudo (Transcriptome) Aligners</strong></p>
 <ul>
 <li>Salmon</li>
 <li>Kallisto</li>
 </ul>
-<p>Here we&rsquo;ll focus on alignment to the reference genome. Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. Enter &ldquo;splice-aware&rdquo; aligners.</p>
+<p>But here we&rsquo;ll focus on alignment to the reference genome.</p>
+<p>Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. Enter &ldquo;splice-aware&rdquo; aligners.</p>
 <p>Splice aware aligner&rsquo;s are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic. Here are some splice-aware aligners:</p>
-<p><strong>Splice-Aware Aligners</strong></p>
+<p><strong>Splice-Aware (Genome) Aligners</strong></p>
 <ul>
 <li>STAR
 <ul>
