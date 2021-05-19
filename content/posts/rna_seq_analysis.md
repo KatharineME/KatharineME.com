@@ -189,8 +189,8 @@ If we normalize our data with RPKM, for each sample, the total RPKM is different
 
 __TPM__
 
-If we normalize our data with TPM, for each sample, the total TPM is the same. That means that when Gene B's TPM is greater in sample 2 than sample 1, its expression is actually greater in sample 2 than sample 1. Isn't that nice?
-
+If we normalize our data with TPM, for each sample, the total TPM is the same. That means that when Gene B's TPM is greater in sample 2 than sample 1, its expression is actually greater in sample 2 than sample 1.
+ 
 {{< rawhtml >}}
 <br>
 <div style="text-align:center;">
