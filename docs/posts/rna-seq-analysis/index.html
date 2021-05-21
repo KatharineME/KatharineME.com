@@ -181,7 +181,7 @@
 <li>About 80% of exons are less than 200bp in length.</li>
 </ul>
 <h2 id="normalization">Normalization</h2>
-<p><strong>1. Normalize the number of reads per sample</strong></p>
+<p><strong>1. The number of reads per sample</strong></p>
 <p>Without this normalization, you would think the gene expression of sample B is double the gene expression of sample C. Wherein reality, their gene expression maybe almost identical.</p>
 
 
@@ -190,7 +190,7 @@
 <p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Biorender</p>
 </div>
 
-<p><strong>2. Normalize the number of reads per gene</strong></p>
+<p><strong>2. The number of reads per gene</strong></p>
 <p>Genes vary in length. If you counted the number of reads mapped to genes A and B below, you would think gene B has twice the expression of gene A. Normalizing by gene length sovles this problem.</p>
 
 
@@ -198,6 +198,7 @@
 <img style="height: 250px;" src="/images/genes_different_length.png">
 </div>
 
+<p>__3. The outlier genes that skew expression of all other genes</p>
 <h4 id="common-normalization-methods">Common normalization methods</h4>
 <p>The methods below normalize by the number of reads per sample and by the number of reads per gene. They differ in the order of operations and few other details.</p>
 <ul>
@@ -244,6 +245,31 @@
 </ul>
 </li>
 </ul>
+<h4 id="normalization-programs">Normalization Programs</h4>
+<p>DESeq2</p>
+<ul>
+<li>Adjusting for differences in library size (all mehtods above deal with this)</li>
+<li>Adjusting for differences in library composition
+<ul>
+<li>When one sample has a gene that is transcribed a lot and the other sample doesnt transcribe that gene at all, the other samples makes the expression of all other genes artificially high to make up for this.</li>
+</ul>
+</li>
+<li>Steps for a single sample:
+<ul>
+<li>Calculate scaling factor for each sample
+<ul>
+<li>Takes the log base e of all the count values</li>
+<li>Average each gene across all samples</li>
+<li>Filter out genes with infinity averages (these genes that for one or more samples, had zero expression). This causes scaling factors to be based on house keeping genes (genes transcribed ar similar levels regardless of tissue type).</li>
+<li>Subtract the average log value from the log(counts) for each gene of each sample</li>
+<li>Calculate the median value for each sample.</li>
+<li>Raise e to the median value for each sample to get the scaling factor for each sample.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>edgeR</p>
 <h4 id="whats-the-best-method-to-use">Whats the best method to use?</h4>
 <p>Probably TPM. Here&rsquo;s why.</p>
 <p>Lets say we performed RNA-Seq on three samples (each sample gets one pie in the pictures below).</p>
