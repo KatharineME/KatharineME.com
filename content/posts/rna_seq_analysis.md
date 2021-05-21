@@ -125,7 +125,7 @@ Stats
 
 ## Normalization
 
-__1. Normalize the number of reads per sample__
+__1. The number of reads per sample__
 
 Without this normalization, you would think the gene expression of sample B is double the gene expression of sample C. Wherein reality, their gene expression maybe almost identical.
 
@@ -136,7 +136,7 @@ Without this normalization, you would think the gene expression of sample B is d
 </div>
 {{< /rawhtml >}}
 
-__2. Normalize the number of reads per gene__
+__2. The number of reads per gene__
 
 Genes vary in length. If you counted the number of reads mapped to genes A and B below, you would think gene B has twice the expression of gene A. Normalizing by gene length sovles this problem.
 
@@ -145,6 +145,9 @@ Genes vary in length. If you counted the number of reads mapped to genes A and B
 <img style="height: 250px;" src="/images/genes_different_length.png">
 </div>
 {{< /rawhtml >}}
+
+
+__3. The outlier genes that skew expression of all other genes 
 
 
 #### Common normalization methods 
@@ -169,6 +172,20 @@ The methods below normalize by the number of reads per sample and by the number 
             - We call this reads per kilobase
         - Step 2: Calculate total reads per kilobase
         - Step 3: Divde total reads per kilobase by 1,000,000
+
+
+DESeq2
+
+- Adjusting for differences in library size (all mehtods above deal with this)
+- Adjusting for differences in library composition
+    - When one sample has a gene that is transcribed a lot and the other sample doesnt transcribe that gene at all, the other samples makes the expression of all other genes artificially high to make up for this.
+- Steps for a single sample:
+    - Calculate scaling factor for each sample
+        - Takes the log base e of all the count values
+        - Average each gene across all samples
+        - Filter out genes with infinity averages (these genes that for one or more samples, had zero expression). This causes scaling factors to be based on house keeping genes (genes transcribed ar similar levels regardless of tissue type).
+        - Subtract the average log value from the log(counts) for each gene of each sample
+        -  
 
 #### Whats the best method to use?
 
