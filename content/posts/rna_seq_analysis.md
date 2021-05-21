@@ -173,6 +173,7 @@ The methods below normalize by the number of reads per sample and by the number 
         - Step 2: Calculate total reads per kilobase
         - Step 3: Divde total reads per kilobase by 1,000,000
 
+#### Normalization Programs
 
 DESeq2
 
@@ -185,7 +186,11 @@ DESeq2
         - Average each gene across all samples
         - Filter out genes with infinity averages (these genes that for one or more samples, had zero expression). This causes scaling factors to be based on house keeping genes (genes transcribed ar similar levels regardless of tissue type).
         - Subtract the average log value from the log(counts) for each gene of each sample
-        -  
+        - Calculate the median value for each sample.
+        - Raise e to the median value for each sample to get the scaling factor for each sample.
+
+
+edgeR
 
 #### Whats the best method to use?
 
