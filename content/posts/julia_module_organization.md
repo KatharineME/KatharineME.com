@@ -92,7 +92,7 @@ end
 
 ### A function in one module calls a function in another module
 
-f4 calls f1. How do we make this work? This is what f4 looks like:
+f4 calls f1. `using ..A: f1` tells julia to reference the previously defined f1 function from the A module. The two dots `..` are used to go one level up from the current module.
 
 ```julia
 

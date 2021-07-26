@@ -140,7 +140,7 @@ Kate.f6()
 <span class="k">end</span>
 
 </code></pre></div><h3 id="a-function-in-one-module-calls-a-function-in-another-module">A function in one module calls a function in another module</h3>
-<p>f4 calls f1. How do we make this work? This is what f4 looks like:</p>
+<p>f4 calls f1. <code>using ..A: f1</code> tells julia to reference the previously defined f1 function from the A module. The two dots <code>..</code> are used to go one level up from the current module.</p>
 <div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia">
 <span class="k">using</span> <span class="o">..</span><span class="n">A</span><span class="o">:</span> <span class="n">f1</span>
 
