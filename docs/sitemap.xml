@@ -2,13 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://katharineme.com/posts/</loc>
-    <lastmod>2021-05-05T00:00:00+00:00</lastmod>
+    <loc>https://katharineme.com/beginnings/</loc>
+    <lastmod>2021-07-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://katharineme.com/posts/rna-seq-analysis/</loc>
-    <lastmod>2021-05-05T00:00:00+00:00</lastmod>
+    <loc>https://katharineme.com/beginnings/julia-module-organization/</loc>
+    <lastmod>2021-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/posts/julia-module-organization/</loc>
+    <lastmod>2021-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/posts/</loc>
+    <lastmod>2021-07-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/</loc>
+    <lastmod>2021-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/posts/rna-seq-analysis/</loc>
     <lastmod>2021-05-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/posts/juliadb/</loc>
@@ -35,13 +44,7 @@
     <loc>https://katharineme.com/posts/virtualization/</loc>
     <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://katharineme.com/beginnings/</loc>
-    <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://katharineme.com/beginnings/sequence-analysis/</loc>
-    <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://katharineme.com/beginnings/trace-ancestry-through-dna/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/beginnings/trace-ancestry-through-dna/</loc>
@@ -70,8 +73,6 @@
   </url><url>
     <loc>https://katharineme.com/posts/web-design/</loc>
     <lastmod>2020-03-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://katharineme.com/beginnings/question/</loc>
   </url><url>
     <loc>https://katharineme.com/categories/</loc>
   </url><url>
