@@ -35,7 +35,6 @@ Then `git add` and `git push` as usual and thats it.
 - Its more expensive than AWS S3 and Google Cloud
 
 #### Pricing
-- https://aws.amazon.com/s3/pricing/
 - $5 / month per data pack, where a data pack is 50GB storage with 50GB bandwidth
 - If you have 3 data packs, you would pay $15 / month and have 150GB of storage with 150GB bandwidth
 
@@ -46,6 +45,7 @@ Then `git add` and `git push` as usual and thats it.
 #### Pricing
 - $0.023 / month per GB for the first 50TB. This is equal to $1.15 / month for 50GB storage
 - Much cheaper than Git LFS
+- https://aws.amazon.com/s3/pricing/
 
 ### Google Cloud
 
