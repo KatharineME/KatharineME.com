@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.88.1" />
   </head>
 
   <body class="">
@@ -83,7 +83,7 @@
 <p>Include vs. Using</p>
 <p><code>include</code> and <code>using</code> are two ways of accessing code in Julia. <code>using</code> tells Julia to reference something that has already been defined, while <code>include</code> tells Julia to copy and define code that was not previously defined. <code>include</code> should only be run once. Thereafter <code>using</code> should be used to access it.</p>
 <p>This is the Kate.jl file.</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia">
 <span class="k">module</span> <span class="n">Kate</span>
 
 <span class="k">module</span> <span class="n">A</span>
@@ -105,7 +105,7 @@
 <span class="k">end</span>
 
 </code></pre></div><p>In a Jupyter notebook I&rsquo;ll be able to run the following:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">
 using Kate
 
 Kate.A.f1()
@@ -115,7 +115,7 @@ Kate.B.f4()
 Kate.f5()
 
 </code></pre></div><p>However f4 actually uses f1. How do we make this work? This is what f4 looks like:</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia">
 <span class="k">using</span> <span class="o">..</span><span class="n">A</span><span class="o">:</span> <span class="n">f1</span>
 
 <span class="k">function</span> <span class="n">f4</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -126,7 +126,7 @@ Kate.f5()
 
 </code></pre></div><p>In order for this to work, module A msut be defined before module B in the Kate.jl file. If the their order was reversed, julia would throw an error when it tried to call <code>using ..A: f1</code> because module A would not have been defined yet. Here is another illustration of why order matters in a module file like Kate.jl:</p>
 <p>This module file while throw an error because when <code>a = b</code> is evaluated, <code>b</code> has not been defined.</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia">
 <span class="k">module</span> <span class="n">Kate</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
@@ -135,7 +135,7 @@ Kate.f5()
 
 <span class="k">end</span>
 </code></pre></div><p>However, this module file works. It doesnt matter that function <code>a</code> calls <code>b</code>and <code>a</code> comes before <code>b</code> becuase they are not being executed, they are merely being defined.</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia">
 <span class="k">module</span> <span class="n">Kate</span>
 
 <span class="k">function</span> <span class="n">a</span><span class="p">()</span>

@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.88.1" />
   </head>
 
   <body class="">
@@ -124,12 +124,12 @@ This is the genome VCF output for sample ${N}, which includes both variant recor
 <h2 id="run">Run</h2>
 <p>Strelka is run in a two step procedure: 1) configuration and 2) execution.</p>
 <p>In the configure step, you pass in the alignment file, reference data, output directory, and more like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">{</span>STRELKA_INSTALL_PATH<span class="o">}</span>/bin/configureStrelkaGermlineWorkflow.py <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="o">{</span>STRELKA_INSTALL_PATH<span class="o">}</span>/bin/configureStrelkaGermlineWorkflow.py <span class="se">\
 </span><span class="se"></span>--bam NA12878.bam <span class="se">\
 </span><span class="se"></span>--referenceFasta hg19.fa <span class="se">\
 </span><span class="se"></span>--runDir <span class="si">${</span><span class="nv">STRELKA_ANALYSIS_PATH</span><span class="si">}</span>
 </code></pre></div><p>which creates a <code>runWorkflow.py</code> script with those settings in <code>output/strelka/</code> using Pyflow. <code>runWorkflow.py</code> is then run in the execution step where you can pass in parameters like number of jobs:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">{</span>STRELKA_ANALYSIS_PATH<span class="o">}</span>/runWorkflow.py -m <span class="nb">local</span> -j <span class="m">8</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="o">{</span>STRELKA_ANALYSIS_PATH<span class="o">}</span>/runWorkflow.py -m <span class="nb">local</span> -j <span class="m">8</span>
 </code></pre></div>
   </article>
 

@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.88.1" />
   </head>
 
   <body class="">
@@ -111,7 +111,7 @@
 <li>Use <code>table</code> function to create or <code>loadtable</code> to load existing data</li>
 <li><code>loadtable</code> should only be used once, then the <code>save</code> function should be used to save the table in bianry format to then be quickly loaded using <code>load</code> in the next session. The <code>save</code> and <code>load</code> functions are Dagger.jl fucntions.</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">6</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">6</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">vcat</span><span class="p">(</span><span class="n">fill</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">fill</span><span class="p">(</span><span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
 
@@ -126,13 +126,13 @@
 <span class="mi">4</span>  <span class="sc">&#39;b&#39;</span>  <span class="o">-</span><span class="mf">0.422334</span>
 <span class="mi">5</span>  <span class="sc">&#39;b&#39;</span>  <span class="mf">0.0246361</span>
 <span class="mi">6</span>  <span class="sc">&#39;b&#39;</span>  <span class="mf">0.669536</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">1.069356265804105</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">y</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">y</span>
 
 <span class="sc">&#39;a&#39;</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">t</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">t</span>
     <span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="k">end</span>
 
@@ -150,7 +150,7 @@
 <li>Its made for working with data that is sparse over the domain of the index (stock data)</li>
 <li>Iterates over NamedTuples of <strong>values</strong></li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">nd</span> <span class="o">=</span> <span class="n">ndsparse</span><span class="p">((</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,))</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">nd</span> <span class="o">=</span> <span class="n">ndsparse</span><span class="p">((</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,))</span>
 
 <span class="mi">2</span><span class="o">-</span><span class="n">d</span> <span class="n">NDSparse</span> <span class="n">with</span> <span class="mi">6</span> <span class="n">values</span> <span class="p">(</span><span class="mi">1</span> <span class="n">field</span> <span class="n">named</span> <span class="n">tuples</span><span class="p">)</span><span class="o">:</span>
 <span class="n">x</span>  <span class="n">y</span>   <span class="n">│</span> <span class="n">z</span>
@@ -161,10 +161,10 @@
 <span class="mi">4</span>  <span class="sc">&#39;b&#39;</span> <span class="n">│</span> <span class="mf">0.325126</span>
 <span class="mi">5</span>  <span class="sc">&#39;b&#39;</span> <span class="n">│</span> <span class="mf">0.299526</span>
 <span class="mi">6</span>  <span class="sc">&#39;b&#39;</span> <span class="n">│</span> <span class="mf">0.787615</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">nd</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">nd</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span>
 
 <span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">1.0548018299672375</span><span class="p">,)</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">nd</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">nd</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span>
 
 <span class="mi">1</span><span class="o">-</span><span class="n">d</span> <span class="n">NDSparse</span> <span class="n">with</span> <span class="mi">3</span> <span class="n">values</span> <span class="p">(</span><span class="mi">1</span> <span class="n">field</span> <span class="n">named</span> <span class="n">tuples</span><span class="p">)</span><span class="o">:</span>
 <span class="n">x</span> <span class="n">│</span> <span class="n">z</span>
@@ -172,7 +172,7 @@
 <span class="mi">1</span> <span class="n">│</span> <span class="mf">1.0548</span>
 <span class="mi">2</span> <span class="n">│</span> <span class="mf">1.64493</span>
 <span class="mi">3</span> <span class="n">│</span> <span class="o">-</span><span class="mf">0.738508</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">nd</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">nd</span>
     <span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="k">end</span>
 
@@ -193,7 +193,7 @@
 <h2 id="api">API</h2>
 <h4 id="select">select</h4>
 <p>Selects particular data and optionally applies function on it.</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:z</span><span class="p">))</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:z</span><span class="p">))</span>
 
 <span class="n">Table</span> <span class="n">with</span> <span class="mi">6</span> <span class="n">rows</span><span class="p">,</span> <span class="mi">2</span> <span class="n">columns</span><span class="o">:</span>
 <span class="n">x</span>  <span class="n">z</span>
@@ -204,7 +204,7 @@
 <span class="mi">4</span>  <span class="o">-</span><span class="mf">0.0998402</span>
 <span class="mi">5</span>  <span class="o">-</span><span class="mf">1.43908</span>
 <span class="mi">6</span>  <span class="mf">1.96262</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:z</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">row</span> <span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:z</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">row</span> <span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
 
 <span class="mi">6</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Bool</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
  <span class="mi">0</span>
@@ -222,7 +222,7 @@
 <p><a href="https://juliadb.juliadata.org/latest/api/">More on JuliaDB API.</a></p>
 <h4 id="map">map</h4>
 <p>Map function. <code>map</code> and <code>select</code> have overlapping functionality.</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">map</span><span class="p">(</span><span class="n">row</span> <span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">map</span><span class="p">(</span><span class="n">row</span> <span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
 
 <span class="mi">6</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Bool</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
  <span class="mi">0</span>
@@ -233,12 +233,12 @@
  <span class="mi">1</span>
 </code></pre></div><h4 id="columns">columns</h4>
 <p>Gives you a NamedTuple of Vectors where each name is the column name and each vector is the column data.</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">columns</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">columns</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 
 <span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">],</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5812131489064223</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5545552318128536</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5490833373597503</span><span class="p">,</span> <span class="mf">0.291760065744581</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.411530524868723</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.449557749618286</span><span class="p">])</span>
 </code></pre></div><h4 id="rows">rows</h4>
 <p>Gvies you a StructArray which is basically a Vector of NamedTuples. Each row is one NamedTuple.</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">rows</span><span class="p">(</span><span class="n">t</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">rows</span><span class="p">(</span><span class="n">t</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">1.5812131489064223</span><span class="p">)</span>
 </code></pre></div><h4 id="summarize">summarize</h4>
@@ -248,7 +248,7 @@
 <p>Adds as many workers as there are CPU cores available. <code>addprocs(2)</code> would add two working processes. When there are multiple processes, tables will be loaded as distributed tables across all the workers. So oyu cant index a row based on row number or iterate over all rows.</p>
 <h3 id="statistics">Statistics</h3>
 <p>JuliaDB integrates with OnlineStats (a julia stats package) using the functions <code>reduce</code> and <code>groupreduce</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="k">using</span> <span class="n">JuliaDB</span><span class="p">,</span> <span class="n">OnlineStats</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="k">using</span> <span class="n">JuliaDB</span><span class="p">,</span> <span class="n">OnlineStats</span>
 <span class="n">julia</span> <span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span> <span class="n">rand</span><span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
 <span class="n">julia</span> <span class="o">&gt;</span> <span class="n">reduce</span><span class="p">(</span><span class="n">Mean</span><span class="p">(),</span> <span class="n">t</span><span class="p">;</span> <span class="n">select</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
 

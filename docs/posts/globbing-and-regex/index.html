@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.88.1" />
   </head>
 
   <body class="">
@@ -84,22 +84,22 @@
     <p>This post is all about time saving tools. Globbing is for filename completion in shell and regex is for searching text.</p>
 <h2 id="globbing">Globbing</h2>
 <p>The asterisk means &ldquo;zero or more characters&rdquo; in the file glob. So this command returns all files ending in <code>.md</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls *.md
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">ls *.md
 </code></pre></div><p>This command returns all files starting with <code>A</code> and ending with <code>.md</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls A*.md
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">ls A*.md
 </code></pre></div><p>The question mark means one unknown character in the file glob. So this command will return <code>All.md</code> but not <code>About.md</code> or <code>A.md</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">ls A??.md
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">ls A??.md
 </code></pre></div><h2 id="regex">Regex</h2>
 
 
 <img src="/images/regex_trex.png" style="max-height: 300px;">
 
 <p><code>^</code> means &ldquo;at the beginning of the line&rdquo; and <code>$</code> means &ldquo;at the end of the line&rdquo;. So this commmand returns lines beginning with &ldquo;moose&rdquo;.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;^moose&#34;</span> file.txt
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;^moose&#34;</span> file.txt
 </code></pre></div><p>And this command returns lines ending with &ldquo;mojo&rdquo;.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;mojo</span>$<span class="s2">&#34;</span> file.txt
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;mojo</span>$<span class="s2">&#34;</span> file.txt
 </code></pre></div><p>This command returns lines beginning with &ldquo;moose&rdquo; and ending with &ldquo;mojo&rdquo;. The <code>.*</code> means zero or more (<code>*</code>) of any character (<code>.</code>).</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;^moose.*mojo</span>$<span class="s2">&#34;</span> file.txt
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;^moose.*mojo</span>$<span class="s2">&#34;</span> file.txt
 </code></pre></div><p>More:</p>
 <table>
 <thead>
@@ -141,12 +141,12 @@
 </table>
 <h2 id="grep-and-fgrep-come-to-play">grep and fgrep Come to Play</h2>
 <p><code>grep</code> is a command line tool for searching text. <code>grep</code> never uses globbing. <code>grep</code> uses regex. However, with a command like this one:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep file* README.md
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">grep file* README.md
 </code></pre></div><p>the shell will do globbing before passing the command to grep. The shell will find <code>filename.txt</code> in the current directory (assuming it exists) and then grep will look for &ldquo;filename.txt&rdquo; in the README.md. However, adding quotes like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;file*&#34;</span> README.md
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">grep <span class="s2">&#34;file*&#34;</span> README.md
 </code></pre></div><p>will prevent the shell from globbing and then <code>file*</code> will be interpretted as regex and grep will look for &ldquo;fil&rdquo; ending with zero or more &ldquo;e&rdquo; in README.md.</p>
 <p><code>fgrep</code> or <code>grep -F</code> on the other hand allows you to search for exactly what you type. For example, this command:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">grep -F <span class="s2">&#34;</span>$<span class="s2">&#34;</span> file.txt
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">grep -F <span class="s2">&#34;</span>$<span class="s2">&#34;</span> file.txt
 </code></pre></div><p>will return all the lines with the &ldquo;$&rdquo; character in file.txt.</p>
 
   </article>
