@@ -1,105 +1,32 @@
 +++ 
 date = "2021-07-26"
-title = "Julia Module Organization"
-slug = "julia-module-organization" 
+title = "Julia's Package Installer Pkg"
+slug = "julias-package-installer-pkg" 
 tags = []
 categories = []
 +++
 
-What is a Module?
 
-A module is a self contained entity. It can only see what is inside itself.
+Pkg knows best.
 
-Include vs. Using
+The more that I learn about JuliaLange and software development in Julia, the more I like the Pkg. Pkg is of course Julia's package manager. 
 
-`include` and `using` are two ways of accessing code in Julia. `using` tells Julia to reference something that has already been defined, while `include` tells Julia to copy and define code that was not previously defined. `include` should only be run once. Thereafter `using` should be used to access it.
+To give a high level overview, a lot ofthe environmen problems that occur in python are sovled in Julia by the sandboxing behavior of Pkg (much like npm).
 
-This is the Kate.jl file.
+If Project.toml is the CEO of a Julia Package, Manifest.toml is Accountant.
 
-```julia
+Things in Project.toml compat section are updated with the up command
 
-module Kate
+Project.toml describes the project on a high level. It has project meta data and dependencies and version requirements.
 
-module A
+Manifest.toml is an “absolute record of the state of the packages in the environment”.  Includes exact information about direct and indirect dependencies. 
 
-include(f1.jl)
-include(f2.jl)
+It is supposed to be true that given a Project.toml and a Manifest.toml, you can instantiate the exact same environment.
 
-end
 
-module B
 
-include(f3.jl)
-include(f4.jl)
+API
 
-end
+Instantiate
 
-include(f5.jl)
-
-end
-
-```
-
-In a Jupyter notebook I'll be able to run the following:
-
-```jupyter
-
-using Kate
-
-Kate.A.f1()
-
-Kate.B.f4()
-
-Kate.f5()
-
-```
-
-However f4 actually uses f1. How do we make this work? This is what f4 looks like:
-
-```julia
-
-using ..A: f1
-
-function f4(x)
-
-    return f1(x)
-
-end
-
-```
-
-In order for this to work, module A msut be defined before module B in the Kate.jl file. If the their order was reversed, julia would throw an error when it tried to call `using ..A: f1` because module A would not have been defined yet. Here is another illustration of why order matters in a module file like Kate.jl:
-
-This module file while throw an error because when `a = b` is evaluated, `b` has not been defined.
-
-```julia
-
-module Kate
-
-a = b
-
-b = 5
-
-end
-```
-
-However, this module file works. It doesnt matter that function `a` calls `b`and `a` comes before `b` becuase they are not being executed, they are merely being defined.
-
-```julia
-
-module Kate
-
-function a()
-
-    return b(5)
-
-end
-
-function b(x)
-
-    return(x +5)
-
-end
-
-end
-```
+If Manifest.toml exists in active project, download all packages as described. If Manifest.toml doesn’t exist, get a set of feasible packages from project.toml and install them, then create a manifest.toml 

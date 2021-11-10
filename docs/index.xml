@@ -50,24 +50,25 @@ Julia is a wonderful new language which combines Python&amp;rsquo;s simplicity w
     
     <item>
       <title>Julia Module Organization</title>
-      <link>https://katharineme.com/beginnings/julia-module-organization/</link>
-      <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.com/beginnings/julia-module-organization/</guid>
-      <description>What is a Module?
-A module is a self contained entity. It can only see what is inside itself.
-Include vs. Using
-include and using are two ways of accessing code in Julia. using tells Julia to reference something that has already been defined, while include tells Julia to copy and define code that was not previously defined. include should only be run once. Thereafter using should be used to access it.</description>
-    </item>
-    
-    <item>
-      <title>Julia Module Organization</title>
       <link>https://katharineme.com/posts/julia-module-organization/</link>
       <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/julia-module-organization/</guid>
       <description>What is a Module? A module is a self contained unit of code with a separate global scope namespace. It can only see what is inside itself. A module is defined with module NameOfModule ... end. A module can contain files and other modules.
 include vs. using include and using are two ways of accessing code in Julia. using tells Julia to reference something that has already been defined, while include tells Julia to copy and define code that was not previously defined.</description>
+    </item>
+    
+    <item>
+      <title>Julia&#39;s Package Installer Pkg</title>
+      <link>https://katharineme.com/beginnings/julias-package-installer-pkg/</link>
+      <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/beginnings/julias-package-installer-pkg/</guid>
+      <description>Pkg knows best.
+The more that I learn about JuliaLange and software development in Julia, the more I like the Pkg. Pkg is of course Julia&amp;rsquo;s package manager.
+To give a high level overview, a lot ofthe environmen problems that occur in python are sovled in Julia by the sandboxing behavior of Pkg (much like npm).
+If Project.toml is the CEO of a Julia Package, Manifest.toml is Accountant.
+Things in Project.</description>
     </item>
     
     <item>
