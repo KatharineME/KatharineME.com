@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.89.2" />
   </head>
 
   <body class="">
@@ -81,6 +81,7 @@
     <p><img src="/images/genie_logo.png" alt="docker art"></p>
 
 
+
 <p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Genie.jl</p>
 
 <p>Julia is a wonderful new language which combines Python&rsquo;s simplicity with C&rsquo;s speed. So when I considered what language to use for the backend of a web app I&rsquo;m making, naturally I wanted to use Julia. Python has well established web frameworks like flask and Django. But being such a new language I was concerned Julia wouldn&rsquo;t have a fully developed web framework option like Python. I was happily mistaken. Genie.jl is Julia&rsquo;s most complete and most popular web framework at the time of this post. Here I want to take you with me as I learn Genie.jl and achieve the &ldquo;unparalleled developer productivity, excellent run-time performance, and security by default&rdquo; which Genie.jl identifies as its goals.</p>
@@ -99,7 +100,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">Genie</span><span class="o">.</span><span class="n">newapp_mvc</span><span class="p">(</span><span class="s">&#34;RobustApp&#34;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">Genie</span><span class="o">.</span><span class="n">loadapp</span><span class="p">()</span>
 </code></pre></div><h3 id="standard-app-workflow">Standard App Workflow</h3>
-<p>A route points to a method in the controller -  which is charged with building and sending the response over the network, back to the client.</p>
+<p>A route points to a method in the controller - which is charged with building and sending the response over the network, back to the client.</p>
 <h3 id="genie-app-filesystem">Genie App Filesystem</h3>
 <h4 id="routesjl"><code>routes.jl</code></h4>
 <p>For a simple <code>Genie.newapp</code>, this is where all the logic for making functions to URLs goes.</p>

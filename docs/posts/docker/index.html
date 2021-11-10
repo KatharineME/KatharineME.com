@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.89.2" />
   </head>
 
   <body class="">
@@ -84,6 +84,7 @@
     <p><img src="/images/docker_art.png" alt="docker art"></p>
 
 
+
 <p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Medium.com</p>
 
 <p>Docker makes a process with unique environment requirments run anywhere.</p>
@@ -98,6 +99,7 @@
 <p>It uses various layers from its image for its filesystem. However, each container gets a scratch space to add/update/remove files. This scratch space is isolated in each container, even containers built from the same image. When the container exits, all files and changes made in the scratch space are gone.</p>
 <p>Docker Volumes allow you to connect the filesystem of the host OS filesystem with the filesystem of a container. <strong>named volumes</strong> are like buckets of data that are saved in a docker controlled directory close to root of the Linux OS that Docker is running on. If the host OS is Linux, <strong>named volumes</strong> can be accessed by the host OS CLI. But if the host OS is Windows or Mac, <strong>named volumes</strong> cannot be accessed by the host OS CLI, instead you would need to enter the Linux virtual machine to access them outside a container. <strong>bind mounts</strong> are another type of volume and way to persist data in docker, and are preferable to <strong>named volumes</strong> in most cases. With <strong>bind mounts</strong> you can control where the data sits on the host. For example, if your project is in <code>/home/github/my_project</code>, you can simply mount that directory into a container using the <code>-v</code> flag to be able to access and edit <code>my_project</code> code in a container.</p>
 <h2 id="dockerfile-and-image">Dockerfile and Image</h2>
+
 
 
 <p style="font-size: 130%; font-weight:600; color: #3489eb; line-height: 1.2em; padding-bottom:1.5%;">
@@ -119,7 +121,7 @@ A Dockerfile is a set of instructions for building an image. When an image is bu
 RUN apt-get update
 RUN apt-get install python
 
-COPY . . 
+COPY . .
 
 ENTRYPOINT [&#34;sleep&#34;]
 
@@ -160,13 +162,13 @@ services:
 <p>While building an image from a Dockerfile, the Docker client will send everything the entire directory the Dockerfile is in to the Docker daemon. So if your project has a lot of data, use <strong>.dockerignore</strong> to tell the Docker client what not to send to the daemon. This will speed up image building significantly for large projects.</p>
 
 
-    <br>
-    <br>
+<br>
+<br>
 
 <h1 id="commands">Commands</h1>
 
 
-    <br>
+<br>
 
 <h3 id="basics">Basics</h3>
 <p>Run the container in the background <strong>-d</strong> and map port <strong>-p</strong> 80 of the host to 80 in the container. Without <strong>-d</strong> you won&rsquo;t get your prompt back and STDOUT of the container will be printed to the terminal.</p>
@@ -197,12 +199,13 @@ services:
 </code></pre></div><p>Tag an image. Tagging an image doesnt rename an image, it creates a copy of the image and give it the new name.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker tag &lt;source_image_name&gt;:&lt;tag&gt; &lt;target_image_name&gt;:&lt;tag&gt;
 </code></pre></div><p>Build an iamge off of the Dockerfile in the current directory <code>.</code> and tag it <code>-t</code> with <code>image_name</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker build -t &lt;image_name&gt; . 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker build -t &lt;image_name&gt; .
 </code></pre></div><p>See image layer information.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker <span class="nb">history</span> &lt;image_name&gt;
 </code></pre></div><h3 id="registry">Registry</h3>
 <p>The predominant registry for docker images is <a href="https://hub.docker.com">Docker Hub</a>.</p>
 <p><img src="/images/docker_registry.png" alt="docker registry"></p>
+
 
 
 <p style="font-size:18%; color: #8f8f8f; margin: 0;"> Image credit to IT'zGeek</p>

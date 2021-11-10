@@ -26,16 +26,16 @@ module Kate
 
 module A
 
-    include(f1.jl)
-    include(f2.jl)
-    include(f3.jl)
+include(f1.jl)
+include(f2.jl)
+include(f3.jl)
 
 end
 
 module B
 
-    include(f4.jl)
-    include(f5.jl)
+include(f4.jl)
+include(f5.jl)
 
 end
 
