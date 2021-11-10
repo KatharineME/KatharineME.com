@@ -6,7 +6,7 @@ tags = []
 categories = []
 +++
 
-SAM is the current standard format for storing aligned sequences. It was defined by the community in the early days of the 1000 genomes project. 
+SAM is the current standard format for storing aligned sequences. It was defined by the community in the early days of the 1000 genomes project.
 
 [SAM format tutorial](https://www.youtube.com/watch?v=XU8atPxM0VQ)
 

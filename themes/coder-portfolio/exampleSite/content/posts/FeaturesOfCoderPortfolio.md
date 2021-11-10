@@ -5,13 +5,13 @@ math = "true"
 
 +++
 
-## Change Point  
+## Change Point
 
-### "private content" short code added. 
+### "private content" short code added.
 
 It is now possible to communicate your personal hobby and your own content.  
 You can use it easily.
-Please see "theme-demo" for details and demo.  
+Please see "theme-demo" for details and demo.
 
 ### An animation of red underline was added to Anchor.
 
@@ -34,4 +34,4 @@ I made the boundary clearer.
 
 It is now possible to communicate your portfolio.  
 You can use it easily.  
-Please see "theme-demo" for details and demo.  
+Please see "theme-demo" for details and demo.

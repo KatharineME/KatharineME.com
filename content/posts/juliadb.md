@@ -10,29 +10,29 @@ categories = []
 <img src="/images/julia_db_logo.png" style="max-height: 400px;">
 {{< /rawhtml >}}
 
-
 ## Key Features
+
 - Has two main data structures: IndexedTable and NDSparse.
 - Can work with data that is larger than the machine RAM.
 - Allows parallel processing with the `addprocs` function.
 - Works with Dagger.jl's `save` and `load` functions to make a sort of index file adjacent to your table which allows for fast loading and access.
- 
- 
+
 ### Table
+
 - "Table" refers to both an IndexedTable and NDSparse
 - Tables store data in columns
 - Tables are typed, meaning changing a table requires returning a new table
 - JuliaDB has few mutating operations because a new table is necessary in most cases
-
 
 {{< rawhtml >}}
 <br>
 {{< /rawhtml >}}
 
 #### Indexed Table
-- Basically a named tuple of vectors which __behaves__ like a vector of named tuples
+
+- Basically a named tuple of vectors which **behaves** like a vector of named tuples
 - IndexedTable can be sorted by any number of primary keys (defined using parameter `pkey`). The table will be sorted by the first priamry key, then the second, and so on.
-- Iterates over NamedTuples of __rows__
+- Iterates over NamedTuples of **rows**
 - Use `table` function to create or `loadtable` to load existing data
 - `loadtable` should only be used once, then the `save` function should be used to save the table in bianry format to then be quickly loaded using `load` in the next session. The `save` and `load` functions are Dagger.jl fucntions.
 
@@ -53,16 +53,19 @@ x  y    z
 5  'b'  0.0246361
 6  'b'  0.669536
 ```
+
 ```julia
 t[1]
 
 (x = 1, y = 'a', z = 1.069356265804105)
 ```
+
 ```julia
 t[1].y
 
 'a'
 ```
+
 ```julia
 for item in t
     println(item)
@@ -77,11 +80,12 @@ end
 ```
 
 ### NDSparse
+
 - Behaves like a sparse array with arbitrary indices
 - The keys of an NDSparse array are sorted
 - Use `loadndsparse` to load existing data
 - Its made for working with data that is sparse over the domain of the index (stock data)
-- Iterates over NamedTuples of __values__
+- Iterates over NamedTuples of **values**
 
 ```julia
 nd = ndsparse((x=x, y=y), (z=z,))
@@ -96,11 +100,13 @@ x  y   │ z
 5  'b' │ 0.299526
 6  'b' │ 0.787615
 ```
+
 ```julia
 nd[1, 'a']
 
 (z = 1.0548018299672375,)
 ```
+
 ```julia
 nd[:, 'a']
 
@@ -111,6 +117,7 @@ x │ z
 2 │ 1.64493
 3 │ -0.738508
 ```
+
 ```julia
 for item in nd
     println(item)
@@ -124,14 +131,12 @@ end
 (z = 0.7876150538404173,)
 ```
 
-
 ### When To Use a Table or NDSparse?
-- NDSparse cases
-    - Stocks. First two columns are stock name and date. You will often want to know the closing price of a particular stock on a particular day. In a table, you would need to query where the apple stock has that particular date. In an NDSparse, it is just getting the index with apple and that date.
 
+- NDSparse cases
+  - Stocks. First two columns are stock name and date. You will often want to know the closing price of a particular stock on a particular day. In a table, you would need to query where the apple stock has that particular date. In an NDSparse, it is just getting the index with apple and that date.
 
 ## API
-
 
 #### select
 
@@ -150,6 +155,7 @@ x  z
 5  -1.43908
 6  1.96262
 ```
+
 ```julia
 select(t, (:x, :z) => row -> row.x > row.z)
 
@@ -176,7 +182,6 @@ Which will get the sum of the four rows.
 
 [More on JuliaDB API.](https://juliadb.juliadata.org/latest/api/)
 
-
 #### map
 
 Map function. `map` and `select` have overlapping functionality.
@@ -191,7 +196,7 @@ map(row -> row.x > row.z, t)
  1
  1
  1
-````
+```
 
 #### columns
 
@@ -215,17 +220,16 @@ rows(t)[1]
 
 #### summarize
 
-Applies a function (or functions) column-wise. 
+Applies a function (or functions) column-wise.
 
 `summarize(function, table, by: select)`
-
 
 #### addprocs
 
 Adds as many workers as there are CPU cores available. `addprocs(2)` would add two working processes. When there are multiple processes, tables will be loaded as distributed tables across all the workers. So oyu cant index a row based on row number or iterate over all rows.
 
-
 ### Statistics
+
 JuliaDB integrates with OnlineStats (a julia stats package) using the functions `reduce` and `groupreduce`.
 
 ```julia
@@ -237,7 +241,6 @@ Mean: n=100 | value=0.159962
 ```
 
 ### General Wisdom
+
 - Be as specific as possible when selecting to minimize the amount of data you are passing around.
 - After loading a table for the first time, use Dagger.jl's `save` and `load` functions to work with the table.
-
-

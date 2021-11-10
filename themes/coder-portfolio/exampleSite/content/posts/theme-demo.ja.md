@@ -8,20 +8,24 @@ math = "true"
 ## Style Demo
 
 # h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
 
+## h2 Heading
+
+### h3 Heading
+
+#### h4 Heading
+
+##### h5 Heading
+
+###### h6 Heading
 
 ---
 
 **This is bold text**
 
-__This is bold text__
+**This is bold text**
 
-*This is italic text*
+_This is italic text_
 
 _This is italic text_
 
@@ -34,7 +38,7 @@ $$
 $$
 
 | Heading | Another heading |
-| :----:  | :-------------: |
+| :-----: | :-------------: |
 |  text   |      text       |
 |  text   |      text       |
 |  text   |      text       |
@@ -49,11 +53,11 @@ Some text, and some `code` and then a nice plain [link with title](https://githu
 
 and then
 
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-+ Very easy!
+-   Create a list by starting a line with `+`, `-`, or `*`
+-   Sub-lists are made by indenting 2 spaces:
+    -   Marker character change forces new list start:
+        -   Ac tristique libero volutpat at
+-   Very easy!
 
 vs.
 
@@ -65,48 +69,50 @@ vs.
 
 Inline `code`
 
-``` js
+```js
 var foo = function (bar) {
-  return bar++;
+    return bar++;
 };
 
 console.log(foo(5));
 ```
 
-## Private Content  
+## Private Content
 
-プライベートな内容をこのShortCodeで作成できます。  
+プライベートな内容をこの ShortCode で作成できます。
 
 ```
-{% private %}  
+{% private %}
 ここにプライベートな内容を書きます。
-{% /private %}  
+{% /private %}
 ```
 
-実際に使用するときには、ShortCodeをさらに{}で囲ってください。
+実際に使用するときには、ShortCode をさらに{}で囲ってください。
 
 ## Private Content Demo
 
 下付きのバーの'Click'をクリックしてください。  
-プライベートな内容が下に表示されます。  
+プライベートな内容が下に表示されます。
 
-{{% private %}}  
+{{% private %}}
+
 ## Private Content
+
 プライベートな内容です。  
-{{% /private %}}  
+{{% /private %}}
 
 ## Portfolio Content
 
-ポートフォリオをこのShortCodeで作成できます。  
+ポートフォリオをこの ShortCode で作成できます。
 
 ```
-{% portfolio image="/images/tn.png" alt="Coder Portfolio" %}  
-作品の説明。  
-{% /portfolio %}  
+{% portfolio image="/images/tn.png" alt="Coder Portfolio" %}
+作品の説明。
+{% /portfolio %}
 ```
 
-実際に使用するときには、ShortCodeをさらに{}で囲ってください。
+実際に使用するときには、ShortCode をさらに{}で囲ってください。
 
 ## Portfolio Content Demo
 
-"プロジェクト"を見てください。  
+"プロジェクト"を見てください。

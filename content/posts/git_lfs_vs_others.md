@@ -6,8 +6,7 @@ tags = []
 categories = []
 +++
 
-
-## Git LFS 
+## Git LFS
 
 Git Large File Storage is a CLI and server made by Github to store large files. It integrates very nicely into the git workflow, making it easy for git users to adopt. Git LFS stores your repoistory's large files in the Git LFS server and adds a link to your repository that points there. Which files in your repository are managed by Git LFS is specified in `.gitattributes` and manages by `git lfs track` and `git lfs untrack` commands.
 
@@ -26,15 +25,18 @@ git lfs track my_big_file.txt
 Then `git add` and `git push` as usual and thats it.
 
 #### Pros
+
 - Very easy to setup, manage which files are tracked, and remove if need be
 - Naturally integrated with git so you can manage your code and data storage on one platform
 
 #### Cons
+
 - Maximum of 2GiB file size
-    - This is not encouraging when thinking about genomic data
+  - This is not encouraging when thinking about genomic data
 - Its more expensive than AWS S3 and Google Cloud
 
 #### Pricing
+
 - $5 / month per data pack, where a data pack is 50GB storage with 50GB bandwidth
 - If you have 3 data packs, you would pay $15 / month and have 150GB of storage with 150GB bandwidth
 
@@ -43,6 +45,7 @@ Then `git add` and `git push` as usual and thats it.
 ### Amazon S3
 
 #### Pricing
+
 - $0.023 / month per GB for the first 50TB. This is equal to $1.15 / month for 50GB storage
 - Much cheaper than Git LFS
 - https://aws.amazon.com/s3/pricing/
@@ -50,6 +53,7 @@ Then `git add` and `git push` as usual and thats it.
 ### Google Cloud
 
 #### Pricing
+
 - About $0.20 / month per GB which is about $1 / month for 50GB
 - But adding in costs from interacting with the storage it is $1.19 / month per 50GB.
 - About the same as Amazon S3
@@ -73,4 +77,5 @@ Stands for "Data Version Control". I found it in this article which pitches DVC:
 Looks promising but its not fun to integrate an entirely new tool into your stack.
 
 ### BackBlaze B2
+
 https://www.backblaze.com/b2/cloud-storage.html

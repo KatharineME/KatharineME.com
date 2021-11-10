@@ -1,10 +1,9 @@
----------------------------
-This theme is created based on [hugo-coder](https://github.com/luizdepra/hugo-coder).  
-I made it possible to tell yourself more by my change.   
+---
+This theme is created based on [hugo-coder](https://github.com/luizdepra/hugo-coder).
+I made it possible to tell yourself more by my change.
 Please see [FeaturesOfCoderPortfolio](https://github.com/naro143/hugo-coder-portfolio/blob/master/exampleSite/content/posts/FeaturesOfCoderPortfolio.md) in the post about the change.
 Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/naro143/hugo-coder-portfolio/issues/new) or [ask me on Twitter](https://twitter.com/naro143).
-
----------------------------
+---
 
 A simple and clean blog theme for Hugo.
 
@@ -130,7 +129,7 @@ Each `language` section overrides default site's parameters when that language i
         languagename = "English" # The language name to be displayed in the selector.
         title = "Yusuke Ishimi"
 
-        # You can configure the theme parameter for each language. 
+        # You can configure the theme parameter for each language.
         [languages.en.params]
         author = "Yusuke Ishimi"
         info = "WEB AND APPS ENGINEER"
@@ -205,9 +204,8 @@ The above command copies current state of the theme to exampleSite/themes and st
 
 ### Disqus
 
-Add the following line to your config, ```disqusShortname = "yourdiscussshortname"``` When this is set, all posts are disqus enabled   
-You can disable comments for a post by adding the following to your page meta data: ```disable_comments: true```.
-
+Add the following line to your config, `disqusShortname = "yourdiscussshortname"` When this is set, all posts are disqus enabled  
+You can disable comments for a post by adding the following to your page meta data: `disable_comments: true`.
 
 ## License
 
@@ -221,4 +219,4 @@ Coder is licensed under the [MIT license](https://github.com/naro143/hugo-coder-
 
 ## Special Thanks
 
-- All contributors, for every PR and Issue reported.
+-   All contributors, for every PR and Issue reported.

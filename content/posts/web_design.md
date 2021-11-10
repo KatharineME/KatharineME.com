@@ -6,35 +6,37 @@ tags = []
 categories = []
 +++
 
-
 ## Fonts
 
 Pair a bold serif header with a nondescript sans-serif subheader for an approachabe yet sophisticated look.
 
 {{< rawhtml >}}
-  <img class="square-image"src="../../images/font_pairing.png" alt="font pairing">
+<img class="square-image"src="../../images/font_pairing.png" alt="font pairing">
 {{< /rawhtml >}}
 
 Serif
+
 - Has “serifs” at the end of the letters
 - Its the oldest font, from 15th century
 - Gives a trustworthy classic feeling
 
 Sans-serif
+
 - Simpler, cleaner, modern, no serifs
 
 Slab serif
+
 - Has thick slab -like serifs
 
 ## Visual Hierarchy
 
 {{< rawhtml >}}
-  <img class="post-image"src="../../images/visual_hierarchy.png" alt="font pairing">
+<img class="post-image"src="../../images/visual_hierarchy.png" alt="font pairing">
 {{< /rawhtml >}}
 
 ## Golden Ratio
 
-1.618 
+1.618
 
 [Golden ratio typography](https://pearsonified.com/golden-ratio-typography-intro/)
 
@@ -55,7 +57,7 @@ The size of a button should be proportional to how often its clicked.
 An image should be divided into nine equal parts by two equally spaced horizontal lines and two equally spaced vertical lines. Important compositional elements should be placed along these lines or at their intersections.
 
 {{< rawhtml >}}
-  <img class="square-image"src="../../images/visual_in_thirds.png" alt="font pairing">
+<img class="square-image"src="../../images/visual_in_thirds.png" alt="font pairing">
 {{< /rawhtml >}}
 
 ## Occam’s Razor
@@ -72,10 +74,6 @@ Things that look similar will be naturally associated with each other.
 
 People prefer symmetry.
 
-People eyes finish unfinished or incomplete shapes naturally. 
+People eyes finish unfinished or incomplete shapes naturally.
 
 ## Whitespace is Good
-
-
-
-

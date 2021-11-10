@@ -11,6 +11,6 @@ description = "projects"
 
 ## Coder Portfolio
 
-hugo-coderを元に作成しました。  
+hugo-coder を元に作成しました。  
 より自分を伝えられるようにしました。
 {{% /portfolio %}}

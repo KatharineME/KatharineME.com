@@ -6,7 +6,6 @@ tags = []
 categories = []
 +++
 
-
 What is a Module?
 
 A module is a self contained entity. It can only see what is inside itself.
@@ -23,15 +22,15 @@ module Kate
 
 module A
 
-    include(f1.jl)
-    include(f2.jl)
+include(f1.jl)
+include(f2.jl)
 
 end
 
 module B
 
-    include(f3.jl)
-    include(f4.jl)
+include(f3.jl)
+include(f4.jl)
 
 end
 
@@ -104,6 +103,3 @@ end
 
 end
 ```
-
-
-

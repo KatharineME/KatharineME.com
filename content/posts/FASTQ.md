@@ -1,4 +1,3 @@
-
 +++ 
 date = "2020-08-28"
 title = "FASTQ"
@@ -6,7 +5,6 @@ slug = "fastq"
 tags = []
 categories = []
 +++
-
 
 ## File Names
 
@@ -37,31 +35,35 @@ GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
 
 ```sh
 @<instrument>:<run_number>:<flowcell ID>:<lane>:<title>:<x-pos>:<y-pos>:<UMI> <read>:<is_filtered>:<control_number>:<index>
-``` 
+```
+
 #### 2nd Line
+
 The sequence.
 
 #### 3rd Line
+
 "+". The space this line adds helped make the FASTQ format popular.
 
 #### 4th Line
+
 - Quality scores for the read.
 - Uses ASCII symbols to more efficiently encode multi-digit quality scores. See [Encoding Basics](encoding-basics)
 - Quality (!) means 33, which in a 33 based quality score system means a phred score of 0.
 - Quality scores are usually 33 based because the first written ASCII character codes for 33.
 - Some older quality score system are 64 based.
 - Phred scores are like this:
-    - 0: 0% confidence
-    - 10: 90% confidence and 1/10 error rate
-    - 20: 99% confidence and 1/100 error rate
-    - 30: 99.9% confidence and 1/1000 error rate
-    - 40: 99.99% confidence and 1/10000 error rate
-- If sequencing gives a base call a phred score of 10, then the FASTQ file will show the ASCII character for 43 (33 + 10) which is __+__. If a base call gets a phred score of 20 that would be represented by the ASCII character for 53 (33 + 20) which is __5__.
+  - 0: 0% confidence
+  - 10: 90% confidence and 1/10 error rate
+  - 20: 99% confidence and 1/100 error rate
+  - 30: 99.9% confidence and 1/1000 error rate
+  - 40: 99.99% confidence and 1/10000 error rate
+- If sequencing gives a base call a phred score of 10, then the FASTQ file will show the ASCII character for 43 (33 + 10) which is **+**. If a base call gets a phred score of 20 that would be represented by the ASCII character for 53 (33 + 20) which is **5**.
 
 ## Forward and reverse reads
 
 - [Forward and reverse reads in paired- end sequencing](https://www.cureffi.org/2012/12/19/forward-and-reverse-reads-in-paired-end-sequencing/)
 
 {{< rawhtml >}}
-  <img class="post-image "src="../../images/paired_end_reads.jpg" alt="font pairing">
+<img class="post-image "src="../../images/paired_end_reads.jpg" alt="font pairing">
 {{< /rawhtml >}}

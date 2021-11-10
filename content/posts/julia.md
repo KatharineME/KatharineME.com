@@ -6,10 +6,10 @@ tags = []
 categories = []
 +++
 
-
 ![julia](/images/julia_banner.png)
 
 {{< rawhtml >}}
+
 <p style="font-size:110%; color: #6f439c; margin: 0; font-style: italic; padding-top:2%;">
 The words that we have available change what we will do.
 </p>
@@ -17,46 +17,44 @@ The words that we have available change what we will do.
 
 ## Why Learn Julia? What Are the Value Propositions?
 
-- __Combines Python's usability with C++ speed__
-    - Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste.
-    - Now these strengths are in one language.
-    - This is accomplished using just in time compilation. The way this works is: you write dynamic Julia code, then Julia compiles it into static Julia, then everything runs super fast.
-- __Dynamic__
-    - Meaning you don't have to define data types, Julia will do that for you.
-    - However you have the option of defining them if you want.
-- __Readable__
-    - Designed to be easy to understand. 
-- __Flexible__
-    - There are optional arugments in functions.
-    - Functions can be combined.
-    - There is a rich language of types for contructing and describing objects.
-- __Multiple Dispatch__
-    - Where a function or method can be dynamically dispatched at runtime based on the type of the object the function is being called on, or attributes of one or more of its arguments. An example would be a function whose arguments can be a either integers or strings, and where multiple arguments are string values, the function is dispatched in a certain way.
-    - Single dispatch, on the other hand, is when the way that a function is dispatched at runtime is determined by a single data type, or a single function argument. This _special_ argument is highlighted syntactically in some languages.
-- __Asynchronous I/O__
-    - This simply means processes are allowed to continue running before data transmission is finished.
-    - This is contrasted with Synchronous I/O or Blocking I/O where processes need to wait for data transfers to finish before they can continue.
-- __Developed for parallel processing__
-- __No dependencies on other languages__
-    - However, Julia can call other languages easily. 
-- __Includes math and data science symbols__
-    - So an equation can become a line of code.
-- __Focus on scientific computing__
-
+- **Combines Python's usability with C++ speed**
+  - Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste.
+  - Now these strengths are in one language.
+  - This is accomplished using just in time compilation. The way this works is: you write dynamic Julia code, then Julia compiles it into static Julia, then everything runs super fast.
+- **Dynamic**
+  - Meaning you don't have to define data types, Julia will do that for you.
+  - However you have the option of defining them if you want.
+- **Readable**
+  - Designed to be easy to understand.
+- **Flexible**
+  - There are optional arugments in functions.
+  - Functions can be combined.
+  - There is a rich language of types for contructing and describing objects.
+- **Multiple Dispatch**
+  - Where a function or method can be dynamically dispatched at runtime based on the type of the object the function is being called on, or attributes of one or more of its arguments. An example would be a function whose arguments can be a either integers or strings, and where multiple arguments are string values, the function is dispatched in a certain way.
+  - Single dispatch, on the other hand, is when the way that a function is dispatched at runtime is determined by a single data type, or a single function argument. This _special_ argument is highlighted syntactically in some languages.
+- **Asynchronous I/O**
+  - This simply means processes are allowed to continue running before data transmission is finished.
+  - This is contrasted with Synchronous I/O or Blocking I/O where processes need to wait for data transfers to finish before they can continue.
+- **Developed for parallel processing**
+- **No dependencies on other languages**
+  - However, Julia can call other languages easily.
+- **Includes math and data science symbols**
+  - So an equation can become a line of code.
+- **Focus on scientific computing**
 
 ## Weaknesses
 
-- __Just in time compilation__
-    - It is the reason Julia is easy to use and also lightening fast. So its also a plus.
-    - When you run something for the first time it will take surprisingly long to run. This is because all the Julia code you're calling (including julia packages that you called / included) get compiled into a static Julia (like C++ which is static from the start). 
-    - However, after the compilation is done, it is super fast.
-    - The work-around for this is to keep your Julia session running for as long as possible.
-- __Community and packages are still maturing__
-    - Being a young language, we expect this.
-- __Often not backwards compatible__
-    - Julia is developing rapidly, and as a consequence, a solution that was posted on Stack Overflow six months ago may already by deprecated, forcing you to actually read the documentation 😝.
-- __Code errors can be difficult to interpret__
-
+- **Just in time compilation**
+  - It is the reason Julia is easy to use and also lightening fast. So its also a plus.
+  - When you run something for the first time it will take surprisingly long to run. This is because all the Julia code you're calling (including julia packages that you called / included) get compiled into a static Julia (like C++ which is static from the start).
+  - However, after the compilation is done, it is super fast.
+  - The work-around for this is to keep your Julia session running for as long as possible.
+- **Community and packages are still maturing**
+  - Being a young language, we expect this.
+- **Often not backwards compatible**
+  - Julia is developing rapidly, and as a consequence, a solution that was posted on Stack Overflow six months ago may already by deprecated, forcing you to actually read the documentation 😝.
+- **Code errors can be difficult to interpret**
 
 ## Julia in Jupyter
 
@@ -99,6 +97,7 @@ To run a shell command in a Julia Jupyter notebook (or in the Julia REPL), use t
 ## Basics For Getting Started
 
 #### Using Modules
+
 In most cases, you'll need to use a few Julia packages, also known as modules. JuliaDB.jl is one such module. To get started using the module, you first need to add it to your environment by entering the Julia REPL and pressing `]` to enter pkg mode, then:
 
 ```julia
@@ -107,8 +106,8 @@ add JuliaDB
 
 Once you're back in the Julia REPL, or in a notebook, and you want to use the module you can either enter `import JuliaDB` or `using JuliaDB`. If you `import` the package, you're only importing the module's name, to call its function you would need to enter `JuliaDB.loadtable()` for instance. But if you use `using` than the modules name and all of its function names are imported so you could call `loadtable()` directly.
 
-
 #### Changing strings to ints
+
 ```julia
 parse.(Int, ["1", "2"])
 
@@ -119,7 +118,8 @@ parse.(Int, ["1", "2"])
 
 ## Symbols
 
-__@ Macro__
+**@ Macro**
+
 - A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.
 - My favorite macro is `@time` which wil print how long a process took, how much memory was used, and percent gc if applicable.
 
@@ -133,12 +133,13 @@ __@ Macro__
  2.23832e-314  0.0  NaN
 ```
 
-__!__
+**!**
+
 - It means "not" is Julia. For example `!=` codes for "not equal to."
-- A function name ending with a `!` indicates that it will mutate or destroy the value of one or more of its arguments (compare, for example, `sort` and `sort!`) 
+- A function name ending with a `!` indicates that it will mutate or destroy the value of one or more of its arguments (compare, for example, `sort` and `sort!`)
 
+**;**
 
-__;__
 - The semicolon has multiple uses in Julia.
 - First, it activates shell mode in the Julia REPL. `;pwd` for example will print the working directory.
 - Next, when the semicolon is placed at the end of a piece of code, it stops Julia from printing variables defined in that code. However if a function is called in that piece of code, the output of the function will still be printed. The semilon at the end of this code prevents the filtered indexedtable from being printed, however the time function still prints its output.
@@ -155,7 +156,7 @@ Julia has lots of datatypes, and yet if you dont specify a data type, Julia will
 
 #### Tuple
 
-Built in data structure with __fixed-length__ that can hold __any values__ but cannot be changed (__immutable__)
+Built in data structure with **fixed-length** that can hold **any values** but cannot be changed (**immutable**)
 
 ```julia
 julia > x = (2, "soy sauce", "mirin")
@@ -187,7 +188,7 @@ julia > x[:protein]
 
 ### Core Essentials
 
-__Core.Array__: N-dimensional dense array with elements of type T
+**Core.Array**: N-dimensional dense array with elements of type T
 
 ```julia
 julia > Array{T, N}
@@ -195,7 +196,7 @@ julia > Array{T, N}
 
 ### Base Essentials
 
-__Base.vcat__: concatenate along 1 dimension
+**Base.vcat**: concatenate along 1 dimension
 
 ```julia
 julia > a = [1 2 3]
@@ -207,5 +208,3 @@ julia > vcat(a,b)
  4  5  6
  7  8  9
 ```
-
-

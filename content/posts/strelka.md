@@ -16,7 +16,7 @@ A structural variant and indel caller. Manta provides additional indel candidate
 
 Strelka accepts BAM or CRAM. Reads lengths above 400bp have not been tested. The default settings in all workflows assume a whole genome DNA-Seq analysis. Input other than paired-end reads are ignored by default.
 
-- All input alignment and reference sequence files must contain the same chromosome names in the same order. 
+- All input alignment and reference sequence files must contain the same chromosome names in the same order.
 - Alignments cannot contain the "=" character in the SEQ field.
 - RG (read group) tags are ignored -- each alignment file must represent one sample.
 - Alignments with basecall quality values greater than 70 will trigger a runtime error (these are not supported on the assumption that the high basecall quality indicates an offset error)
@@ -28,18 +28,20 @@ Put in `output/strelka/results/variants/`.
 VCF 4.1 format.
 
 Germline analysis is reported to the following variant files:
+
 - variants.vcf.gz
-    - This describes all potential variant loci across all samples. Note this file includes non-variant loci if they have a non-trivial level of variant evidence or contain one or more alleles for which genotyping has been forced. Please see the multi-sample variants VCF section below for additional details on interpreting this file.
+
+  - This describes all potential variant loci across all samples. Note this file includes non-variant loci if they have a non-trivial level of variant evidence or contain one or more alleles for which genotyping has been forced. Please see the multi-sample variants VCF section below for additional details on interpreting this file.
 
 - genome.S${N}.vcf.gz
-This is the genome VCF output for sample ${N}, which includes both variant records and compressed non-variant blocks. The sample index, ${N} is 1-indexed and corresponds to the input order of alignment files on the configuration command-line.
+  This is the genome VCF output for sample ${N}, which includes both variant records and compressed non-variant blocks. The sample index, ${N} is 1-indexed and corresponds to the input order of alignment files on the configuration command-line.
 
 Somatic analysis provides somatic variants in the following two files:
 
 - somatic.snvs.vcf.gz
-    - All somatic SNVs inferred in the tumor sample.
+  - All somatic SNVs inferred in the tumor sample.
 - somatic.indels.vcf.gz
-    - All somatic indels inferred in the tumor sample.
+  - All somatic indels inferred in the tumor sample.
 
 ## Run
 

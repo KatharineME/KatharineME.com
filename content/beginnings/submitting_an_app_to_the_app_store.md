@@ -6,7 +6,6 @@ tags = []
 categories = []
 +++
 
-
 ![app store](/images/app_store.png)
 
 ### HEADS UP
@@ -16,15 +15,14 @@ Before getting into the step by step process, you need to know the following abo
 - The first step is applying the the Apple Developer Program and it takes months to be approved.
 - Apps needs to be submitted through Xcode.
 - Here are two potentially helpful video tutorials if questions come up:
-    - https://www.youtube.com/watch?v=fXeDe9tafG8
-    - https://www.youtube.com/watch?v=fXeDe9tafG8&t=84s
-
+  - https://www.youtube.com/watch?v=fXeDe9tafG8
+  - https://www.youtube.com/watch?v=fXeDe9tafG8&t=84s
 
 ### 1. Enroll in Apple Developer Program
 
 - https://developer.apple.com/programs/
 
-### 2. Setup Apple Developer Account 
+### 2. Setup Apple Developer Account
 
 - Sign all contracts in App Store Connect under "Agreements, Tax and Banking"
 
@@ -50,7 +48,7 @@ Before getting into the step by step process, you need to know the following abo
 
 ### 10. Archive the Project
 
-- Select the correct device 
+- Select the correct device
 - Go to Product > Archive
 
 ### 11. Validate App

@@ -6,7 +6,6 @@ tags = []
 categories = []
 +++
 
-
 ## What is a Module?
 
 A module is a self contained unit of code with a separate global scope namespace. It can only see what is inside itself. A module is defined with `module NameOfModule ... end`. A module can contain files and other modules.
@@ -17,7 +16,7 @@ A module is a self contained unit of code with a separate global scope namespace
 
 ## Example Module
 
-This is the Kate.jl file that defines the Kate module. Everytime there is an include statement, you can imagine the code in that file being copied and pasted into this Kate.jl file. 
+This is the Kate.jl file that defines the Kate module. Everytime there is an include statement, you can imagine the code in that file being copied and pasted into this Kate.jl file.
 
 Modules A and B have no knowledge of eachother, nor do they know they belong to module Kate. Whereas module Kate knows modules A and B and each of their files.
 
@@ -77,7 +76,6 @@ Kate.f6()
 
 ### A function in one module calls another function in the same module
 
- 
 f2 calls f3. f3 can be called directly in f2 becuase they are within the same module.
 
 ```julia
@@ -107,8 +105,6 @@ end
 ```
 
 ## Order Matters When Defining a Module
-
-
 
 In order for f4 to use f1, module A must be defined before module B in Kate.jl. If the their order was reversed, julia would throw an error when it tried to call `using ..A: f1` because module A would not have been defined yet. Here is another illustration of why order matters in a module file like Kate.jl. This module file will throw an error because when `a = b` is evaluated, `b` has not been defined.
 
@@ -143,6 +139,3 @@ end
 
 end
 ```
-
-
-
