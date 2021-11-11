@@ -42,11 +42,9 @@ Julia is a wonderful new language which combines Python&amp;rsquo;s simplicity w
       <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/beginnings/julias-package-installer-pkg/</guid>
-      <description>Pkg knows best.
-The more that I learn about JuliaLange and software development in Julia, the more I like the Pkg. Pkg is of course Julia&amp;rsquo;s package manager.
-To give a high level overview, a lot ofthe environmen problems that occur in python are sovled in Julia by the sandboxing behavior of Pkg (much like npm).
-If Project.toml is the CEO of a Julia Package, Manifest.toml is Accountant.
-Things in Project.</description>
+      <description>Julia&amp;rsquo;s package manager is called Pkg. Pkg creates and manages separate environments for individual julia projects, much like npm maintains an environment for each of its modules.
+Pkg actually has its own sort of REPL that you can access from command line by typing:
+In the pkg REPL you can enter commands that manage package environments like up for update and add to add a dependency. But more on that later.</description>
     </item>
     
     <item>

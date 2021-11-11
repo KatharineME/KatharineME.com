@@ -78,16 +78,69 @@
       <h1>Julia&#39;s Package Installer Pkg</h1>
     </header>
 
-    <p>Pkg knows best.</p>
-<p>The more that I learn about JuliaLange and software development in Julia, the more I like the Pkg. Pkg is of course Julia&rsquo;s package manager.</p>
-<p>To give a high level overview, a lot ofthe environmen problems that occur in python are sovled in Julia by the sandboxing behavior of Pkg (much like npm).</p>
-<p>If Project.toml is the CEO of a Julia Package, Manifest.toml is Accountant.</p>
-<p>Things in Project.toml compat section are updated with the up command</p>
-<p>Project.toml describes the project on a high level. It has project meta data and dependencies and version requirements.</p>
-<p>Manifest.toml is an “absolute record of the state of the packages in the environment”.  Includes exact information about direct and indirect dependencies.</p>
-<p>It is supposed to be true that given a Project.toml and a Manifest.toml, you can instantiate the exact same environment.</p>
-<p>API</p>
-<p>Instantiate</p>
+    <p>Julia&rsquo;s package manager is called Pkg. Pkg creates and manages separate environments for individual julia projects, much like npm maintains an environment for each of its modules.</p>
+<p>Pkg actually has its own sort of REPL that you can access from command line by typing:</p>
+<p>In the pkg REPL you can enter commands that manage package environments like <code>up</code> for update and <code>add</code> to add a dependency. But more on that later. You can also call Pkg from the julia REPL like so:</p>
+<h2 id="projecttoml-and-manifesttoml">Project.toml and Manifest.toml</h2>
+<p>To understand how Pkg works, you must know about Project.toml and Manifest.toml. You can think of Project.toml as the input for the Pkg interpretter, and Manifest.toml as Pkg&rsquo;s output.</p>
+<p>A julia project is defined as a pair of Project.toml and Manifest.toml. A julia package is definded as a julia project with a <code>uuid</code> and <code>name</code> set in the Project.toml.</p>
+<p>Project.toml looks like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;test&#34;</span>
+<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;3b32e9fd-c20c-4cfa-a9b2-bfc1ff37ba3c&#34;</span>
+<span class="nx">authors</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;KatharineME &lt;katharine.me@icloud.com&gt;&#34;</span><span class="p">]</span>
+<span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;0.1.0&#34;</span>
+
+<span class="p">[</span><span class="nx">deps</span><span class="p">]</span>
+<span class="nx">Revise</span> <span class="p">=</span> <span class="s2">&#34;295af30f-e4ad-537b-8983-00126c2a3abe&#34;</span>
+<span class="nx">Example</span> <span class="p">=</span> <span class="s2">&#34;7876af07-990d-54b4-ab0e-23690620f79a&#34;</span>
+
+<span class="p">[</span><span class="nx">compat</span><span class="p">]</span>
+<span class="nx">BenchmarkTools</span> <span class="p">=</span> <span class="s2">&#34;1.2.0&#34;</span>
+<span class="nx">Revise</span> <span class="p">=</span> <span class="s2">&#34;3.1.20&#34;</span>
+<span class="nx">julia</span> <span class="p">=</span> <span class="s2">&#34;1.6&#34;</span>
+</code></pre></div><p>It describes the project on a high level. The <code>name</code> field is the name of the project, the <code>uuid</code> field sets a unique identifier for the project, the <code>author</code> field is simply the name and email of the author, and the <code>version</code> of the project follows semantic versioning (major_version.minor_version.patch) More about semantic versioning.</p>
+<p>The <code>deps</code> section lists the dependencies of the project. Notice the dependencies under <code>deps</code> dont include details like version number or the packages they depend on.</p>
+<p>The <code>compat</code> section lists compatibility requirements: basically what has to be true for this package to run. For example <code>julia = &quot;1.6&quot;</code> is for the example project above to run. In the compat section you can also specifiy whether you will allow minor version updates or patch updates to the specificed packages.</p>
+<p>A typical Manifest.toml looks like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="c"># This file is machine-generated - editing it directly is not advised</span>
+
+<span class="p">[[</span><span class="nx">ArgTools</span><span class="p">]]</span>
+<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;0dad84c5-d112-42e6-8d28-ef12dabb789f&#34;</span>
+
+<span class="p">[[</span><span class="nx">Artifacts</span><span class="p">]]</span>
+<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;56f22d72-fd6d-98f1-02f0-08ddc0907c33&#34;</span>
+
+<span class="p">[[</span><span class="nx">Base64</span><span class="p">]]</span>
+<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;2a0f44e3-6c83-55bd-87e4-b1978d98bd5f&#34;</span>
+
+<span class="p">[[</span><span class="nx">BenchmarkTools</span><span class="p">]]</span>
+<span class="nx">deps</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;JSON&#34;</span><span class="p">,</span> <span class="s2">&#34;Logging&#34;</span><span class="p">,</span> <span class="s2">&#34;Printf&#34;</span><span class="p">,</span> <span class="s2">&#34;Profile&#34;</span><span class="p">,</span> <span class="s2">&#34;Statistics&#34;</span><span class="p">,</span> <span class="s2">&#34;UUIDs&#34;</span><span class="p">]</span>
+<span class="nx">git-tree-sha1</span> <span class="p">=</span> <span class="s2">&#34;61adeb0823084487000600ef8b1c00cc2474cd47&#34;</span>
+<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf&#34;</span>
+<span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;1.2.0&#34;</span>
+
+<span class="p">[[</span><span class="nx">CodeTracking</span><span class="p">]]</span>
+<span class="nx">deps</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;InteractiveUtils&#34;</span><span class="p">,</span> <span class="s2">&#34;UUIDs&#34;</span><span class="p">]</span>
+<span class="nx">git-tree-sha1</span> <span class="p">=</span> <span class="s2">&#34;9aa8a5ebb6b5bf469a7e0e2b5202cf6f8c291104&#34;</span>
+<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;da1fd8a2-8d9e-5ec2-8556-3022fb5608a2&#34;</span>
+<span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;1.0.6&#34;</span>
+
+<span class="p">[[</span><span class="nx">Dates</span><span class="p">]]</span>
+<span class="nx">deps</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;Printf&#34;</span><span class="p">]</span>
+<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;ade2ca70-3891-5945-98fb-dc099432e06a&#34;</span>
+
+</code></pre></div><p>Things in Project.toml compat section are updated with the up command</p>
+<p>Manifest.toml is an “absolute record of the state of the packages in the environment”. It includes exact information about direct and indirect dependencies.</p>
+<p>Given a Project.toml and a Manifest.toml, you can instantiate the exact same environment.</p>
+<h2 id="how-pkg-and-the-tomls-work-together">How Pkg and the .tomls work together</h2>
+<p>Lets consider a workflow where you are building a simple hello work package and see how Pkg manages the development of this package.</p>
+<h2 id="pkg-api">Pkg API</h2>
+<p><code>add</code>
+Add a dependency (a package that the current project will use and depend on)</p>
+<p><code>rm</code>
+Remove a dependency.</p>
+<p><code>resovle</code></p>
+<p><code>instantiate</code></p>
 <p>If Manifest.toml exists in active project, download all packages as described. If Manifest.toml doesn’t exist, get a set of feasible packages from project.toml and install them, then create a manifest.toml</p>
 
   </article>
