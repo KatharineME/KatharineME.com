@@ -23,8 +23,6 @@ Manifest.toml is an “absolute record of the state of the packages in the envir
 
 It is supposed to be true that given a Project.toml and a Manifest.toml, you can instantiate the exact same environment.
 
-
-
 API
 
 Instantiate
