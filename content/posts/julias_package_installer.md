@@ -45,7 +45,7 @@ test/
     runtests.jl
 ```
 
-You can think of Project.toml as the input for the Pkg interpretter, and Manifest.toml as Pkg's output.
+You can think of Project.toml as the input for the Pkg interpreter, and Manifest.toml as Pkg's output.
 
 
 ### Project.toml
@@ -102,7 +102,7 @@ uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
 ```
 Manifest.toml is an “absolute record of the state of the packages in the environment”. It includes exact information about direct and indirect dependencies. 
 
-As you can see in the comment at the top, Manifest.toml is not intended to be manually edited, it is strictly Pkg's output. It is continuously being regenerated and updated as the envrionment on the project changes.
+As you can see in the comment at the top, Manifest.toml is not intended to be manually edited, it is strictly Pkg's output. It is continuously being regenerated and updated as the envrionment in the project changes.
 
 Given a Project.toml and a Manifest.toml, you can `instantiate` the exact same environment.
 

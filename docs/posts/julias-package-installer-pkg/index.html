@@ -108,7 +108,7 @@ src/
     Project.jl
 test/
     runtests.jl
-</code></pre></div><p>You can think of Project.toml as the input for the Pkg interpretter, and Manifest.toml as Pkg&rsquo;s output.</p>
+</code></pre></div><p>You can think of Project.toml as the input for the Pkg interpreter, and Manifest.toml as Pkg&rsquo;s output.</p>
 <h3 id="projecttoml">Project.toml</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;test&#34;</span>
 <span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;3b32e9fd-c20c-4cfa-a9b2-bfc1ff37ba3c&#34;</span>
@@ -155,7 +155,7 @@ test/
 <span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;ade2ca70-3891-5945-98fb-dc099432e06a&#34;</span>
 
 </code></pre></div><p>Manifest.toml is an “absolute record of the state of the packages in the environment”. It includes exact information about direct and indirect dependencies.</p>
-<p>As you can see in the comment at the top, Manifest.toml is not intended to be manually edited, it is strictly Pkg&rsquo;s output. It is continuously being regenerated and updated as the envrionment on the project changes.</p>
+<p>As you can see in the comment at the top, Manifest.toml is not intended to be manually edited, it is strictly Pkg&rsquo;s output. It is continuously being regenerated and updated as the envrionment in the project changes.</p>
 <p>Given a Project.toml and a Manifest.toml, you can <code>instantiate</code> the exact same environment.</p>
 <p>A julia project is defined as a pair of Project.toml and Manifest.toml. A julia package is definded as a julia project with a <code>uuid</code> and <code>name</code> set in the Project.toml.</p>
 <h2 id="pkg-api">Pkg API</h2>
