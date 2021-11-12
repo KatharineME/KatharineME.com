@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://katharineme.com/posts/julias-package-installer-pkg/</loc>
+    <lastmod>2021-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/posts/</loc>
+    <lastmod>2021-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/</loc>
+    <lastmod>2021-11-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://katharineme.com/beginnings/</loc>
     <lastmod>2021-10-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/beginnings/submitting_an_app_to_the_app_store/</loc>
-    <lastmod>2021-10-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://katharineme.com/</loc>
     <lastmod>2021-10-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/beginnings/submitting_an_app_to_the_app_store/</loc>
@@ -20,13 +26,7 @@
     <loc>https://katharineme.com/beginnings/genie.jl/</loc>
     <lastmod>2021-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://katharineme.com/posts/</loc>
-    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://katharineme.com/posts/julia-module-organization/</loc>
-    <lastmod>2021-07-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://katharineme.com/beginnings/julias-package-installer-pkg/</loc>
     <lastmod>2021-07-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/posts/rna-seq-analysis/</loc>

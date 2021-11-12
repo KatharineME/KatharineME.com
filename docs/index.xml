@@ -6,7 +6,17 @@
     <description>Recent content on The Art of Genome Analysis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 07 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Julia&#39;s Package Installer Pkg</title>
+      <link>https://katharineme.com/posts/julias-package-installer-pkg/</link>
+      <pubDate>Thu, 11 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/julias-package-installer-pkg/</guid>
+      <description>Julia&amp;rsquo;s package manager is called Pkg. Pkg creates and manages separate environments for individual julia projects, much like npm maintains an environment for each of its modules. Understanding how Pkg works is essential for being effective in julia. So let&amp;rsquo;s dive in.
+Pkg has its own REPL that you can access from command line by starting julia and then hitting the ] key, which will move you from the julia REPL into the pkg REPL.</description>
+    </item>
+    
     <item>
       <title>Submitting an App to the App Store</title>
       <link>https://katharineme.com/beginnings/submitting_an_app_to_the_app_store/</link>
@@ -56,17 +66,6 @@ Julia is a wonderful new language which combines Python&amp;rsquo;s simplicity w
       <guid>https://katharineme.com/posts/julia-module-organization/</guid>
       <description>What is a Module? A module is a self contained unit of code with a separate global scope namespace. It can only see what is inside itself. A module is defined with module NameOfModule ... end. A module can contain files and other modules.
 include vs. using include and using are two ways of accessing code in Julia. using tells Julia to reference something that has already been defined, while include tells Julia to copy and define code that was not previously defined.</description>
-    </item>
-    
-    <item>
-      <title>Julia&#39;s Package Installer Pkg</title>
-      <link>https://katharineme.com/beginnings/julias-package-installer-pkg/</link>
-      <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.com/beginnings/julias-package-installer-pkg/</guid>
-      <description>Julia&amp;rsquo;s package manager is called Pkg. Pkg creates and manages separate environments for individual julia projects, much like npm maintains an environment for each of its modules.
-Pkg actually has its own sort of REPL that you can access from command line by typing:
-In the pkg REPL you can enter commands that manage package environments like up for update and add to add a dependency. But more on that later.</description>
     </item>
     
     <item>
