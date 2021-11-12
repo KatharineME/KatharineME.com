@@ -1,7 +1,7 @@
 +++ 
 date = "2021-11-11"
-title = "Julia's Package Installer Pkg"
-slug = "julias-package-installer-pkg" 
+title = "Julia's Package Manager Pkg"
+slug = "julias-package-manager-pkg" 
 tags = []
 categories = []
 +++
