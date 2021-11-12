@@ -71,7 +71,7 @@ Example = "7876af07-990d-54b4-ab0e-23690620f79a"
 
 [compat]
 BenchmarkTools = "1.2.0"
-Revise = "3.1.20"
+Dates = "3.1.20"
 julia = "1.6"
 ```
 Project.toml describes the project on a high level. 
