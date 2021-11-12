@@ -168,7 +168,7 @@ test/
 <h4 id="rm-or-remove"><code>rm</code> or <code>remove</code></h4>
 <p>Remove a package. This command uninstalls the package from the project environment and removes it from the Project.toml. If no other packages depend on it, it will be removed from the Manifest.toml. If other packages this project depends on use it, it will remain in the Manifest.toml. You can run <code>rm -m pkg_name</code> to remove the package and all packages that depend on it from the Manifest.toml.</p>
 <h4 id="instantiate"><code>instantiate</code></h4>
-<p>If Manifest.toml exists in the active project, download all packages as described. If Manifest.toml doesn’t exist, get a set of feasible packages from project.toml and install them, then create a manifest.toml.</p>
+<p>If Manifest.toml exists in the active project, download all packages as described. If Manifest.toml doesn’t exist, get a set of feasible packages from Project.toml and install them, then create a manifest.toml.</p>
 <h4 id="up-or-update"><code>up</code> or <code>update</code></h4>
 <p>Update packages according to the <code>deps</code> and <code>compat</code> sections of Project.toml. Passing <code>-m</code> like in <code>update -m</code> will update packages according to the Manifest.toml.</p>
 <h4 id="test"><code>test</code></h4>

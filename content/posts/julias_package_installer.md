@@ -123,7 +123,7 @@ Runs the `deps/build.jl` script in the current package, then runs the build scri
 Remove a package. This command uninstalls the package from the project environment and removes it from the Project.toml. If no other packages depend on it, it will be removed from the Manifest.toml. If other packages this project depends on use it, it will remain in the Manifest.toml. You can run `rm -m pkg_name` to remove the package and all packages that depend on it from the Manifest.toml.
 
 #### `instantiate`
-If Manifest.toml exists in the active project, download all packages as described. If Manifest.toml doesn’t exist, get a set of feasible packages from project.toml and install them, then create a manifest.toml.
+If Manifest.toml exists in the active project, download all packages as described. If Manifest.toml doesn’t exist, get a set of feasible packages from Project.toml and install them, then create a manifest.toml.
 
 #### `up` or `update`
 Update packages according to the `deps` and `compat` sections of Project.toml. Passing `-m` like in `update -m` will update packages according to the Manifest.toml.
