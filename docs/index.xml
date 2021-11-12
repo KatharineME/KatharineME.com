@@ -13,8 +13,9 @@
       <pubDate>Thu, 11 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/julias-package-installer-pkg/</guid>
-      <description>Julia&amp;rsquo;s package manager is called Pkg. Pkg creates and manages separate environments for individual julia projects, much like npm maintains an environment for each of its modules. Understanding how Pkg works is essential for being effective in julia. So let&amp;rsquo;s dive in.
-Pkg has its own REPL that you can access from command line by starting julia and then hitting the ] key, which will move you from the julia REPL into the pkg REPL.</description>
+      <description>Julia&amp;rsquo;s package manager is called Pkg. Pkg creates and manages environments for julia projects, much like npm maintains an environment for each of its packages. Understanding how Pkg works is essential for being effective in julia. So let&amp;rsquo;s dive in.
+The Big Picture Pkg prioritizes local project environments over global environments.
+But how does Pkg identify a project environment? What constitutes a project? There are two files that Pkg checks for: Project.</description>
     </item>
     
     <item>
