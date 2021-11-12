@@ -59,6 +59,9 @@ test/
 ```
 
 ### Project.toml
+
+Project.toml describes the project on a high level. 
+
 ```toml
 name = "test"
 uuid = "3b32e9fd-c20c-4cfa-a9b2-bfc1ff37ba3c"
@@ -74,8 +77,6 @@ BenchmarkTools = "1.2.0"
 Dates = "3.1.20"
 julia = "1.6"
 ```
-Project.toml describes the project on a high level. 
-
 The `name` field is the name of the project, the `uuid` field sets a universally unique identifier ([UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)) for the project, the `author` field is simply the name and email of the author, and the `version` of the project which follows [semantic versioning](https://semver.org).
 
 The `deps` section lists the dependencies of the project. Notice the dependencies under `deps` dont include details like version number or the packages they depend on.
@@ -86,6 +87,9 @@ Side note: A julia _package_ is definded as a julia project with a `uuid` and `n
 
 
 ### Manifest.toml
+
+Manifest.toml is an “absolute record of the state of the packages in the environment”. It includes exact information about direct and recursive dependencies. 
+
 ```toml
 # This file is machine-generated - editing it directly is not advised
 
@@ -107,10 +111,7 @@ version = "1.2.0"
 [[Dates]]
 deps = ["Printf"]
 uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
-
 ```
-Manifest.toml is an “absolute record of the state of the packages in the environment”. It includes exact information about direct and recursive dependencies. 
-
 As you can see in the comment at the top, Manifest.toml is not intended to be manually edited, it is strictly Pkg's output. It is continuously being regenerated and updated as the envrionment of the project changes.
 
 ## Calling Pkg

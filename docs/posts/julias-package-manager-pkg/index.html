@@ -119,6 +119,7 @@ src/
 test/
     runtests.jl
 </code></pre></div><h3 id="projecttoml">Project.toml</h3>
+<p>Project.toml describes the project on a high level.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;test&#34;</span>
 <span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;3b32e9fd-c20c-4cfa-a9b2-bfc1ff37ba3c&#34;</span>
 <span class="nx">authors</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;KatharineME &lt;katharine.me@icloud.com&gt;&#34;</span><span class="p">]</span>
@@ -132,12 +133,12 @@ test/
 <span class="nx">BenchmarkTools</span> <span class="p">=</span> <span class="s2">&#34;1.2.0&#34;</span>
 <span class="nx">Dates</span> <span class="p">=</span> <span class="s2">&#34;3.1.20&#34;</span>
 <span class="nx">julia</span> <span class="p">=</span> <span class="s2">&#34;1.6&#34;</span>
-</code></pre></div><p>Project.toml describes the project on a high level.</p>
-<p>The <code>name</code> field is the name of the project, the <code>uuid</code> field sets a universally unique identifier (<a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>) for the project, the <code>author</code> field is simply the name and email of the author, and the <code>version</code> of the project which follows <a href="https://semver.org">semantic versioning</a>.</p>
+</code></pre></div><p>The <code>name</code> field is the name of the project, the <code>uuid</code> field sets a universally unique identifier (<a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>) for the project, the <code>author</code> field is simply the name and email of the author, and the <code>version</code> of the project which follows <a href="https://semver.org">semantic versioning</a>.</p>
 <p>The <code>deps</code> section lists the dependencies of the project. Notice the dependencies under <code>deps</code> dont include details like version number or the packages they depend on.</p>
 <p>The <code>compat</code> section lists compatibility requirements: basically what has to be true for this package to run. For example <code>julia = &quot;1.6&quot;</code> is for the example project above to run. In the compat section you can also specifiy whether you will allow minor version updates or patch updates to the specificed packages. More documentation on the compat section <a href="https://pkgdocs.julialang.org/v1/compatibility/#Compatibility">is here</a>.</p>
 <p>Side note: A julia <em>package</em> is definded as a julia project with a <code>uuid</code> and <code>name</code> set in the Project.toml.</p>
 <h3 id="manifesttoml">Manifest.toml</h3>
+<p>Manifest.toml is an “absolute record of the state of the packages in the environment”. It includes exact information about direct and recursive dependencies.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="c"># This file is machine-generated - editing it directly is not advised</span>
 
 <span class="p">[[</span><span class="nx">ArgTools</span><span class="p">]]</span>
@@ -158,9 +159,7 @@ test/
 <span class="p">[[</span><span class="nx">Dates</span><span class="p">]]</span>
 <span class="nx">deps</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;Printf&#34;</span><span class="p">]</span>
 <span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;ade2ca70-3891-5945-98fb-dc099432e06a&#34;</span>
-
-</code></pre></div><p>Manifest.toml is an “absolute record of the state of the packages in the environment”. It includes exact information about direct and recursive dependencies.</p>
-<p>As you can see in the comment at the top, Manifest.toml is not intended to be manually edited, it is strictly Pkg&rsquo;s output. It is continuously being regenerated and updated as the envrionment of the project changes.</p>
+</code></pre></div><p>As you can see in the comment at the top, Manifest.toml is not intended to be manually edited, it is strictly Pkg&rsquo;s output. It is continuously being regenerated and updated as the envrionment of the project changes.</p>
 <h2 id="calling-pkg">Calling Pkg</h2>
 <p>Pkg has its own REPL that you can access from command line by starting julia and then hitting the <code>]</code> key, which will move you from the julia REPL into the pkg REPL.</p>
 
