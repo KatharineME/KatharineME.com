@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.89.2" />
+    <meta name="generator" content="Hugo 0.90.0" />
   </head>
 
   <body class="">
@@ -84,12 +84,14 @@
     
 
 <img src="/images/pkg.png" style="max-height: 200px;">
+
 <p> 
 
 <p><a href="https://docs.julialang.org/en/v1/">Julia&rsquo;s</a> package manager is called Pkg. Pkg creates and manages environments for julia projects, much like npm maintains an environment for each of its packages. Understanding how Pkg works is essential for being effective in julia. So let&rsquo;s dive in.</p>
 <h2 id="the-big-picture">The Big Picture</h2>
 <p><strong>Pkg prioritizes local project environments over global environments.</strong></p>
 <p>But how does Pkg identify a project environment? What constitutes a project? There are two files that Pkg checks for: <strong>Project.toml and Manifest.toml</strong>.</p>
+
 
 
 <p style="font-size:110%; color:#4063D8; font-weight:600; padding:10px 0px;">A julia project is defined as a Project.toml and Manifest.toml pair.</p>
@@ -99,9 +101,11 @@
 
 
 <img src="/images/load_path.png" style="max-height: 200px;">
+
 <p> 
 
 <p>The first is the current project&rsquo;s environment (which needs to be activated for Pkg to see it). The next is the global julia environment thats installed on the machine, <code>1.6</code> for example. In fact, if you look in<code> ~/.julia/environments/v1.6</code> you will find a Manifest.toml and Project.toml. And last are the standard libraries which come with julia when its installed.</p>
+
 
 
 <p style="font-size:110%; color:#4063D8; font-weight:600; padding:10px 0px;">Pkg starts with the first entry of LOAD_PATH, and will check subsequent entries in order until it finds what its looking for.</p>
@@ -165,9 +169,10 @@ test/
 
 
 <img src="/images/pkg_repl.png" style="max-height: 250px;">
+
 <p> 
 
-<p>In the pkg REPL you can enter commands that manage package environments like  <code>add</code> to add a dependency. More on that in the API section below.</p>
+<p>In the pkg REPL you can enter commands that manage package environments like <code>add</code> to add a dependency. More on that in the API section below.</p>
 <p>You can also call Pkg from the julia REPL like so:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">using</span> <span class="n">Pkg</span><span class="p">;</span>
 
@@ -182,6 +187,7 @@ test/
 
 
 <img src="/images/pkg_develop.png" style="max-height: 250px;">
+
 <p> 
 
 <h4 id="activate"><code>activate</code></h4>
@@ -195,6 +201,7 @@ test/
 
 
 <img src="/images/pkg_add.png" style="max-height: 250px;">
+
 <p> 
 
 <h4 id="rm-or-remove"><code>rm</code> or <code>remove</code></h4>

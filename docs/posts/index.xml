@@ -61,12 +61,32 @@ From acetylation to methylation, alternative splicing, and other regulatory mech
     </item>
     
     <item>
+      <title>About Me</title>
+      <link>https://katharineme.com/posts/about_me/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/about_me/</guid>
+      <description>Hi everyone, I&amp;rsquo;m Kate Medetgul-Ernar. I&amp;rsquo;m 28 years old, I&amp;rsquo;m cofounder and CEO of Guardiome. I&amp;rsquo;m a mother, a wife, a programmer, and a genomics enthusiast.
+In this video I&amp;rsquo;m going to tell you more about me and how I got here.
+My story starts in North Carolina. I grew up in a rural area of North Carolina where I rode horses and cleaned barnes on the weekends. In these early years I spent a lot of time in nature wth good friends, pissing of neighboring farmers and bringing home strange animals.</description>
+    </item>
+    
+    <item>
       <title>Julia</title>
       <link>https://katharineme.com/posts/julia/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/julia/</guid>
       <description>The words that we have available change what we will do. Why Learn Julia? What Are the Value Propositions?  Combines Python&amp;rsquo;s usability with C++ speed  Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste. Now these strengths are in one language. This is accomplished using just in time compilation. The way this works is: you write dynamic Julia code, then Julia compiles it into static Julia, then everything runs super fast.</description>
+    </item>
+    
+    <item>
+      <title>Types of DNA Tests</title>
+      <link>https://katharineme.com/posts/types_of_dna_tests/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/types_of_dna_tests/</guid>
+      <description></description>
     </item>
     
     <item>
