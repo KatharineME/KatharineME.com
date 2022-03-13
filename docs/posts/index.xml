@@ -6,7 +6,19 @@
     <description>Recent content in Posts on The Art of Genome Analysis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>https://katharineme.com/posts/about_me/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/about_me/</guid>
+      <description>TEST
+Hi everyone, I&amp;rsquo;m Kate Medetgul-Ernar. I&amp;rsquo;m 28 years old, I&amp;rsquo;m cofounder and CEO of Guardiome. I&amp;rsquo;m a mother, a wife, a programmer, and a genomics enthusiast.
+In this video I&amp;rsquo;m going to tell you more about me and how I got here.
+My story starts in North Carolina. I grew up in a rural area of North Carolina where I rode horses and cleaned barnes on the weekends. In these early years I spent a lot of time in nature wth good friends, pissing of neighboring farmers and bringing home strange animals.</description>
+    </item>
+    
     <item>
       <title>Julia&#39;s Package Manager Pkg</title>
       <link>https://katharineme.com/posts/julias-package-manager-pkg/</link>
@@ -58,17 +70,6 @@ From acetylation to methylation, alternative splicing, and other regulatory mech
       
       <guid>https://katharineme.com/posts/juliadb/</guid>
       <description>Key Features  Has two main data structures: IndexedTable and NDSparse. Can work with data that is larger than the machine RAM. Allows parallel processing with the addprocs function. Works with Dagger.jl&amp;rsquo;s save and load functions to make a sort of index file adjacent to your table which allows for fast loading and access.  Table  &amp;ldquo;Table&amp;rdquo; refers to both an IndexedTable and NDSparse Tables store data in columns Tables are typed, meaning changing a table requires returning a new table JuliaDB has few mutating operations because a new table is necessary in most cases  Indexed Table  Basically a named tuple of vectors which behaves like a vector of named tuples IndexedTable can be sorted by any number of primary keys (defined using parameter pkey).</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>https://katharineme.com/posts/about_me/</link>
-      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.com/posts/about_me/</guid>
-      <description>Hi everyone, I&amp;rsquo;m Kate Medetgul-Ernar. I&amp;rsquo;m 28 years old, I&amp;rsquo;m cofounder and CEO of Guardiome. I&amp;rsquo;m a mother, a wife, a programmer, and a genomics enthusiast.
-In this video I&amp;rsquo;m going to tell you more about me and how I got here.
-My story starts in North Carolina. I grew up in a rural area of North Carolina where I rode horses and cleaned barnes on the weekends. In these early years I spent a lot of time in nature wth good friends, pissing of neighboring farmers and bringing home strange animals.</description>
     </item>
     
     <item>
