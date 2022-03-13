@@ -17,7 +17,7 @@ When I was eleven, my parents split and I moved to Connecticut with my mom. It w
 By the time I entered high school, I was absolutey determined to become a professional contemporary ballet dancer. I was all in as they say. I would be up on school nights until 1am practicing in front of my mirror then fall asleep in the splits. I would stretch my feel under my dresser to improve my arch on point. I did it so much that I ended up breaking few metarcles in my foot. In sophmore year of high school I switched to online school so that I could commute into New York City to dance. I danced for 6 to 8 hours during the day and would get my homework done on the train.
 
 {{< rawhtml >}}
-<img src="/images/dance.jpeg" style="height:5%">
+<img src="/images/dance.jpeg" style="height:450px; padding: 10px;">
 {{< /rawhtml >}}
 
 During this time I was I danced as a pre-company member in a contemporary ballet company, and I thoroughly enjoyed it. But when I grduated high school and was offered a formal position in the company, I strangley declined. I chose to go to college to study biology instead. In hindsight it was an odd decision considering how hard I had worked for it, but I just had a feeling that there was something important for me to do in the field of biology, so I went to UCSD to studied biochemistry and cell biology.
