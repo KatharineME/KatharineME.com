@@ -27,6 +27,13 @@ During this time I was I danced as a pre-company member in a contemporary ballet
 
 A few months into my freshman year I met my husband. We have been together ever since. We didn't have money for housing so we lived in a car together for over a year. We both got jobs in a wet lab. When we weren't in class, we were in the lab. And when we weren't in the lab we were sleeping in the car. In the lab I worked with yeast trying to discover how genes are born through fitness and adaptation experiments. This was my first exposure to the power and importantce of genomics. In 2015, my husband and I started Guardiome together. Guardiome was the first completely private whole genome sequence service offered directly to cosumers. In a time when other consumer genomics companies were trying to capitalize on the naivete of consumers to make money and deliver little value, Guardiome stood with the consumers. We got together friends in the lab and spent many late nights building and breaking software and hardware. Six months later, we shocked the DTC genomics market by offering customers a Genome Vault, which was basically your genome on your coffe table. It was a device that could fit in your hand that securely stored your DNA sequence. It had a small touchscreen where you could search for specific genes or variants in your DNA, and perform analyses.
 
+{{< rawhtml >}}
+
+<p style="text-align:center;">
+    <img src="/images/helixa_table.jpg" style="height:450px; padding: 10px;">
+</p>
+{{< /rawhtml >}}
+
 After exciting press releases and rush of orders, we headed to the Y Combinator interviews with our Genome Vault in hand, bursting with excitement. Though the YC partners were supportive of our vision they advised us to drop the hardware. Eventually we submitted. We are now a software only company with the same values and vision.
 
 {{< rawhtml >}}
@@ -36,6 +43,6 @@ After exciting press releases and rush of orders, we headed to the Y Combinator 
 </p>
 {{< /rawhtml >}}
 
-At 24 I had my first child. I feel blessed to be her mom. She makes me want to be a better version of myself everyday. Today I am a mother of two and a full time entrepreneur. Every mother knows that this kind of path is very diffcult, but I find tht when you're heart is in the right place, all the pieces begin to fall into plce. The rest is a story I am writing now. I hope you will come along with me to see how it turns out.
+At 24 I had my first child. I feel blessed to be her mom. She makes me want to be a better version of myself everyday. Today I am a mother of two and a full time entrepreneur. Every mother knows that this kind of path is very diffcult, but I find that when your heart is in the right place, all the pieces begin to fall into place. The rest is a story I am writing now. I hope you will come along with me to see how it turns out.
 
 In this blog I talk about all things genomics and bioinformatics. I also have a companion YouTube channel where many of these posts are in video form. If you have questions about my journey or yours, you can contact me directly at katharine.me@icloud.com.
