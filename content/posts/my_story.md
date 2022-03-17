@@ -30,16 +30,16 @@ A few months into my freshman year I met my husband. We have been together ever 
 {{< rawhtml >}}
 
 <p style="text-align:center;">
-    <img src="/images/helixa_table.jpg" style="height:450px; padding: 10px;">
+    <img src="/images/helixa_table.jpg" style="height:350px; padding: 10px;">
 </p>
 {{< /rawhtml >}}
 
-After exciting press releases and rush of orders, we headed to the Y Combinator interviews with our Genome Vault in hand, bursting with excitement. Though the YC partners were supportive of our vision they advised us to drop the hardware. Eventually we submitted. We are now a software only company with the same values and vision.
+After exciting press releases and rush of orders, we headed to the Y Combinator interviews with our Genome Vaults in hand, bursting with excitement. Though the YC partners were supportive of our vision they advised us to drop the hardware. Eventually we submitted. We are now a software only company with the same values and vision.
 
 {{< rawhtml >}}
 
 <p style="text-align:center;">
-    <img src="/images/yc.jpg" style="height:350px; padding: 10px;">
+    <img src="/images/yc.jpg" style="height:450px; padding: 10px;">
 </p>
 {{< /rawhtml >}}
 
