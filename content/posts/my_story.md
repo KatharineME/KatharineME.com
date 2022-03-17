@@ -39,7 +39,7 @@ After exciting press releases and rush of orders, we headed to the Y Combinator 
 {{< rawhtml >}}
 
 <p style="text-align:center;">
-    <img src="/images/yc.jpg" style="height:450px; padding: 10px;">
+    <img src="/images/yc.jpg" style="height:350px; padding: 10px;">
 </p>
 {{< /rawhtml >}}
 
