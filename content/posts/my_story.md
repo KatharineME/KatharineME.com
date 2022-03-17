@@ -1,7 +1,7 @@
 +++ 
 date = "2022-03-01"
-title = "About Me"
-slug = "about_me"
+title = "My Story"
+slug = "my_story"
 tags = []
 categories = []
 +++
@@ -25,7 +25,7 @@ By the time I entered high school, I was absolutey determined to become a profes
 
 During this time I was I danced as a pre-company member in a contemporary ballet company, and I thoroughly enjoyed it. But when I grduated high school and was offered a formal position in the company, I strangley declined. I chose to go to college to study biology instead. In hindsight it was an odd decision considering how hard I had worked for it, but I just had a feeling that there was something important for me to do in the field of biology. So I went across the country to UCSD to study biochemistry and cell biology.
 
-A few months into my freshman year I met my husband. We have been together ever since. We didn't have money for housing so we lived in a car together for over a year. We both got jobs in a wet lab. When we weren't in class, we were in the lab. And when we weren't in the lab we were sleeping in the car. In the lab I worked with yeast trying to discover how genes are born through fitness and adaptation experiments. This was my first exposure to the power and importantce of genomics. In 2015, my husband and I started Guardiome together. Guardiome was the first completely private whole genome sequence service offered directly to cosumers. In a time when other consumer genomics companies were trying to capitalize on the naivete of consumers to make money and deliver little value, Guardiome stood with the consumers. We got together friends in the lab and spent many late nights building and breaking software and hardware. Six months later, we shocked the DTC genomics market by offering customers a Genome Vault, which was basically your genome on your coffe table. It was a device that could fit in your hand that securely stored your DNA sequence. It had a small touchscreen where you could search for specific genes or variants in your DNA, and perform analyses.
+A few months into my freshman year I met my husband. We have been together ever since. We didn't have money for housing so we lived in a car together for over a year. We both got jobs in a wet lab. When we weren't in class, we were in the lab. And when we weren't in the lab we were sleeping in the car. In the lab I worked with yeast trying to discover how genes are born through fitness and adaptation experiments. This was my first exposure to the power and importantce of genomics. In 2015, my husband and I started Guardiome together. Guardiome was the first completely private whole genome sequence service offered directly to cosumers. In a time when other consumer genomics companies were trying to capitalize on the naivete of consumers to make money and deliver little value, Guardiome stood with the consumers. We got together friends in the lab and spent many late nights building and breaking software and hardware. Six months later, we shocked the DTC genomics market by offering customers a Genome Vault, which was basically your genome on your coffee table. It was a device that could fit in your hand that securely stored your DNA sequence. It had a small touchscreen where you could search for specific genes or variants in your DNA, and perform analyses.
 
 {{< rawhtml >}}
 
