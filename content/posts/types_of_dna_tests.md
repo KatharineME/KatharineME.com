@@ -6,33 +6,33 @@ tags = []
 categories = []
 +++
 
-In this video I'm going to compare three methods for checking a persons DNA: whole genome sequencing, whole exome sequencing, and genotyping arrays.
+In this video I'm going to compare three common methods for checking a persons DNA: whole genome sequencing, whole exome sequencing, and genotyping arrays. Each of these methods are common types of consumer DNA tests.
 
-Each of these methods are common types of consumer DNA tests, but they are hugely different in terms of usability.
+I'm going to compare them on: how much of the genome they cover, their cost, how they work, and what they can tell us.
 
-First to review, the human genome is 3.2 billion base pairs long. 1.2% of the genome is genes, and the rest is DNA that sits between gene sequences, called intragenic DNA. Genes are the sequences that are transcribed into proteins. And proteins are the workhorses of the cell. Which is why if there's a problem in a gene sequence, there will likely be a problem with the protein that gene makes. That protein may not do its job correctly, which sometimes gives the carrier a sign or symptom.
+First, we need to do a quick review. The human genome is 3.2 billion base pairs long. 1.2% are sequences that code for proteins, also called genes. The rest is DNA that sits between gene sequences is called intragenic DNA. Genes are the sequences that are transcribed into proteins. And proteins are the workhorses of the cell. Which is why if there's a problem in a gene sequence, there will likely be a problem with the protein that gene codes for. That protein may not do its job correctly, which sometimes gives the carrier a sign or symptom.
 
 So you might think, ah, then only the sequences of genes matter, we can just focus on those. Which would be great, but the genome is more complex than this. Nature didn't just stick all that intragenic DNA in our genomes for fun. Many intragenic DNA sequencs help regulate how and when specific genes are transcribed. Other intragenic regions are crucial for how DNA physically folds, which in turn affects how genes are read. And we are learning more everyday about the many roles intragenic DNA plays.
 
-This brings us to the primary way these three genomic tests differ: their coverage.
+This brings us to the primary way these three genomic tests differ: their coverage of the genome
 
 Coverage
 
 Whole genome sequencing delivers the entire 3.2 billion base pairs of an individual. Whole exome sequencing delivers only the gene sequences of an individual (so about 1.2% of the genome or about 38 million base pairs). And genotyping delivers information on a few hundred thousand basae pairs which is about .01% of the genome.
 
-Cost
-
-Now the genome coverage (or how much of the genome sequence they deliver) affects the prize. As you can imaging, wgs is the most expensive at about 1000 per genome for clinical grade quality for 99% accuracy. Whole exome sequencing on the otehr hand is about $400 and genotyping is anywhere from $50 to $200.
-
 How they work
 
-In terms of how these test actually work. Whole genome sequencing and whole exome sequencing are quite similar. First DNA is isolated from the sample, then it is broken into little pieces. In wgs, all these DNA fragments get little ends called adapters stuck to them so that they can stick to the flow cell in the sequencing machine. However in wes, the exons, or regions that code for genes, are isolated from the sea of DNA fragments and then have adapters attached to them for sequencing. Thereafter the sequencing process is nearly identical.
+In terms of how these test actually work. Whole genome sequencing and whole exome sequencing are quite similar. First DNA is isolated from the sample, then it is broken into little pieces. In WGS, all the DNA fragments of the right size get little ends called adapters stuck to them so that they can stick to the flow cell in the sequencing machine. However in WES, the exons, or regions that code for genes, are isolated from the sea of DNA fragments and then have adapters attached to them for sequencing. Thereafter the sequencing process is nearly identical.
 
 However genotyping works very differently. Instead of sequencing the DNA base by base to discover the sequence, genotyping starts with a device called an array. You can think of an array like a sea of sticky genomic flags. Each flag will only bind to a specific sequence. So when the sample DNA is broken into tiny pieces and washed over the array, there will be signal where the array DNA sequence matched and bound to the sample sequence.
 
 Now what are these DNA sequences on the array lawn? Mostly they are the sequences of common mutations seen in humans. So the type of data you get when you genotype a sample is a series of yes and nos to all to all the mutated sequences that the array has on its lawn. For example, you might get four thousand yeses and 400 thousand nos. Which really means that in the end, these four thousand sequences are the only things you know exist in the sample DNA.
 
 But when we start to think about all the mutations the sample DNA has that weren't on the array lawn, it kind of makes you sweat. Considering that we know of about 350 million human variants, and that an array can only test about 600K variants at most, its clear that the amount of information an array yeilds is very miniaml.
+
+Cost
+
+Now the genome coverage (or how much of the genome sequence they deliver) affects the price. As you can imagine, WGS is the most expensive at about $1000 per genome for clinical grade quality for 99% accuracy. Whole exome sequencing on the other hand is about $400 and genotyping is anywhere from $50 to $200.
 
 Usability
 
