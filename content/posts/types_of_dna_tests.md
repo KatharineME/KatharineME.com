@@ -6,13 +6,13 @@ tags = []
 categories = []
 +++
 
-In this video I'm going to compare three methods dna tests: whole genome sequencing, whole exome sequencing, and genotyping arrays.
+In this video I'm going to compare three methods for checking a persons DNA: whole genome sequencing, whole exome sequencing, and genotyping arrays.
 
 Each of these methods are common types of consumer DNA tests, but they are hugely different in terms of usability.
 
-The human genome is 3.2 billion base pairs long. 2% of the genome is genes, and the rest is DNA that sits between gene sequences, called intragenic dna. Genes are the sequences that are transcribed into proteins. And proteins are the workhorses of the cell. Which is why if theres a problem in a gene sequence, there will liekly be a problem with the protein the sequence makes. That protein will not do its job correctly, sometimes giving the carrier some sign or symptom.
+First to review, the human genome is 3.2 billion base pairs long. 2% of the genome is genes, and the rest is DNA that sits between gene sequences, called intragenic dna. Genes are the sequences that are transcribed into proteins. And proteins are the workhorses of the cell. Which is why if there's a problem in a gene sequence, there will likely be a problem with the protein that gene makes. That protein may not do its job correctly, which sometimes gives the carrier a sign or symptom.
 
-So you might think, ah, then only the sequences of genes matter, we can just focus on those. But, the genome is more complex than this. Nature didn't just stick all that intragenic dna in our genomes for fun. Many intragenic dna sequencs help regulate how and when specific genes are transcribed. Other intragenic regions are curcial for how dna physically folds, which in turn affects how genes are read. In fact mutations in intragenic dna that affect how genes are transcribed is a common cause of cancer.
+So you might think, ah, then only the sequences of genes matter, we can just focus on those. Which would be great, but the genome is more complex than this. Nature didn't just stick all that intragenic dna in our genomes for fun. Many intragenic dna sequencs help regulate how and when specific genes are transcribed. Other intragenic regions are crucial for how dna physically folds, which in turn affects how genes are read. And we are learning more everyday about the many roles intragenic DNA plays.
 
 {{< rawhtml >}}
 
@@ -20,6 +20,19 @@ So you might think, ah, then only the sequences of genes matter, we can just foc
     <img src="/images/dance.jpeg" style="height:450px; padding: 10px;">
 </p>
 {{< /rawhtml >}}
+
+compare on
+
+coverage
+
+usability
+
+- disease risk
+- ancestry
+
+acurracy
+
+future of the data
 
 Even though the genome is a sequence of nucleotides A, T, G, and C, its more of an ecosystem than a book.
 
