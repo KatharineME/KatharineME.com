@@ -24,7 +24,11 @@ How they work
 
 In terms of how these test actually work. Whole genome sequencing and whole exome sequencing are quite similar. First DNA is isolated from the sample, then it is broken into little pieces. In WGS, all the DNA fragments of the right size get little ends called adapters stuck to them so that they can stick to the flow cell in the sequencing machine. However in WES, the exons, or regions that code for genes, are isolated from the sea of DNA fragments and then have adapters attached to them for sequencing. Thereafter the sequencing process is nearly identical.
 
-However genotyping works very differently. Instead of sequencing the DNA base by base to discover the sequence, genotyping starts with a device called an array. You can think of an array like a sea of sticky genomic flags. Each flag will only bind to a specific sequence. So when the sample DNA is broken into tiny pieces and washed over the array, there will be signal where the array DNA sequence matched and bound to the sample sequence.
+However genotyping works very differently. Instead of sequencing the DNA base by base to discover the sequence, genotyping starts with a device called an array. If you want to learn in depth hwo a genotyping or SNP array works, checkout this video.
+
+An array has hundreds of thousands of tiny wells. Each well has a bead in it. Stuck on the surface of the beads are many copies of the same dna sequence. In this picture I'm just drawing one for simplicity. The sample Dna is broken into small pieces and washed over the array. When the sample dna complements the dna sequence on the bead, they stick to each other
+
+You can think of an array like a sea of sticky genomic flags. Each flag will only bind to a specific sequence. So when the sample DNA is broken into tiny pieces and washed over the array, there will be signal where the array DNA sequence matched and bound to the sample sequence.
 
 Now what are these DNA sequences on the array lawn? Mostly they are the sequences of common mutations seen in humans. So the type of data you get when you genotype a sample is a series of yes and nos to all to all the mutated sequences that the array has on its lawn. For example, you might get four thousand yeses and 400 thousand nos. Which really means that in the end, these four thousand sequences are the only things you know exist in the sample DNA.
 
