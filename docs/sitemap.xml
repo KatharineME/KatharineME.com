@@ -14,16 +14,13 @@
     <loc>https://katharineme.com/posts/julias-package-manager-pkg/</loc>
     <lastmod>2021-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://katharineme.com/beginnings/</loc>
-    <lastmod>2021-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://katharineme.com/beginnings/submitting_an_app_to_the_app_store/</loc>
-    <lastmod>2021-10-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://katharineme.com/posts/creating_a_macos_app/</loc>
     <lastmod>2021-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://katharineme.com/beginnings/genie.jl/</loc>
+    <loc>https://katharineme.com/drafts/</loc>
+    <lastmod>2021-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/drafts/genie.jl/</loc>
     <lastmod>2021-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/posts/julia-module-organization/</loc>
@@ -38,10 +35,10 @@
     <loc>https://katharineme.com/posts/julia/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://katharineme.com/posts/snp_microarray/</loc>
+    <loc>https://katharineme.com/drafts/snp_microarray/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://katharineme.com/posts/types_of_dna_tests/</loc>
+    <loc>https://katharineme.com/posts/types_of_dna_tests_which_is_right_for_you/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/posts/tabix/</loc>
@@ -62,10 +59,13 @@
     <loc>https://katharineme.com/posts/virtualization/</loc>
     <lastmod>2020-10-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://katharineme.com/beginnings/sequence-analysis/</loc>
+    <loc>https://katharineme.com/drafts/app_packaging/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://katharineme.com/beginnings/trace-ancestry-through-dna/</loc>
+    <loc>https://katharineme.com/drafts/sequence-analysis/</loc>
+    <lastmod>2020-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/drafts/trace-ancestry-through-dna/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/posts/sequence-analysis-benchmark/</loc>

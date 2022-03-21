@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drafts on The Art of Genome Analysis</title>
+    <link>https://katharineme.com/drafts/</link>
+    <description>Recent content in Drafts on The Art of Genome Analysis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 05 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/drafts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Genie.jl</title>
+      <link>https://katharineme.com/drafts/genie.jl/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/genie.jl/</guid>
+      <description>Photo credit to Genie.jl
+Julia is a wonderful new language which combines Python&amp;rsquo;s simplicity with C&amp;rsquo;s speed. So when I considered what language to use for the backend of a web app I&amp;rsquo;m making, naturally I wanted to use Julia. Python has well established web frameworks like flask and Django. But being such a new language I was concerned Julia wouldn&amp;rsquo;t have a fully developed web framework option like Python. I was happily mistaken.</description>
+    </item>
+    
+    <item>
+      <title>SNP Microarray</title>
+      <link>https://katharineme.com/drafts/snp_microarray/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/snp_microarray/</guid>
+      <description>Here I&amp;rsquo;m going to talk about what a SNP microarray is and how it works with a simple example.
+A SNP microarray is a method of checking the allele for hundreds of thousands of SNPs in a single sample or group of samples with. Most SNP microarrays cost around 100 to 200 dollars and are around 99% accurate.
+The SNP microarray is a 10 centimeter slide with hundreds of thousands of tiny wells.</description>
+    </item>
+    
+    <item>
+      <title>App Packaging</title>
+      <link>https://katharineme.com/drafts/app_packaging/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/app_packaging/</guid>
+      <description>What is a .dylib? If you are building an app, I&amp;rsquo;m sorry but you cannot escape learning about .dylibs.
+dylib = dynamic library.
+The goal of dynamic libraries is to reduce the launch time and memory use of an app.
+A dynamic library can be directly contrasted with a static library. A static library is a library that is copied into an app&amp;rsquo;s executable file. The upsides of using static libraries are: 1) The app becomes robust and less likely to break, and 2) the app is faster at runtime because all the dependent libraries have already been compiled.</description>
+    </item>
+    
+    <item>
+      <title>Sequence Analysis</title>
+      <link>https://katharineme.com/drafts/sequence-analysis/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/sequence-analysis/</guid>
+      <description>The human genome is 3.3 billion base pairs long.
+75% of RNA-Seq sequences will be ribosomal.
+Replicates
+ Technical replicate: sequence same sample 2x  NGS technical replicates are usually 97% matching or better   Biological replicate: different individual sequenced under same conditions  Reference Genomes  2 major verisons  GRCh  NIH Genome Reference Consortium Latest release is GRCh38   UCSC  Latest release is hg38 Previous release was hg19 After hg19 they decided to jump release number to match GRCh      Decoy Genomes When you sequence a human genome, you dont just get human DNA.</description>
+    </item>
+    
+    <item>
+      <title>Trace Ancestry Through DNA</title>
+      <link>https://katharineme.com/drafts/trace-ancestry-through-dna/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/trace-ancestry-through-dna/</guid>
+      <description>Ever since the human genome was sequenced in 2000, we have been trying to use it to figure out where we came from.
+However, this field is at the intersection of society-wide misunderstandings about race / ethnicity, all the problems that come with a new technology (genome sequencing), and a public shortage of sequencing data for diverse human genomes. The obstacles between us and the &amp;ldquo;truth&amp;rdquo; about our genetic heritage are currenlty great.</description>
+    </item>
+    
+  </channel>
+</rss>

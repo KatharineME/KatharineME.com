@@ -81,37 +81,11 @@
       
     </header>
 
-    <h2 id="but-first-what-the-hell-is-a-dylib">But first, what the hell is a .dylib?</h2>
-<p>If you are building an app, I&rsquo;m sorry but you cannot escape learning about .dylibs.</p>
-<p>dylib = dynamic library.</p>
-<p>The goal of dynamic libraries is to reduce the launch time and memory use of an app.</p>
-<p>A dynamic library can be directly contrasted with a static library. A static library is a library that is copied into an app&rsquo;s executable file. The upsides of using static libraries are: 1) The app becomes robust and less likely to break, and 2) the app is faster at runtime because all the dependent libraries have already been compiled. The downsides are: 1) the app&rsquo;s executable becomes large, and 2) when a static library is updated, the app executable needs to be rebuilt with the new version of the static library.</p>
-<p>Dynamic libraries are separate files and do not become part of the app&rsquo;s executable file. Instead the app carries dynamic library references. When the app is run, a link is established between the app and the actual dynamic libraries. The upsides are 1) the app&rsquo;s executable is smaller, and 2) apps automatically use and benefit from any upates to the dyanmic libraries. The downside is that the app is less robust.</p>
-<p>A dynamic library is called and activated based on its software language and operating system (OS).</p>
-<p>More Reading</p>
-<ul>
-<li><a href="https://medium.com/@StueyGK/static-libraries-vs-dynamic-libraries-af78f0b5f1e4">https://medium.com/@StueyGK/static-libraries-vs-dynamic-libraries-af78f0b5f1e4</a></li>
-<li><a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html">https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html</a></li>
-</ul>
-<h2 id="how-to-distribute-an-app">How to Distribute an App</h2>
-<p>Assuming that the app is already made and is self-contained, you can either distribute it via the Mac App Store, or outside of it. If outside the MacApp Store, you need a way to help users install the app. To do this, you can use a .dmg or a .pkg.</p>
-<h4 id="what-is-a-dmg">What is a .dmg?</h4>
-<p>DMG stands for disk image file and is used to install software but can contain any type of file. A dmg doesn&rsquo;t know whats inside of it. For example, you could make a dmg for a single text file, and that dmg would place the text file in the Applications folder for example. A .dmg is usually used when a simple copy to the Applications folder is needed for example.</p>
-<h4 id="what-is-a-pkg">What is a .pkg?</h4>
-<p>PKG are macOS installation packages which contain installer scripts and compressed installation files that are used to install Mac software. A .pkg knows the files iside of it. A .pkg has instructions for how the software it carries should be installed. When you click on a .pkg, the os will follow the instructions. A .pkg can install files in different locations. Generally, people will use a .pkg instead of a .dmg when they need to include installer scripts.</p>
-<h4 id="what-is-a-flat-package">What is a Flat Package?</h4>
-<p>&ldquo;Flat Package&rdquo; is usually how people refer to a .pkg which installs some kind of application. Flat packages are xar archives. You can use <code>pkgutil --expand</code> to open the content of a flat package, and <code>pkgutil --flatten</code> to recreate the .pkg. Flat packages can be a product archive or a component package.</p>
-<p>A product archive is a meta-package containing one or more component packages with an XML file specifying the installer behavior. The command line tool <code>productbuild</code> can create product archives.</p>
-<p>A component package is an installer that installs one component. It can be included as a part of a product archive, or can be an installer on its own.</p>
-<p>More Reading</p>
-<ul>
-<li><a href="https://matthew-brett.github.io/docosx/flat_packages.html">https://matthew-brett.github.io/docosx/flat_packages.html</a></li>
-</ul>
-<h2 id="submitting-an-app-to-the-app-store">Submitting an App to the App Store</h2>
+    <h2 id="submitting-an-app-to-the-app-store">Submitting an App to the App Store</h2>
 <p><img src="/images/app_store.png" alt="app store"></p>
 <p>Before getting into the step by step process, you need to know the following about submitting an app to the app store:</p>
 <ul>
-<li>The first step is applying the the Apple Developer Program and it takes months to be approved</li>
+<li>The first step is applying to the Apple Developer Program and it takes months to be approved</li>
 <li>Apps needs to be submitted through Xcode</li>
 <li>Two potentially helpful video tutorials if questions come up:
 <ul>

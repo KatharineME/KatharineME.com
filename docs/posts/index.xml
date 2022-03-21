@@ -35,10 +35,8 @@ But how does Pkg identify a project environment? What constitutes a project? The
       <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/creating_a_macos_app/</guid>
-      <description>But first, what the hell is a .dylib? If you are building an app, I&amp;rsquo;m sorry but you cannot escape learning about .dylibs.
-dylib = dynamic library.
-The goal of dynamic libraries is to reduce the launch time and memory use of an app.
-A dynamic library can be directly contrasted with a static library. A static library is a library that is copied into an app&amp;rsquo;s executable file. The upsides of using static libraries are: 1) The app becomes robust and less likely to break, and 2) the app is faster at runtime because all the dependent libraries have already been compiled.</description>
+      <description>Submitting an App to the App Store Before getting into the step by step process, you need to know the following about submitting an app to the app store:
+ The first step is applying to the Apple Developer Program and it takes months to be approved Apps needs to be submitted through Xcode Two potentially helpful video tutorials if questions come up:  https://www.youtube.com/watch?v=fXeDe9tafG8 https://www.youtube.com/watch?v=fXeDe9tafG8&amp;amp;t=84s    1. Enroll in Apple Developer Program  https://developer.</description>
     </item>
     
     <item>
@@ -81,25 +79,13 @@ From acetylation to methylation, alternative splicing, and other regulatory mech
     </item>
     
     <item>
-      <title>SNP Microarray</title>
-      <link>https://katharineme.com/posts/snp_microarray/</link>
+      <title>Types of DNA Tests - Which is right for you?</title>
+      <link>https://katharineme.com/posts/types_of_dna_tests_which_is_right_for_you/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://katharineme.com/posts/snp_microarray/</guid>
-      <description>Here im going to talk about what a SNP microarray is and how it works with a simple example.
-A SNP microarray is a method of checking the allele for hundreds of thousands of SNPs in a single sample or group of samples with. Most SNP microarrays cost around 100 to 200 dollars and are around 99% accurate.
-The SNP microarray is a 10 centimeter slide with hundreds of thousands of tiny wells.</description>
-    </item>
-    
-    <item>
-      <title>Types of DNA Tests</title>
-      <link>https://katharineme.com/posts/types_of_dna_tests/</link>
-      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.com/posts/types_of_dna_tests/</guid>
+      <guid>https://katharineme.com/posts/types_of_dna_tests_which_is_right_for_you/</guid>
       <description>In this video I&amp;rsquo;m going to compare three common methods for checking a persons DNA: whole genome sequencing, whole exome sequencing, and genotyping arrays. Each of these methods are common types of consumer DNA tests.
-I&amp;rsquo;m going to compare them on: how much of the genome they cover, how they work, their cost, and what they can tell us.
-First, we need to do a quick review. The human genome is 3.</description>
+I&amp;rsquo;m going to compare them on: how much of the genome they cover, how they work, their cost, and what they can tell us. Stick around until the end to hear which companies are actually offering which kind of test.</description>
     </item>
     
     <item>
