@@ -6,7 +6,37 @@
     <description>Recent content on The Art of Genome Analysis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Your Genome Data Files</title>
+      <link>https://katharineme.com/drafts/your-genome-data-files/</link>
+      <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/your-genome-data-files/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DNA Collection Methods</title>
+      <link>https://katharineme.com/drafts/dna-collection-methods/</link>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/dna-collection-methods/</guid>
+      <description>Hi folks, today I am going to compare three methods for collection DNA from a person: blood, swab, and saliva. Stick around to the end to hear which method which consumer DNA company is using and which I recommend.
+Before we do the comparison, we need talk about what makes a great DNA sample. Because quality data, starts with a quality sample. There are three factors that determine the quality of a DNA sample: amount, purity, and the degree of degradation.</description>
+    </item>
+    
+    <item>
+      <title>SNP Microarray</title>
+      <link>https://katharineme.com/drafts/snp_microarray/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/snp_microarray/</guid>
+      <description>Here I&amp;rsquo;m going to talk about what a SNP microarray is and how it works with a simple example.
+A SNP microarray is a method of checking the allele for hundreds of thousands of SNPs in a single sample or group of samples with. Most SNP microarrays cost around 100 to 200 dollars and are around 99% accurate.
+The SNP microarray is a 10 centimeter slide with hundreds of thousands of tiny wells.</description>
+    </item>
+    
     <item>
       <title>My Story</title>
       <link>https://katharineme.com/posts/my_story/</link>
@@ -80,33 +110,12 @@ From acetylation to methylation, alternative splicing, and other regulatory mech
     </item>
     
     <item>
-      <title>DNA Collection Methods</title>
-      <link>https://katharineme.com/drafts/dna-collection-methods/</link>
-      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.com/drafts/dna-collection-methods/</guid>
-      <description>Hi folks, today I am going to compare three methods for collection DNA from a person: blood, swab, and saliva. Stick around to the end to hear which method which consumer DNA company is using and which I recommend.
-Before we compare these methods, we need talk about what makes a great DNA sample. Because quality data, starts with a quality sample. There are three factors that determine the quality of a DNA sample: amount, purity, and the degree of degradation.</description>
-    </item>
-    
-    <item>
       <title>Julia</title>
       <link>https://katharineme.com/posts/julia/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/julia/</guid>
       <description>The words that we have available change what we will do. Why Learn Julia? What Are the Value Propositions?  Combines Python&amp;rsquo;s usability with C++ speed  Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste. Now these strengths are in one language. This is accomplished using just in time compilation. The way this works is: you write dynamic Julia code, then Julia compiles it into static Julia, then everything runs super fast.</description>
-    </item>
-    
-    <item>
-      <title>SNP Microarray</title>
-      <link>https://katharineme.com/drafts/snp_microarray/</link>
-      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://katharineme.com/drafts/snp_microarray/</guid>
-      <description>Here I&amp;rsquo;m going to talk about what a SNP microarray is and how it works with a simple example.
-A SNP microarray is a method of checking the allele for hundreds of thousands of SNPs in a single sample or group of samples with. Most SNP microarrays cost around 100 to 200 dollars and are around 99% accurate.
-The SNP microarray is a 10 centimeter slide with hundreds of thousands of tiny wells.</description>
     </item>
     
     <item>

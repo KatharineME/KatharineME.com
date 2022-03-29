@@ -1,5 +1,5 @@
 +++ 
-date = "2021-01-28"
+date = "2022-03-20"
 title = "SNP Microarray"
 slug = "snp_microarray"
 tags = []
