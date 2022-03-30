@@ -8,12 +8,12 @@
     <language>en</language>
     <lastBuildDate>Mon, 28 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/drafts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Your Genome Data Files</title>
-      <link>https://katharineme.com/drafts/your-genome-data-files/</link>
+      <title>Whats in your genome data files and what can you do with them</title>
+      <link>https://katharineme.com/drafts/what-you-can-do-with-your-genome-data-files/</link>
       <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://katharineme.com/drafts/your-genome-data-files/</guid>
-      <description></description>
+      <guid>https://katharineme.com/drafts/what-you-can-do-with-your-genome-data-files/</guid>
+      <description>Hi folks, today I am going to explain 3 genome data file types (FASTQ, BAM, and VCF). I am going to explain what these files are, what they contain, and roughly how they are structured. If you&amp;rsquo;ve had a DNA test before, depending on the type of DNA test you&amp;rsquo;ve had, you probably received one if not all of these file types. Just to clarify, this post is for everyone, you do not need a PhD to understand whats to come, so no sweat.</description>
     </item>
     
     <item>
