@@ -65,5 +65,4 @@ Typically when a DNA test is ordered by a physician, a blood sample will be take
 Direct to consumer genomics companies however usually use the buccal swab or saliva methods for their convenience.
 
 CircleDNA, FamilyTree DNA, and labcorp use buccal swabs.
-
 23andME, AncestryDNA, Guardiome, and a few others use saliva samples.

@@ -6,7 +6,18 @@
     <description>Recent content on The Art of Genome Analysis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cool things to do with your genome data files with no technical experience</title>
+      <link>https://katharineme.com/drafts/cool-things-to-do-with-your-genome-data-files-with-no-technical-experience/</link>
+      <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/cool-things-to-do-with-your-genome-data-files-with-no-technical-experience/</guid>
+      <description>Load BAM into IGV, scroll through your DNA, and visualize your variants.
+If you are a 23andMe customer and have downloaded your 23andMe data file, you can convert this file to a VCF using bcftools: https://samtools.github.io/bcftools/howtos/convert.html
+Data is an asset. Getting your genome or exome sequenced and not receiving all your raw and processed data is like buying a house but only using one room.</description>
+    </item>
+    
     <item>
       <title>Whats in your genome data files and what can you do with them</title>
       <link>https://katharineme.com/drafts/what-you-can-do-with-your-genome-data-files/</link>
@@ -24,6 +35,16 @@
       <guid>https://katharineme.com/drafts/dna-collection-methods/</guid>
       <description>Hi folks, today I am going to compare three methods for collection DNA from a person: blood, swab, and saliva. Stick around to the end to hear which method which consumer DNA company is using and which I recommend.
 Before we do the comparison, we need talk about what makes a great DNA sample. Because quality data, starts with a quality sample. There are three factors that determine the quality of a DNA sample: amount, purity, and the degree of degradation.</description>
+    </item>
+    
+    <item>
+      <title>SNP Microarray</title>
+      <link>https://katharineme.com/drafts/snp_microarray/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/snp_microarray/</guid>
+      <description>From this paper on benchmarking practices:
+&amp;ldquo;Moving forward, groups will also need to modify benchmarking strategies to address changes in the way the human genome itself is represented. Today the most common way of representing the human genome involves a set of linear chromosomes (e.g., the most common usage of GRCh37). There are key advantages to non-linear representations of the genome, including ability to recognize copy-number and other polymorphisms directly in the reference, and as a result more graphical structures are in development.</description>
     </item>
     
     <item>
