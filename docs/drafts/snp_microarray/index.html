@@ -78,10 +78,24 @@
       <h1>SNP Microarray</h1>
     </header>
 
-    <p>Here I&rsquo;m going to talk about what a SNP microarray is and how it works with a simple example.</p>
-<p>A SNP microarray is a method of checking the allele for hundreds of thousands of SNPs in a single sample or group of samples with. Most SNP microarrays cost around 100 to 200 dollars and are around 99% accurate.</p>
-<p>The SNP microarray is a 10 centimeter slide with hundreds of thousands of tiny wells. Each well has a bead in it. Stuck on the surface of the beads are many copies of the same oligonucleotide probe dna sequence. This sequence stops right before a base of interest, which is the location of a particular SNP. In this picture I&rsquo;m just drawing one oligonucleotide probe for simplicity. The sample DNA is broken into small pieces and washed over the microarray. When the sample DNA complements the oligonucleotide probe, it binds to it. Then when the microarray is washed with the four labeled bases, A, T G, and C, the base that complements the sample DNA is added. A laser then excites the labeled nucleotide, emitting a signal of a particular color. That color identifies the base which was added, which is the sample&rsquo;s allele at this SNP.</p>
-<p>Lets look at an example. For the SNP in this example the possible alleles are A and G. Therefore, based on what alleles the sample has there are three possible outcomes. The first possible outcome is that the sample dna is homozygous for A at this SNP. In that case, after the sample DNA is washed over the microarray, and the sample&rsquo;s complement sticks to the oligonucleotide probe DNA sequence leading up to this SNP. Then the labels nucleotides are washed over the microarray and adenine is added. The laser excites the label on the adenine and a yellow signal is produced. Remember, even though I&rsquo;m only showing one oligonucleotide probe here , there are actually hundreds of this exact probe on this bead. So you can imagine 100s of instances of this reaction occurring simultaneously, producing a strong yellow signal.</p>
+    <p>From <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6699627/#SD1">this paper</a> on benchmarking practices:</p>
+<p>&ldquo;Moving forward, groups will also need to modify benchmarking strategies to address changes in the way the human genome itself is represented. Today the most common way of representing the human genome involves a set of linear chromosomes (e.g., the most common usage of GRCh37). There are key advantages to non-linear representations of the genome, including ability to recognize copy-number and other polymorphisms directly in the reference, and as a result more graphical structures are in development.25 The GRCh38 build of the human genome makes a key step towards this with its use of ALT loci, which provide multiple distinct versions of specific regions of the genome.26 These ALT loci are not well-accounted for by most aligners or the benchmarking tools we describe, and their impact on benchmarking studies is largely unexplored and likely would require a variety of samples with differing ALT alleles. It is likely that the core representation of the genome will continue to evolve over time, and benchmarking tools will continue to evolve.&rdquo;</p>
+
+  </article>
+</section>
+
+
+      </div>
+      
+    </main>
+
+    
+
+  <script src="/js/app.js"></script>
+  
+  </body>
+</html>
+as there are three possible outcomes. The first possible outcome is that the sample dna is homozygous for A at this SNP. In that case, after the sample DNA is washed over the microarray, and the sample&rsquo;s complement sticks to the oligonucleotide probe DNA sequence leading up to this SNP. Then the labels nucleotides are washed over the microarray and adenine is added. The laser excites the label on the adenine and a yellow signal is produced. Remember, even though I&rsquo;m only showing one oligonucleotide probe here , there are actually hundreds of this exact probe on this bead. So you can imagine 100s of instances of this reaction occurring simultaneously, producing a strong yellow signal.</p>
 <p>The second possibility is that the sample is homozygous for G at this SNP. In that case, once the sample&rsquo;s complement DNA leading up to SNP location is bound, a G is added. After being excited by the laser, a blue signal is produced, which again is amplified by this same reaction happening hundreds of times across the surface of this bead.</p>
 <p>The third possibility is that the sample is heterozygous and has a genotype of AG. In this case, some of the hundreds of oligonucleotide probes would had an adenine added, and some would have a Guanine added. This would happen of course because the sample DNA has roughly equal amounts of DNA fragments complementing each, in this case roughly equal amounts of T and C at this location in the sample genome. Therefore when the laser excites the nucleotide labels, half of the signal will be yellow and half will be blue, resulting in a green signal, indicating the heterozygous genotype AG.</p>
 <p>And this is happening simultaneously on each of the hundreds of thousands of beads on the SNP microarray. In the end, the allele at each locus is known with some level of confidence. That level of confidence varies depending on the strength and clarity of the light signal.</p>
