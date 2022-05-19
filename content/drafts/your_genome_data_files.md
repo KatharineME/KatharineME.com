@@ -37,6 +37,6 @@ Moving on the REF column has the reference base (which is the base that the refe
 
 Now the last detail I'll cover here is how to tell if you have two copies of this variant or just one. If you remember, you have two copies of each chromosome, one from your dad and one from your mom. So for each variant that you have, its possible that you have it on both of your copies of that chromosome, or just on one. If you have two copies of the variant, whatever effect it has may be stronger. So here's how to tell. This GT field here stands for genotype. Here the zero represents the reference base, and the 1 represents the variant or alternate base. If you have 0/1 here, that means you have only one copy of the variant. If you have 1/1, that means you have two copies.
 
-## Wrap up
+## Conclusion
 
 And that it is folks, you now have a basic understanding of what FASTQ, BAM, and VCF files are and what they contain. In the next post I am going to cover cool things that you can do with these files even if you have zero technical experience.
