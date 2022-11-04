@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://katharineme.com/drafts/cool-things-to-do-with-your-genome-data-files-with-no-technical-experience/</loc>
-    <lastmod>2022-03-31T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://katharineme.com/drafts/</loc>
-    <lastmod>2022-03-31T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/drafts/grch38_and_beyond/</loc>
+    <lastmod>2022-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/</loc>
+    <lastmod>2022-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/drafts/cool-things-to-do-with-your-genome-data-files-with-no-technical-experience/</loc>
     <lastmod>2022-03-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/drafts/what-you-can-do-with-your-genome-data-files/</loc>
@@ -16,9 +19,6 @@
   </url><url>
     <loc>https://katharineme.com/drafts/dna-collection-methods/</loc>
     <lastmod>2022-03-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://katharineme.com/drafts/snp_microarray/</loc>
-    <lastmod>2022-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/drafts/snp_microarray/</loc>
     <lastmod>2022-03-20T00:00:00+00:00</lastmod>

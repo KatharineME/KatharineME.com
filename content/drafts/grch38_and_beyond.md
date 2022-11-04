@@ -1,7 +1,7 @@
 +++ 
-date = "2022-03-20"
-title = "SNP Microarray"
-slug = "snp_microarray"
+date = "2022-10-05"
+title = "GRCH38 and Beyond"
+slug = "grch38_and_beyond"
 tags = []
 categories = []
 +++
