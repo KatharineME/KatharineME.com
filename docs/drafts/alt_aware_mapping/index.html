@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Katharine Medetgul-Ernar">
+    <meta name="description" content="https://katharineme.com/">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta property="og:site_name" content="The Art of Genome Analysis">
+    <meta property="og:title" content="
+  Alt Aware Mapping - The Art of Genome Analysis
+">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://katharineme.com/drafts/alt_aware_mapping/">
+    <meta property="og:image" content="https://katharineme.com/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="https://katharineme.com/drafts/alt_aware_mapping/">
+    <meta name="twitter:image" content="https://katharineme.com/">
+
+    <base href="https://katharineme.com/drafts/alt_aware_mapping/">
+    <title>
+  Alt Aware Mapping - The Art of Genome Analysis
+</title>
+
+    <link rel="canonical" href="https://katharineme.com/drafts/alt_aware_mapping/">
+    
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="/css/normalize.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="16x16">
+
+    
+      <link rel="alternate" href="https://katharineme.com/index.xml" type="application/rss+xml" title="The Art of Genome Analysis">
+      <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
+    
+
+    <meta name="generator" content="Hugo 0.90.0" />
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">The Art of Genome Analysis</a>
+    <input type="checkbox" id="menu-control"/>
+    <label class="menu-mobile  float-right " for="menu-control">
+      <span class="btn-mobile  float-right ">&#9776;</span>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="https://katharineme.com/posts">Posts</a>
+            </li>
+          
+        
+        
+      </ul>
+    </label>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Alt Aware Mapping</h1>
+    </header>
+
+    <p><a href="https://support-docs.illumina.com/SW/DRAGEN_v38/Content/SW/DRAGEN/GPipelineAltMap_fDG.htm">https://support-docs.illumina.com/SW/DRAGEN_v38/Content/SW/DRAGEN/GPipelineAltMap_fDG.htm</a></p>
+<p><a href="https://gatk.broadinstitute.org/hc/en-us/articles/4410953761563-Introducing-DRAGMAP-the-new-genome-mapper-in-DRAGEN-GATK">https://gatk.broadinstitute.org/hc/en-us/articles/4410953761563-Introducing-DRAGMAP-the-new-genome-mapper-in-DRAGEN-GATK</a></p>
+<p>Learned from the webinar on December 2nd 2022:</p>
+<p>Basis for alt aware mapping:</p>
+<p>GRCH38 comes with more alternate contigs than grch37 did. And we expect future reference genome versions to continue to increase the number of alternate contigs. Therefore, we need aligners that can take advantage of these smarter reference genomes.</p>
+<p>How exactly does it work? What does it mean for there to be a variant in an alt aware section of the genome?</p>
+<p>If you use an alt aware mapping, the vcf, in combination with the reference genome version that was used, can no longer tell you the exact and entire genome sequence of the sample. This is because at the locations with alternate contigs, if there is no snp, we dont know which reference alternate contig the sample has. In many cases, the phenotype may be the same. But this fact remains.</p>
+
+  </article>
+</section>
+
+
+      </div>
+      
+    </main>
+
+    
+
+  <script src="/js/app.js"></script>
+  
+  </body>
+</html>

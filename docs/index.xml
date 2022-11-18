@@ -6,7 +6,21 @@
     <description>Recent content on The Art of Genome Analysis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alt Aware Mapping</title>
+      <link>https://katharineme.com/drafts/alt_aware_mapping/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/alt_aware_mapping/</guid>
+      <description>https://support-docs.illumina.com/SW/DRAGEN_v38/Content/SW/DRAGEN/GPipelineAltMap_fDG.htm
+https://gatk.broadinstitute.org/hc/en-us/articles/4410953761563-Introducing-DRAGMAP-the-new-genome-mapper-in-DRAGEN-GATK
+Learned from the webinar on December 2nd 2022:
+Basis for alt aware mapping:
+GRCH38 comes with more alternate contigs than grch37 did. And we expect future reference genome versions to continue to increase the number of alternate contigs. Therefore, we need aligners that can take advantage of these smarter reference genomes.
+How exactly does it work? What does it mean for there to be a variant in an alt aware section of the genome?</description>
+    </item>
+    
     <item>
       <title>GRCH38 and Beyond</title>
       <link>https://katharineme.com/drafts/grch38_and_beyond/</link>
