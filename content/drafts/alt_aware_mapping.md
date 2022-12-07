@@ -12,9 +12,6 @@ https://gatk.broadinstitute.org/hc/en-us/articles/4410953761563-Introducing-DRAG
 
 Learned from the webinar on December 2nd 2022:
 
-
-
-
 Basis for alt aware mapping:
 
 GRCH38 comes with more alternate contigs than grch37 did. And we expect future reference genome versions to continue to increase the number of alternate contigs. Therefore, we need aligners that can take advantage of these smarter reference genomes.
