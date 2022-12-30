@@ -347,5 +347,16 @@ Golden ratio typography
 Hick’s Law With every additional choice increases the time required to make a decision.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://katharineme.com/drafts/grch38_and_beyond.snippets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/grch38_and_beyond.snippets/</guid>
+      <description>Centromere Sequencing How did we manage to model centromere sequences in GRCH38?
+Using a rare type of pregnancy called a hydatidiform mole. This happens when a sperm fertilizes and egg without a nucleus.
+That sperm then reduplicates its DNA, resulting in two identical copies of each chromosome. Since the resulting cell has no allelic variation, it can be used to generate unambiguous reads in regions with high diversity or repetition.</description>
+    </item>
+    
   </channel>
 </rss>
