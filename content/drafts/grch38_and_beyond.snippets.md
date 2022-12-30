@@ -17,4 +17,4 @@ functional core of their centromeres. But we dont know yet whether they are acti
 
 Need to convert data aligned to GRCH37 to GRCH38?
 You may not need to re-align the raw reads.
-Try NCBI's remapping tool: https://www.ncbi.nlm.nih.gov/genome/tools/remap
+NCBI has a remapping tool: https://www.ncbi.nlm.nih.gov/genome/tools/remap
