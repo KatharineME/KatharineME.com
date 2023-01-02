@@ -6,7 +6,18 @@
     <description>Recent content in Drafts on The Art of Genome Analysis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 16 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/drafts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/drafts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sequencing Technology in 2022</title>
+      <link>https://katharineme.com/drafts/sequencing_technology_in_2022/</link>
+      <pubDate>Mon, 02 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/drafts/sequencing_technology_in_2022/</guid>
+      <description>2022 was an important year for sequencing technology.For the first time, Illumina is facing real competition in short-read sequencing.
+In May 2022 Ultima Genomics emerged from stealth mode with a machine (UG 100) that supposedly delivers a $100 genome.
+To back up their claim, they</description>
+    </item>
+    
     <item>
       <title>Alt Aware Mapping</title>
       <link>https://katharineme.com/drafts/alt_aware_mapping/</link>
