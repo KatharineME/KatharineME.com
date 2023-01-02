@@ -35,9 +35,18 @@ GRCH39 will probably have more...
 
 It's 2023. Time to invest in an alt-aware aligner!
 
-## Alt-aware alginers
+## Non-linear Genome
 
-Are the ALT loci really worth making the human genome non-linear? Whats the benefit?
+The human reference genome used to be a list of bases. One base was assigned for every genomic location.
 
-They improve alignment. Reads that align well with an alt contig would otherwise be misaligned elsewhere in the genome.
-THey
+But as we sequenced more genomes around the world, we recognized that for some spots in the human genome, there are multiple common alleles. Instead of calling these common alternate alleles variants, its more useful to include in the reference genome. This is how ALT contigs were born.
+
+Alternative (ALT) contigs make the human reference genome non-linear.
+
+## Alt-aware aligners
+
+Alternative loci complicate the reference genome by making it non-linear. So why are they useful?
+
+They improve alignment. Reads that align well with an ALT contig would otherwise be misaligned elsewhere in the genome, or discarded.
+
+They improve variant calling. At the 261 in GRCH38 locations with ALT contigs, if the base call doesn't match the primary assembly but matches an ALT contig, it doesn't wrongfully end up in the VCF.
