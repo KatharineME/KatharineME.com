@@ -1,0 +1,167 @@
++++ 
+date = "2022-10-05"
+title = "GRCH38 and Beyond"
+slug = "grch38_and_beyond"
+tags = []
+categories = []
++++
+
+## Founding
+
+Created in 2009, got popular in 2014.
+
+Computational methods are actively being developed.
+
+## Different From Bulk RNASeq
+
+More expensive.
+
+More computationally complex.
+
+Typically used for heterogeneous tissue. Bulk RNA Seq is better for homogeneous tissue.
+
+More information. There is an added dimension of knowing what expression came from what cell.
+
+In a typical bulk RNA Seq experiment ~20% of genes will be zero. In a deeply sequenced single cell experiment ~50% will be zeros. And in a shallow sequenced single cell experiment up to 99% of genes can be zero.
+
+High-throughput droplet based methods identify ~5,000 genes, down to ~1000 for very shallow studies. More sensitive methods like SmartSeq identify twice as many genes.
+
+## Sequencing
+
+### Plate-based Sequencing
+
+Low-throughput high depth sequencing.
+
+Most popular platform was SmartSeq.
+
+Prominent from 2009 to 2014.
+
+Expensive and very labor intensive (pippeting).
+
+Plate based. Cells are separated into wells of a plate. Library prep happens separately in each well, then sequencing is done.
+
+Sequences only a few cells deeply without UMIs. The entire transcript is profiled and achieves higher sensitivity then droplet-based scRNASeq.
+
+### Droplet-based Sequencing
+
+High throughput (many cells) and low depth.
+
+Has been popular since 2015.
+
+Magnetic bead with PCR handle, cell barcode (to identify cells), and UMI (to identify mRNA molecule), and stretch of Ts to bind to the poly A tail of the messenger RNAs.
+
+Magnetic beads are flowed in with cell stream. The bead and cell streams combine and then hit an oil interface. This forms water droplets in the oil where most of the droplets are empty or contain a bead. About 16% contain a bead and a cell. And about 2% contain a bead and multiple cells.
+
+If the concentration of cells and beads are increased, then you get more droplets with one cell and one bead. But you also get many more droplets with two cells and one bead. There isn't a hgihly accurate way of ditinguishing doublets from singlets, so this isn't a good strategy. This is why cells are beads are flowed in at low concentrations.
+
+Eric Chow - Single Cell Sequencing - Eric Chow (UCSF) YouTube Video
+
+_UMIs help distinguish PCR duplicates from higher gene expression. If many transcripts are mapping to the same gene and they each have a different UMI, it means the expression of that gene was relatively high. If however the UMIs are the same, it means they are PCR duplicates and should be removed._
+
+In drop-seq aparatus, beads and flowed in with cells. Droplets are created with ideally one bead bound to one cell. Sometimes two cells or none in the droplet.
+
+Then the cells are lysed within each droplet. The poly A tails of the mRNA molecules bind to the T tails on the bead.
+
+The droplets are broken and reverse transcription and PCR amplification happens.
+
+#### 10X Genomics DropSeq
+
+Most popular droplet-based platform.
+
+Made two improvements to traditional droplet sequencing technology.
+
+The first is they engineered their microfluidic device and beads such that at least 90% of the droplets end up with a bead. Traditionally only a small fraction of droplets would have a bead. This allows them to lead the beads at high concentration.
+
+Secondly, they do reverse transcription inside the droplets. Traditionally the reverse transcription happened after the emulsion was broken. Thereafter they break the emulsion and amplify the cDNA in tube and construct the sequencing library in the same tube.
+
+This process happens on a chip. Each lane of the chip has input for oil, beads, and cells, and one output for droplets. Each chip has eight lanes. You can process 25K cells in each lane. Therefore 200K cells per chip. Process on chip takes fifteen minutes.
+
+cDNA amplification and library prep take half a day.
+
+#### Droplet Problems
+
+The goal is one bead and one cell in each droplet. But the following problems happen. The cutoffs for each problem type need to be determined per dataset.
+
+###### No Cell
+
+Identified by no genes or a small number of genes expressed (from ambient RNA).
+
+###### Two or More Cells
+
+Identified by large number of genes expressed (many more than other cells). Also ~5% of cell barcodes are tagging multiple cells. And up to ~20% of the time multiple cell barcodes are tagging the same cell.
+
+###### Dead or Broken Cell
+
+Identified by high percentage of mitochondrial transcripts, unmappable or multi-mapped transcripts,
+
+#### Weaknesses
+
+Only allow for the 5' or 3' end to be sequenced.
+
+The entire transcript isn't sequenced. Still don't understand this.
+
+Lots of dropouts. Even when a gene is expressed, the detected expression level is zero.
+
+Noisy. High level of variation between cells due to percentage of mRNAs captured, reverse transcription efficiency, amplification bias, sequencing depth, cell size, and cell-cycle stage.
+
+Multimodal Expression Distributions. Cell heterogeneity and lots of zero cause this.
+
+### Microwell-based Sequencing
+
+SeqWell, CelSee Genesis, Becton Dickinson Rhapsody.
+
+Between thousands and hundreds of thousands of microwells on a plate. The beads are engineered so yo get one bead in each well. Beads coat the microwell array. Then cells are applied. Small subset of wells will get a cell. Those wells will go through reverse transcription, amplification and library prep.
+
+## Analysis
+
+FastQC
+
+Alignment and mapping. Tools such as Cell Ranger (commercial software from 10x Genomics) [Zheng et al., 2017], zUMIs [Parekh et al., 2018], alevin [Srivastava et al., 2019], RainDrop [Niebler et al., 2020], kallisto|bustools [Melsted et al., 2021], STARsolo [Kaminow et al., 2021] and alevin-fry [He et al., 2022] provide dedicated treatment for aligning scRNA-seq reads along with parsing of technical read content (CBs and UMIs), as well as methods for demultiplexing and UMI resolution.
+
+https://kb.10xgenomics.com/hc/en-us/articles/115000794686-How-is-the-MEX-format-used-for-the-gene-barcode-matrices-
+
+Spliced mapping, contiguous mapping, and varieties of lightweight mapping.
+
+Cell Barcode Assignment.
+
+Trim barcodes from reads before mapping.
+
+Psuedo-alignment > gene by cell matrix for each sample.
+
+Remove genes with all zeros.
+
+Remove low quality cells.
+
+Normalize sequencing depth. SCnorm, sctransform, and bayNorm.
+
+Imputation and smoothing. SAVER. Fills some zeroes with imputed values based on overall structure of the data. Many false positives. Imposes patterns. Risky.
+
+Cell cycle assignment. cyclone and Seurat. cyclone uses pairs of genes to asssign G1,S, G2/M, but doesn't recognize non-cycling cells well. Seurat scores cells based on expression of known cycle markers. Once cells have been assigned a stage, they both use linear model to regress out differences.
+
+Feature selection. Select the genes with highest variance across cells, they have the most signal. Its been shown that noise follows a negative binomial distribution. Seurat selects features by empirically fitting the relationship between variance and mean expression. The reverse approach can also be taken, by removing features with more zeroes than expected.
+
+Scale expression.
+
+Reduce dimensions using PCA.
+
+Determine significant principal components.
+
+Use the principal components to cluster cells. Graph it.
+
+Visualize clusters with non-linear dimensional reduction (UMAP, tSNE) using the principal components.
+
+Detect and visualize marker genes for the clusters.
+
+## Sources
+
+https://www.nature.com/articles/s41596-020-00409-w
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4481139/
+
+https://pubmed.ncbi.nlm.nih.gov/28263961/
+
+https://pubmed.ncbi.nlm.nih.gov/28212749/
+
+https://www.sc-best-practices.org
+
+https://hbctraining.github.io/Intro-to-rnaseq-hpc-salmon/lessons/04_quasi_alignment_salmon.html#:~:text=The%20quasi%2Dmapping%20approach%20estimates,base%2Dby%2Dbase%20alignment.
