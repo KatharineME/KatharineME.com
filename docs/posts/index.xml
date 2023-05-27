@@ -6,7 +6,19 @@
     <description>Recent content in Posts on The Art of Genome Analysis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://katharineme.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS CLI and S3</title>
+      <link>https://katharineme.com/posts/aws_cli_and_s3/</link>
+      <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://katharineme.com/posts/aws_cli_and_s3/</guid>
+      <description>AWS Accounts and Users An AWS Organization is a unit that can hold multiple AWS accounts.
+AWS users are conceptually separate from AWS accounts. There are two types of users: root and IAM.
+A root user&amp;rsquo;s login information was used to create an account. The root user has supreme control over that account. But a root user cannot interface with other accounts.
+An IAM user can interface with multiple accounts and have varying degrees of power in each (Administrative access for example).</description>
+    </item>
+    
     <item>
       <title>My Story</title>
       <link>https://katharineme.com/posts/my_story/</link>
@@ -36,7 +48,7 @@ But how does Pkg identify a project environment? What constitutes a project? The
       
       <guid>https://katharineme.com/posts/creating_a_macos_app/</guid>
       <description>Submitting an App to the App Store Before getting into the step by step process, you need to know the following about submitting an app to the app store:
- The first step is applying to the Apple Developer Program and it takes months to be approved Apps needs to be submitted through Xcode Two potentially helpful video tutorials if questions come up:  https://www.youtube.com/watch?v=fXeDe9tafG8 https://www.youtube.com/watch?v=fXeDe9tafG8&amp;amp;t=84s    1. Enroll in Apple Developer Program  https://developer.</description>
+The first step is applying to the Apple Developer Program and it takes months to be approved Apps needs to be submitted through Xcode Two potentially helpful video tutorials if questions come up: https://www.youtube.com/watch?v=fXeDe9tafG8 https://www.youtube.com/watch?v=fXeDe9tafG8&amp;amp;t=84s 1. Enroll in Apple Developer Program https://developer.</description>
     </item>
     
     <item>
@@ -56,7 +68,7 @@ include vs. using include and using are two ways of accessing code in Julia. usi
       
       <guid>https://katharineme.com/posts/rna-seq-analysis/</guid>
       <description>DNA vs. RNA Photo credit to biologydictionary.net
- To review, DNA and RNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.
+To review, DNA and RNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.
 From acetylation to methylation, alternative splicing, and other regulatory mechanisms, our cells use many different strategies to specialize the way they transcribe and utilize the genome, resulting in different functions (why skin cells are different from heart cells).</description>
     </item>
     
@@ -66,7 +78,7 @@ From acetylation to methylation, alternative splicing, and other regulatory mech
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/juliadb/</guid>
-      <description>Key Features  Has two main data structures: IndexedTable and NDSparse. Can work with data that is larger than the machine RAM. Allows parallel processing with the addprocs function. Works with Dagger.jl&amp;rsquo;s save and load functions to make a sort of index file adjacent to your table which allows for fast loading and access.  Table  &amp;ldquo;Table&amp;rdquo; refers to both an IndexedTable and NDSparse Tables store data in columns Tables are typed, meaning changing a table requires returning a new table JuliaDB has few mutating operations because a new table is necessary in most cases  Indexed Table  Basically a named tuple of vectors which behaves like a vector of named tuples IndexedTable can be sorted by any number of primary keys (defined using parameter pkey).</description>
+      <description>Key Features Has two main data structures: IndexedTable and NDSparse. Can work with data that is larger than the machine RAM. Allows parallel processing with the addprocs function. Works with Dagger.jl&amp;rsquo;s save and load functions to make a sort of index file adjacent to your table which allows for fast loading and access. Table &amp;ldquo;Table&amp;rdquo; refers to both an IndexedTable and NDSparse Tables store data in columns Tables are typed, meaning changing a table requires returning a new table JuliaDB has few mutating operations because a new table is necessary in most cases Indexed Table Basically a named tuple of vectors which behaves like a vector of named tuples IndexedTable can be sorted by any number of primary keys (defined using parameter pkey).</description>
     </item>
     
     <item>
@@ -75,7 +87,7 @@ From acetylation to methylation, alternative splicing, and other regulatory mech
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/julia/</guid>
-      <description>The words that we have available change what we will do. Why Learn Julia? What Are the Value Propositions?  Combines Python&amp;rsquo;s usability with C++ speed  Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste. Now these strengths are in one language. This is accomplished using just in time compilation. The way this works is: you write dynamic Julia code, then Julia compiles it into static Julia, then everything runs super fast.</description>
+      <description>The words that we have available change what we will do. Why Learn Julia? What Are the Value Propositions? Combines Python&amp;rsquo;s usability with C++ speed Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste. Now these strengths are in one language. This is accomplished using just in time compilation. The way this works is: you write dynamic Julia code, then Julia compiles it into static Julia, then everything runs super fast.</description>
     </item>
     
     <item>
@@ -147,7 +159,7 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
       <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/virtualization/</guid>
-      <description>Virtual Machines  Virtualize the hardware Come with complete OS and kernal Interact with the hardware via a hypervisor Run on standby Start in minutes Usually GBs in size  Containers  Virtualize the OS Interact with and use the host OS and host kernal  Docker does this via Docker Daemon   Will exit without an active process Start in seconds Usually MBs in size  </description>
+      <description>Virtual Machines Virtualize the hardware Come with complete OS and kernal Interact with the hardware via a hypervisor Run on standby Start in minutes Usually GBs in size Containers Virtualize the OS Interact with and use the host OS and host kernal Docker does this via Docker Daemon Will exit without an active process Start in seconds Usually MBs in size </description>
     </item>
     
     <item>
@@ -156,7 +168,7 @@ To run Docker on Mac specifically, the newest and best option is to get Docker D
       <pubDate>Fri, 02 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/sequence-analysis-benchmark/</guid>
-      <description>Precision FDA Truth Challenge  Genome in Bottle’s NA12878 also known as HG001. Used to develop the actual tools (overfitted to analyzing this sample). So using this sample to test for accuracy and quality is too easy. The NA24285 sample known as HG002 (the son of an Ashkenazi trio) was about to be released from GiaB (genome in a bottle) as another truth dataset. So this challenge took advantage of that HG002 to assess SA pipelines.</description>
+      <description>Precision FDA Truth Challenge Genome in Bottle’s NA12878 also known as HG001. Used to develop the actual tools (overfitted to analyzing this sample). So using this sample to test for accuracy and quality is too easy. The NA24285 sample known as HG002 (the son of an Ashkenazi trio) was about to be released from GiaB (genome in a bottle) as another truth dataset. So this challenge took advantage of that HG002 to assess SA pipelines.</description>
     </item>
     
     <item>
@@ -180,7 +192,7 @@ Size, why are SAM /BAM files so big?</description>
       
       <guid>https://katharineme.com/posts/read-preprocessing/</guid>
       <description>Pre-processing is an umbrella term that can mean filtering out / trimming low quality reads and reads contaminated with adapter sequences, and / or correcting for sequencing baises such as batch or lane effects.
-Sequencing Biases  Batch effects include any errors that occur after random fragmentation of the DNA until it is input to the flow cell.  e.g., PCR amplification and reverse transcription artifacts.   Lane effects include any errors that occur from the point at which the sample is input to the flow cell until data are output from the sequencing machine.</description>
+Sequencing Biases Batch effects include any errors that occur after random fragmentation of the DNA until it is input to the flow cell. e.g., PCR amplification and reverse transcription artifacts. Lane effects include any errors that occur from the point at which the sample is input to the flow cell until data are output from the sequencing machine.</description>
     </item>
     
     <item>
@@ -190,7 +202,7 @@ Sequencing Biases  Batch effects include any errors that occur after random frag
       
       <guid>https://katharineme.com/posts/fastq/</guid>
       <description>File Names SampleName_S1_L001_R1_001.fastq.gz
- SampleName &amp;gt; sample name provided S1 &amp;gt; sample number based on order in list of samples. S1 is first sample on the list. L001 &amp;gt; Lane number R1 &amp;gt; Read number. Paired end sequencing must have at least one R1 file and 1 R2 file. 001 &amp;gt; The last segment is always 001.  Illumina FASTQ naming convention
+SampleName &amp;gt; sample name provided S1 &amp;gt; sample number based on order in list of samples. S1 is first sample on the list. L001 &amp;gt; Lane number R1 &amp;gt; Read number. Paired end sequencing must have at least one R1 file and 1 R2 file. 001 &amp;gt; The last segment is always 001. Illumina FASTQ naming convention
 Format For a single-read run, one Read 1 (R1) FASTQ file is created for each sample per flow cell lane.</description>
     </item>
     
@@ -200,7 +212,7 @@ Format For a single-read run, one Read 1 (R1) FASTQ file is created for each sam
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/encoding-basics/</guid>
-      <description>ASCII  Character to number mapping 0-32 are non-written symbols like breaks, sounds, etc. 33 is the first written character and is the exclamation point (!) There are 128 total ASCII characters  UTF-8  UTF-8 is capable of encoding all 1,112,064 valid character code points in Unicode using one to four one-byte code units As of November 2020, UTF-8 accounts on average for 95.8% of all web pages The first 128 characters correspond 1 to 1 with ASCII characters, a big reason for its popularity  </description>
+      <description>ASCII Character to number mapping 0-32 are non-written symbols like breaks, sounds, etc. 33 is the first written character and is the exclamation point (!) There are 128 total ASCII characters UTF-8 UTF-8 is capable of encoding all 1,112,064 valid character code points in Unicode using one to four one-byte code units As of November 2020, UTF-8 accounts on average for 95.8% of all web pages The first 128 characters correspond 1 to 1 with ASCII characters, a big reason for its popularity </description>
     </item>
     
     <item>
@@ -209,8 +221,8 @@ Format For a single-read run, one Read 1 (R1) FASTQ file is created for each sam
       <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/library-preparation/</guid>
-      <description>Initial Quality Check  Check DNA purity on Nanodrop (260/280 ratio shows RNA contamination) Check DNA concentration on Qubit Fluorometer  Fragmentation Two main options for fragmenting the DNA
- Sonication  Uses a sonication machine Pros: very little base bias in cuts made Cons: Sonication machines are expensive, difficult to cut DNA fragments smaller than 300bp   Enzyme digestion  Pros: cheaper, doesnt require large sonication machine Cons: Produces minor base % bias in first 10 bases of fragments  This bias can be easily seen in FastQC results      End Repair and A Tailing In order to ligate the necessary adapters to the fragmented sequences, the ends of the fragments need to be made compatible with those adapters.</description>
+      <description>Initial Quality Check Check DNA purity on Nanodrop (260/280 ratio shows RNA contamination) Check DNA concentration on Qubit Fluorometer Fragmentation Two main options for fragmenting the DNA
+Sonication Uses a sonication machine Pros: very little base bias in cuts made Cons: Sonication machines are expensive, difficult to cut DNA fragments smaller than 300bp Enzyme digestion Pros: cheaper, doesnt require large sonication machine Cons: Produces minor base % bias in first 10 bases of fragments This bias can be easily seen in FastQC results End Repair and A Tailing In order to ligate the necessary adapters to the fragmented sequences, the ends of the fragments need to be made compatible with those adapters.</description>
     </item>
     
     <item>
@@ -231,9 +243,9 @@ If it had not been for a potential family member entering our lives, I probably 
       <guid>https://katharineme.com/posts/web-design/</guid>
       <description>Fonts Pair a bold serif header with a nondescript sans-serif subheader for an approachabe yet sophisticated look.
 Serif
- Has “serifs” at the end of the letters Its the oldest font, from 15th century Gives a trustworthy classic feeling  Sans-serif
- Simpler, cleaner, modern, no serifs  Slab serif
- Has thick slab -like serifs  Visual Hierarchy Golden Ratio 1.618
+Has “serifs” at the end of the letters Its the oldest font, from 15th century Gives a trustworthy classic feeling Sans-serif
+Simpler, cleaner, modern, no serifs Slab serif
+Has thick slab -like serifs Visual Hierarchy Golden Ratio 1.618
 Golden ratio typography
 Hick’s Law With every additional choice increases the time required to make a decision.</description>
     </item>

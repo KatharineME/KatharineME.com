@@ -92,7 +92,7 @@ Identified by large number of genes expressed (many more than other cells). Also
 
 ###### Dead or Broken Cell
 
-Identified by high percentage of mitochondrial transcripts, unmappable or multi-mapped transcripts,
+Identified by high percentage (more than 5%) of mitochondrial transcripts, unmappable or multi-mapped transcripts,
 
 #### Weaknesses
 
@@ -114,25 +114,51 @@ Between thousands and hundreds of thousands of microwells on a plate. The beads 
 
 ## Analysis
 
-FastQC
+#### FastQC
 
-Alignment and mapping. Tools such as Cell Ranger (commercial software from 10x Genomics) [Zheng et al., 2017], zUMIs [Parekh et al., 2018], alevin [Srivastava et al., 2019], RainDrop [Niebler et al., 2020], kallisto|bustools [Melsted et al., 2021], STARsolo [Kaminow et al., 2021] and alevin-fry [He et al., 2022] provide dedicated treatment for aligning scRNA-seq reads along with parsing of technical read content (CBs and UMIs), as well as methods for demultiplexing and UMI resolution.
+#### Alignment
+
+Tools such as Cell Ranger (commercial software from 10x Genomics) [Zheng et al., 2017], zUMIs [Parekh et al., 2018], alevin [Srivastava et al., 2019], RainDrop [Niebler et al., 2020], kallisto|bustools [Melsted et al., 2021], STARsolo [Kaminow et al., 2021] and alevin-fry [He et al., 2022] provide dedicated treatment for aligning scRNA-seq reads along with parsing of technical read content (CBs and UMIs), as well as methods for demultiplexing and UMI resolution.
+
+STARsolo has performs very similarly to 10X genomics on 10x data, but runs ten times faster than CellRanger.
 
 https://kb.10xgenomics.com/hc/en-us/articles/115000794686-How-is-the-MEX-format-used-for-the-gene-barcode-matrices-
 
 Spliced mapping, contiguous mapping, and varieties of lightweight mapping.
 
-Cell Barcode Assignment.
+Cell Barcode Assignment. This should be done by the aligner.
 
-Trim barcodes from reads before mapping.
+Get gene by cell matrix for each sample.
 
-Psuedo-alignment > gene by cell matrix for each sample.
+#### Clean Gene by Cell Counts Matrix
 
-Remove genes with all zeros.
+"Cell QC is commonly performed based on three QC covariates: the number of counts per barcode (count depth), the number of genes per barcode, and the fraction of counts from mitochondrial genes per barcode (Ilicic et al, 2016; Griffiths et al, 2018). The distributions of these QC covariates are examined for outlier peaks that are filtered out by thresholding"
 
-Remove low quality cells.
+from: https://www.embopress.org/doi/full/10.15252/msb.20188746
+
+Remove unvarying genes. Remove genes with all zeros.
+
+Remove low quality cells. (emptyDrops via STARsolo flag)
 
 Normalize sequencing depth. SCnorm, sctransform, and bayNorm.
+
+
+From STARsolo manuscript:
+
+"
+We further filtered the cells that contain < 200 genes or > 20% of mitochondrial
+reads based on CellRanger counts, resulting in the final set of 4,473 cells which
+was used for all tools.
+2. For each tool, genes detected in less than 3 cells were excluded.
+3. Counts were normalized to 10000 reads per cell, a pseudocount of 1 was added
+and the natural log transformation was performed. These normalized expression
+values were used for differential gene expression calculations (see below).
+4. For UMAP embedding, neighborhood graph calculation and clustering, the ex- pression values were scaled to unit variance and zero mean across the cells and
+truncated at a maximum value of 10.
+5. 3, 000 highly variable genes were selected using the ’seurat v3’ algorithm.
+"
+
+#### ?
 
 Imputation and smoothing. SAVER. Fills some zeroes with imputed values based on overall structure of the data. Many false positives. Imposes patterns. Risky.
 
@@ -153,6 +179,8 @@ Visualize clusters with non-linear dimensional reduction (UMAP, tSNE) using the 
 Detect and visualize marker genes for the clusters.
 
 ## Sources
+
+https://www.biorxiv.org/content/10.1101/2021.05.05.442755v1.full.pdf
 
 https://www.nature.com/articles/s41596-020-00409-w
 

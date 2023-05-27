@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.90.0" />
+    <meta name="generator" content="Hugo 0.110.0">
   </head>
 
   <body class="">
@@ -116,20 +116,19 @@ A Dockerfile is a set of instructions for building an image. When an image is bu
 </ul>
 <p>A Dockerfile must be built off a previous image. That is why there is a default base image for docker: its Alpine (a lightweight Linux distro). Interestingly, the Dockerfile is not included in the image that made it. The best way to get more information about an image is docker inspect &lt;image_name&gt;.</p>
 <p>Here is what a minimal Dockerfile looks like.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">FROM Ubuntu
-
-RUN apt-get update
-RUN apt-get install python
-
-COPY . .
-
-ENTRYPOINT [&#34;sleep&#34;]
-
-WORKDIR /home/work
-
-CMD [&#34;5&#34;]
-
-</code></pre></div><p>FROM</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">FROM Ubuntu
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">RUN apt-get update
+</span></span><span class="line"><span class="cl">RUN apt-get install python
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">COPY . .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ENTRYPOINT [&#34;sleep&#34;]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">WORKDIR /home/work
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">CMD [&#34;5&#34;]
+</span></span></code></pre></div><p>FROM</p>
 <ul>
 <li>Specify the image to build off of.</li>
 </ul>
@@ -144,21 +143,21 @@ CMD [&#34;5&#34;]
 <h2 id="docker-compose">docker-compose</h2>
 <p>docker-compose is a command line tool that reads a file called <strong>docker-compose.yml</strong> and has only two commands <code>docker-compose up</code> and <code>docker-compose down</code>. docker-compose makes the process of building, running, and linking multiple containers easier. This might be done to create different containers for parts of a single application (one container for the frontend, and one for the sql database). However, docker-compose can also be used to start a single container. docker-compose runs all the containers with their specificed parameters in docker-compose.yml and connects them so they can access each other.</p>
 <p><strong>docker-compose.yml</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">version: <span class="m">3</span>
-services:
-    redis:
-        image: my_redis_image
-    db:
-        image: postgres:9.4
-    vote:
-        image: voting-app
-        ports:
-            -5000:80
-</code></pre></div><p>Run containers in <strong>docker-compose.yml</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker-compose up
-</code></pre></div><p>Exit and remove containers in <strong>docker-compose.yml</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker-compose down
-</code></pre></div><h2 id="dockerignore">.dockerignore</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">version: <span class="m">3</span>
+</span></span><span class="line"><span class="cl">services:
+</span></span><span class="line"><span class="cl">    redis:
+</span></span><span class="line"><span class="cl">        image: my_redis_image
+</span></span><span class="line"><span class="cl">    db:
+</span></span><span class="line"><span class="cl">        image: postgres:9.4
+</span></span><span class="line"><span class="cl">    vote:
+</span></span><span class="line"><span class="cl">        image: voting-app
+</span></span><span class="line"><span class="cl">        ports:
+</span></span><span class="line"><span class="cl">            -5000:80
+</span></span></code></pre></div><p>Run containers in <strong>docker-compose.yml</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker-compose up
+</span></span></code></pre></div><p>Exit and remove containers in <strong>docker-compose.yml</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker-compose down
+</span></span></code></pre></div><h2 id="dockerignore">.dockerignore</h2>
 <p>While building an image from a Dockerfile, the Docker client will send everything the entire directory the Dockerfile is in to the Docker daemon. So if your project has a lot of data, use <strong>.dockerignore</strong> to tell the Docker client what not to send to the daemon. This will speed up image building significantly for large projects.</p>
 
 
@@ -172,37 +171,37 @@ services:
 
 <h3 id="basics">Basics</h3>
 <p>Run the container in the background <strong>-d</strong> and map port <strong>-p</strong> 80 of the host to 80 in the container. Without <strong>-d</strong> you won&rsquo;t get your prompt back and STDOUT of the container will be printed to the terminal.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker run -dp 80:80 &lt;image_name&gt;
-</code></pre></div><p>Run a container based off the ubuntu image. If no <strong>ubuntu</strong> image exists locally, docker will pull it from Docker Hub. Specifically, Docker will look for <strong>uhbuntu/ubuntu:latest</strong> when <strong>ubuntu</strong> is passed in. No tag is specified, so docker will use the version of ubuntu tagged with <strong>latest</strong> on Docker Hub.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker run -d ubuntu
-</code></pre></div><p>Run a container based off the verison of ubuntu tagged with <strong>11.2.0</strong>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker run -d ubuntu:11.2.0
-</code></pre></div><p>Run a container in interactive mode <strong>-i</strong>. By default, containers dont listen to STDIN. In interactive mode, they will. <strong>-t</strong> attaches to the container&rsquo;s terminal. With both of these flags, STDIN and STDOUT will flow through the container.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker run -it ubuntu ls /
-</code></pre></div><p>List containers that are running and because <strong>-a</strong> exited.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker ps -a
-</code></pre></div><p>Stop a running container.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker stop &lt;container_id&gt;
-</code></pre></div><p>Remove a container.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker rm &lt;container_id&gt;
-</code></pre></div><p>Remove all stopped containers and cached image layers, and dangling images (all things you dont need).</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker system prune
-</code></pre></div><p>Execute a command in a running container.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker <span class="nb">exec</span> &lt;container_id&gt; cat file_in_container
-</code></pre></div><h3 id="image">Image</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -dp 80:80 &lt;image_name&gt;
+</span></span></code></pre></div><p>Run a container based off the ubuntu image. If no <strong>ubuntu</strong> image exists locally, docker will pull it from Docker Hub. Specifically, Docker will look for <strong>uhbuntu/ubuntu:latest</strong> when <strong>ubuntu</strong> is passed in. No tag is specified, so docker will use the version of ubuntu tagged with <strong>latest</strong> on Docker Hub.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d ubuntu
+</span></span></code></pre></div><p>Run a container based off the verison of ubuntu tagged with <strong>11.2.0</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d ubuntu:11.2.0
+</span></span></code></pre></div><p>Run a container in interactive mode <strong>-i</strong>. By default, containers dont listen to STDIN. In interactive mode, they will. <strong>-t</strong> attaches to the container&rsquo;s terminal. With both of these flags, STDIN and STDOUT will flow through the container.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -it ubuntu ls /
+</span></span></code></pre></div><p>List containers that are running and because <strong>-a</strong> exited.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker ps -a
+</span></span></code></pre></div><p>Stop a running container.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker stop &lt;container_id&gt;
+</span></span></code></pre></div><p>Remove a container.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker rm &lt;container_id&gt;
+</span></span></code></pre></div><p>Remove all stopped containers and cached image layers, and dangling images (all things you dont need).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker system prune
+</span></span></code></pre></div><p>Execute a command in a running container.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker <span class="nb">exec</span> &lt;container_id&gt; cat file_in_container
+</span></span></code></pre></div><h3 id="image">Image</h3>
 <p>List images.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker image list
-</code></pre></div><p>List dangling images. Dangling images are layers that have no relationship to any tagged iamges. They consume disk space, so its usually better to remove them. <strong>-f</strong> is for filter.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker images -f <span class="nv">dangling</span><span class="o">=</span><span class="nb">true</span>
-</code></pre></div><p>Remove an image.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker rmi &lt;image_name&gt;
-</code></pre></div><p>Tag an image. Tagging an image doesnt rename an image, it creates a copy of the image and give it the new name.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker tag &lt;source_image_name&gt;:&lt;tag&gt; &lt;target_image_name&gt;:&lt;tag&gt;
-</code></pre></div><p>Build an iamge off of the Dockerfile in the current directory <code>.</code> and tag it <code>-t</code> with <code>image_name</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker build -t &lt;image_name&gt; .
-</code></pre></div><p>See image layer information.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker <span class="nb">history</span> &lt;image_name&gt;
-</code></pre></div><h3 id="registry">Registry</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker image list
+</span></span></code></pre></div><p>List dangling images. Dangling images are layers that have no relationship to any tagged iamges. They consume disk space, so its usually better to remove them. <strong>-f</strong> is for filter.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker images -f <span class="nv">dangling</span><span class="o">=</span><span class="nb">true</span>
+</span></span></code></pre></div><p>Remove an image.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker rmi &lt;image_name&gt;
+</span></span></code></pre></div><p>Tag an image. Tagging an image doesnt rename an image, it creates a copy of the image and give it the new name.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker tag &lt;source_image_name&gt;:&lt;tag&gt; &lt;target_image_name&gt;:&lt;tag&gt;
+</span></span></code></pre></div><p>Build an iamge off of the Dockerfile in the current directory <code>.</code> and tag it <code>-t</code> with <code>image_name</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker build -t &lt;image_name&gt; .
+</span></span></code></pre></div><p>See image layer information.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker <span class="nb">history</span> &lt;image_name&gt;
+</span></span></code></pre></div><h3 id="registry">Registry</h3>
 <p>The predominant registry for docker images is <a href="https://hub.docker.com">Docker Hub</a>.</p>
 <p><img src="/images/docker_registry.png" alt="docker registry"></p>
 
@@ -211,40 +210,40 @@ services:
 <p style="font-size:18%; color: #8f8f8f; margin: 0;"> Image credit to IT'zGeek</p>
 
 <p>Login to Docker Hub.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker login -u &lt;user_name&gt;
-</code></pre></div><p>Pull image. It will pull from Docker Hub unless a different registry is specified. If you dont specifiy a username, docker will assume the username is the same as the image name. So these two commands will do the same thing:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker pull ubuntu
-
-docker pull ubuntu/ubuntu:latest
-</code></pre></div><p>Pull image from a different registry.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker pull myregistry.local:5000/testing/test-image
-</code></pre></div><p>Push image. It will push to Docker Hub unless a different registry is specified.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker push katharineme/myimage
-</code></pre></div><h3 id="volume">Volume</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker login -u &lt;user_name&gt;
+</span></span></code></pre></div><p>Pull image. It will pull from Docker Hub unless a different registry is specified. If you dont specifiy a username, docker will assume the username is the same as the image name. So these two commands will do the same thing:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker pull ubuntu
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker pull ubuntu/ubuntu:latest
+</span></span></code></pre></div><p>Pull image from a different registry.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker pull myregistry.local:5000/testing/test-image
+</span></span></code></pre></div><p>Push image. It will push to Docker Hub unless a different registry is specified.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker push katharineme/myimage
+</span></span></code></pre></div><h3 id="volume">Volume</h3>
 <p>Map host data to container to create a <strong>bind-mount</strong>. When the container is running, the data will be accessible by the container at the mapped location. The container will listen to changes made the data and changes made to the data in the container will be saved on the host.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker run -v &lt;/host/data/dir&gt;:&lt;/container/dir&gt; &lt;image_name&gt;
-</code></pre></div><p>To move a file or directory on the host into a running container (in a more one-off fashion) you can use the <code>cp</code> command.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker cp /Downloads/file.txt &lt;container_name&gt;:&lt;container_directory&gt;
-
-docker cp /Downloads/file.txt sad_burnell:/home/
-</code></pre></div><p>Create a <strong>named volume</strong>. named volumes are stored in a directory in the virtual machine docker is running. So they arent accessible in the host CLI.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker volume create &lt;volume_name&gt;
-</code></pre></div><p>List named volumes.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker volume ls
-</code></pre></div><h3 id="container-status">Container Status</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -v &lt;/host/data/dir&gt;:&lt;/container/dir&gt; &lt;image_name&gt;
+</span></span></code></pre></div><p>To move a file or directory on the host into a running container (in a more one-off fashion) you can use the <code>cp</code> command.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker cp /Downloads/file.txt &lt;container_name&gt;:&lt;container_directory&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker cp /Downloads/file.txt sad_burnell:/home/
+</span></span></code></pre></div><p>Create a <strong>named volume</strong>. named volumes are stored in a directory in the virtual machine docker is running. So they arent accessible in the host CLI.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker volume create &lt;volume_name&gt;
+</span></span></code></pre></div><p>List named volumes.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker volume ls
+</span></span></code></pre></div><h3 id="container-status">Container Status</h3>
 <p>See container details.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker inspect &lt;container_name&gt;
-</code></pre></div><p>See container logs (STDOUT).</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker logs &lt;container_name&gt;
-</code></pre></div><h3 id="container-power">Container Power</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker inspect &lt;container_name&gt;
+</span></span></code></pre></div><p>See container logs (STDOUT).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker logs &lt;container_name&gt;
+</span></span></code></pre></div><h3 id="container-power">Container Power</h3>
 <p>Give a container 50% of host CPU</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker run --cpus<span class="o">=</span>.5 ubuntu
-</code></pre></div><p>Give a container 100Mb of host Memory</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker run --memory<span class="o">=</span>100m ubuntu
-</code></pre></div><h3 id="environment-variables">Environment Variables</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run --cpus<span class="o">=</span>.5 ubuntu
+</span></span></code></pre></div><p>Give a container 100Mb of host Memory</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run --memory<span class="o">=</span>100m ubuntu
+</span></span></code></pre></div><h3 id="environment-variables">Environment Variables</h3>
 <p>Run container with environment variable. See a containers current environment variables by running <code>docker inspect</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">docker run -e <span class="nv">APP_COLOR</span><span class="o">=</span>blue &lt;image_name&gt;
-</code></pre></div><h2 id="more">More</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -e <span class="nv">APP_COLOR</span><span class="o">=</span>blue &lt;image_name&gt;
+</span></span></code></pre></div><h2 id="more">More</h2>
 <p><a href="https://www.youtube.com/watch?v=zJ6WbK9zFpI&amp;t=1s">Best Video Docker tutorial</a></p>
 
   </article>

@@ -2,17 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://katharineme.com/posts/aws_cli_and_s3/</loc>
+    <lastmod>2023-05-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/posts/</loc>
+    <lastmod>2023-05-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/</loc>
+    <lastmod>2023-05-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://katharineme.com/drafts/</loc>
-    <lastmod>2023-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2023-01-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/drafts/using_gene_expression_omnibus/</loc>
+    <lastmod>2023-01-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/drafts/sequencing_technology_in_2022/</loc>
     <lastmod>2023-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://katharineme.com/</loc>
-    <lastmod>2023-01-02T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://katharineme.com/drafts/alt_aware_mapping/</loc>
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://katharineme.com/drafts/grch38_and_beyond/</loc>
+    <lastmod>2022-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/drafts/grch38_and_beyond/</loc>
     <lastmod>2022-10-05T00:00:00+00:00</lastmod>
@@ -30,9 +42,6 @@
     <lastmod>2022-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/posts/my_story/</loc>
-    <lastmod>2022-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://katharineme.com/posts/</loc>
     <lastmod>2022-03-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://katharineme.com/posts/julias-package-manager-pkg/</loc>

@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.90.0" />
+    <meta name="generator" content="Hugo 0.110.0">
   </head>
 
   <body class="">
@@ -94,20 +94,20 @@
 <p>You can look for variants in a region in the same way.</p>
 <p><img src="/images/tabix_region.png" alt="command line"></p>
 <p>You can also do other useful / cool things with tabix, like return the header of a VCF.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">tabix -H vcf.gz
-</code></pre></div><p>Return chromosome names of a VCF.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">tabix -l vcf.gz
-</code></pre></div><p>You can also return variants found in regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">tabix -H vcf.gz
+</span></span></code></pre></div><p>Return chromosome names of a VCF.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">tabix -l vcf.gz
+</span></span></code></pre></div><p>You can also return variants found in regions listed in a file. The file can be a bed (.bed, .bed.gz, .bed.bgz) or a TAB-delimited file with CHROM, POS, and, optionally, POS_TO columns.</p>
 <p>I like to use BED files. BED files have only 3 required columns: chromosome, start position, and end position. They have 9 more optional columns. The only optional column I use is the 4th one, which is <code>name</code>. I use it because it helps me remember what that locus is. More on the BED file format <a href="https://m.ensembl.org/info/website/upload/bed.html">here</a>. Here is a BED file I might use.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">chr7    150999022    150999023   rs1799983
-chr19   51354483     51354484    rs79338777
-chr21   36146407     36146408    rs1056892
-</code></pre></div><p><strong>NOTE</strong>:This bed file is searching for three SNPs. Notice how the positions are one base apart? The position range in regions listed in a file need to start one base before where the expected variant is. That is different from when we search for a SNP directly like <code>tabix test.vcf.gz chr7:150999023-150999023</code> for example, where the position range is from one position to the same position. If you were to do this in the BED file and a variant actually existed at position 150999023 on chromosome 7, it wouldn&rsquo;t be returned. I don&rsquo;t know why this is the case, but its certainly must-know behavior.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">chr7    150999022    150999023   rs1799983
+</span></span><span class="line"><span class="cl">chr19   51354483     51354484    rs79338777
+</span></span><span class="line"><span class="cl">chr21   36146407     36146408    rs1056892
+</span></span></code></pre></div><p><strong>NOTE</strong>:This bed file is searching for three SNPs. Notice how the positions are one base apart? The position range in regions listed in a file need to start one base before where the expected variant is. That is different from when we search for a SNP directly like <code>tabix test.vcf.gz chr7:150999023-150999023</code> for example, where the position range is from one position to the same position. If you were to do this in the BED file and a variant actually existed at position 150999023 on chromosome 7, it wouldn&rsquo;t be returned. I don&rsquo;t know why this is the case, but its certainly must-know behavior.</p>
 <p>To return variants in regions listed in a file, enter:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">tabix -R test.bed vcf.gz
-</code></pre></div><p>Tabix doesn&rsquo;t have a stdout option, so you would save the output to a file like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">tabix -R test.bed vcf.gz &gt; results.tsv
-</code></pre></div><h2 id="careful-with-that-gz-file-">Careful with that .gz file &hellip;</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">tabix -R test.bed vcf.gz
+</span></span></code></pre></div><p>Tabix doesn&rsquo;t have a stdout option, so you would save the output to a file like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">tabix -R test.bed vcf.gz &gt; results.tsv
+</span></span></code></pre></div><h2 id="careful-with-that-gz-file-">Careful with that .gz file &hellip;</h2>
 <p><code>gzip</code> and <code>bgzip</code> are not the same thing. Wait &hellip; what is <code>bgzip</code>? Good question. <code>bgzip</code> is a compression algorithm that creates a series of <code>gzip</code> compressed blocks which are each 64kb in size. To go along with all these little blocks is whats called a &ldquo;virtual offset&rdquo;. The vitual offset is actually an unsigned (meaning nonnegative) 64 bit integer. And this integer holds information which acts like a map of the <code>bgzip</code> file. Its because of the &ldquo;block + map&rdquo; structure that <code>bgzip</code> files can be accessed without unzipping the entire file. And this is why tabix can access lets say <code>chr1:452923-452923</code> without unzipping the whole <code>variants.vcf.gz</code> (a bgzipped file).</p>
 <p>But why did I say be careful? Because <code>bgzip</code> files and <code>gzip</code> files both have the filename extension <code>.gz</code>. So how do you know if a <code>.gz</code> file is bgzipped or just gzipped? Because for the reasons explained above, you cannot access a part of a <code>gzip</code> file without unzipping it, which is why like tabix requires <code>bgzip</code> compression. Luckily its easy to tell. Just try to tabix it (create an index) and if its not bgzipped, tabix will tell you:</p>
 <p><img src="/images/tabix_not_bgzipped.png" alt="command line"></p>

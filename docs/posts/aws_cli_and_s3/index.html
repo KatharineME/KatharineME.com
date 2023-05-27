@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Katharine Medetgul-Ernar">
+    <meta name="description" content="https://katharineme.com/">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta property="og:site_name" content="The Art of Genome Analysis">
+    <meta property="og:title" content="
+  AWS CLI and S3 - The Art of Genome Analysis
+">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://katharineme.com/posts/aws_cli_and_s3/">
+    <meta property="og:image" content="https://katharineme.com/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="https://katharineme.com/posts/aws_cli_and_s3/">
+    <meta name="twitter:image" content="https://katharineme.com/">
+
+    <base href="https://katharineme.com/posts/aws_cli_and_s3/">
+    <title>
+  AWS CLI and S3 - The Art of Genome Analysis
+</title>
+
+    <link rel="canonical" href="https://katharineme.com/posts/aws_cli_and_s3/">
+    
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="/css/normalize.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="16x16">
+
+    
+      <link rel="alternate" href="https://katharineme.com/index.xml" type="application/rss+xml" title="The Art of Genome Analysis">
+      <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
+    
+
+    <meta name="generator" content="Hugo 0.110.0">
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">The Art of Genome Analysis</a>
+    <input type="checkbox" id="menu-control"/>
+    <label class="menu-mobile  float-right " for="menu-control">
+      <span class="btn-mobile  float-right ">&#9776;</span>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item  align-center ">
+              <a class="navigation-link" href="https://katharineme.com/posts">Posts</a>
+            </li>
+          
+        
+        
+      </ul>
+    </label>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">AWS CLI and S3</h1>
+      <h2 class="date">May 26, 2023</h2>
+
+      
+    </header>
+
+    <h2 id="aws-accounts-and-users">AWS Accounts and Users</h2>
+<p>An AWS Organization is a unit that can hold multiple AWS accounts.</p>
+<p>AWS users are conceptually separate from AWS accounts. There are two types of users: root and IAM.</p>
+<p>A root user&rsquo;s login information was used to create an account. The root user has supreme control over that account. But a root user cannot interface with other accounts.</p>
+<p>An IAM user can interface with multiple accounts and have varying degrees of power in each (Administrative access for example). But an IAM user will never have the power level of a root user.</p>
+<h2 id="aws-s3">AWS S3</h2>
+<p>Cloud storage organized into buckets.</p>
+<p>By default buckets are completely private. Individual files or folders can be made public however.</p>
+<p>Bucket names must be globally unique, lowercase, and can only include hypens or periods.</p>
+<p><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html</a></p>
+<h2 id="aws-cli">AWS CLI</h2>
+<h4 id="setup">Setup</h4>
+<h6 id="install">Install.</h6>
+<p><a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html</a></p>
+<h6 id="option-1-configure-with-root-user-credentials-less-secure-more-simple">Option 1: Configure with root user credentials (Less secure, more simple).</h6>
+<p>Login to AWS Console.</p>
+<p>Go to username drop down &gt; Security Credentials &gt; Scroll down to &ldquo;Access keys&rdquo; section &gt; Create a access key &gt; Check the box &gt; Create access key.</p>
+<p>Take a screenshot of the keys. You won&rsquo;t be able to see the keys again, but you can always generate new ones.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">aws configure
+</span></span></code></pre></div><p>Enter prompted information.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">AWS Access Key ID <span class="o">[</span>None<span class="o">]</span>: AKIAWT7RYAPOG57VK4Q3
+</span></span><span class="line"><span class="cl">AWS Secret Access Key <span class="o">[</span>None<span class="o">]</span>: tptnTWg0EqKP13yGFtyhOm2XgYlsYD4+tp0rTkUA
+</span></span><span class="line"><span class="cl">Default region name <span class="o">[</span>None<span class="o">]</span>: us-west-2
+</span></span><span class="line"><span class="cl">Default output format <span class="o">[</span>None<span class="o">]</span>: json
+</span></span></code></pre></div><p>AWS CLI uses the default region when you run a command where the region to use is not self evident.</p>
+<h6 id="option-2-configure-with-iam-user-credentials-more-secure-less-simple">Option 2: Configure with IAM user credentials (More secure, less simple).</h6>
+<p>An IAM user is simply a user wich may have access to one or multiple root accounts.
+This works like it sounds, you need to login every aws cli session. If your IAM user has access to multiple accounts, this is useful because you only need to login once. Thereafter you can access multiple accounts at once during the session.</p>
+<p><a href="https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html">https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html</a></p>
+<h4 id="use-with-s3">Use with S3</h4>
+<p>List buckets.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">aws s3 ls
+</span></span></code></pre></div><p>Make bucket.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">aws s3 mb s3://mybucket
+</span></span></code></pre></div><p>Copy thing to bucket.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">aws s3 cp test.txt s3://mybucket/
+</span></span></code></pre></div><h6 id="sync">Sync</h6>
+<p>Sync local folder to bucket.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">aws s3 sync ~/local/thing s3://mybucket
+</span></span></code></pre></div><p>Sync bucket to local folder.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">aws s3 sync s3://mybucket ~/local/thing
+</span></span></code></pre></div><p>If you delete a file in ~/local/thing and sync to mybucket, the file will not be deleted in mybucket unless you pass the  <code>--delete</code> flag.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">aws s3 sync ~/local/thing s3://mybucket --delete
+</span></span></code></pre></div><p>Like Github repositories, S3 buckets will only store non-empty folders.</p>
+<p><a href="https://docs.aws.amazon.com/cli/latest/reference/s3/">https://docs.aws.amazon.com/cli/latest/reference/s3/</a></p>
+
+  </article>
+
+  <br/>
+  
+</section>
+
+      </div>
+      
+    </main>
+
+    
+
+  <script src="/js/app.js"></script>
+  
+  </body>
+</html>

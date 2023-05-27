@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.90.0" />
+    <meta name="generator" content="Hugo 0.110.0">
   </head>
 
   <body class="">
@@ -88,96 +88,92 @@
 <h2 id="example-module">Example Module</h2>
 <p>This is the Kate.jl file that defines the Kate module. Everytime there is an include statement, you can imagine the code in that file being copied and pasted into this Kate.jl file.</p>
 <p>Modules A and B have no knowledge of eachother, nor do they know they belong to module Kate. Whereas module Kate knows modules A and B and each of their files.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia">
-<span class="k">module</span> <span class="n">Kate</span>
-
-<span class="k">module</span> <span class="n">A</span>
-
-<span class="n">include</span><span class="p">(</span><span class="n">f1</span><span class="o">.</span><span class="n">jl</span><span class="p">)</span>
-<span class="n">include</span><span class="p">(</span><span class="n">f2</span><span class="o">.</span><span class="n">jl</span><span class="p">)</span>
-<span class="n">include</span><span class="p">(</span><span class="n">f3</span><span class="o">.</span><span class="n">jl</span><span class="p">)</span>
-
-<span class="k">end</span>
-
-<span class="k">module</span> <span class="n">B</span>
-
-<span class="n">include</span><span class="p">(</span><span class="n">f4</span><span class="o">.</span><span class="n">jl</span><span class="p">)</span>
-<span class="n">include</span><span class="p">(</span><span class="n">f5</span><span class="o">.</span><span class="n">jl</span><span class="p">)</span>
-
-<span class="k">end</span>
-
-<span class="n">include</span><span class="p">(</span><span class="n">f6</span><span class="o">.</span><span class="n">jl</span><span class="p">)</span>
-
-<span class="k">end</span>
-
-</code></pre></div><p>The f1.jl file for example looks like this. In order for Kate module to see the <code>f1</code> function, it must be exported at the end of the file. If there are multiple methods for one functions, all will be exported with a single export statement.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia">
-<span class="k">function</span> <span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="k">return</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="k">end</span>
-
-<span class="k">export</span> <span class="n">f1</span>
-</code></pre></div><p>Now in a Jupyter notebook I&rsquo;ll be able to run the following:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">
-using Kate
-
-Kate.A.f1()
-
-Kate.B.f5()
-
-Kate.f6()
-
-</code></pre></div><h2 id="dependencies-within-a-module">Dependencies Within a Module</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">Kate</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">A</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">include</span><span class="p">(</span><span class="n">f1</span><span class="o">.</span><span class="n">jl</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">include</span><span class="p">(</span><span class="n">f2</span><span class="o">.</span><span class="n">jl</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">include</span><span class="p">(</span><span class="n">f3</span><span class="o">.</span><span class="n">jl</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">B</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">include</span><span class="p">(</span><span class="n">f4</span><span class="o">.</span><span class="n">jl</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">include</span><span class="p">(</span><span class="n">f5</span><span class="o">.</span><span class="n">jl</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">include</span><span class="p">(</span><span class="n">f6</span><span class="o">.</span><span class="n">jl</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><p>The f1.jl file for example looks like this. In order for Kate module to see the <code>f1</code> function, it must be exported at the end of the file. If there are multiple methods for one functions, all will be exported with a single export statement.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">f1</span>
+</span></span></code></pre></div><p>Now in a Jupyter notebook I&rsquo;ll be able to run the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">using Kate
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Kate.A.f1()
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Kate.B.f5()
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Kate.f6()
+</span></span></code></pre></div><h2 id="dependencies-within-a-module">Dependencies Within a Module</h2>
 <h3 id="a-function-in-one-module-calls-another-function-in-the-same-module">A function in one module calls another function in the same module</h3>
 <p>f2 calls f3. f3 can be called directly in f2 becuase they are within the same module.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia">
-<span class="k">function</span> <span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">f3</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="k">end</span>
-
-</code></pre></div><h3 id="a-function-in-one-module-calls-a-function-in-another-module">A function in one module calls a function in another module</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">f3</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><h3 id="a-function-in-one-module-calls-a-function-in-another-module">A function in one module calls a function in another module</h3>
 <p>f4 calls f1. <code>using ..A: f1</code> tells julia to reference the previously defined f1 function from the A module. The two dots <code>..</code> are used to go one level up from the current module.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia">
-<span class="k">using</span> <span class="o">..</span><span class="n">A</span><span class="o">:</span> <span class="n">f1</span>
-
-<span class="k">function</span> <span class="n">f4</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="k">end</span>
-
-</code></pre></div><h2 id="order-matters-when-defining-a-module">Order Matters When Defining a Module</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="o">..</span><span class="n">A</span><span class="o">:</span> <span class="n">f1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="n">f4</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><h2 id="order-matters-when-defining-a-module">Order Matters When Defining a Module</h2>
 <p>In order for f4 to use f1, module A must be defined before module B in Kate.jl. If the their order was reversed, julia would throw an error when it tried to call <code>using ..A: f1</code> because module A would not have been defined yet. Here is another illustration of why order matters in a module file like Kate.jl. This module file will throw an error because when <code>a = b</code> is evaluated, <code>b</code> has not been defined.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia">
-<span class="k">module</span> <span class="n">Kate</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
-
-<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
-
-<span class="k">end</span>
-</code></pre></div><p>However, this module file works. It doesnt matter that function <code>a</code> calls <code>b</code>and <code>a</code> comes before <code>b</code> becuase they are not being executed, they are merely being defined.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia">
-<span class="k">module</span> <span class="n">Kate</span>
-
-<span class="k">function</span> <span class="n">a</span><span class="p">()</span>
-
-    <span class="k">return</span> <span class="n">b</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="k">end</span>
-
-<span class="k">function</span> <span class="n">b</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="k">return</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="k">end</span>
-
-<span class="k">end</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">Kate</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><p>However, this module file works. It doesnt matter that function <code>a</code> calls <code>b</code>and <code>a</code> comes before <code>b</code> becuase they are not being executed, they are merely being defined.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">Kate</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="n">a</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">b</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="n">b</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span><span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div>
   </article>
 
   <br/>

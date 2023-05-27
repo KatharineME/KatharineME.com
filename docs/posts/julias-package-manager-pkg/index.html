@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.90.0" />
+    <meta name="generator" content="Hugo 0.110.0">
   </head>
 
   <body class="">
@@ -114,56 +114,56 @@
 <p>So how does Pkg interact with the .toml files individually?</p>
 <p>You can think of Project.toml as the <strong>input</strong> for the Pkg interpreter, and Manifest.toml as Pkg&rsquo;s <strong>output</strong>.</p>
 <p>This is a typical julia project structure for your reference:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">LICENSE
-Manifest.toml
-Project.toml
-README.md
-src/
-    Project.jl
-test/
-    runtests.jl
-</code></pre></div><h3 id="projecttoml">Project.toml</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">LICENSE
+</span></span><span class="line"><span class="cl">Manifest.toml
+</span></span><span class="line"><span class="cl">Project.toml
+</span></span><span class="line"><span class="cl">README.md
+</span></span><span class="line"><span class="cl">src/
+</span></span><span class="line"><span class="cl">    Project.jl
+</span></span><span class="line"><span class="cl">test/
+</span></span><span class="line"><span class="cl">    runtests.jl
+</span></span></code></pre></div><h3 id="projecttoml">Project.toml</h3>
 <p>Project.toml describes the project on a high level.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;test&#34;</span>
-<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;3b32e9fd-c20c-4cfa-a9b2-bfc1ff37ba3c&#34;</span>
-<span class="nx">authors</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;KatharineME &lt;katharine.me@icloud.com&gt;&#34;</span><span class="p">]</span>
-<span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;0.1.0&#34;</span>
-
-<span class="p">[</span><span class="nx">deps</span><span class="p">]</span>
-<span class="nx">Revise</span> <span class="p">=</span> <span class="s2">&#34;295af30f-e4ad-537b-8983-00126c2a3abe&#34;</span>
-<span class="nx">Example</span> <span class="p">=</span> <span class="s2">&#34;7876af07-990d-54b4-ab0e-23690620f79a&#34;</span>
-
-<span class="p">[</span><span class="nx">compat</span><span class="p">]</span>
-<span class="nx">BenchmarkTools</span> <span class="p">=</span> <span class="s2">&#34;1.2.0&#34;</span>
-<span class="nx">Dates</span> <span class="p">=</span> <span class="s2">&#34;3.1.20&#34;</span>
-<span class="nx">julia</span> <span class="p">=</span> <span class="s2">&#34;1.6&#34;</span>
-</code></pre></div><p>The <code>name</code> field is the name of the project, the <code>uuid</code> field sets a universally unique identifier (<a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>) for the project, the <code>author</code> field is simply the name and email of the author, and the <code>version</code> of the project which follows <a href="https://semver.org">semantic versioning</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;test&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;3b32e9fd-c20c-4cfa-a9b2-bfc1ff37ba3c&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">authors</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;KatharineME &lt;katharine.me@icloud.com&gt;&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;0.1.0&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">deps</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Revise</span> <span class="p">=</span> <span class="s2">&#34;295af30f-e4ad-537b-8983-00126c2a3abe&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Example</span> <span class="p">=</span> <span class="s2">&#34;7876af07-990d-54b4-ab0e-23690620f79a&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">compat</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">BenchmarkTools</span> <span class="p">=</span> <span class="s2">&#34;1.2.0&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Dates</span> <span class="p">=</span> <span class="s2">&#34;3.1.20&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">julia</span> <span class="p">=</span> <span class="s2">&#34;1.6&#34;</span>
+</span></span></code></pre></div><p>The <code>name</code> field is the name of the project, the <code>uuid</code> field sets a universally unique identifier (<a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>) for the project, the <code>author</code> field is simply the name and email of the author, and the <code>version</code> of the project which follows <a href="https://semver.org">semantic versioning</a>.</p>
 <p>The <code>deps</code> section lists the dependencies of the project. Notice the dependencies under <code>deps</code> dont include details like version number or the packages they depend on.</p>
 <p>The <code>compat</code> section lists compatibility requirements: basically what has to be true for this package to run. For example <code>julia = &quot;1.6&quot;</code> is for the example project above to run. In the compat section you can also specifiy whether you will allow minor version updates or patch updates to the specificed packages. More documentation on the compat section <a href="https://pkgdocs.julialang.org/v1/compatibility/#Compatibility">is here</a>.</p>
 <p>Side note: A julia <em>package</em> is definded as a julia project with a <code>uuid</code> and <code>name</code> set in the Project.toml.</p>
 <h3 id="manifesttoml">Manifest.toml</h3>
 <p>Manifest.toml is an “absolute record of the state of the packages in the environment”. It includes exact information about direct and recursive dependencies.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="c"># This file is machine-generated - editing it directly is not advised</span>
-
-<span class="p">[[</span><span class="nx">ArgTools</span><span class="p">]]</span>
-<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;0dad84c5-d112-42e6-8d28-ef12dabb789f&#34;</span>
-
-<span class="p">[[</span><span class="nx">Artifacts</span><span class="p">]]</span>
-<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;56f22d72-fd6d-98f1-02f0-08ddc0907c33&#34;</span>
-
-<span class="p">[[</span><span class="nx">Base64</span><span class="p">]]</span>
-<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;2a0f44e3-6c83-55bd-87e4-b1978d98bd5f&#34;</span>
-
-<span class="p">[[</span><span class="nx">BenchmarkTools</span><span class="p">]]</span>
-<span class="nx">deps</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;JSON&#34;</span><span class="p">,</span> <span class="s2">&#34;Logging&#34;</span><span class="p">,</span> <span class="s2">&#34;Printf&#34;</span><span class="p">,</span> <span class="s2">&#34;Profile&#34;</span><span class="p">,</span> <span class="s2">&#34;Statistics&#34;</span><span class="p">,</span> <span class="s2">&#34;UUIDs&#34;</span><span class="p">]</span>
-<span class="nx">git-tree-sha1</span> <span class="p">=</span> <span class="s2">&#34;61adeb0823084487000600ef8b1c00cc2474cd47&#34;</span>
-<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf&#34;</span>
-<span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;1.2.0&#34;</span>
-
-<span class="p">[[</span><span class="nx">Dates</span><span class="p">]]</span>
-<span class="nx">deps</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;Printf&#34;</span><span class="p">]</span>
-<span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;ade2ca70-3891-5945-98fb-dc099432e06a&#34;</span>
-</code></pre></div><p>As you can see in the comment at the top, Manifest.toml is not intended to be manually edited, it is strictly Pkg&rsquo;s output. It is continuously being regenerated and updated as the envrionment of the project changes.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># This file is machine-generated - editing it directly is not advised</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">ArgTools</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;0dad84c5-d112-42e6-8d28-ef12dabb789f&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">Artifacts</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;56f22d72-fd6d-98f1-02f0-08ddc0907c33&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">Base64</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;2a0f44e3-6c83-55bd-87e4-b1978d98bd5f&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">BenchmarkTools</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">deps</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;JSON&#34;</span><span class="p">,</span> <span class="s2">&#34;Logging&#34;</span><span class="p">,</span> <span class="s2">&#34;Printf&#34;</span><span class="p">,</span> <span class="s2">&#34;Profile&#34;</span><span class="p">,</span> <span class="s2">&#34;Statistics&#34;</span><span class="p">,</span> <span class="s2">&#34;UUIDs&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">git-tree-sha1</span> <span class="p">=</span> <span class="s2">&#34;61adeb0823084487000600ef8b1c00cc2474cd47&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;1.2.0&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">Dates</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">deps</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;Printf&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;ade2ca70-3891-5945-98fb-dc099432e06a&#34;</span>
+</span></span></code></pre></div><p>As you can see in the comment at the top, Manifest.toml is not intended to be manually edited, it is strictly Pkg&rsquo;s output. It is continuously being regenerated and updated as the envrionment of the project changes.</p>
 <h2 id="calling-pkg">Calling Pkg</h2>
 <p>Pkg has its own REPL that you can access from command line by starting julia and then hitting the <code>]</code> key, which will move you from the julia REPL into the pkg REPL.</p>
 
@@ -174,10 +174,10 @@ test/
 
 <p>In the pkg REPL you can enter commands that manage package environments like <code>add</code> to add a dependency. More on that in the API section below.</p>
 <p>You can also call Pkg from the julia REPL like so:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">using</span> <span class="n">Pkg</span><span class="p">;</span>
-
-<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;Example&#34;</span><span class="p">)</span>
-</code></pre></div><h2 id="pkg-api">Pkg API</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="k">using</span> <span class="n">Pkg</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;Example&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="pkg-api">Pkg API</h2>
 <h4 id="generate"><code>generate</code></h4>
 <p>Creates a boilerplate julia project in the current directory.</p>
 <h4 id="build"><code>build</code></h4>

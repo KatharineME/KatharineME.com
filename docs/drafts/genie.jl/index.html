@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.90.0" />
+    <meta name="generator" content="Hugo 0.110.0">
   </head>
 
   <body class="">
@@ -88,18 +88,18 @@
 <p>Uses HTTP.jl as the web server.</p>
 <h3 id="play-with-genie-in-a-jupyter-notebook">Play with Genie in a Jupyter Notebook</h3>
 <p>Whip up a web server and</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">using</span> <span class="n">Genie</span>
-
-<span class="n">route</span><span class="p">(</span><span class="s">&#34;/&#34;</span><span class="p">)</span> <span class="k">do</span>
-    <span class="s">&#34;Hi there!&#34;</span>
-<span class="k">end</span>
-</code></pre></div><h3 id="making-a-genie-app">Making a Genie App</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="k">using</span> <span class="n">Genie</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">route</span><span class="p">(</span><span class="s">&#34;/&#34;</span><span class="p">)</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;Hi there!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><h3 id="making-a-genie-app">Making a Genie App</h3>
 <p>Create a minimal, script-oriented app without database support and no templating engine. They are used more for scripting and creating simple applications. However the missing features can be added as the application grows.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">Genie</span><span class="o">.</span><span class="n">newapp</span><span class="p">(</span><span class="s">&#34;BasicApp&#34;</span><span class="p">)</span>
-</code></pre></div><p>Create a fully blown app with datbase support, templating engine, etc. Comes with most things you need for a more complex app.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">Genie</span><span class="o">.</span><span class="n">newapp_mvc</span><span class="p">(</span><span class="s">&#34;RobustApp&#34;</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">Genie</span><span class="o">.</span><span class="n">loadapp</span><span class="p">()</span>
-</code></pre></div><h3 id="standard-app-workflow">Standard App Workflow</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">Genie</span><span class="o">.</span><span class="n">newapp</span><span class="p">(</span><span class="s">&#34;BasicApp&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Create a fully blown app with datbase support, templating engine, etc. Comes with most things you need for a more complex app.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">Genie</span><span class="o">.</span><span class="n">newapp_mvc</span><span class="p">(</span><span class="s">&#34;RobustApp&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">Genie</span><span class="o">.</span><span class="n">loadapp</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="standard-app-workflow">Standard App Workflow</h3>
 <p>A route points to a method in the controller - which is charged with building and sending the response over the network, back to the client.</p>
 <h3 id="genie-app-filesystem">Genie App Filesystem</h3>
 <h4 id="routesjl"><code>routes.jl</code></h4>

@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.90.0" />
+    <meta name="generator" content="Hugo 0.110.0">
   </head>
 
   <body class="">
@@ -111,38 +111,38 @@
 <li>Use <code>table</code> function to create or <code>loadtable</code> to load existing data</li>
 <li><code>loadtable</code> should only be used once, then the <code>save</code> function should be used to save the table in bianry format to then be quickly loaded using <code>load</code> in the next session. The <code>save</code> and <code>load</code> functions are Dagger.jl fucntions.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">6</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">vcat</span><span class="p">(</span><span class="n">fill</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">fill</span><span class="p">(</span><span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
-
-<span class="n">t</span> <span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">);</span> <span class="n">pkey</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">])</span>
-
-<span class="n">Table</span> <span class="n">with</span> <span class="mi">6</span> <span class="n">rows</span><span class="p">,</span> <span class="mi">3</span> <span class="n">columns</span><span class="o">:</span>
-<span class="n">x</span>  <span class="n">y</span>    <span class="n">z</span>
-<span class="n">─────────────────</span>
-<span class="mi">1</span>  <span class="sc">&#39;a&#39;</span>  <span class="mf">1.06936</span>
-<span class="mi">2</span>  <span class="sc">&#39;a&#39;</span>  <span class="o">-</span><span class="mf">1.29235</span>
-<span class="mi">3</span>  <span class="sc">&#39;a&#39;</span>  <span class="o">-</span><span class="mf">0.725817</span>
-<span class="mi">4</span>  <span class="sc">&#39;b&#39;</span>  <span class="o">-</span><span class="mf">0.422334</span>
-<span class="mi">5</span>  <span class="sc">&#39;b&#39;</span>  <span class="mf">0.0246361</span>
-<span class="mi">6</span>  <span class="sc">&#39;b&#39;</span>  <span class="mf">0.669536</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">1.069356265804105</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">y</span>
-
-<span class="sc">&#39;a&#39;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">t</span>
-    <span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-<span class="k">end</span>
-
-<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5856775236297086</span><span class="p">)</span>
-<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.8225049388821863</span><span class="p">)</span>
-<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.2538693543229162</span><span class="p">)</span>
-<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">3.0769831992975276</span><span class="p">)</span>
-<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">1.0156881097767552</span><span class="p">)</span>
-<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.7371713978290413</span><span class="p">)</span>
-</code></pre></div><h3 id="ndsparse">NDSparse</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">vcat</span><span class="p">(</span><span class="n">fill</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">fill</span><span class="p">(</span><span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">t</span> <span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">);</span> <span class="n">pkey</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Table</span> <span class="n">with</span> <span class="mi">6</span> <span class="n">rows</span><span class="p">,</span> <span class="mi">3</span> <span class="n">columns</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span>  <span class="n">y</span>    <span class="n">z</span>
+</span></span><span class="line"><span class="cl"><span class="n">─────────────────</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>  <span class="sc">&#39;a&#39;</span>  <span class="mf">1.06936</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span>  <span class="sc">&#39;a&#39;</span>  <span class="o">-</span><span class="mf">1.29235</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>  <span class="sc">&#39;a&#39;</span>  <span class="o">-</span><span class="mf">0.725817</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span>  <span class="sc">&#39;b&#39;</span>  <span class="o">-</span><span class="mf">0.422334</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span>  <span class="sc">&#39;b&#39;</span>  <span class="mf">0.0246361</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span>  <span class="sc">&#39;b&#39;</span>  <span class="mf">0.669536</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">1.069356265804105</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="sc">&#39;a&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">t</span>
+</span></span><span class="line"><span class="cl">    <span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5856775236297086</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.8225049388821863</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.2538693543229162</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">3.0769831992975276</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">1.0156881097767552</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.7371713978290413</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="ndsparse">NDSparse</h3>
 <ul>
 <li>Behaves like a sparse array with arbitrary indices</li>
 <li>The keys of an NDSparse array are sorted</li>
@@ -150,39 +150,39 @@
 <li>Its made for working with data that is sparse over the domain of the index (stock data)</li>
 <li>Iterates over NamedTuples of <strong>values</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">nd</span> <span class="o">=</span> <span class="n">ndsparse</span><span class="p">((</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,))</span>
-
-<span class="mi">2</span><span class="o">-</span><span class="n">d</span> <span class="n">NDSparse</span> <span class="n">with</span> <span class="mi">6</span> <span class="n">values</span> <span class="p">(</span><span class="mi">1</span> <span class="n">field</span> <span class="n">named</span> <span class="n">tuples</span><span class="p">)</span><span class="o">:</span>
-<span class="n">x</span>  <span class="n">y</span>   <span class="n">│</span> <span class="n">z</span>
-<span class="n">───────┼──────────</span>
-<span class="mi">1</span>  <span class="sc">&#39;a&#39;</span> <span class="n">│</span> <span class="mf">1.0548</span>
-<span class="mi">2</span>  <span class="sc">&#39;a&#39;</span> <span class="n">│</span> <span class="mf">1.64493</span>
-<span class="mi">3</span>  <span class="sc">&#39;a&#39;</span> <span class="n">│</span> <span class="o">-</span><span class="mf">0.738508</span>
-<span class="mi">4</span>  <span class="sc">&#39;b&#39;</span> <span class="n">│</span> <span class="mf">0.325126</span>
-<span class="mi">5</span>  <span class="sc">&#39;b&#39;</span> <span class="n">│</span> <span class="mf">0.299526</span>
-<span class="mi">6</span>  <span class="sc">&#39;b&#39;</span> <span class="n">│</span> <span class="mf">0.787615</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">nd</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span>
-
-<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">1.0548018299672375</span><span class="p">,)</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">nd</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span>
-
-<span class="mi">1</span><span class="o">-</span><span class="n">d</span> <span class="n">NDSparse</span> <span class="n">with</span> <span class="mi">3</span> <span class="n">values</span> <span class="p">(</span><span class="mi">1</span> <span class="n">field</span> <span class="n">named</span> <span class="n">tuples</span><span class="p">)</span><span class="o">:</span>
-<span class="n">x</span> <span class="n">│</span> <span class="n">z</span>
-<span class="n">──┼──────────</span>
-<span class="mi">1</span> <span class="n">│</span> <span class="mf">1.0548</span>
-<span class="mi">2</span> <span class="n">│</span> <span class="mf">1.64493</span>
-<span class="mi">3</span> <span class="n">│</span> <span class="o">-</span><span class="mf">0.738508</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">nd</span>
-    <span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-<span class="k">end</span>
-
-<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">1.0548018299672375</span><span class="p">,)</span>
-<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">1.6449349801308328</span><span class="p">,)</span>
-<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.7385076399317578</span><span class="p">,)</span>
-<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.3251263120611191</span><span class="p">,)</span>
-<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.2995262607206383</span><span class="p">,)</span>
-<span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.7876150538404173</span><span class="p">,)</span>
-</code></pre></div><h3 id="when-to-use-a-table-or-ndsparse">When To Use a Table or NDSparse?</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">nd</span> <span class="o">=</span> <span class="n">ndsparse</span><span class="p">((</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mi">2</span><span class="o">-</span><span class="n">d</span> <span class="n">NDSparse</span> <span class="n">with</span> <span class="mi">6</span> <span class="n">values</span> <span class="p">(</span><span class="mi">1</span> <span class="n">field</span> <span class="n">named</span> <span class="n">tuples</span><span class="p">)</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span>  <span class="n">y</span>   <span class="n">│</span> <span class="n">z</span>
+</span></span><span class="line"><span class="cl"><span class="n">───────┼──────────</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>  <span class="sc">&#39;a&#39;</span> <span class="n">│</span> <span class="mf">1.0548</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span>  <span class="sc">&#39;a&#39;</span> <span class="n">│</span> <span class="mf">1.64493</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>  <span class="sc">&#39;a&#39;</span> <span class="n">│</span> <span class="o">-</span><span class="mf">0.738508</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span>  <span class="sc">&#39;b&#39;</span> <span class="n">│</span> <span class="mf">0.325126</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span>  <span class="sc">&#39;b&#39;</span> <span class="n">│</span> <span class="mf">0.299526</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span>  <span class="sc">&#39;b&#39;</span> <span class="n">│</span> <span class="mf">0.787615</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">nd</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">1.0548018299672375</span><span class="p">,)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">nd</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mi">1</span><span class="o">-</span><span class="n">d</span> <span class="n">NDSparse</span> <span class="n">with</span> <span class="mi">3</span> <span class="n">values</span> <span class="p">(</span><span class="mi">1</span> <span class="n">field</span> <span class="n">named</span> <span class="n">tuples</span><span class="p">)</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="n">│</span> <span class="n">z</span>
+</span></span><span class="line"><span class="cl"><span class="n">──┼──────────</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="n">│</span> <span class="mf">1.0548</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span> <span class="n">│</span> <span class="mf">1.64493</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span> <span class="n">│</span> <span class="o">-</span><span class="mf">0.738508</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">nd</span>
+</span></span><span class="line"><span class="cl">    <span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">1.0548018299672375</span><span class="p">,)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">1.6449349801308328</span><span class="p">,)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.7385076399317578</span><span class="p">,)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.3251263120611191</span><span class="p">,)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.2995262607206383</span><span class="p">,)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.7876150538404173</span><span class="p">,)</span>
+</span></span></code></pre></div><h3 id="when-to-use-a-table-or-ndsparse">When To Use a Table or NDSparse?</h3>
 <ul>
 <li>NDSparse cases
 <ul>
@@ -193,27 +193,27 @@
 <h2 id="api">API</h2>
 <h4 id="select">select</h4>
 <p>Selects particular data and optionally applies function on it.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:z</span><span class="p">))</span>
-
-<span class="n">Table</span> <span class="n">with</span> <span class="mi">6</span> <span class="n">rows</span><span class="p">,</span> <span class="mi">2</span> <span class="n">columns</span><span class="o">:</span>
-<span class="n">x</span>  <span class="n">z</span>
-<span class="n">─────────────</span>
-<span class="mi">1</span>  <span class="mf">1.37942</span>
-<span class="mi">2</span>  <span class="mf">0.525809</span>
-<span class="mi">3</span>  <span class="mf">0.754992</span>
-<span class="mi">4</span>  <span class="o">-</span><span class="mf">0.0998402</span>
-<span class="mi">5</span>  <span class="o">-</span><span class="mf">1.43908</span>
-<span class="mi">6</span>  <span class="mf">1.96262</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:z</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">row</span> <span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
-
-<span class="mi">6</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Bool</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">0</span>
- <span class="mi">1</span>
- <span class="mi">1</span>
- <span class="mi">1</span>
- <span class="mi">1</span>
- <span class="mi">1</span>
-</code></pre></div><h4 id="reduce">reduce</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:z</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Table</span> <span class="n">with</span> <span class="mi">6</span> <span class="n">rows</span><span class="p">,</span> <span class="mi">2</span> <span class="n">columns</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span>  <span class="n">z</span>
+</span></span><span class="line"><span class="cl"><span class="n">─────────────</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>  <span class="mf">1.37942</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span>  <span class="mf">0.525809</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>  <span class="mf">0.754992</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span>  <span class="o">-</span><span class="mf">0.0998402</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span>  <span class="o">-</span><span class="mf">1.43908</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span>  <span class="mf">1.96262</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">select</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="ss">:x</span><span class="p">,</span> <span class="ss">:z</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">row</span> <span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mi">6</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Bool</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">1</span>
+</span></span></code></pre></div><h4 id="reduce">reduce</h4>
 <p>Applies a function pairwise. Its good for functions with the associative property, meaning order doesnt matter. For a table that is four rows long, reduce(+, t) is the same as:</p>
 <p>out = +(row1, row2)</p>
 <p>out = +(out, row3)</p>
@@ -222,38 +222,38 @@
 <p><a href="https://juliadb.juliadata.org/latest/api/">More on JuliaDB API.</a></p>
 <h4 id="map">map</h4>
 <p>Map function. <code>map</code> and <code>select</code> have overlapping functionality.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">map</span><span class="p">(</span><span class="n">row</span> <span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
-
-<span class="mi">6</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Bool</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">0</span>
- <span class="mi">1</span>
- <span class="mi">1</span>
- <span class="mi">1</span>
- <span class="mi">1</span>
- <span class="mi">1</span>
-</code></pre></div><h4 id="columns">columns</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">map</span><span class="p">(</span><span class="n">row</span> <span class="o">-&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">row</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mi">6</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Bool</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">1</span>
+</span></span></code></pre></div><h4 id="columns">columns</h4>
 <p>Gives you a NamedTuple of Vectors where each name is the column name and each vector is the column data.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">columns</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-
-<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">],</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5812131489064223</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5545552318128536</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5490833373597503</span><span class="p">,</span> <span class="mf">0.291760065744581</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.411530524868723</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.449557749618286</span><span class="p">])</span>
-</code></pre></div><h4 id="rows">rows</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">columns</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">],</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5812131489064223</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5545552318128536</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5490833373597503</span><span class="p">,</span> <span class="mf">0.291760065744581</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.411530524868723</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.449557749618286</span><span class="p">])</span>
+</span></span></code></pre></div><h4 id="rows">rows</h4>
 <p>Gvies you a StructArray which is basically a Vector of NamedTuples. Each row is one NamedTuple.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">rows</span><span class="p">(</span><span class="n">t</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">1.5812131489064223</span><span class="p">)</span>
-</code></pre></div><h4 id="summarize">summarize</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">rows</span><span class="p">(</span><span class="n">t</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">1.5812131489064223</span><span class="p">)</span>
+</span></span></code></pre></div><h4 id="summarize">summarize</h4>
 <p>Applies a function (or functions) column-wise.</p>
 <p><code>summarize(function, table, by: select)</code></p>
 <h4 id="addprocs">addprocs</h4>
 <p>Adds as many workers as there are CPU cores available. <code>addprocs(2)</code> would add two working processes. When there are multiple processes, tables will be loaded as distributed tables across all the workers. So oyu cant index a row based on row number or iterate over all rows.</p>
 <h3 id="statistics">Statistics</h3>
 <p>JuliaDB integrates with OnlineStats (a julia stats package) using the functions <code>reduce</code> and <code>groupreduce</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="n">julia</span> <span class="o">&gt;</span> <span class="k">using</span> <span class="n">JuliaDB</span><span class="p">,</span> <span class="n">OnlineStats</span>
-<span class="n">julia</span> <span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span> <span class="n">rand</span><span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
-<span class="n">julia</span> <span class="o">&gt;</span> <span class="n">reduce</span><span class="p">(</span><span class="n">Mean</span><span class="p">(),</span> <span class="n">t</span><span class="p">;</span> <span class="n">select</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
-
-<span class="n">Mean</span><span class="o">:</span> <span class="n">n</span><span class="o">=</span><span class="mi">100</span> <span class="o">|</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.159962</span>
-</code></pre></div><h3 id="general-wisdom">General Wisdom</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="k">using</span> <span class="n">JuliaDB</span><span class="p">,</span> <span class="n">OnlineStats</span>
+</span></span><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span> <span class="n">rand</span><span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">reduce</span><span class="p">(</span><span class="n">Mean</span><span class="p">(),</span> <span class="n">t</span><span class="p">;</span> <span class="n">select</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Mean</span><span class="o">:</span> <span class="n">n</span><span class="o">=</span><span class="mi">100</span> <span class="o">|</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.159962</span>
+</span></span></code></pre></div><h3 id="general-wisdom">General Wisdom</h3>
 <ul>
 <li>Be as specific as possible when selecting to minimize the amount of data you are passing around.</li>
 <li>After loading a table for the first time, use Dagger.jl&rsquo;s <code>save</code> and <code>load</code> functions to work with the table.</li>
