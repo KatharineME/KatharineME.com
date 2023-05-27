@@ -99,4 +99,6 @@ aws s3 sync ~/local/thing s3://mybucket --delete
 
 Like Github repositories, S3 buckets will only store non-empty folders.
 
+###### More
+
 https://docs.aws.amazon.com/cli/latest/reference/s3/
