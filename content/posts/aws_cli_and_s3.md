@@ -6,7 +6,7 @@ tags = []
 categories = []
 +++
 
-## AWS Accounts and Users
+## Accounts and Users
 
 An AWS Organization is a unit that can hold multiple AWS accounts.
 
@@ -16,7 +16,7 @@ A root user's login information was used to create an account. The root user has
 
 An IAM user can interface with multiple accounts and have varying degrees of power in each (Administrative access for example). But an IAM user will never have the power level of a root user.
 
-## AWS S3
+## S3
 
 Cloud storage organized into buckets.
 
@@ -26,7 +26,7 @@ Bucket names must be globally unique, lowercase, and can only include hypens or 
 
 https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html
 
-## AWS CLI
+## CLI
 
 #### Setup 
 

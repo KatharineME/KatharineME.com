@@ -13,7 +13,7 @@
       <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://katharineme.com/posts/aws_cli_and_s3/</guid>
-      <description>AWS Accounts and Users An AWS Organization is a unit that can hold multiple AWS accounts.
+      <description>Accounts and Users An AWS Organization is a unit that can hold multiple AWS accounts.
 AWS users are conceptually separate from AWS accounts. There are two types of users: root and IAM.
 A root user&amp;rsquo;s login information was used to create an account. The root user has supreme control over that account. But a root user cannot interface with other accounts.
 An IAM user can interface with multiple accounts and have varying degrees of power in each (Administrative access for example).</description>
