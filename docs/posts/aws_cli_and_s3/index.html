@@ -107,8 +107,7 @@
 </span></span><span class="line"><span class="cl">Default output format <span class="o">[</span>None<span class="o">]</span>: json
 </span></span></code></pre></div><p>AWS CLI uses the default region when you run a command where the region to use is not self evident.</p>
 <h6 id="option-2-configure-with-iam-user-credentials-more-secure-less-simple">Option 2: Configure with IAM user credentials (More secure, less simple).</h6>
-<p>An IAM user is simply a user wich may have access to one or multiple root accounts.
-This works like it sounds, you need to login every aws cli session. If your IAM user has access to multiple accounts, this is useful because you only need to login once. Thereafter you can access multiple accounts at once during the session.</p>
+<p>You need to login every aws cli session. If your IAM user has access to multiple accounts, this is useful because you only need to login once to access all accounts.</p>
 <p><a href="https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html">https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html</a></p>
 <h4 id="use-with-s3">Use with S3</h4>
 <p>List buckets.</p>

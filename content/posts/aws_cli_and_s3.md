@@ -58,8 +58,7 @@ AWS CLI uses the default region when you run a command where the region to use i
 
 ###### Option 2: Configure with IAM user credentials (More secure, less simple).
 
-An IAM user is simply a user wich may have access to one or multiple root accounts. 
-This works like it sounds, you need to login every aws cli session. If your IAM user has access to multiple accounts, this is useful because you only need to login once. Thereafter you can access multiple accounts at once during the session.
+You need to login every aws cli session. If your IAM user has access to multiple accounts, this is useful because you only need to login once to access all accounts. 
 
 https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html
 
