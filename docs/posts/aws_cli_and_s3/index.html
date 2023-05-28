@@ -93,9 +93,9 @@
 <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html</a></p>
 <h2 id="cli">CLI</h2>
 <h4 id="setup">Setup</h4>
-<h6 id="install">Install.</h6>
+<h5 id="install">Install.</h5>
 <p><a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html</a></p>
-<h6 id="option-1-configure-with-root-user-credentials-less-secure-more-simple">Option 1: Configure with root user credentials (Less secure, more simple).</h6>
+<h5 id="option-1-configure-with-root-user-credentials-less-secure-more-simple">Option 1: Configure with root user credentials (Less secure, more simple).</h5>
 <p>Login to AWS Console.</p>
 <p>Go to username drop down &gt; Security Credentials &gt; Scroll down to &ldquo;Access keys&rdquo; section &gt; Create a access key &gt; Check the box &gt; Create access key.</p>
 <p>Take a screenshot of the keys. You won&rsquo;t be able to see the keys again, but you can always generate new ones.</p>
@@ -106,7 +106,7 @@
 </span></span><span class="line"><span class="cl">Default region name <span class="o">[</span>None<span class="o">]</span>: us-west-2
 </span></span><span class="line"><span class="cl">Default output format <span class="o">[</span>None<span class="o">]</span>: json
 </span></span></code></pre></div><p>AWS CLI uses the default region when you run a command where the region to use is not self evident.</p>
-<h6 id="option-2-configure-with-iam-user-credentials-more-secure-less-simple">Option 2: Configure with IAM user credentials (More secure, less simple).</h6>
+<h5 id="option-2-configure-with-iam-user-credentials-more-secure-less-simple">Option 2: Configure with IAM user credentials (More secure, less simple).</h5>
 <p>You need to login every aws cli session. If your IAM user has access to multiple accounts, this is useful because you only need to login once to access all accounts.</p>
 <p><a href="https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html">https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html</a></p>
 <h4 id="use-with-s3">Use with S3</h4>
@@ -116,7 +116,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">aws s3 mb s3://mybucket
 </span></span></code></pre></div><p>Copy thing to bucket.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">aws s3 cp test.txt s3://mybucket/
-</span></span></code></pre></div><h6 id="sync">Sync</h6>
+</span></span></code></pre></div><h5 id="sync">Sync</h5>
 <p>Sync local folder to bucket.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">aws s3 sync ~/local/thing s3://mybucket
 </span></span></code></pre></div><p>Sync bucket to local folder.</p>
@@ -124,7 +124,7 @@
 </span></span></code></pre></div><p>If you delete a file in ~/local/thing and sync to mybucket, the file will not be deleted in mybucket unless you pass the  <code>--delete</code> flag.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">aws s3 sync ~/local/thing s3://mybucket --delete
 </span></span></code></pre></div><p>Like Github repositories, S3 buckets will only store non-empty folders.</p>
-<h6 id="more">More</h6>
+<h5 id="more">More</h5>
 <p><a href="https://docs.aws.amazon.com/cli/latest/reference/s3/">https://docs.aws.amazon.com/cli/latest/reference/s3/</a></p>
 
   </article>

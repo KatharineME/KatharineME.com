@@ -30,11 +30,11 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html
 
 #### Setup 
 
-###### Install.
+##### Install.
 
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
-###### Option 1: Configure with root user credentials (Less secure, more simple).
+##### Option 1: Configure with root user credentials (Less secure, more simple).
 
 Login to AWS Console.
 
@@ -56,7 +56,7 @@ Default output format [None]: json
 
 AWS CLI uses the default region when you run a command where the region to use is not self evident.
 
-###### Option 2: Configure with IAM user credentials (More secure, less simple).
+##### Option 2: Configure with IAM user credentials (More secure, less simple).
 
 You need to login every aws cli session. If your IAM user has access to multiple accounts, this is useful because you only need to login once to access all accounts. 
 
@@ -79,7 +79,7 @@ Copy thing to bucket.
 aws s3 cp test.txt s3://mybucket/
 ```
 
-###### Sync
+##### Sync
 
 Sync local folder to bucket. 
 ```zsh
@@ -99,6 +99,6 @@ aws s3 sync ~/local/thing s3://mybucket --delete
 
 Like Github repositories, S3 buckets will only store non-empty folders.
 
-###### More
+##### More
 
 https://docs.aws.amazon.com/cli/latest/reference/s3/
