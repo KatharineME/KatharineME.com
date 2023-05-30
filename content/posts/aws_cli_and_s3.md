@@ -74,28 +74,29 @@ Make bucket.
 aws s3 mb s3://mybucket
 ```
 
-Copy thing to bucket.
-```zsh
-aws s3 cp test.txt s3://mybucket/
-```
-
 ##### Sync
 
 Sync local folder to bucket. 
 ```zsh
-aws s3 sync ~/local/thing s3://mybucket
+aws s3 sync ~/Downloads/thing s3://mybucket
 ```
 
 Sync bucket to local folder.
 ```zsh
-aws s3 sync s3://mybucket ~/local/thing
+aws s3 sync s3://mybucket ~/Downloads/thing
 ```
 
-If you delete a file in ~/local/thing and sync to mybucket, the file will not be deleted in mybucket unless you pass the  `--delete` flag.
+If you delete a file in ~/Downloads/thing and sync to mybucket, the file will not be deleted in mybucket unless you pass the  `--delete` flag.
 
 ```zsh
-aws s3 sync ~/local/thing s3://mybucket --delete
+aws s3 sync ~/Downloads/thing s3://mybucket --delete
 ```
+
+Sync file. This command will override the target file if it already exists.
+```zsh
+aws s3 sync s3://mybucket/folder/file.txt ~/Downloads/file.txt
+```
+
 
 Like Github repositories, S3 buckets will only store non-empty folders.
 
