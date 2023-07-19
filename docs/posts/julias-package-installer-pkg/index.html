@@ -1,48 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="author" content="Katharine Medetgul-Ernar">
-    <meta name="description" content="https://katharineme.com/">
-    <meta name="keywords" content="blog,developer,personal">
+    <meta name="author" content="Katharine Medetgul-Ernar" />
+    <meta name="description" content="https://katharineme.com/" />
+    <meta name="keywords" content="blog,developer,personal" />
 
-    <meta property="og:site_name" content="The Art of Genome Analysis">
-    <meta property="og:title" content="
+    <meta property="og:site_name" content="The Art of Genome Analysis" />
+    <meta
+      property="og:title"
+      content="
   Julia&#39;s Package Installer Pkg - The Art of Genome Analysis
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://katharineme.com/posts/julias-package-installer-pkg/">
-    <meta property="og:image" content="https://katharineme.com/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="https://katharineme.com/posts/julias-package-installer-pkg/">
-    <meta name="twitter:image" content="https://katharineme.com/">
+"
+    />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://katharineme.com/posts/julias-package-installer-pkg/"
+    />
+    <meta property="og:image" content="https://katharineme.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:site"
+      content="https://katharineme.com/posts/julias-package-installer-pkg/"
+    />
+    <meta name="twitter:image" content="https://katharineme.com/" />
 
-    <base href="https://katharineme.com/posts/julias-package-installer-pkg/">
+    <base href="https://katharineme.com/posts/julias-package-installer-pkg/" />
     <title>
-  Julia&#39;s Package Installer Pkg - The Art of Genome Analysis
-</title>
+      Julia&#39;s Package Installer Pkg - The Art of Genome Analysis
+    </title>
 
-    <link rel="canonical" href="https://katharineme.com/posts/julias-package-installer-pkg/">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="/css/normalize.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
+    <link
+      rel="canonical"
+      href="https://katharineme.com/posts/julias-package-installer-pkg/"
+    />
 
-    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700"
+    />
+    <link rel="stylesheet" href="/css/normalize.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
 
-    
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="16x16"
+    />
 
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="16x16">
-
-    
-      <link rel="alternate" href="https://katharineme.com/index.xml" type="application/rss+xml" title="The Art of Genome Analysis">
-      <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
-    
+    <link
+      rel="alternate"
+      href="https://katharineme.com/index.xml"
+      type="application/rss+xml"
+      title="The Art of Genome Analysis"
+    />
+    <link
+      href="https://katharineme.com/index.xml"
+      rel="feed"
+      type="application/rss+xml"
+      title="The Art of Genome Analysis"
+    />
 
     <meta name="generator" content="Hugo 0.89.2" />
   </head>
@@ -50,67 +78,117 @@
   <body class="">
     <main class="wrapper">
       <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">The Art of Genome Analysis</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="https://katharineme.com/posts">Posts</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
-
+        <section class="container">
+          <a class="navigation-title" href="/">The Art of Genome Analysis</a>
+          <input type="checkbox" id="menu-control" />
+          <label class="menu-mobile float-right" for="menu-control">
+            <span class="btn-mobile float-right">&#9776;</span>
+            <ul class="navigation-list">
+              <li class="navigation-item align-center">
+                <a class="navigation-link" href="https://katharineme.com/posts"
+                  >Posts</a
+                >
+              </li>
+            </ul>
+          </label>
+        </section>
+      </nav>
 
       <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">Julia&#39;s Package Installer Pkg</h1>
-      <h2 class="date">November 11, 2021</h2>
+        <section class="container post">
+          <article>
+            <header>
+              <h1 class="title">Julia&#39;s Package Installer Pkg</h1>
+              <h2 class="date">November 11, 2021</h2>
+            </header>
 
-      
-    </header>
+            <img src="/images/pkg.png" style="max-height: 200px" />
+            <p></p>
 
-    
+            <p>
+              <a href="https://docs.julialang.org/en/v1/">Julia&rsquo;s</a>
+              package manager is called Pkg. Pkg creates and manages
+              environments for julia projects, much like npm maintains an
+              environment for each of its packages. Understanding how Pkg works
+              is essential for being effective in julia. So let&rsquo;s dive in.
+            </p>
+            <h2 id="the-big-picture">The Big Picture</h2>
+            <p>
+              <strong
+                >Pkg prioritizes local project environments over global
+                environments.</strong
+              >
+            </p>
+            <p>
+              But how does Pkg identify a project environment? What constitutes
+              a project? There are two files that Pkg checks for:
+              <strong>Project.toml and Manifest.toml</strong>.
+            </p>
 
-<img src="/images/pkg.png" style="max-height: 200px;">
-<p> 
+            <p
+              style="
+                font-size: 110%;
+                color: #4063d8;
+                font-weight: 600;
+                padding: 10px 0px;
+              "
+            >
+              A julia project is defined as a Project.toml and Manifest.toml
+              pair.
+            </p>
 
-<p><a href="https://docs.julialang.org/en/v1/">Julia&rsquo;s</a> package manager is called Pkg. Pkg creates and manages environments for julia projects, much like npm maintains an environment for each of its packages. Understanding how Pkg works is essential for being effective in julia. So let&rsquo;s dive in.</p>
-<h2 id="the-big-picture">The Big Picture</h2>
-<p><strong>Pkg prioritizes local project environments over global environments.</strong></p>
-<p>But how does Pkg identify a project environment? What constitutes a project? There are two files that Pkg checks for: <strong>Project.toml and Manifest.toml</strong>.</p>
+            <p>
+              Given a Project.toml and a Manifest.toml pair, you can
+              <code>instantiate</code> the exact same environment using Pkg.
+            </p>
+            <p>
+              Pkg uses the julia environment variable <code>LOAD_PATH</code> to
+              search for project environments (Project.toml and Manifest.toml
+              pairs) to work in. In most situations, <code>LOAD_PATH</code> has
+              three entries like so:
+            </p>
 
+            <img src="/images/load_path.png" style="max-height: 200px" />
+            <p></p>
 
-<p style="font-size:110%; color:#4063D8; font-weight:600; padding:10px 0px;">A julia project is defined as a Project.toml and Manifest.toml pair.</p>
+            <p>
+              The first is the current project&rsquo;s environment (which needs
+              to be activated for Pkg to see it). The next is the global julia
+              environment thats installed on the machine, <code>1.6</code> for
+              example. In fact, if you look in<code>
+                ~/.julia/environments/v1.6</code
+              >
+              you will find a Manifest.toml and Project.toml. And last are the
+              standard libraries which come with julia when its installed.
+            </p>
 
-<p>Given a Project.toml and a Manifest.toml pair, you can <code>instantiate</code> the exact same environment using Pkg.</p>
-<p>Pkg uses the julia environment variable <code>LOAD_PATH</code> to search for project environments (Project.toml and Manifest.toml pairs) to work in. In most situations, <code>LOAD_PATH</code> has three entries like so:</p>
+            <p
+              style="
+                font-size: 110%;
+                color: #4063d8;
+                font-weight: 600;
+                padding: 10px 0px;
+              "
+            >
+              Pkg starts with the first entry of LOAD_PATH, and will check
+              subsequent entries in order until it finds what its looking for.
+            </p>
 
-
-<img src="/images/load_path.png" style="max-height: 200px;">
-<p> 
-
-<p>The first is the current project&rsquo;s environment (which needs to be activated for Pkg to see it). The next is the global julia environment thats installed on the machine, <code>1.6</code> for example. In fact, if you look in<code> ~/.julia/environments/v1.6</code> you will find a Manifest.toml and Project.toml. And last are the standard libraries which come with julia when its installed.</p>
-
-
-<p style="font-size:110%; color:#4063D8; font-weight:600; padding:10px 0px;">Pkg starts with the first entry of LOAD_PATH, and will check subsequent entries in order until it finds what its looking for.</p>
-
-<h2 id="projecttoml-and-manifesttoml">Project.toml and Manifest.toml</h2>
-<p>So how does Pkg interact with the .toml files individually?</p>
-<p>You can think of Project.toml as the <strong>input</strong> for the Pkg interpreter, and Manifest.toml as Pkg&rsquo;s <strong>output</strong>.</p>
-<p>This is a typical julia project structure for your reference:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">LICENSE
+            <h2 id="projecttoml-and-manifesttoml">
+              Project.toml and Manifest.toml
+            </h2>
+            <p>So how does Pkg interact with the .toml files individually?</p>
+            <p>
+              You can think of Project.toml as the <strong>input</strong> for
+              the Pkg interpreter, and Manifest.toml as Pkg&rsquo;s
+              <strong>output</strong>.
+            </p>
+            <p>This is a typical julia project structure for your reference:</p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-sh" data-lang="sh">LICENSE
 Manifest.toml
 Project.toml
 README.md
@@ -118,8 +196,14 @@ src/
     Project.jl
 test/
     runtests.jl
-</code></pre></div><h3 id="projecttoml">Project.toml</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;test&#34;</span>
+</code></pre>
+            </div>
+            <h3 id="projecttoml">Project.toml</h3>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-toml" data-lang="toml"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;test&#34;</span>
 <span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;3b32e9fd-c20c-4cfa-a9b2-bfc1ff37ba3c&#34;</span>
 <span class="nx">authors</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;KatharineME &lt;katharine.me@icloud.com&gt;&#34;</span><span class="p">]</span>
 <span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;0.1.0&#34;</span>
@@ -132,13 +216,48 @@ test/
 <span class="nx">BenchmarkTools</span> <span class="p">=</span> <span class="s2">&#34;1.2.0&#34;</span>
 <span class="nx">Dates</span> <span class="p">=</span> <span class="s2">&#34;3.1.20&#34;</span>
 <span class="nx">julia</span> <span class="p">=</span> <span class="s2">&#34;1.6&#34;</span>
-</code></pre></div><p>Project.toml describes the project on a high level.</p>
-<p>The <code>name</code> field is the name of the project, the <code>uuid</code> field sets a universally unique identifier (<a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>) for the project, the <code>author</code> field is simply the name and email of the author, and the <code>version</code> of the project which follows <a href="https://semver.org">semantic versioning</a>.</p>
-<p>The <code>deps</code> section lists the dependencies of the project. Notice the dependencies under <code>deps</code> dont include details like version number or the packages they depend on.</p>
-<p>The <code>compat</code> section lists compatibility requirements: basically what has to be true for this package to run. For example <code>julia = &quot;1.6&quot;</code> is for the example project above to run. In the compat section you can also specifiy whether you will allow minor version updates or patch updates to the specificed packages. More documentation on the compat section <a href="https://pkgdocs.julialang.org/v1/compatibility/#Compatibility">is here</a>.</p>
-<p>Side note: A julia <em>package</em> is definded as a julia project with a <code>uuid</code> and <code>name</code> set in the Project.toml.</p>
-<h3 id="manifesttoml">Manifest.toml</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="c"># This file is machine-generated - editing it directly is not advised</span>
+</code></pre>
+            </div>
+            <p>Project.toml describes the project on a high level.</p>
+            <p>
+              The <code>name</code> field is the name of the project, the
+              <code>uuid</code> field sets a universally unique identifier (<a
+                href="https://en.wikipedia.org/wiki/Universally_unique_identifier"
+                >UUID</a
+              >) for the project, the <code>author</code> field is simply the
+              name and email of the author, and the <code>version</code> of the
+              project which follows
+              <a href="https://semver.org">semantic versioning</a>.
+            </p>
+            <p>
+              The <code>deps</code> section lists the dependencies of the
+              project. Notice the dependencies under <code>deps</code> dont
+              include details like version number or the packages they depend
+              on.
+            </p>
+            <p>
+              The <code>compat</code> section lists compatibility requirements:
+              basically what has to be true for this package to run. For example
+              <code>julia = &quot;1.6&quot;</code> is for the example project
+              above to run. In the compat section you can also specifiy whether
+              you will allow minor version updates or patch updates to the
+              specificed packages. More documentation on the compat section
+              <a
+                href="https://pkgdocs.julialang.org/v1/compatibility/#Compatibility"
+                >is here</a
+              >.
+            </p>
+            <p>
+              Side note: A julia <em>package</em> is definded as a julia project
+              with a <code>uuid</code> and <code>name</code> set in the
+              Project.toml.
+            </p>
+            <h3 id="manifesttoml">Manifest.toml</h3>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-toml" data-lang="toml"><span class="c"># This file is machine-generated - editing it directly is not advised</span>
 
 <span class="p">[[</span><span class="nx">ArgTools</span><span class="p">]]</span>
 <span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;0dad84c5-d112-42e6-8d28-ef12dabb789f&#34;</span>
@@ -159,69 +278,131 @@ test/
 <span class="nx">deps</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;Printf&#34;</span><span class="p">]</span>
 <span class="nx">uuid</span> <span class="p">=</span> <span class="s2">&#34;ade2ca70-3891-5945-98fb-dc099432e06a&#34;</span>
 
-</code></pre></div><p>Manifest.toml is an “absolute record of the state of the packages in the environment”. It includes exact information about direct and recursive dependencies.</p>
-<p>As you can see in the comment at the top, Manifest.toml is not intended to be manually edited, it is strictly Pkg&rsquo;s output. It is continuously being regenerated and updated as the envrionment of the project changes.</p>
-<h2 id="calling-pkg">Calling Pkg</h2>
-<p>Pkg has its own REPL that you can access from command line by starting julia and then hitting the <code>]</code> key, which will move you from the julia REPL into the pkg REPL.</p>
+</code></pre>
+            </div>
+            <p>
+              Manifest.toml is an “absolute record of the state of the packages
+              in the environment”. It includes exact information about direct
+              and recursive dependencies.
+            </p>
+            <p>
+              As you can see in the comment at the top, Manifest.toml is not
+              intended to be manually edited, it is strictly Pkg&rsquo;s output.
+              It is continuously being regenerated and updated as the
+              envrionment of the project changes.
+            </p>
+            <h2 id="calling-pkg">Calling Pkg</h2>
+            <p>
+              Pkg has its own REPL that you can access from command line by
+              starting julia and then hitting the <code>]</code> key, which will
+              move you from the julia REPL into the pkg REPL.
+            </p>
 
+            <img src="/images/pkg_repl.png" style="max-height: 250px" />
+            <p></p>
 
-<img src="/images/pkg_repl.png" style="max-height: 250px;">
-<p> 
-
-<p>In the pkg REPL you can enter commands that manage package environments like  <code>add</code> to add a dependency. More on that in the API section below.</p>
-<p>You can also call Pkg from the julia REPL like so:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="k">using</span> <span class="n">Pkg</span><span class="p">;</span>
+            <p>
+              In the pkg REPL you can enter commands that manage package
+              environments like <code>add</code> to add a dependency. More on
+              that in the API section below.
+            </p>
+            <p>You can also call Pkg from the julia REPL like so:</p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="k">using</span> <span class="n">Pkg</span><span class="p">;</span>
 
 <span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&#34;Example&#34;</span><span class="p">)</span>
-</code></pre></div><h2 id="pkg-api">Pkg API</h2>
-<h4 id="generate"><code>generate</code></h4>
-<p>Creates a boilerplate julia project in the current directory.</p>
-<h4 id="build"><code>build</code></h4>
-<p>Runs the <code>deps/build.jl</code> script in the current package, then runs the build scripts for all the dependencies in depth-first recursive order.</p>
-<h4 id="develop"><code>develop</code></h4>
-<p>Make a package available for development.</p>
+</code></pre>
+            </div>
+            <h2 id="pkg-api">Pkg API</h2>
+            <h4 id="generate"><code>generate</code></h4>
+            <p>Creates a boilerplate julia project in the current directory.</p>
+            <h4 id="build"><code>build</code></h4>
+            <p>
+              Runs the <code>deps/build.jl</code> script in the current package,
+              then runs the build scripts for all the dependencies in
+              depth-first recursive order.
+            </p>
+            <h4 id="develop"><code>develop</code></h4>
+            <p>Make a package available for development.</p>
 
+            <img src="/images/pkg_develop.png" style="max-height: 250px" />
+            <p></p>
 
-<img src="/images/pkg_develop.png" style="max-height: 250px;">
-<p> 
+            <h4 id="activate"><code>activate</code></h4>
+            <p>
+              Activates a project&rsquo;s environment. For example,
+              <code>activate .</code> activates the current directory&rsquo;s
+              environment. This can also be done when starting julia in the
+              project of interest like so: <code>julia --project</code>. This
+              command needs to be run in a directory with Project.toml and
+              Manifest.toml at the top level.
+            </p>
+            <h4 id="instantiate"><code>instantiate</code></h4>
+            <p>
+              If Manifest.toml exists in the active project, download all
+              packages as described. If Manifest.toml doesn’t exist, get a set
+              of feasible packages from Project.toml and install them, then
+              create a manifest.toml.
+            </p>
+            <h4 id="st-or-status"><code>st</code> or <code>status</code></h4>
+            <p>
+              Print out the status of the Project.toml or Manifest.toml. By
+              default, the status of Project.toml will be printed. If
+              <code>--manifest</code> is passed, the status of the Manifest.toml
+              will be printed.
+            </p>
+            <h4 id="add"><code>add</code></h4>
+            <p>
+              Add a package (a package that the current project will use and
+              depend on). This command installs the package, updates the
+              Project.toml <code>deps</code> section, and updates the
+              Manifest.toml.
+            </p>
 
-<h4 id="activate"><code>activate</code></h4>
-<p>Activates a project&rsquo;s environment. For example, <code>activate .</code> activates the current directory&rsquo;s environment. This can also be done when starting julia in the project of interest like so: <code>julia --project</code>. This command needs to be run in a directory with Project.toml and Manifest.toml at the top level.</p>
-<h4 id="instantiate"><code>instantiate</code></h4>
-<p>If Manifest.toml exists in the active project, download all packages as described. If Manifest.toml doesn’t exist, get a set of feasible packages from Project.toml and install them, then create a manifest.toml.</p>
-<h4 id="st-or-status"><code>st</code> or <code>status</code></h4>
-<p>Print out the status of the Project.toml or Manifest.toml. By default, the status of Project.toml will be printed. If <code>--manifest</code> is passed, the status of the Manifest.toml will be printed.</p>
-<h4 id="add"><code>add</code></h4>
-<p>Add a package (a package that the current project will use and depend on). This command installs the package, updates the Project.toml <code>deps</code> section, and updates the Manifest.toml.</p>
+            <img src="/images/pkg_add.png" style="max-height: 250px" />
+            <p></p>
 
+            <h4 id="rm-or-remove"><code>rm</code> or <code>remove</code></h4>
+            <p>
+              Remove a package. This command uninstalls the package from the
+              project environment and removes it from the Project.toml. If no
+              other packages depend on it, it will be removed from the
+              Manifest.toml. If other packages this project depends on use it,
+              it will remain in the Manifest.toml. You can run
+              <code>rm -m pkg_name</code> to remove the package and all packages
+              that depend on it from the Manifest.toml.
+            </p>
+            <h4 id="up-or-update"><code>up</code> or <code>update</code></h4>
+            <p>
+              Update packages according to the <code>deps</code> and
+              <code>compat</code> sections of Project.toml. Passing
+              <code>-m</code> like in <code>update -m</code> will update
+              packages according to the Manifest.toml.
+            </p>
+            <h4 id="resolve"><code>resolve</code></h4>
+            <p>
+              Updates the Manifest.toml to the current needs of the project
+              according to Project.toml.
+            </p>
+            <h4 id="test"><code>test</code></h4>
+            <p>
+              Runs the <code>test/runtest.jl</code> in the package directory.
+            </p>
+            <h4 id="gc"><code>gc</code></h4>
+            <p>
+              Garbage collect packages not used for significant time to free
+              disk space.
+            </p>
+          </article>
 
-<img src="/images/pkg_add.png" style="max-height: 250px;">
-<p> 
-
-<h4 id="rm-or-remove"><code>rm</code> or <code>remove</code></h4>
-<p>Remove a package. This command uninstalls the package from the project environment and removes it from the Project.toml. If no other packages depend on it, it will be removed from the Manifest.toml. If other packages this project depends on use it, it will remain in the Manifest.toml. You can run <code>rm -m pkg_name</code> to remove the package and all packages that depend on it from the Manifest.toml.</p>
-<h4 id="up-or-update"><code>up</code> or <code>update</code></h4>
-<p>Update packages according to the <code>deps</code> and <code>compat</code> sections of Project.toml. Passing <code>-m</code> like in <code>update -m</code> will update packages according to the Manifest.toml.</p>
-<h4 id="resolve"><code>resolve</code></h4>
-<p>Updates the Manifest.toml to the current needs of the project according to Project.toml.</p>
-<h4 id="test"><code>test</code></h4>
-<p>Runs the <code>test/runtest.jl</code> in the package directory.</p>
-<h4 id="gc"><code>gc</code></h4>
-<p>Garbage collect packages not used for significant time to free disk space.</p>
-
-  </article>
-
-  <br/>
-  
-</section>
-
+          <br />
+        </section>
       </div>
-      
     </main>
 
-    
-
-  <script src="/js/app.js"></script>
-  
+    <script src="/js/app.js"></script>
   </body>
 </html>

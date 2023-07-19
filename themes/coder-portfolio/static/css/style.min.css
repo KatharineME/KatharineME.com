@@ -215,7 +215,9 @@ img {
     background-color: rgba(254, 254, 254, 0.98);
     padding: 0;
     border-bottom: solid 2px #e2dfe1;
-    transition: opacity 0.25s, max-height 0.15s linear;
+    transition:
+      opacity 0.25s,
+      max-height 0.15s linear;
   }
 }
 #menu-control {

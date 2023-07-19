@@ -44,7 +44,7 @@
       <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
     
 
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.115.3">
   </head>
 
   <body class="">
@@ -78,57 +78,53 @@
       <h1>GRCH38 and Beyond</h1>
     </header>
 
-    <h2 id="founding">Founding</h2>
-<p>Created in 2009, got popular in 2014.</p>
-<p>Computational methods are actively being developed.</p>
-<h2 id="different-from-bulk-rnaseq">Different From Bulk RNASeq</h2>
-<p>More expensive.</p>
-<p>More computationally complex.</p>
-<p>Typically used for heterogeneous tissue. Bulk RNA Seq is better for homogeneous tissue.</p>
-<p>More information. There is an added dimension of knowing what expression came from what cell.</p>
-<p>In a typical bulk RNA Seq experiment ~20% of genes will be zero. In a deeply sequenced single cell experiment ~50% will be zeros. And in a shallow sequenced single cell experiment up to 99% of genes can be zero.</p>
-<p>High-throughput droplet based methods identify ~5,000 genes, down to ~1000 for very shallow studies. More sensitive methods like SmartSeq identify twice as many genes.</p>
-<h2 id="sequencing">Sequencing</h2>
-<h3 id="plate-based-sequencing">Plate-based Sequencing</h3>
-<p>Low-throughput high depth sequencing.</p>
-<p>Most popular platform was SmartSeq.</p>
-<p>Prominent from 2009 to 2014.</p>
-<p>Expensive and very labor intensive (pippeting).</p>
-<p>Plate based. Cells are separated into wells of a plate. Library prep happens separately in each well, then sequencing is done.</p>
-<p>Sequences only a few cells deeply without UMIs. The entire transcript is profiled and achieves higher sensitivity then droplet-based scRNASeq.</p>
-<h3 id="droplet-based-sequencing">Droplet-based Sequencing</h3>
-<p>High throughput (many cells) and low depth.</p>
-<p>Has been popular since 2015.</p>
-<p>Magnetic bead with PCR handle, cell barcode (to identify cells), and UMI (to identify mRNA molecule), and stretch of Ts to bind to the poly A tail of the messenger RNAs.</p>
-<p>Magnetic beads are flowed in with cell stream. The bead and cell streams combine and then hit an oil interface. This forms water droplets in the oil where most of the droplets are empty or contain a bead. About 16% contain a bead and a cell. And about 2% contain a bead and multiple cells.</p>
-<p>If the concentration of cells and beads are increased, then you get more droplets with one cell and one bead. But you also get many more droplets with two cells and one bead. There isn&rsquo;t a hgihly accurate way of ditinguishing doublets from singlets, so this isn&rsquo;t a good strategy. This is why cells are beads are flowed in at low concentrations.</p>
-<p>Eric Chow - Single Cell Sequencing - Eric Chow (UCSF) YouTube Video</p>
-<p><em>UMIs help distinguish PCR duplicates from higher gene expression. If many transcripts are mapping to the same gene and they each have a different UMI, it means the expression of that gene was relatively high. If however the UMIs are the same, it means they are PCR duplicates and should be removed.</em></p>
-<p>In drop-seq aparatus, beads and flowed in with cells. Droplets are created with ideally one bead bound to one cell. Sometimes two cells or none in the droplet.</p>
-<p>Then the cells are lysed within each droplet. The poly A tails of the mRNA molecules bind to the T tails on the bead.</p>
-<p>The droplets are broken and reverse transcription and PCR amplification happens.</p>
-<h4 id="10x-genomics-dropseq">10X Genomics DropSeq</h4>
-<p>Most popular droplet-based platform.</p>
-<p>Made two improvements to traditional droplet sequencing technology.</p>
-<p>The first is they engineered their microfluidic device and beads such that at least 90% of the droplets end up with a bead. Traditionally only a small fraction of droplets would have a bead. This allows them to lead the beads at high concentration.</p>
-<p>Secondly, they do reverse transcription inside the droplets. Traditionally the reverse transcription happened after the emulsion was broken. Thereafter they break the emulsion and amplify the cDNA in tube and construct the sequencing library in the same tube.</p>
-<p>This process happens on a chip. Each lane of the chip has input for oil, beads, and cells, and one output for droplets. Each chip has eight lanes. You can process 25K cells in each lane. Therefore 200K cells per chip. Process on chip takes fifteen minutes.</p>
-<p>cDNA amplification and library prep take half a day.</p>
-<h4 id="droplet-problems">Droplet Problems</h4>
-<p>The goal is one bead and one cell in each droplet. But the following problems happen. The cutoffs for each problem type need to be determined per dataset.</p>
-<h6 id="no-cell">No Cell</h6>
-<p>Identified by no genes or a small number of genes expressed (from ambient RNA).</p>
-<h6 id="two-or-more-cells">Two or More Cells</h6>
-<p>Identified by large number of genes expressed (many more than other cells). Also ~5% of cell barcodes are tagging multiple cells. And up to ~20% of the time multiple cell barcodes are tagging the same cell.</p>
-<h6 id="dead-or-broken-cell">Dead or Broken Cell</h6>
-<p>Identified by high percentage (more than 5%) of mitochondrial transcripts, unmappable or multi-mapped transcripts,</p>
-<h4 id="weaknesses">Weaknesses</h4>
-<p>Only allow for the 5&rsquo; or 3&rsquo; end to be sequenced.</p>
-<p>The entire transcript isn&rsquo;t sequenced. Still don&rsquo;t understand this.</p>
-<p>Lots of dropouts. Even when a gene is expressed, the detected expression level is zero.</p>
-<p>Noisy. High level of variation between cells due to percentage of mRNAs captured, reverse transcription efficiency, amplification bias, sequencing depth, cell size, and cell-cycle stage.</p>
-<p>Multimodal Expression Distributions. Cell heterogeneity and lots of zero cause this.</p>
-<h3 id="microwell-based-sequencing">Microwell-based Sequencing</h3>
+    <p>From <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6699627/#SD1">this paper</a> on benchmarking practices:</p>
+<p>&ldquo;Moving forward, groups will also need to modify benchmarking strategies to address changes in the way the human genome itself is represented. Today the most common way of representing the human genome involves a set of linear chromosomes (e.g., the most common usage of GRCh37). There are key advantages to non-linear representations of the genome, including ability to recognize copy-number and other polymorphisms directly in the reference, and as a result more graphical structures are in development.25 The GRCh38 build of the human genome makes a key step towards this with its use of ALT loci, which provide multiple distinct versions of specific regions of the genome.26 These ALT loci are not well-accounted for by most aligners or the benchmarking tools we describe, and their impact on benchmarking studies is largely unexplored and likely would require a variety of samples with differing ALT alleles. It is likely that the core representation of the genome will continue to evolve over time, and benchmarking tools will continue to evolve.&rdquo;</p>
+<p>In this video we are going to talk about reference genomes. We&rsquo;ll cover the most popular reference genomes,how they were made, their limitations, and what changes we can expect in the future.</p>
+<p>Why do we need a reference?
+First, to review, the existence of a reference genome allows us to summarize a person by simply listing the 4 to 5 million places where they are different from the reference, instead of listing all 3.2 billion of their bases. Which is a massive convenience. However, since the reference is what everybody is comparing against, creating and maintaining the reference genome is a big responsibility.</p>
+<p>History of the reference genome
+still maintained by four organizations – the National Center for Biotechnology Information (NCBI), the Genome Institute at Washington University, the Wellcome Trust Sanger Institute, and the European Bioinformatics Institute – that were leading players in the original Human Genome Project. These organizations make up the GRC/ or genome reference consortium, which is responsible for keeping the reference genome at the forefront of accuracy and completeness, and is still plugging gaps and making refinements over a decade after the Human Genome Project was declared complete.</p>
+<p>Most popular reference genomes, their names, whats equivalent to what, and how they are made.
+WHo is in charge of creating and maintaining reference genomes?</p>
+<p>NCBI36 from March 2006
+grch37 released in march 2009
+grch38 released in december 2013</p>
+<p>grch37 and hg19 are the same</p>
+<p>ghrch38 versus grch37</p>
+<ul>
+<li>Repair incorrect reads (Build 38 alters around 8,000 single nucleotides across the genome, which “in many cases will improve the annotation or analysis of clinically relevant genes,” )</li>
+<li>inclusion of model centromere sequences</li>
+<li>addition of alternate loci (Build 38 contains 261 alternate loci across 178 regions – one of which, the KIR locus involved in the differentiation of natural killer cells, has been given 35 distinct sequences.)</li>
+<li>GRCh38 also adds new sequences to help fill those pieces of the genome that have never been fully captured</li>
+</ul>
+<p>This is the first reference to have centromere sequences. however there are still gaps present in the genome.</p>
+<p>One novel resource that GRCh38 takes advantage of is a hydatidiform mole, a type of abnormal pregnancy that occurs when a sperm fertilizes an enucleated egg. That sperm then reduplicates its DNA, resulting in two identical copies of each chromosome. Since the resulting cell has no allelic variation, it can be used to generate unambiguous reads in regions of very high diversity.</p>
+<p>The biggest leap in coverage in GRCh38 comes from the centromeres, which are modeled for the first time in the reference genome’s history. Once thought to be important only during cell division, centromeres have generated new interest as the evidence mounts that their sequences may have real impacts on function.</p>
+<p>applied a new analytical approach to create estimated centromere sequences. Centromeres are defined largely by very slight variations on a massively repeated 171-base sequence</p>
+<p>GRC did incorporate some changes to the MUC5AC gene based on a PacBio sequence posted in GenBank. As more sequences generated on long-read technology are placed in public repositories, the GRC will have more opportunity to benefit from advances in capturing these difficult regions.</p>
+<p>CONVERSION TOOL from GRCH37 to GRCH38. MCBI remapping tool: <a href="https://www.ncbi.nlm.nih.gov/genome/tools/remap">https://www.ncbi.nlm.nih.gov/genome/tools/remap</a></p>
+<p>Show a diagram of the life of reference genomes, as they progress from various sources.</p>
+<p>Limitations of the latest and greatest reference. What regions we dont have sequence for, what was the sample pool for this genome.</p>
+<h2 id="future">Future</h2>
+<p>GRC says they:</p>
+<p>&ldquo;have decided to indefinitely postpone our next coordinate-changing update (GRCh39) while we evaluate new models and sequence content from ongoing efforts to better represent the genetic diversity of the human pangenome, including those of the Telemore-to-Telomere Consortium and the Human Pangenome Reference Consortium&rdquo;</p>
+
+  </article>
+</section>
+
+
+      </div>
+      
+    </main>
+
+    
+
+  <script src="/js/app.js"></script>
+  
+  </body>
+</html>
+>
 <p>SeqWell, CelSee Genesis, Becton Dickinson Rhapsody.</p>
 <p>Between thousands and hundreds of thousands of microwells on a plate. The beads are engineered so yo get one bead in each well. Beads coat the microwell array. Then cells are applied. Small subset of wells will get a cell. Those wells will go through reverse transcription, amplification and library prep.</p>
 <h2 id="analysis">Analysis</h2>

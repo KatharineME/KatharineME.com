@@ -142,20 +142,15 @@ Remove low quality cells. (emptyDrops via STARsolo flag)
 
 Normalize sequencing depth. SCnorm, sctransform, and bayNorm.
 
-
 From STARsolo manuscript:
 
 "
 We further filtered the cells that contain < 200 genes or > 20% of mitochondrial
 reads based on CellRanger counts, resulting in the final set of 4,473 cells which
-was used for all tools.
-2. For each tool, genes detected in less than 3 cells were excluded.
-3. Counts were normalized to 10000 reads per cell, a pseudocount of 1 was added
+was used for all tools. 2. For each tool, genes detected in less than 3 cells were excluded. 3. Counts were normalized to 10000 reads per cell, a pseudocount of 1 was added
 and the natural log transformation was performed. These normalized expression
-values were used for differential gene expression calculations (see below).
-4. For UMAP embedding, neighborhood graph calculation and clustering, the ex- pression values were scaled to unit variance and zero mean across the cells and
-truncated at a maximum value of 10.
-5. 3, 000 highly variable genes were selected using the ’seurat v3’ algorithm.
+values were used for differential gene expression calculations (see below). 4. For UMAP embedding, neighborhood graph calculation and clustering, the ex- pression values were scaled to unit variance and zero mean across the cells and
+truncated at a maximum value of 10. 5. 3, 000 highly variable genes were selected using the ’seurat v3’ algorithm.
 "
 
 #### ?

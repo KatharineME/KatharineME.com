@@ -1,174 +1,289 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="author" content="Katharine Medetgul-Ernar">
-    <meta name="description" content="https://katharineme.com/">
-    <meta name="keywords" content="blog,developer,personal">
+    <meta name="author" content="Katharine Medetgul-Ernar" />
+    <meta name="description" content="https://katharineme.com/" />
+    <meta name="keywords" content="blog,developer,personal" />
 
-    <meta property="og:site_name" content="The Art of Genome Analysis">
-    <meta property="og:title" content="
+    <meta property="og:site_name" content="The Art of Genome Analysis" />
+    <meta
+      property="og:title"
+      content="
   Julia - The Art of Genome Analysis
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://katharineme.com/posts/julia/">
-    <meta property="og:image" content="https://katharineme.com/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="https://katharineme.com/posts/julia/">
-    <meta name="twitter:image" content="https://katharineme.com/">
+"
+    />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://katharineme.com/posts/julia/" />
+    <meta property="og:image" content="https://katharineme.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="https://katharineme.com/posts/julia/" />
+    <meta name="twitter:image" content="https://katharineme.com/" />
 
-    <base href="https://katharineme.com/posts/julia/">
-    <title>
-  Julia - The Art of Genome Analysis
-</title>
+    <base href="https://katharineme.com/posts/julia/" />
+    <title>Julia - The Art of Genome Analysis</title>
 
-    <link rel="canonical" href="https://katharineme.com/posts/julia/">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="/css/normalize.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="canonical" href="https://katharineme.com/posts/julia/" />
 
-    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700"
+    />
+    <link rel="stylesheet" href="/css/normalize.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
 
-    
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="16x16"
+    />
 
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="16x16">
+    <link
+      rel="alternate"
+      href="https://katharineme.com/index.xml"
+      type="application/rss+xml"
+      title="The Art of Genome Analysis"
+    />
+    <link
+      href="https://katharineme.com/index.xml"
+      rel="feed"
+      type="application/rss+xml"
+      title="The Art of Genome Analysis"
+    />
 
-    
-      <link rel="alternate" href="https://katharineme.com/index.xml" type="application/rss+xml" title="The Art of Genome Analysis">
-      <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
-    
-
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.115.3" />
   </head>
 
   <body class="">
     <main class="wrapper">
       <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">The Art of Genome Analysis</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="https://katharineme.com/posts">Posts</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
-
+        <section class="container">
+          <a class="navigation-title" href="/">The Art of Genome Analysis</a>
+          <input type="checkbox" id="menu-control" />
+          <label class="menu-mobile float-right" for="menu-control">
+            <span class="btn-mobile float-right">&#9776;</span>
+            <ul class="navigation-list">
+              <li class="navigation-item align-center">
+                <a class="navigation-link" href="https://katharineme.com/posts"
+                  >Posts</a
+                >
+              </li>
+            </ul>
+          </label>
+        </section>
+      </nav>
 
       <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">Julia</h1>
-      <h2 class="date">January 28, 2021</h2>
+        <section class="container post">
+          <article>
+            <header>
+              <h1 class="title">Julia</h1>
+              <h2 class="date">January 28, 2021</h2>
+            </header>
 
-      
-    </header>
+            <p><img src="/images/julia_banner.png" alt="julia" /></p>
 
-    <p><img src="/images/julia_banner.png" alt="julia"></p>
+            <p
+              style="
+                font-size: 110%;
+                color: #6f439c;
+                margin: 0;
+                font-style: italic;
+                padding-top: 2%;
+              "
+            >
+              The words that we have available change what we will do.
+            </p>
 
-
-
-<p style="font-size:110%; color: #6f439c; margin: 0; font-style: italic; padding-top:2%;">
-The words that we have available change what we will do.
-</p>
-
-<h2 id="why-learn-julia-what-are-the-value-propositions">Why Learn Julia? What Are the Value Propositions?</h2>
-<ul>
-<li><strong>Combines Python&rsquo;s usability with C++ speed</strong>
-<ul>
-<li>Writing a prototype of code in Python, only to later implement it in C++ for speed is a waste.</li>
-<li>Now these strengths are in one language.</li>
-<li>This is accomplished using just in time compilation. The way this works is: you write dynamic Julia code, then Julia compiles it into static Julia, then everything runs super fast.</li>
-</ul>
-</li>
-<li><strong>Dynamic</strong>
-<ul>
-<li>Meaning you don&rsquo;t have to define data types, Julia will do that for you.</li>
-<li>However you have the option of defining them if you want.</li>
-</ul>
-</li>
-<li><strong>Readable</strong>
-<ul>
-<li>Designed to be easy to understand.</li>
-</ul>
-</li>
-<li><strong>Flexible</strong>
-<ul>
-<li>There are optional arugments in functions.</li>
-<li>Functions can be combined.</li>
-<li>There is a rich language of types for contructing and describing objects.</li>
-</ul>
-</li>
-<li><strong>Multiple Dispatch</strong>
-<ul>
-<li>Where a function or method can be dynamically dispatched at runtime based on the type of the object the function is being called on, or attributes of one or more of its arguments. An example would be a function whose arguments can be a either integers or strings, and where multiple arguments are string values, the function is dispatched in a certain way.</li>
-<li>Single dispatch, on the other hand, is when the way that a function is dispatched at runtime is determined by a single data type, or a single function argument. This <em>special</em> argument is highlighted syntactically in some languages.</li>
-</ul>
-</li>
-<li><strong>Asynchronous I/O</strong>
-<ul>
-<li>This simply means processes are allowed to continue running before data transmission is finished.</li>
-<li>This is contrasted with Synchronous I/O or Blocking I/O where processes need to wait for data transfers to finish before they can continue.</li>
-</ul>
-</li>
-<li><strong>Developed for parallel processing</strong></li>
-<li><strong>No dependencies on other languages</strong>
-<ul>
-<li>However, Julia can call other languages easily.</li>
-</ul>
-</li>
-<li><strong>Includes math and data science symbols</strong>
-<ul>
-<li>So an equation can become a line of code.</li>
-</ul>
-</li>
-<li><strong>Focus on scientific computing</strong></li>
-</ul>
-<h2 id="weaknesses">Weaknesses</h2>
-<ul>
-<li><strong>Just in time compilation</strong>
-<ul>
-<li>It is the reason Julia is easy to use and also lightening fast. So its also a plus.</li>
-<li>When you run something for the first time it will take surprisingly long to run. This is because all the Julia code you&rsquo;re calling (including julia packages that you called / included) get compiled into a static Julia (like C++ which is static from the start).</li>
-<li>However, after the compilation is done, it is super fast.</li>
-<li>The work-around for this is to keep your Julia session running for as long as possible.</li>
-</ul>
-</li>
-<li><strong>Community and packages are still maturing</strong>
-<ul>
-<li>Being a young language, we expect this.</li>
-</ul>
-</li>
-<li><strong>Often not backwards compatible</strong>
-<ul>
-<li>Julia is developing rapidly, and as a consequence, a solution that was posted on Stack Overflow six months ago may already by deprecated, forcing you to actually read the documentation 😝.</li>
-</ul>
-</li>
-<li><strong>Code errors can be difficult to interpret</strong></li>
-</ul>
-<h2 id="julia-in-jupyter">Julia in Jupyter</h2>
-<p>Jupyter Lab is where I develop Julia packages. With the right settings, this works great. Some people complain about the slowness of Julia&rsquo;s JIT compiling. But once you understand how it works, you can organize your notebook to maximize your session length and enjoy the speedy compiled Julia code.</p>
-<p>First, you&rsquo;ll need <a href="https://github.com/JuliaLang/IJulia.jl">IJulia</a>, which is the Julia kernal for Jupyter. Once its installed, you&rsquo;ll be able to create a Julia notebook, just like you would create a Python notebook. From the Julia REPL, enter <code>]</code> to access pkg mode, then:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">add</span> <span class="n">IJulia</span>
-</span></span></code></pre></div><p>Once its running, I would add these lines at the top of every Julia notebook you work in:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="k">using</span> <span class="n">JuliDB</span>
+            <h2 id="why-learn-julia-what-are-the-value-propositions">
+              Why Learn Julia? What Are the Value Propositions?
+            </h2>
+            <ul>
+              <li>
+                <strong
+                  >Combines Python&rsquo;s usability with C++ speed</strong
+                >
+                <ul>
+                  <li>
+                    Writing a prototype of code in Python, only to later
+                    implement it in C++ for speed is a waste.
+                  </li>
+                  <li>Now these strengths are in one language.</li>
+                  <li>
+                    This is accomplished using just in time compilation. The way
+                    this works is: you write dynamic Julia code, then Julia
+                    compiles it into static Julia, then everything runs super
+                    fast.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Dynamic</strong>
+                <ul>
+                  <li>
+                    Meaning you don&rsquo;t have to define data types, Julia
+                    will do that for you.
+                  </li>
+                  <li>
+                    However you have the option of defining them if you want.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Readable</strong>
+                <ul>
+                  <li>Designed to be easy to understand.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Flexible</strong>
+                <ul>
+                  <li>There are optional arugments in functions.</li>
+                  <li>Functions can be combined.</li>
+                  <li>
+                    There is a rich language of types for contructing and
+                    describing objects.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Multiple Dispatch</strong>
+                <ul>
+                  <li>
+                    Where a function or method can be dynamically dispatched at
+                    runtime based on the type of the object the function is
+                    being called on, or attributes of one or more of its
+                    arguments. An example would be a function whose arguments
+                    can be a either integers or strings, and where multiple
+                    arguments are string values, the function is dispatched in a
+                    certain way.
+                  </li>
+                  <li>
+                    Single dispatch, on the other hand, is when the way that a
+                    function is dispatched at runtime is determined by a single
+                    data type, or a single function argument. This
+                    <em>special</em> argument is highlighted syntactically in
+                    some languages.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Asynchronous I/O</strong>
+                <ul>
+                  <li>
+                    This simply means processes are allowed to continue running
+                    before data transmission is finished.
+                  </li>
+                  <li>
+                    This is contrasted with Synchronous I/O or Blocking I/O
+                    where processes need to wait for data transfers to finish
+                    before they can continue.
+                  </li>
+                </ul>
+              </li>
+              <li><strong>Developed for parallel processing</strong></li>
+              <li>
+                <strong>No dependencies on other languages</strong>
+                <ul>
+                  <li>However, Julia can call other languages easily.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Includes math and data science symbols</strong>
+                <ul>
+                  <li>So an equation can become a line of code.</li>
+                </ul>
+              </li>
+              <li><strong>Focus on scientific computing</strong></li>
+            </ul>
+            <h2 id="weaknesses">Weaknesses</h2>
+            <ul>
+              <li>
+                <strong>Just in time compilation</strong>
+                <ul>
+                  <li>
+                    It is the reason Julia is easy to use and also lightening
+                    fast. So its also a plus.
+                  </li>
+                  <li>
+                    When you run something for the first time it will take
+                    surprisingly long to run. This is because all the Julia code
+                    you&rsquo;re calling (including julia packages that you
+                    called / included) get compiled into a static Julia (like
+                    C++ which is static from the start).
+                  </li>
+                  <li>
+                    However, after the compilation is done, it is super fast.
+                  </li>
+                  <li>
+                    The work-around for this is to keep your Julia session
+                    running for as long as possible.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Community and packages are still maturing</strong>
+                <ul>
+                  <li>Being a young language, we expect this.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Often not backwards compatible</strong>
+                <ul>
+                  <li>
+                    Julia is developing rapidly, and as a consequence, a
+                    solution that was posted on Stack Overflow six months ago
+                    may already by deprecated, forcing you to actually read the
+                    documentation 😝.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Code errors can be difficult to interpret</strong>
+              </li>
+            </ul>
+            <h2 id="julia-in-jupyter">Julia in Jupyter</h2>
+            <p>
+              Jupyter Lab is where I develop Julia packages. With the right
+              settings, this works great. Some people complain about the
+              slowness of Julia&rsquo;s JIT compiling. But once you understand
+              how it works, you can organize your notebook to maximize your
+              session length and enjoy the speedy compiled Julia code.
+            </p>
+            <p>
+              First, you&rsquo;ll need
+              <a href="https://github.com/JuliaLang/IJulia.jl">IJulia</a>, which
+              is the Julia kernal for Jupyter. Once its installed, you&rsquo;ll
+              be able to create a Julia notebook, just like you would create a
+              Python notebook. From the Julia REPL, enter <code>]</code> to
+              access pkg mode, then:
+            </p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">add</span> <span class="n">IJulia</span>
+</span></span></code></pre>
+            </div>
+            <p>
+              Once its running, I would add these lines at the top of every
+              Julia notebook you work in:
+            </p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="k">using</span> <span class="n">JuliDB</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">IndexedTables</span>
 </span></span><span class="line"><span class="cl">
@@ -181,73 +296,200 @@ The words that we have available change what we will do.
 </span></span><span class="line"><span class="cl"><span class="c"># For viewing JuliaDB tables and arrays</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">IndexedTables</span><span class="o">.</span><span class="n">set_show_compact!</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span>
-</span></span></code></pre></div><p>By default, only summaries of tables and dataframes are shown, running these commands will allow full data to be printed.</p>
-<p>To run a shell command in a Julia Jupyter notebook (or in the Julia REPL), use the <code>;</code> key binding.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="p">;</span><span class="n">pwd</span>
+</span></span></code></pre>
+            </div>
+            <p>
+              By default, only summaries of tables and dataframes are shown,
+              running these commands will allow full data to be printed.
+            </p>
+            <p>
+              To run a shell command in a Julia Jupyter notebook (or in the
+              Julia REPL), use the <code>;</code> key binding.
+            </p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="p">;</span><span class="n">pwd</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">kate</span><span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">Project</span><span class="o">/</span><span class="n">notebook</span>
-</span></span></code></pre></div><h2 id="basics-for-getting-started">Basics For Getting Started</h2>
-<h4 id="using-modules">Using Modules</h4>
-<p>In most cases, you&rsquo;ll need to use a few Julia packages, also known as modules. JuliaDB.jl is one such module. To get started using the module, you first need to add it to your environment by entering the Julia REPL and pressing <code>]</code> to enter pkg mode, then:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">add</span> <span class="n">JuliaDB</span>
-</span></span></code></pre></div><p>Once you&rsquo;re back in the Julia REPL, or in a notebook, and you want to use the module you can either enter <code>import JuliaDB</code> or <code>using JuliaDB</code>. If you <code>import</code> the package, you&rsquo;re only importing the module&rsquo;s name, to call its function you would need to enter <code>JuliaDB.loadtable()</code> for instance. But if you use <code>using</code> than the modules name and all of its function names are imported so you could call <code>loadtable()</code> directly.</p>
-<h4 id="changing-strings-to-ints">Changing strings to ints</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">parse</span><span class="o">.</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="p">[</span><span class="s">&#34;1&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span><span class="p">])</span>
+</span></span></code></pre>
+            </div>
+            <h2 id="basics-for-getting-started">Basics For Getting Started</h2>
+            <h4 id="using-modules">Using Modules</h4>
+            <p>
+              In most cases, you&rsquo;ll need to use a few Julia packages, also
+              known as modules. JuliaDB.jl is one such module. To get started
+              using the module, you first need to add it to your environment by
+              entering the Julia REPL and pressing <code>]</code> to enter pkg
+              mode, then:
+            </p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">add</span> <span class="n">JuliaDB</span>
+</span></span></code></pre>
+            </div>
+            <p>
+              Once you&rsquo;re back in the Julia REPL, or in a notebook, and
+              you want to use the module you can either enter
+              <code>import JuliaDB</code> or <code>using JuliaDB</code>. If you
+              <code>import</code> the package, you&rsquo;re only importing the
+              module&rsquo;s name, to call its function you would need to enter
+              <code>JuliaDB.loadtable()</code> for instance. But if you use
+              <code>using</code> than the modules name and all of its function
+              names are imported so you could call
+              <code>loadtable()</code> directly.
+            </p>
+            <h4 id="changing-strings-to-ints">Changing strings to ints</h4>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">parse</span><span class="o">.</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="p">[</span><span class="s">&#34;1&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl"> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl"> <span class="mi">2</span>
-</span></span></code></pre></div><h2 id="symbols">Symbols</h2>
-<p><strong>@ Macro</strong></p>
-<ul>
-<li>A macro takes in code (a julia expression) as input and spits out code (a different julia expression). So, a macro is a code generator.</li>
-<li>My favorite macro is <code>@time</code> which wil print how long a process took, how much memory was used, and percent gc if applicable.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="nd">@time</span> <span class="n">A</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}(</span><span class="nb">undef</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></span></code></pre>
+            </div>
+            <h2 id="symbols">Symbols</h2>
+            <p><strong>@ Macro</strong></p>
+            <ul>
+              <li>
+                A macro takes in code (a julia expression) as input and spits
+                out code (a different julia expression). So, a macro is a code
+                generator.
+              </li>
+              <li>
+                My favorite macro is <code>@time</code> which wil print how long
+                a process took, how much memory was used, and percent gc if
+                applicable.
+              </li>
+            </ul>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="nd">@time</span> <span class="n">A</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}(</span><span class="nb">undef</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="mf">0.000001</span> <span class="n">seconds</span> <span class="p">(</span><span class="mi">1</span> <span class="n">allocation</span><span class="o">:</span> <span class="mi">128</span> <span class="n">bytes</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mi">2</span><span class="o">×</span><span class="mi">3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl"> <span class="mf">2.23877e-314</span>  <span class="mf">0.0</span>    <span class="mf">0.0</span>
 </span></span><span class="line"><span class="cl"> <span class="mf">2.23832e-314</span>  <span class="mf">0.0</span>  <span class="nb">NaN</span>
-</span></span></code></pre></div><p><strong>!</strong></p>
-<ul>
-<li>It means &ldquo;not&rdquo; is Julia. For example <code>!=</code> codes for &ldquo;not equal to.&rdquo;</li>
-<li>A function name ending with a <code>!</code> indicates that it will mutate or destroy the value of one or more of its arguments (compare, for example, <code>sort</code> and <code>sort!</code>)</li>
-</ul>
-<p><strong>;</strong></p>
-<ul>
-<li>The semicolon has multiple uses in Julia.</li>
-<li>First, it activates shell mode in the Julia REPL. <code>;pwd</code> for example will print the working directory.</li>
-<li>Next, when the semicolon is placed at the end of a piece of code, it stops Julia from printing variables defined in that code. However if a function is called in that piece of code, the output of the function will still be printed. The semilon at the end of this code prevents the filtered indexedtable from being printed, however the time function still prints its output.</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="nd">@time</span> <span class="n">filter</span><span class="p">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">CHROM</span> <span class="o">==</span> <span class="n">benchmark_variant</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">vcf_table</span><span class="p">);</span>
+</span></span></code></pre>
+            </div>
+            <p><strong>!</strong></p>
+            <ul>
+              <li>
+                It means &ldquo;not&rdquo; is Julia. For example
+                <code>!=</code> codes for &ldquo;not equal to.&rdquo;
+              </li>
+              <li>
+                A function name ending with a <code>!</code> indicates that it
+                will mutate or destroy the value of one or more of its arguments
+                (compare, for example, <code>sort</code> and <code>sort!</code>)
+              </li>
+            </ul>
+            <p><strong>;</strong></p>
+            <ul>
+              <li>The semicolon has multiple uses in Julia.</li>
+              <li>
+                First, it activates shell mode in the Julia REPL.
+                <code>;pwd</code> for example will print the working directory.
+              </li>
+              <li>
+                Next, when the semicolon is placed at the end of a piece of
+                code, it stops Julia from printing variables defined in that
+                code. However if a function is called in that piece of code, the
+                output of the function will still be printed. The semilon at the
+                end of this code prevents the filtered indexedtable from being
+                printed, however the time function still prints its output.
+              </li>
+            </ul>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="nd">@time</span> <span class="n">filter</span><span class="p">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">CHROM</span> <span class="o">==</span> <span class="n">benchmark_variant</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">vcf_table</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="mf">0.102539</span> <span class="n">seconds</span> <span class="p">(</span><span class="mf">81.61</span> <span class="n">k</span> <span class="n">allocations</span><span class="o">:</span> <span class="mf">4.294</span> <span class="n">MiB</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="data-types">Data Types</h2>
-<p>Julia has lots of datatypes, and yet if you dont specify a data type, Julia will do that for you. Having a solid understanding of the basic data types will save you lots of time and headaches.</p>
-<h4 id="tuple">Tuple</h4>
-<p>Built in data structure with <strong>fixed-length</strong> that can hold <strong>any values</strong> but cannot be changed (<strong>immutable</strong>)</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#34;soy sauce&#34;</span><span class="p">,</span> <span class="s">&#34;mirin&#34;</span><span class="p">)</span>
+</span></span></code></pre>
+            </div>
+            <h2 id="data-types">Data Types</h2>
+            <p>
+              Julia has lots of datatypes, and yet if you dont specify a data
+              type, Julia will do that for you. Having a solid understanding of
+              the basic data types will save you lots of time and headaches.
+            </p>
+            <h4 id="tuple">Tuple</h4>
+            <p>
+              Built in data structure with <strong>fixed-length</strong> that
+              can hold <strong>any values</strong> but cannot be changed
+              (<strong>immutable</strong>)
+            </p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#34;soy sauce&#34;</span><span class="p">,</span> <span class="s">&#34;mirin&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#34;soy sauce&#34;</span><span class="p">,</span> <span class="s">&#34;mirin&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span></span></code></pre>
+            </div>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="s">&#34;soy sauce&#34;</span>
-</span></span></code></pre></div><h4 id="named-tuple">Named Tuple</h4>
-<p>Elements in tuple can be given names. If so, then its a named tuple. Allowd you to access via names.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">protein</span><span class="o">=</span><span class="s">&#34;beef&#34;</span><span class="p">,</span> <span class="n">carb</span><span class="o">=</span><span class="s">&#34;rice&#34;</span><span class="p">)</span>
+</span></span></code></pre>
+            </div>
+            <h4 id="named-tuple">Named Tuple</h4>
+            <p>
+              Elements in tuple can be given names. If so, then its a named
+              tuple. Allowd you to access via names.
+            </p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">protein</span><span class="o">=</span><span class="s">&#34;beef&#34;</span><span class="p">,</span> <span class="n">carb</span><span class="o">=</span><span class="s">&#34;rice&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">protein</span> <span class="o">=</span> <span class="s">&#34;beef&#34;</span><span class="p">,</span> <span class="n">carb</span> <span class="o">=</span> <span class="s">&#34;rice&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="ss">:protein</span><span class="p">]</span>
+</span></span></code></pre>
+            </div>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="ss">:protein</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="s">&#34;beef&#34;</span>
-</span></span></code></pre></div><h3 id="core-essentials">Core Essentials</h3>
-<p><strong>Core.Array</strong>: N-dimensional dense array with elements of type T</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">T</span><span class="p">,</span> <span class="kt">N</span><span class="p">}</span>
-</span></span></code></pre></div><h3 id="base-essentials">Base Essentials</h3>
-<p><strong>Base.vcat</strong>: concatenate along 1 dimension</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span>
+</span></span></code></pre>
+            </div>
+            <h3 id="core-essentials">Core Essentials</h3>
+            <p>
+              <strong>Core.Array</strong>: N-dimensional dense array with
+              elements of type T
+            </p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">T</span><span class="p">,</span> <span class="kt">N</span><span class="p">}</span>
+</span></span></code></pre>
+            </div>
+            <h3 id="base-essentials">Base Essentials</h3>
+            <p><strong>Base.vcat</strong>: concatenate along 1 dimension</p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-julia" data-lang="julia"><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">julia</span> <span class="o">&gt;</span> <span class="n">vcat</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -255,20 +497,15 @@ The words that we have available change what we will do.
 </span></span><span class="line"><span class="cl"> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>
 </span></span><span class="line"><span class="cl"> <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>
 </span></span><span class="line"><span class="cl"> <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span>
-</span></span></code></pre></div>
-  </article>
+</span></span></code></pre>
+            </div>
+          </article>
 
-  <br/>
-  
-</section>
-
+          <br />
+        </section>
       </div>
-      
     </main>
 
-    
-
-  <script src="/js/app.js"></script>
-  
+    <script src="/js/app.js"></script>
   </body>
 </html>

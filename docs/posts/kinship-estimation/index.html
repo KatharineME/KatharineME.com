@@ -1,215 +1,411 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="author" content="Katharine Medetgul-Ernar">
-    <meta name="description" content="https://katharineme.com/">
-    <meta name="keywords" content="blog,developer,personal">
+    <meta name="author" content="Katharine Medetgul-Ernar" />
+    <meta name="description" content="https://katharineme.com/" />
+    <meta name="keywords" content="blog,developer,personal" />
 
-    <meta property="og:site_name" content="The Art of Genome Analysis">
-    <meta property="og:title" content="
+    <meta property="og:site_name" content="The Art of Genome Analysis" />
+    <meta
+      property="og:title"
+      content="
   Kinship Estimation - The Art of Genome Analysis
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://katharineme.com/posts/kinship-estimation/">
-    <meta property="og:image" content="https://katharineme.com/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="https://katharineme.com/posts/kinship-estimation/">
-    <meta name="twitter:image" content="https://katharineme.com/">
+"
+    />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://katharineme.com/posts/kinship-estimation/"
+    />
+    <meta property="og:image" content="https://katharineme.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:site"
+      content="https://katharineme.com/posts/kinship-estimation/"
+    />
+    <meta name="twitter:image" content="https://katharineme.com/" />
 
-    <base href="https://katharineme.com/posts/kinship-estimation/">
-    <title>
-  Kinship Estimation - The Art of Genome Analysis
-</title>
+    <base href="https://katharineme.com/posts/kinship-estimation/" />
+    <title>Kinship Estimation - The Art of Genome Analysis</title>
 
-    <link rel="canonical" href="https://katharineme.com/posts/kinship-estimation/">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="/css/normalize.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
+    <link
+      rel="canonical"
+      href="https://katharineme.com/posts/kinship-estimation/"
+    />
 
-    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700"
+    />
+    <link rel="stylesheet" href="/css/normalize.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
 
-    
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="16x16"
+    />
 
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="16x16">
+    <link
+      rel="alternate"
+      href="https://katharineme.com/index.xml"
+      type="application/rss+xml"
+      title="The Art of Genome Analysis"
+    />
+    <link
+      href="https://katharineme.com/index.xml"
+      rel="feed"
+      type="application/rss+xml"
+      title="The Art of Genome Analysis"
+    />
 
-    
-      <link rel="alternate" href="https://katharineme.com/index.xml" type="application/rss+xml" title="The Art of Genome Analysis">
-      <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
-    
-
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.115.3" />
   </head>
 
   <body class="">
     <main class="wrapper">
       <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">The Art of Genome Analysis</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="https://katharineme.com/posts">Posts</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
-
+        <section class="container">
+          <a class="navigation-title" href="/">The Art of Genome Analysis</a>
+          <input type="checkbox" id="menu-control" />
+          <label class="menu-mobile float-right" for="menu-control">
+            <span class="btn-mobile float-right">&#9776;</span>
+            <ul class="navigation-list">
+              <li class="navigation-item align-center">
+                <a class="navigation-link" href="https://katharineme.com/posts"
+                  >Posts</a
+                >
+              </li>
+            </ul>
+          </label>
+        </section>
+      </nav>
 
       <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">Kinship Estimation</h1>
-      <h2 class="date">July 15, 2020</h2>
+        <section class="container post">
+          <article>
+            <header>
+              <h1 class="title">Kinship Estimation</h1>
+              <h2 class="date">July 15, 2020</h2>
+            </header>
 
-      
-    </header>
-
-    <p>Two adults think they may be related based off old photos and records. How do we know for sure? That&rsquo;s the topic of this post.</p>
-<p>If it had not been for a potential family member entering our lives, I probably never would have written this. It provided the necessary motivation to learn how kinship estimation works. In this post I give an introduction to kinship from a genetic perspective. Then I describe how I did the genetic kinship analysis to discover I have another family member.</p>
-<p><img src="/images/siblings.jpg" alt="siblings"></p>
-<h2 id="genetic-kinship">Genetic Kinship</h2>
-<p>There is no set amount of DNA that same-related people share. For example, two biological siblings could have been passed many of the same bits of DNA from their parents, or they could been passed many different bits. This element of chance results in the &ldquo;Range % Shared DNA&rdquo; column below.</p>
-<table>
-<thead>
-<tr>
-<th>Relationship</th>
-<th>Average % Shared DNA</th>
-<th>Range % Shared DNA</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Mother / Son</td>
-<td>52.5%</td>
-<td>NA</td>
-</tr>
-<tr>
-<td>Father / Son</td>
-<td>47.5%</td>
-<td>NA</td>
-</tr>
-<tr>
-<td>Mother / Daughter</td>
-<td>50%</td>
-<td>NA</td>
-</tr>
-<tr>
-<td>Father / Daughter</td>
-<td>50%</td>
-<td>NA</td>
-</tr>
-<tr>
-<td>Full Sibling</td>
-<td>50%</td>
-<td>38%-61%</td>
-</tr>
-<tr>
-<td>Grandparent / Grandchild</td>
-<td>25%</td>
-<td>17%-34%</td>
-</tr>
-<tr>
-<td>Aunt or Uncle / Niece or Nephew</td>
-<td>25%</td>
-<td>17%-34%</td>
-</tr>
-<tr>
-<td>Half Sibling</td>
-<td>25%</td>
-<td>17%-34%</td>
-</tr>
-<tr>
-<td>Great-grandparent / Great-grandchild</td>
-<td>12.5%</td>
-<td>4%-23%</td>
-</tr>
-</tbody>
-</table>
-<p>For this reason, when comparing two people&rsquo;s genomes, it isn&rsquo;t immediately obvious how they are related. But adding in age and life history can give us the answer we&rsquo;re looking for.</p>
-<p><em>Side note: Sons and mothers share more DNA simply because the X chromosome is much larger than the Y chromosome.</em></p>
-<p><em>Side note: Some DNA we can only get from one of our parents. For boys obviously, the Y chromosome comes from their father. And for everyone, mitochondrial DNA comes from the mother. Whatever mitochondrial DNA the fertilized egg held, is the mitochondrial DNA the child will have.</em></p>
-<h2 id="method">Method</h2>
-<p>Here we&rsquo;re going to apply the KING kinship estimator. KING stands for Kinship based INference for Genome-wide association studies. <a href="https://academic.oup.com/bioinformatics/article/26/22/2867/228512?login=true">This is the paper that descsribes KING&rsquo;s algorithm</a>.</p>
-<p>The KING method calculates a &ldquo;kinship coefficient&rdquo; which they define as &ldquo;the probability that two alleles sampled at random from two individuals are identical by descent,&rdquo; where monozygotic twins get about 0.35, 1st degree relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17, 3rd degree relatives are between 0.04 and 0.08, and a negative number indicates an unrelated relationship.</p>
-<p>First we use bcftools to merge the VCFs of all the people we want to compare. In this example, we&rsquo;ll only compare two people. Then use Plink to create the necessary input files. Finally we&rsquo;ll call the KING program via Plink to calculate the pair-wise kinship coefficient.</p>
-<h4 id="1-bcftools-merge">1. bcftools merge</h4>
-<p>First we need to merge all the variants from all the people we want to compare into one VCF file. Here we are going to check the kinship of two people, however this method will work with more than two people as well. To merge the VCF&rsquo;s of the people we want to comapre, we&rsquo;ll use trusty <code>bcftools</code>.</p>
-<p>If you don&rsquo;t have bcftools and your on a Mac, <code>brew install bcftools</code> is a good way to get it. If you like using conda, <code>conda install -c bioconda bcftools</code> is another way to get it.</p>
-<p><code>bcftools merge</code> by default will merge VCF1 with VCF2 to make a merged VCF in the manner below. Before merging, make sure the sample names in the header of each VCF (column names 10 and beyond) are what you want them to be. If they are not, one option is manually changing them in a text editor. At a minimum, sample names must be unique before merging.</p>
-<p>Person1 VCF:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	Person1</span>
+            <p>
+              Two adults think they may be related based off old photos and
+              records. How do we know for sure? That&rsquo;s the topic of this
+              post.
+            </p>
+            <p>
+              If it had not been for a potential family member entering our
+              lives, I probably never would have written this. It provided the
+              necessary motivation to learn how kinship estimation works. In
+              this post I give an introduction to kinship from a genetic
+              perspective. Then I describe how I did the genetic kinship
+              analysis to discover I have another family member.
+            </p>
+            <p><img src="/images/siblings.jpg" alt="siblings" /></p>
+            <h2 id="genetic-kinship">Genetic Kinship</h2>
+            <p>
+              There is no set amount of DNA that same-related people share. For
+              example, two biological siblings could have been passed many of
+              the same bits of DNA from their parents, or they could been passed
+              many different bits. This element of chance results in the
+              &ldquo;Range % Shared DNA&rdquo; column below.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Relationship</th>
+                  <th>Average % Shared DNA</th>
+                  <th>Range % Shared DNA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mother / Son</td>
+                  <td>52.5%</td>
+                  <td>NA</td>
+                </tr>
+                <tr>
+                  <td>Father / Son</td>
+                  <td>47.5%</td>
+                  <td>NA</td>
+                </tr>
+                <tr>
+                  <td>Mother / Daughter</td>
+                  <td>50%</td>
+                  <td>NA</td>
+                </tr>
+                <tr>
+                  <td>Father / Daughter</td>
+                  <td>50%</td>
+                  <td>NA</td>
+                </tr>
+                <tr>
+                  <td>Full Sibling</td>
+                  <td>50%</td>
+                  <td>38%-61%</td>
+                </tr>
+                <tr>
+                  <td>Grandparent / Grandchild</td>
+                  <td>25%</td>
+                  <td>17%-34%</td>
+                </tr>
+                <tr>
+                  <td>Aunt or Uncle / Niece or Nephew</td>
+                  <td>25%</td>
+                  <td>17%-34%</td>
+                </tr>
+                <tr>
+                  <td>Half Sibling</td>
+                  <td>25%</td>
+                  <td>17%-34%</td>
+                </tr>
+                <tr>
+                  <td>Great-grandparent / Great-grandchild</td>
+                  <td>12.5%</td>
+                  <td>4%-23%</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              For this reason, when comparing two people&rsquo;s genomes, it
+              isn&rsquo;t immediately obvious how they are related. But adding
+              in age and life history can give us the answer we&rsquo;re looking
+              for.
+            </p>
+            <p>
+              <em
+                >Side note: Sons and mothers share more DNA simply because the X
+                chromosome is much larger than the Y chromosome.</em
+              >
+            </p>
+            <p>
+              <em
+                >Side note: Some DNA we can only get from one of our parents.
+                For boys obviously, the Y chromosome comes from their father.
+                And for everyone, mitochondrial DNA comes from the mother.
+                Whatever mitochondrial DNA the fertilized egg held, is the
+                mitochondrial DNA the child will have.</em
+              >
+            </p>
+            <h2 id="method">Method</h2>
+            <p>
+              Here we&rsquo;re going to apply the KING kinship estimator. KING
+              stands for Kinship based INference for Genome-wide association
+              studies.
+              <a
+                href="https://academic.oup.com/bioinformatics/article/26/22/2867/228512?login=true"
+                >This is the paper that descsribes KING&rsquo;s algorithm</a
+              >.
+            </p>
+            <p>
+              The KING method calculates a &ldquo;kinship coefficient&rdquo;
+              which they define as &ldquo;the probability that two alleles
+              sampled at random from two individuals are identical by
+              descent,&rdquo; where monozygotic twins get about 0.35, 1st degree
+              relatives are 0.177 - 0.35, 2nd degree relatives are 0.08 to 0.17,
+              3rd degree relatives are between 0.04 and 0.08, and a negative
+              number indicates an unrelated relationship.
+            </p>
+            <p>
+              First we use bcftools to merge the VCFs of all the people we want
+              to compare. In this example, we&rsquo;ll only compare two people.
+              Then use Plink to create the necessary input files. Finally
+              we&rsquo;ll call the KING program via Plink to calculate the
+              pair-wise kinship coefficient.
+            </p>
+            <h4 id="1-bcftools-merge">1. bcftools merge</h4>
+            <p>
+              First we need to merge all the variants from all the people we
+              want to compare into one VCF file. Here we are going to check the
+              kinship of two people, however this method will work with more
+              than two people as well. To merge the VCF&rsquo;s of the people we
+              want to comapre, we&rsquo;ll use trusty <code>bcftools</code>.
+            </p>
+            <p>
+              If you don&rsquo;t have bcftools and your on a Mac,
+              <code>brew install bcftools</code> is a good way to get it. If you
+              like using conda,
+              <code>conda install -c bioconda bcftools</code> is another way to
+              get it.
+            </p>
+            <p>
+              <code>bcftools merge</code> by default will merge VCF1 with VCF2
+              to make a merged VCF in the manner below. Before merging, make
+              sure the sample names in the header of each VCF (column names 10
+              and beyond) are what you want them to be. If they are not, one
+              option is manually changing them in a text editor. At a minimum,
+              sample names must be unique before merging.
+            </p>
+            <p>Person1 VCF:</p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	Person1</span>
 </span></span><span class="line"><span class="cl">chr1	10120	.	T	C	1	LowGQX<span class="p">;</span>LowDepth<span class="p">;</span>NoPassedVariantGTs	<span class="nv">SNVHPOL</span><span class="o">=</span>4<span class="p">;</span><span class="nv">MQ</span><span class="o">=</span>6	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:22:0:2:2:1,1:0,1:1,0:0:LowGQX<span class="p">;</span>LowDepth:30,0,22
 </span></span><span class="line"><span class="cl">chr1	51898	.	C	A	6	LowGQX<span class="p">;</span>NoPassedVariantGTs	<span class="nv">SNVHPOL</span><span class="o">=</span>2<span class="p">;</span><span class="nv">MQ</span><span class="o">=</span>35	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:38:5:6:0:4,2:1,2:3,0:2.1:PASS:40,0,101
-</span></span></code></pre></div><p>Person2 VCF:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	Person2</span>
+</span></span></code></pre>
+            </div>
+            <p>Person2 VCF:</p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	Person2</span>
 </span></span><span class="line"><span class="cl">chr1	10250	.	A	C	1	LowGQX<span class="p">;</span>NoPassedVariantGTs	<span class="nv">SNVHPOL</span><span class="o">=</span>4<span class="p">;</span><span class="nv">MQ</span><span class="o">=</span>11	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:23:0:4:0:3,1:1,0:2,1:0:LowGQX:26,0,80
 </span></span><span class="line"><span class="cl">chr1	51898	.	C	A	6	LowGQX<span class="p">;</span>NoPassedVariantGTs	<span class="nv">SNVHPOL</span><span class="o">=</span>2<span class="p">;</span><span class="nv">MQ</span><span class="o">=</span>35	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:17:0:7:0:6,1:3,1:3,0:0:LowGQX:19,0,146
-</span></span></code></pre></div><p>Merge command (must create indices for each VCF first).</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">bcftools index person 1.vcf.gz
+</span></span></code></pre>
+            </div>
+            <p>Merge command (must create indices for each VCF first).</p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">bcftools index person 1.vcf.gz
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">bcftools index person 2.vcf.gz
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">bcftools merge person1.vcf.gz person2.vcf.gz &gt; merged.vcf
-</span></span></code></pre></div><p>Merged VCF:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	Person1	Person2</span>
+</span></span></code></pre>
+            </div>
+            <p>Merged VCF:</p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	Person1	Person2</span>
 </span></span><span class="line"><span class="cl">chr1	10120	.	T	C	1	LowGQX<span class="p">;</span>LowDepth<span class="p">;</span>NoPassedVariantGTs	<span class="nv">SNVHPOL</span><span class="o">=</span>4<span class="p">;</span><span class="nv">MQ</span><span class="o">=</span>6	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:22:0:2:2:1,1:0,1:1,0:0:LowGQX<span class="p">;</span>LowDepth:30,0,22	./.:.:.:.:.:.:.:.:.:.:.
 </span></span><span class="line"><span class="cl">chr1	10250	.	A	C	1	LowGQX<span class="p">;</span>NoPassedVariantGTs	<span class="nv">SNVHPOL</span><span class="o">=</span>4<span class="p">;</span><span class="nv">MQ</span><span class="o">=</span>11	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	./.:.:.:.:.:.:.:.:.:.:.	0/1:23:0:4:0:3,1:1,0:2,1:0:LowGQX:26,0,80
 </span></span><span class="line"><span class="cl">chr1	51898	.	C	A	6	LowGQX<span class="p">;</span>NoPassedVariantGTs	<span class="nv">SNVHPOL</span><span class="o">=</span>2<span class="p">;</span><span class="nv">MQ</span><span class="o">=</span>35	GT:GQ:GQX:DP:DPF:AD:ADF:ADR:SB:FT:PL	0/1:38:5:6:0:4,2:1,2:3,0:2.1:PASS:40,0,101	0/1:17:0:7:0:6,1:3,1:3,0:0:LowGQX:19,0,146
-</span></span></code></pre></div><p>Take a look at the three rows of the merged VCF. The first row is a variant that only Person1 has, the second row is a variant that only Person2 has, and the third row is a variant that both people have. This is great, because variant information for either person wasn&rsquo;t lost in the merge.</p>
-<h4 id="2-plink-file-preparation">2. Plink File Preparation</h4>
-<p>We are going to now use Plink for file preparation and to call the KING kinship estimator. We use Plink1.9 to prep the files. Then Plink2.0 to call the kinship estimator.</p>
-<p><em>Side note: As of February 2021, Plink1.9 and Plink2.0 are not completely independent. Some Plink2.0 commands require input made by Plink1.9. And that is the case for the command we&rsquo;ll run, so you need both.</em></p>
-<p><a href="https://www.cog-genomics.org/plink/1.9/">Get Plink1.9 here</a></p>
-<p><a href="https://www.cog-genomics.org/plink/2.0/">Get Plink2.0 here</a></p>
-<p>Now, we feed Plink1.9 our merged VCF and ask it to make us a .bed and other accompanying files with the file prefix &ldquo;people_kinship_check&rdquo;.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">plink --vcf merged.vcf.gz --make-bed --out people_kinship_check
-</span></span></code></pre></div><p>This command will create four files:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">people_kinship_check</span><span class="p">.</span><span class="nc">bed</span>
+</span></span></code></pre>
+            </div>
+            <p>
+              Take a look at the three rows of the merged VCF. The first row is
+              a variant that only Person1 has, the second row is a variant that
+              only Person2 has, and the third row is a variant that both people
+              have. This is great, because variant information for either person
+              wasn&rsquo;t lost in the merge.
+            </p>
+            <h4 id="2-plink-file-preparation">2. Plink File Preparation</h4>
+            <p>
+              We are going to now use Plink for file preparation and to call the
+              KING kinship estimator. We use Plink1.9 to prep the files. Then
+              Plink2.0 to call the kinship estimator.
+            </p>
+            <p>
+              <em
+                >Side note: As of February 2021, Plink1.9 and Plink2.0 are not
+                completely independent. Some Plink2.0 commands require input
+                made by Plink1.9. And that is the case for the command
+                we&rsquo;ll run, so you need both.</em
+              >
+            </p>
+            <p>
+              <a href="https://www.cog-genomics.org/plink/1.9/"
+                >Get Plink1.9 here</a
+              >
+            </p>
+            <p>
+              <a href="https://www.cog-genomics.org/plink/2.0/"
+                >Get Plink2.0 here</a
+              >
+            </p>
+            <p>
+              Now, we feed Plink1.9 our merged VCF and ask it to make us a .bed
+              and other accompanying files with the file prefix
+              &ldquo;people_kinship_check&rdquo;.
+            </p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">plink --vcf merged.vcf.gz --make-bed --out people_kinship_check
+</span></span></code></pre>
+            </div>
+            <p>This command will create four files:</p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">people_kinship_check</span><span class="p">.</span><span class="nc">bed</span>
 </span></span><span class="line"><span class="cl"><span class="nt">people_kinship_check</span><span class="p">.</span><span class="nc">bim</span>
 </span></span><span class="line"><span class="cl"><span class="nt">people_kinship_check</span><span class="p">.</span><span class="nc">fam</span>
 </span></span><span class="line"><span class="cl"><span class="nt">people_kinship_check</span><span class="p">.</span><span class="nc">log</span>
-</span></span></code></pre></div><p>In short, .log is just the plink STDOUT saved to a file, .bed is a binary genotype file, .fam is a family file, and .bim is a map file. Its worth checking the .bim file and comparing it to the merged VCF to make sure they agree. You should also look at and edit the .fam file as needed. You may need to adjsut the sex code or other family IDs. <a href="https://www.cog-genomics.org/plink/1.9/formats#fam">Here is the .fam format explained</a>.</p>
-<p><a href="https://www.cog-genomics.org/plink/1.9/formats">Read more about these file formats here</a></p>
-<h4 id="3-plink-kinship-check">3. Plink Kinship Check</h4>
-<p>We have the input files we need. Now we call the KING kinship estimator via Plink with the <code>make-king</code> command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">plink2 --bfile people_kinship_check --make-king --out people_kinship_check_result
-</span></span></code></pre></div><p><em>Note: the <code>bfile</code> flag tells plink2 what type of input data we are passing (.bed, .bim, .fam). Then we only need to give the prefix for these files (&ldquo;people_kinship_check&rdquo;).</em></p>
-<p>This command will make three files:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">people_kinship_check_result</span><span class="p">.</span><span class="nc">king</span>
+</span></span></code></pre>
+            </div>
+            <p>
+              In short, .log is just the plink STDOUT saved to a file, .bed is a
+              binary genotype file, .fam is a family file, and .bim is a map
+              file. Its worth checking the .bim file and comparing it to the
+              merged VCF to make sure they agree. You should also look at and
+              edit the .fam file as needed. You may need to adjsut the sex code
+              or other family IDs.
+              <a href="https://www.cog-genomics.org/plink/1.9/formats#fam"
+                >Here is the .fam format explained</a
+              >.
+            </p>
+            <p>
+              <a href="https://www.cog-genomics.org/plink/1.9/formats"
+                >Read more about these file formats here</a
+              >
+            </p>
+            <h4 id="3-plink-kinship-check">3. Plink Kinship Check</h4>
+            <p>
+              We have the input files we need. Now we call the KING kinship
+              estimator via Plink with the <code>make-king</code> command:
+            </p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">plink2 --bfile people_kinship_check --make-king --out people_kinship_check_result
+</span></span></code></pre>
+            </div>
+            <p>
+              <em
+                >Note: the <code>bfile</code> flag tells plink2 what type of
+                input data we are passing (.bed, .bim, .fam). Then we only need
+                to give the prefix for these files
+                (&ldquo;people_kinship_check&rdquo;).</em
+              >
+            </p>
+            <p>This command will make three files:</p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">people_kinship_check_result</span><span class="p">.</span><span class="nc">king</span>
 </span></span><span class="line"><span class="cl"><span class="nt">people_kinship_check_result</span><span class="p">.</span><span class="nc">king</span><span class="p">.</span><span class="nc">id</span>
 </span></span><span class="line"><span class="cl"><span class="nt">people_kinship_check_result</span><span class="p">.</span><span class="nc">log</span>
-</span></span></code></pre></div><p>The .king file holds the kinship estimation coefficient for the two people we are comparing: what we have been striving for. In my case, the kinship coefficeint was higher than 2.0, indicating a first degree relationship. It is amazing to see the answer as a single number. I hope if you&rsquo;re reading this and you followed the steps here, you get a result just as satisfying.</p>
+</span></span></code></pre>
+            </div>
+            <p>
+              The .king file holds the kinship estimation coefficient for the
+              two people we are comparing: what we have been striving for. In my
+              case, the kinship coefficeint was higher than 2.0, indicating a
+              first degree relationship. It is amazing to see the answer as a
+              single number. I hope if you&rsquo;re reading this and you
+              followed the steps here, you get a result just as satisfying.
+            </p>
+          </article>
 
-  </article>
-
-  <br/>
-  
-</section>
-
+          <br />
+        </section>
       </div>
-      
     </main>
 
-    
-
-  <script src="/js/app.js"></script>
-  
+    <script src="/js/app.js"></script>
   </body>
 </html>

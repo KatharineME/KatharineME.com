@@ -1,155 +1,250 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="author" content="Katharine Medetgul-Ernar">
-    <meta name="description" content="https://katharineme.com/">
-    <meta name="keywords" content="blog,developer,personal">
+    <meta name="author" content="Katharine Medetgul-Ernar" />
+    <meta name="description" content="https://katharineme.com/" />
+    <meta name="keywords" content="blog,developer,personal" />
 
-    <meta property="og:site_name" content="The Art of Genome Analysis">
-    <meta property="og:title" content="
+    <meta property="og:site_name" content="The Art of Genome Analysis" />
+    <meta
+      property="og:title"
+      content="
   Git LFS vs Others - The Art of Genome Analysis
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://katharineme.com/posts/git-lfs-vs-others/">
-    <meta property="og:image" content="https://katharineme.com/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="https://katharineme.com/posts/git-lfs-vs-others/">
-    <meta name="twitter:image" content="https://katharineme.com/">
+"
+    />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://katharineme.com/posts/git-lfs-vs-others/"
+    />
+    <meta property="og:image" content="https://katharineme.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:site"
+      content="https://katharineme.com/posts/git-lfs-vs-others/"
+    />
+    <meta name="twitter:image" content="https://katharineme.com/" />
 
-    <base href="https://katharineme.com/posts/git-lfs-vs-others/">
-    <title>
-  Git LFS vs Others - The Art of Genome Analysis
-</title>
+    <base href="https://katharineme.com/posts/git-lfs-vs-others/" />
+    <title>Git LFS vs Others - The Art of Genome Analysis</title>
 
-    <link rel="canonical" href="https://katharineme.com/posts/git-lfs-vs-others/">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="/css/normalize.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
+    <link
+      rel="canonical"
+      href="https://katharineme.com/posts/git-lfs-vs-others/"
+    />
 
-    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700"
+    />
+    <link rel="stylesheet" href="/css/normalize.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
 
-    
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="16x16"
+    />
 
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="16x16">
+    <link
+      rel="alternate"
+      href="https://katharineme.com/index.xml"
+      type="application/rss+xml"
+      title="The Art of Genome Analysis"
+    />
+    <link
+      href="https://katharineme.com/index.xml"
+      rel="feed"
+      type="application/rss+xml"
+      title="The Art of Genome Analysis"
+    />
 
-    
-      <link rel="alternate" href="https://katharineme.com/index.xml" type="application/rss+xml" title="The Art of Genome Analysis">
-      <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
-    
-
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.115.3" />
   </head>
 
   <body class="">
     <main class="wrapper">
       <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">The Art of Genome Analysis</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="https://katharineme.com/posts">Posts</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
-
+        <section class="container">
+          <a class="navigation-title" href="/">The Art of Genome Analysis</a>
+          <input type="checkbox" id="menu-control" />
+          <label class="menu-mobile float-right" for="menu-control">
+            <span class="btn-mobile float-right">&#9776;</span>
+            <ul class="navigation-list">
+              <li class="navigation-item align-center">
+                <a class="navigation-link" href="https://katharineme.com/posts"
+                  >Posts</a
+                >
+              </li>
+            </ul>
+          </label>
+        </section>
+      </nav>
 
       <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">Git LFS vs Others</h1>
-      <h2 class="date">December 13, 2020</h2>
+        <section class="container post">
+          <article>
+            <header>
+              <h1 class="title">Git LFS vs Others</h1>
+              <h2 class="date">December 13, 2020</h2>
+            </header>
 
-      
-    </header>
+            <h2 id="git-lfs">Git LFS</h2>
+            <p>
+              Git Large File Storage is a CLI and server made by Github to store
+              large files. It integrates very nicely into the git workflow,
+              making it easy for git users to adopt. Git LFS stores your
+              repoistory&rsquo;s large files in the Git LFS server and adds a
+              link to your repository that points there. Which files in your
+              repository are managed by Git LFS is specified in
+              <code>.gitattributes</code> and manages by
+              <code>git lfs track</code> and
+              <code>git lfs untrack</code> commands.
+            </p>
+            <p>
+              Git LFS is enabled and disabled per repository. In the repository
+              you run:
+            </p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git lfs install
+</span></span></code></pre>
+            </div>
+            <p>Then this to track a file:</p>
+            <div class="highlight">
+              <pre
+                tabindex="0"
+                class="chroma"
+              ><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git lfs track my_big_file.txt
+</span></span></code></pre>
+            </div>
+            <p>
+              Then <code>git add</code> and <code>git push</code> as usual and
+              thats it.
+            </p>
+            <h4 id="pros">Pros</h4>
+            <ul>
+              <li>
+                Very easy to setup, manage which files are tracked, and remove
+                if need be
+              </li>
+              <li>
+                Naturally integrated with git so you can manage your code and
+                data storage on one platform
+              </li>
+            </ul>
+            <h4 id="cons">Cons</h4>
+            <ul>
+              <li>
+                Maximum of 2GiB file size
+                <ul>
+                  <li>
+                    This is not encouraging when thinking about genomic data
+                  </li>
+                </ul>
+              </li>
+              <li>Its more expensive than AWS S3 and Google Cloud</li>
+            </ul>
+            <h4 id="pricing">Pricing</h4>
+            <ul>
+              <li>
+                $5 / month per data pack, where a data pack is 50GB storage with
+                50GB bandwidth
+              </li>
+              <li>
+                If you have 3 data packs, you would pay $15 / month and have
+                150GB of storage with 150GB bandwidth
+              </li>
+            </ul>
+            <h2 id="big-players">Big Players</h2>
+            <h3 id="amazon-s3">Amazon S3</h3>
+            <h4 id="pricing-1">Pricing</h4>
+            <ul>
+              <li>
+                $0.023 / month per GB for the first 50TB. This is equal to $1.15
+                / month for 50GB storage
+              </li>
+              <li>Much cheaper than Git LFS</li>
+              <li>
+                <a href="https://aws.amazon.com/s3/pricing/"
+                  >https://aws.amazon.com/s3/pricing/</a
+                >
+              </li>
+            </ul>
+            <h3 id="google-cloud">Google Cloud</h3>
+            <h4 id="pricing-2">Pricing</h4>
+            <ul>
+              <li>
+                About $0.20 / month per GB which is about $1 / month for 50GB
+              </li>
+              <li>
+                But adding in costs from interacting with the storage it is
+                $1.19 / month per 50GB.
+              </li>
+              <li>About the same as Amazon S3</li>
+              <li>Cost per GB goes down as amount of data stored increaes.</li>
+            </ul>
+            <h2 id="smaller-players">Smaller Players</h2>
+            <h3 id="git-annex">git-annex</h3>
+            <p>
+              git-annex was a bigger player in the early days of Git LFS, but
+              has since been beat out. It is praised among its users but there
+              is a consensus that Git LFS wins for the following reasons:
+            </p>
+            <ul>
+              <li>
+                When a team member or outsider clones a repo with Git LFS
+                enabled, they dont need to know that before hand. They dont need
+                to add anything to the clone command to tell github to pull down
+                the GIT LFS data which is part of that repository. With
+                git-annex however, that is the case.
+              </li>
+              <li>
+                Because Git LFS is made by Github, git-annex cannot compete when
+                it comes to improvement speed, support, and overall integration
+                with Github.
+              </li>
+            </ul>
+            <h3 id="dvc">DVC</h3>
+            <p><a href="https://dvc.org">https://dvc.org</a></p>
+            <p>
+              Stands for &ldquo;Data Version Control&rdquo;. I found it in this
+              article which pitches DVC:
+              <a
+                href="https://towardsdatascience.com/why-git-and-git-lfs-is-not-enough-to-solve-the-machine-learning-reproducibility-crisis-f733b49e96e8"
+                >https://towardsdatascience.com/why-git-and-git-lfs-is-not-enough-to-solve-the-machine-learning-reproducibility-crisis-f733b49e96e8</a
+              >
+            </p>
+            <p>
+              Looks promising but its not fun to integrate an entirely new tool
+              into your stack.
+            </p>
+            <h3 id="backblaze-b2">BackBlaze B2</h3>
+            <p>
+              <a href="https://www.backblaze.com/b2/cloud-storage.html"
+                >https://www.backblaze.com/b2/cloud-storage.html</a
+              >
+            </p>
+          </article>
 
-    <h2 id="git-lfs">Git LFS</h2>
-<p>Git Large File Storage is a CLI and server made by Github to store large files. It integrates very nicely into the git workflow, making it easy for git users to adopt. Git LFS stores your repoistory&rsquo;s large files in the Git LFS server and adds a link to your repository that points there. Which files in your repository are managed by Git LFS is specified in <code>.gitattributes</code> and manages by <code>git lfs track</code> and <code>git lfs untrack</code> commands.</p>
-<p>Git LFS is enabled and disabled per repository. In the repository you run:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git lfs install
-</span></span></code></pre></div><p>Then this to track a file:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git lfs track my_big_file.txt
-</span></span></code></pre></div><p>Then <code>git add</code> and <code>git push</code> as usual and thats it.</p>
-<h4 id="pros">Pros</h4>
-<ul>
-<li>Very easy to setup, manage which files are tracked, and remove if need be</li>
-<li>Naturally integrated with git so you can manage your code and data storage on one platform</li>
-</ul>
-<h4 id="cons">Cons</h4>
-<ul>
-<li>Maximum of 2GiB file size
-<ul>
-<li>This is not encouraging when thinking about genomic data</li>
-</ul>
-</li>
-<li>Its more expensive than AWS S3 and Google Cloud</li>
-</ul>
-<h4 id="pricing">Pricing</h4>
-<ul>
-<li>$5 / month per data pack, where a data pack is 50GB storage with 50GB bandwidth</li>
-<li>If you have 3 data packs, you would pay $15 / month and have 150GB of storage with 150GB bandwidth</li>
-</ul>
-<h2 id="big-players">Big Players</h2>
-<h3 id="amazon-s3">Amazon S3</h3>
-<h4 id="pricing-1">Pricing</h4>
-<ul>
-<li>$0.023 / month per GB for the first 50TB. This is equal to $1.15 / month for 50GB storage</li>
-<li>Much cheaper than Git LFS</li>
-<li><a href="https://aws.amazon.com/s3/pricing/">https://aws.amazon.com/s3/pricing/</a></li>
-</ul>
-<h3 id="google-cloud">Google Cloud</h3>
-<h4 id="pricing-2">Pricing</h4>
-<ul>
-<li>About $0.20 / month per GB which is about $1 / month for 50GB</li>
-<li>But adding in costs from interacting with the storage it is $1.19 / month per 50GB.</li>
-<li>About the same as Amazon S3</li>
-<li>Cost per GB goes down as amount of data stored increaes.</li>
-</ul>
-<h2 id="smaller-players">Smaller Players</h2>
-<h3 id="git-annex">git-annex</h3>
-<p>git-annex was a bigger player in the early days of Git LFS, but has since been beat out. It is praised among its users but there is a consensus that Git LFS wins for the following reasons:</p>
-<ul>
-<li>When a team member or outsider clones a repo with Git LFS enabled, they dont need to know that before hand. They dont need to add anything to the clone command to tell github to pull down the GIT LFS data which is part of that repository. With git-annex however, that is the case.</li>
-<li>Because Git LFS is made by Github, git-annex cannot compete when it comes to improvement speed, support, and overall integration with Github.</li>
-</ul>
-<h3 id="dvc">DVC</h3>
-<p><a href="https://dvc.org">https://dvc.org</a></p>
-<p>Stands for &ldquo;Data Version Control&rdquo;. I found it in this article which pitches DVC: <a href="https://towardsdatascience.com/why-git-and-git-lfs-is-not-enough-to-solve-the-machine-learning-reproducibility-crisis-f733b49e96e8">https://towardsdatascience.com/why-git-and-git-lfs-is-not-enough-to-solve-the-machine-learning-reproducibility-crisis-f733b49e96e8</a></p>
-<p>Looks promising but its not fun to integrate an entirely new tool into your stack.</p>
-<h3 id="backblaze-b2">BackBlaze B2</h3>
-<p><a href="https://www.backblaze.com/b2/cloud-storage.html">https://www.backblaze.com/b2/cloud-storage.html</a></p>
-
-  </article>
-
-  <br/>
-  
-</section>
-
+          <br />
+        </section>
       </div>
-      
     </main>
 
-    
-
-  <script src="/js/app.js"></script>
-  
+    <script src="/js/app.js"></script>
   </body>
 </html>

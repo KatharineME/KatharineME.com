@@ -1,318 +1,532 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="author" content="Katharine Medetgul-Ernar">
-    <meta name="description" content="https://katharineme.com/">
-    <meta name="keywords" content="blog,developer,personal">
+    <meta name="author" content="Katharine Medetgul-Ernar" />
+    <meta name="description" content="https://katharineme.com/" />
+    <meta name="keywords" content="blog,developer,personal" />
 
-    <meta property="og:site_name" content="The Art of Genome Analysis">
-    <meta property="og:title" content="
+    <meta property="og:site_name" content="The Art of Genome Analysis" />
+    <meta
+      property="og:title"
+      content="
   RNA-Seq Analysis - The Art of Genome Analysis
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://katharineme.com/posts/rna-seq-analysis/">
-    <meta property="og:image" content="https://katharineme.com/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="https://katharineme.com/posts/rna-seq-analysis/">
-    <meta name="twitter:image" content="https://katharineme.com/">
+"
+    />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://katharineme.com/posts/rna-seq-analysis/"
+    />
+    <meta property="og:image" content="https://katharineme.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:site"
+      content="https://katharineme.com/posts/rna-seq-analysis/"
+    />
+    <meta name="twitter:image" content="https://katharineme.com/" />
 
-    <base href="https://katharineme.com/posts/rna-seq-analysis/">
-    <title>
-  RNA-Seq Analysis - The Art of Genome Analysis
-</title>
+    <base href="https://katharineme.com/posts/rna-seq-analysis/" />
+    <title>RNA-Seq Analysis - The Art of Genome Analysis</title>
 
-    <link rel="canonical" href="https://katharineme.com/posts/rna-seq-analysis/">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="/css/normalize.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
+    <link
+      rel="canonical"
+      href="https://katharineme.com/posts/rna-seq-analysis/"
+    />
 
-    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700"
+    />
+    <link rel="stylesheet" href="/css/normalize.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
 
-    
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="16x16"
+    />
 
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="16x16">
+    <link
+      rel="alternate"
+      href="https://katharineme.com/index.xml"
+      type="application/rss+xml"
+      title="The Art of Genome Analysis"
+    />
+    <link
+      href="https://katharineme.com/index.xml"
+      rel="feed"
+      type="application/rss+xml"
+      title="The Art of Genome Analysis"
+    />
 
-    
-      <link rel="alternate" href="https://katharineme.com/index.xml" type="application/rss+xml" title="The Art of Genome Analysis">
-      <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
-    
-
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.115.3" />
   </head>
 
   <body class="">
     <main class="wrapper">
       <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">The Art of Genome Analysis</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="https://katharineme.com/posts">Posts</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
-
+        <section class="container">
+          <a class="navigation-title" href="/">The Art of Genome Analysis</a>
+          <input type="checkbox" id="menu-control" />
+          <label class="menu-mobile float-right" for="menu-control">
+            <span class="btn-mobile float-right">&#9776;</span>
+            <ul class="navigation-list">
+              <li class="navigation-item align-center">
+                <a class="navigation-link" href="https://katharineme.com/posts"
+                  >Posts</a
+                >
+              </li>
+            </ul>
+          </label>
+        </section>
+      </nav>
 
       <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">RNA-Seq Analysis</h1>
-      <h2 class="date">May 5, 2021</h2>
+        <section class="container post">
+          <article>
+            <header>
+              <h1 class="title">RNA-Seq Analysis</h1>
+              <h2 class="date">May 5, 2021</h2>
+            </header>
 
-      
-    </header>
+            <h2 id="dna-vs-rna">DNA vs. RNA</h2>
 
-    <h2 id="dna-vs-rna">DNA vs. RNA</h2>
+            <div style="text-align: center">
+              <img style="height: 250px" src="/images/dna_vs_rna.jpg" />
+              <p style="font-size: 18%; color: #8f8f8f; margin: 0">
+                Photo credit to biologydictionary.net
+              </p>
+            </div>
 
+            <p>
+              To review, DNA and RNA are different molecules and hold different
+              information. DNA is more or less fixed and consistent across all
+              your cells, with the exception of de novo mutations (in skin cells
+              from UV light for example), whereas RNA produced by the cell is
+              changing all the time.
+            </p>
+            <p>
+              From acetylation to methylation, alternative splicing, and other
+              regulatory mechanisms, our cells use many different strategies to
+              specialize the way they transcribe and utilize the genome,
+              resulting in different functions (why skin cells are different
+              from heart cells).
+            </p>
 
+            <div style="text-align: center">
+              <img style="height: 220px" src="/images/skin_heart_cell.png" />
+              <p style="font-size: 18%; color: #8f8f8f; margin: 0">
+                Photo credit to Biorender
+              </p>
+            </div>
 
-<div style="text-align:center">
-<img style="height: 250px;" src="/images/dna_vs_rna.jpg">
-<p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to biologydictionary.net</p>
-</div>
+            <p>
+              RNA is like a snapshot of the cell. Results of RNA-Seq will be
+              vastly different between cell types and over time in the same
+              cell. For example, a cell might be fighting a pathogen or in the
+              process of division, these will produce different results. Even
+              you may give a different impression if someone meets you at work
+              versus out at a bar. It&rsquo;s the same concept. Cell type
+              dependent and time dependent.
+            </p>
+            <p>
+              In sum: DNA tells you what the cells are working with, RNA tells
+              you what they&rsquo;re up to.
+            </p>
+            <h2 id="rna-seq">RNA-Seq</h2>
+            <p>
+              Whether we are trying to figure out how cells respond to a drug or
+              delineate the cell states of a tumor, RNA-Seq is currently the
+              best way to assess the gene expression of cells. However,
+              it&rsquo;s a bit of a misnomer because we don&rsquo;t actually
+              sequence the RNA. We first convert it into cDNA, which is more
+              stable, then sequence it. Let&rsquo;s break it down step by step.
+            </p>
+            <h4 id="sampling">Sampling</h4>
+            <p>
+              The main challenge with isolating RNA from a sample is it&rsquo;s
+              instability. Compared to DNA, RNA is less stable because it is
+              single stranded and because it has a reactive hydroxyl group (OH)
+              on the second carbon of its sugar ring instead of a hydrogren.
+            </p>
+            <p>
+              However, assuming RNA was successfully isolated, what kind of RNA
+              will be recovered? This is the typical breakdown:
+            </p>
+            <ul>
+              <li>85% is ribosomal RNA (rRNA)</li>
+              <li>10-12% is transfer RNA (tRNA)</li>
+              <li>2-3% is messenger RNA (mRNA)</li>
+              <li>&lt;3% is lncRNA, miRNA, ncRNA, and circRNA</li>
+            </ul>
+            <p>
+              Some researches are interested in studying the ribosomal RNA, in
+              which case this is good. For researchers interested in different
+              RNAs, enrichment techniques can be applied to increase those
+              signals. See below.
+            </p>
+            <h4 id="library-preparation">Library Preparation</h4>
+            <p><strong>1. Check for Degredation</strong></p>
+            <p>
+              Can be done with RNA gel. If mRNA is degraded, special treatments
+              need to be done to repair transcripts first.
+            </p>
+            <p><strong>2. Enrich for mRNA</strong></p>
+            <ul>
+              <li>
+                Poly-A Enrichment
+                <ul>
+                  <li>
+                    Beads that bind to the poly A tails on mRNA trancripts and
+                    pull them down, isolating them from other RNAs.
+                  </li>
+                  <li>
+                    Can&rsquo;t be used in prokaryotic cells becuase they
+                    typically don&rsquo;t have poly A tails on their mRNA
+                    transcripts.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                rRNA depletion
+                <ul>
+                  <li>Selectively remove rRNA sequences.</li>
+                </ul>
+              </li>
+            </ul>
+            <p><strong>3. Convert to cDNA</strong></p>
+            <p>Why? Increases stability and its easier for sequencing.</p>
+            <p><strong>4. Fragment</strong></p>
+            <p>
+              After conversion, fragments will be many different sizes, because
+              transcripts vary in length. To fix this, we do fragmentation
+              (enzymatic or via sonication). As usual, small biases in per base
+              sequence content in the first ~10 bases can be introduced here.
+            </p>
+            <p>
+              Agilent bioanalyzer can tell you how efficient fragmentation was
+              and the distribution of fragement size in your sample.
+            </p>
+            <p><strong>5. Ligate Adapters</strong></p>
+            <p><strong>6. QC Library</strong></p>
+            <h4 id="sequencing">Sequencing</h4>
+            <p>
+              Recommended sequencing depth, read length, number of replicates,
+              and single versus paired-end sequencing are all variables that
+              change depending on the project goal. For example, in this image
+              you can the consequences of varying sequencing depths.
+            </p>
 
-<p>To review, DNA and RNA are different molecules and hold different information. DNA is more or less fixed and consistent across all your cells, with the exception of de novo mutations (in skin cells from UV light for example), whereas RNA produced by the cell is changing all the time.</p>
-<p>From acetylation to methylation, alternative splicing, and other regulatory mechanisms, our cells use many different strategies to specialize the way they transcribe and utilize the genome, resulting in different functions (why skin cells are different from heart cells).</p>
+            <div style="text-align: center">
+              <img
+                style="height: 320px"
+                src="/images/rna_seq_depth_consequences.png"
+              />
+              <p style="font-size: 18%; color: #8f8f8f; margin: 0">
+                Photo credit to Iowa Institute of Human Genetics
+              </p>
+            </div>
 
+            <p>
+              In terms of read length, if the end goal is differential
+              expression analysis or variant calling, 75 bp is a commonly used.
+              This will lower the number of reads that flank splice-junctions
+              which are more difficult to align.
+            </p>
+            <p>
+              Single-end is usually enough for differential expression analysis.
+              De novo sequencing or splice variant anlaysis would require
+              paried-end longer reads at greater depth.
+            </p>
+            <h2 id="alignment">Alignment</h2>
+            <p>This is where it gets interesting.</p>
+            <p>
+              There is alignment and there is <em>pseudo-alignment</em>.
+              Alignment is maping RNA-Seq reads to the human reference genome.
+              After doing this you can call variants or quantify expression.
+              Pseudo-alignment maps RNA-Seq reads to a reference transcriptome.
+              It can be used to quantify expression but not for variant calling.
+              However, it&rsquo;s much faster and less computationally expensive
+              than regular alignment. So how you align the reads depends on your
+              goal.
+            </p>
+            <p><strong>Pseudo (Transcriptome) Aligners</strong></p>
+            <ul>
+              <li>Salmon</li>
+              <li>Kallisto</li>
+            </ul>
+            <p>
+              But here we&rsquo;ll focus on alignment to the reference genome.
+            </p>
+            <p>
+              Aligning cDNA to the genome is more difficult than aligning DNA to
+              the genome becasue cDNA is missing introns and other regions that
+              were spliced out when the RNA was made. Enter
+              &ldquo;splice-aware&rdquo; aligners.
+            </p>
+            <p>
+              Splice aware aligner&rsquo;s are exactly what they sound like.
+              They take into account that many of the reads will be
+              non-contiguous and that most of sequence will be exonic. Here are
+              some splice-aware aligners:
+            </p>
+            <p><strong>Splice-Aware (Genome) Aligners</strong></p>
+            <ul>
+              <li>
+                STAR
+                <ul>
+                  <li>
+                    <a href="https://github.com/alexdobin/STAR"
+                      >https://github.com/alexdobin/STAR</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>HISAT2</li>
+              <li>
+                Minimap2
+                <ul>
+                  <li>
+                    <a
+                      href="https://academic.oup.com/bioinformatics/article/34/18/3094/4994778"
+                      >https://academic.oup.com/bioinformatics/article/34/18/3094/4994778</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://github.com/lh3/minimap2"
+                      >https://github.com/lh3/minimap2</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>TopHat2</li>
+            </ul>
+            <p>Stats</p>
+            <ul>
+              <li>There are ~7-8 exons per gene on average.</li>
+              <li>The average exon size in eukaryotes is 150bp.</li>
+              <li>About 80% of exons are less than 200bp in length.</li>
+            </ul>
+            <h2 id="normalization">Normalization</h2>
+            <p><strong>1. The number of reads per sample</strong></p>
+            <p>
+              Without this normalization, you would think the gene expression of
+              sample B is double the gene expression of sample C. Wherein
+              reality, their gene expression maybe almost identical.
+            </p>
 
+            <div style="text-align: center">
+              <img style="height: 220px" src="/images/sample_depth.png" />
+              <p style="font-size: 18%; color: #8f8f8f; margin: 0">
+                Photo credit to Biorender
+              </p>
+            </div>
 
-<div style="text-align:center">
-<img style="height: 220px;" src="/images/skin_heart_cell.png">
-<p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Biorender</p>
-</div>
+            <p><strong>2. The number of reads per gene</strong></p>
+            <p>
+              Genes vary in length. If you counted the number of reads mapped to
+              genes A and B below, you would think gene B has twice the
+              expression of gene A. Normalizing by gene length sovles this
+              problem.
+            </p>
 
-<p>RNA is like a snapshot of the cell. Results of RNA-Seq will be vastly different between cell types and over time in the same cell. For example, a cell might be fighting a pathogen or in the process of division, these will produce different results. Even you may give a different impression if someone meets you at work versus out at a bar. It&rsquo;s the same concept. Cell type dependent and time dependent.</p>
-<p>In sum: DNA tells you what the cells are working with, RNA tells you what they&rsquo;re up to.</p>
-<h2 id="rna-seq">RNA-Seq</h2>
-<p>Whether we are trying to figure out how cells respond to a drug or delineate the cell states of a tumor, RNA-Seq is currently the best way to assess the gene expression of cells. However, it&rsquo;s a bit of a misnomer because we don&rsquo;t actually sequence the RNA. We first convert it into cDNA, which is more stable, then sequence it. Let&rsquo;s break it down step by step.</p>
-<h4 id="sampling">Sampling</h4>
-<p>The main challenge with isolating RNA from a sample is it&rsquo;s instability. Compared to DNA, RNA is less stable because it is single stranded and because it has a reactive hydroxyl group (OH) on the second carbon of its sugar ring instead of a hydrogren.</p>
-<p>However, assuming RNA was successfully isolated, what kind of RNA will be recovered? This is the typical breakdown:</p>
-<ul>
-<li>85% is ribosomal RNA (rRNA)</li>
-<li>10-12% is transfer RNA (tRNA)</li>
-<li>2-3% is messenger RNA (mRNA)</li>
-<li>&lt;3% is lncRNA, miRNA, ncRNA, and circRNA</li>
-</ul>
-<p>Some researches are interested in studying the ribosomal RNA, in which case this is good. For researchers interested in different RNAs, enrichment techniques can be applied to increase those signals. See below.</p>
-<h4 id="library-preparation">Library Preparation</h4>
-<p><strong>1. Check for Degredation</strong></p>
-<p>Can be done with RNA gel. If mRNA is degraded, special treatments need to be done to repair transcripts first.</p>
-<p><strong>2. Enrich for mRNA</strong></p>
-<ul>
-<li>Poly-A Enrichment
-<ul>
-<li>Beads that bind to the poly A tails on mRNA trancripts and pull them down, isolating them from other RNAs.</li>
-<li>Can&rsquo;t be used in prokaryotic cells becuase they typically don&rsquo;t have poly A tails on their mRNA transcripts.</li>
-</ul>
-</li>
-<li>rRNA depletion
-<ul>
-<li>Selectively remove rRNA sequences.</li>
-</ul>
-</li>
-</ul>
-<p><strong>3. Convert to cDNA</strong></p>
-<p>Why? Increases stability and its easier for sequencing.</p>
-<p><strong>4. Fragment</strong></p>
-<p>After conversion, fragments will be many different sizes, because transcripts vary in length. To fix this, we do fragmentation (enzymatic or via sonication). As usual, small biases in per base sequence content in the first ~10 bases can be introduced here.</p>
-<p>Agilent bioanalyzer can tell you how efficient fragmentation was and the distribution of fragement size in your sample.</p>
-<p><strong>5. Ligate Adapters</strong></p>
-<p><strong>6. QC Library</strong></p>
-<h4 id="sequencing">Sequencing</h4>
-<p>Recommended sequencing depth, read length, number of replicates, and single versus paired-end sequencing are all variables that change depending on the project goal. For example, in this image you can the consequences of varying sequencing depths.</p>
+            <div style="text-align: center">
+              <img
+                style="height: 250px"
+                src="/images/genes_different_length.png"
+              />
+            </div>
 
+            <p>
+              __3. The outlier genes that skew expression of all other genes
+            </p>
+            <h4 id="common-normalization-methods">
+              Common normalization methods
+            </h4>
+            <p>
+              The methods below normalize by the number of reads per sample and
+              by the number of reads per gene. They differ in the order of
+              operations and few other details.
+            </p>
+            <ul>
+              <li>
+                RPKM (Reads Per Kilobase Million)
+                <ul>
+                  <li>For single end RNA-Seq</li>
+                  <li>
+                    Steps for a single sample:
+                    <ul>
+                      <li>
+                        Step 1: Divide total number of reads by 1,000,000
+                        <ul>
+                          <li>
+                            We call this number the per million scaling factor
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        Step 2: Divide the read count for each gene by the per
+                        million scaling factor
+                        <ul>
+                          <li>We call this reads per million</li>
+                        </ul>
+                      </li>
+                      <li>
+                        Step 3: Divide the reads per million of each gene by the
+                        length of the gene in kilobases (divide by 1 if gene
+                        length is 1kb).
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                FPKM (Fragments Per Kilobase Million)
+                <ul>
+                  <li>For paired end RNA-Seq</li>
+                  <li>
+                    It is the same as RPKM except that is avoids counting
+                    forward and reverse reads twice for a given fragment on the
+                    flow cell.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                TPM (Transcript Per Million)
+                <ul>
+                  <li>Uses the same steps as RPKM but in a different order.</li>
+                  <li>
+                    Steps for a single sample:
+                    <ul>
+                      <li>
+                        Step 1: Divide the read count for each gene by the
+                        length of the gene in kilobases (divide by 1 if gene
+                        length is 1kb).
+                        <ul>
+                          <li>We call this reads per kilobase</li>
+                        </ul>
+                      </li>
+                      <li>Step 2: Calculate total reads per kilobase</li>
+                      <li>
+                        Step 3: Divde total reads per kilobase by 1,000,000
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <h4 id="normalization-programs">Normalization Programs</h4>
+            <p>DESeq2</p>
+            <ul>
+              <li>
+                Adjusting for differences in library size (all mehtods above
+                deal with this)
+              </li>
+              <li>
+                Adjusting for differences in library composition
+                <ul>
+                  <li>
+                    When one sample has a gene that is transcribed a lot and the
+                    other sample doesnt transcribe that gene at all, the other
+                    samples makes the expression of all other genes artificially
+                    high to make up for this.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Steps for a single sample:
+                <ul>
+                  <li>
+                    Calculate scaling factor for each sample
+                    <ul>
+                      <li>Takes the log base e of all the count values</li>
+                      <li>Average each gene across all samples</li>
+                      <li>
+                        Filter out genes with infinity averages (these genes
+                        that for one or more samples, had zero expression). This
+                        causes scaling factors to be based on house keeping
+                        genes (genes transcribed ar similar levels regardless of
+                        tissue type).
+                      </li>
+                      <li>
+                        Subtract the average log value from the log(counts) for
+                        each gene of each sample
+                      </li>
+                      <li>Calculate the median value for each sample.</li>
+                      <li>
+                        Raise e to the median value for each sample to get the
+                        scaling factor for each sample.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <p>edgeR</p>
+            <h4 id="whats-the-best-method-to-use">
+              Whats the best method to use?
+            </h4>
+            <p>Probably TPM. Here&rsquo;s why.</p>
+            <p>
+              Lets say we performed RNA-Seq on three samples (each sample gets
+              one pie in the pictures below).
+            </p>
+            <p><strong>RPKM</strong></p>
+            <p>
+              If we normalize our data with RPKM, for each sample, the total
+              RPKM is different. As you can see below, One sample has a total
+              RPKM of 10, while the other two are 8 and 9. Because of this, we
+              can&rsquo;t directly compare the RPKM of Gene B across the three
+              samples. For example if we compare the RPKM of Gene B in samples 1
+              and 2, we would think it&rsquo;s the same, even though it accounts
+              for a larger percentage of total expression in sample 2.
+            </p>
 
+            <br />
 
-<div style="text-align:center">
-<img style="height: 320px;" src="/images/rna_seq_depth_consequences.png">
-<p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Iowa Institute of Human Genetics</p>
-</div>
+            <div style="text-align: center">
+              <img style="height: 280px" src="/images/rpkm.png" />
+            </div>
 
-<p>In terms of read length, if the end goal is differential expression analysis or variant calling, 75 bp is a commonly used. This will lower the number of reads that flank splice-junctions which are more difficult to align.</p>
-<p>Single-end is usually enough for differential expression analysis. De novo sequencing or splice variant anlaysis would require paried-end longer reads at greater depth.</p>
-<h2 id="alignment">Alignment</h2>
-<p>This is where it gets interesting.</p>
-<p>There is alignment and there is <em>pseudo-alignment</em>. Alignment is maping RNA-Seq reads to the human reference genome. After doing this you can call variants or quantify expression. Pseudo-alignment maps RNA-Seq reads to a reference transcriptome. It can be used to quantify expression but not for variant calling. However, it&rsquo;s much faster and less computationally expensive than regular alignment. So how you align the reads depends on your goal.</p>
-<p><strong>Pseudo (Transcriptome) Aligners</strong></p>
-<ul>
-<li>Salmon</li>
-<li>Kallisto</li>
-</ul>
-<p>But here we&rsquo;ll focus on alignment to the reference genome.</p>
-<p>Aligning cDNA to the genome is more difficult than aligning DNA to the genome becasue cDNA is missing introns and other regions that were spliced out when the RNA was made. Enter &ldquo;splice-aware&rdquo; aligners.</p>
-<p>Splice aware aligner&rsquo;s are exactly what they sound like. They take into account that many of the reads will be non-contiguous and that most of sequence will be exonic. Here are some splice-aware aligners:</p>
-<p><strong>Splice-Aware (Genome) Aligners</strong></p>
-<ul>
-<li>STAR
-<ul>
-<li><a href="https://github.com/alexdobin/STAR">https://github.com/alexdobin/STAR</a></li>
-</ul>
-</li>
-<li>HISAT2</li>
-<li>Minimap2
-<ul>
-<li><a href="https://academic.oup.com/bioinformatics/article/34/18/3094/4994778">https://academic.oup.com/bioinformatics/article/34/18/3094/4994778</a></li>
-<li><a href="https://github.com/lh3/minimap2">https://github.com/lh3/minimap2</a></li>
-</ul>
-</li>
-<li>TopHat2</li>
-</ul>
-<p>Stats</p>
-<ul>
-<li>There are ~7-8 exons per gene on average.</li>
-<li>The average exon size in eukaryotes is 150bp.</li>
-<li>About 80% of exons are less than 200bp in length.</li>
-</ul>
-<h2 id="normalization">Normalization</h2>
-<p><strong>1. The number of reads per sample</strong></p>
-<p>Without this normalization, you would think the gene expression of sample B is double the gene expression of sample C. Wherein reality, their gene expression maybe almost identical.</p>
+            <p><strong>TPM</strong></p>
+            <p>
+              If we normalize our data with TPM, for each sample, the total TPM
+              is the same. That means that when Gene B&rsquo;s TPM is greater in
+              sample 2 than sample 1, its expression is actually greater in
+              sample 2 than sample 1.
+            </p>
 
+            <br />
 
+            <div style="text-align: center">
+              <img style="height: 280px" src="/images/tpm.png" />
+            </div>
 
-<div style="text-align:center">
-<img style="height: 220px;" src="/images/sample_depth.png">
-<p style="font-size:18%; color: #8f8f8f; margin: 0;">Photo credit to Biorender</p>
-</div>
+            <p>
+              Joshua Starmer has
+              <a href="https://www.youtube.com/watch?v=TTUrtCY2k-w&amp;t=495s"
+                >a fantastic video</a
+              >
+              on these methods if you&rsquo;re looking for more.
+            </p>
+          </article>
 
-<p><strong>2. The number of reads per gene</strong></p>
-<p>Genes vary in length. If you counted the number of reads mapped to genes A and B below, you would think gene B has twice the expression of gene A. Normalizing by gene length sovles this problem.</p>
-
-
-
-<div style="text-align:center">
-<img style="height: 250px;" src="/images/genes_different_length.png">
-</div>
-
-<p>__3. The outlier genes that skew expression of all other genes</p>
-<h4 id="common-normalization-methods">Common normalization methods</h4>
-<p>The methods below normalize by the number of reads per sample and by the number of reads per gene. They differ in the order of operations and few other details.</p>
-<ul>
-<li>RPKM (Reads Per Kilobase Million)
-<ul>
-<li>For single end RNA-Seq</li>
-<li>Steps for a single sample:
-<ul>
-<li>Step 1: Divide total number of reads by 1,000,000
-<ul>
-<li>We call this number the per million scaling factor</li>
-</ul>
-</li>
-<li>Step 2: Divide the read count for each gene by the per million scaling factor
-<ul>
-<li>We call this reads per million</li>
-</ul>
-</li>
-<li>Step 3: Divide the reads per million of each gene by the length of the gene in kilobases (divide by 1 if gene length is 1kb).</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>FPKM (Fragments Per Kilobase Million)
-<ul>
-<li>For paired end RNA-Seq</li>
-<li>It is the same as RPKM except that is avoids counting forward and reverse reads twice for a given fragment on the flow cell.</li>
-</ul>
-</li>
-<li>TPM (Transcript Per Million)
-<ul>
-<li>Uses the same steps as RPKM but in a different order.</li>
-<li>Steps for a single sample:
-<ul>
-<li>Step 1: Divide the read count for each gene by the length of the gene in kilobases (divide by 1 if gene length is 1kb).
-<ul>
-<li>We call this reads per kilobase</li>
-</ul>
-</li>
-<li>Step 2: Calculate total reads per kilobase</li>
-<li>Step 3: Divde total reads per kilobase by 1,000,000</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="normalization-programs">Normalization Programs</h4>
-<p>DESeq2</p>
-<ul>
-<li>Adjusting for differences in library size (all mehtods above deal with this)</li>
-<li>Adjusting for differences in library composition
-<ul>
-<li>When one sample has a gene that is transcribed a lot and the other sample doesnt transcribe that gene at all, the other samples makes the expression of all other genes artificially high to make up for this.</li>
-</ul>
-</li>
-<li>Steps for a single sample:
-<ul>
-<li>Calculate scaling factor for each sample
-<ul>
-<li>Takes the log base e of all the count values</li>
-<li>Average each gene across all samples</li>
-<li>Filter out genes with infinity averages (these genes that for one or more samples, had zero expression). This causes scaling factors to be based on house keeping genes (genes transcribed ar similar levels regardless of tissue type).</li>
-<li>Subtract the average log value from the log(counts) for each gene of each sample</li>
-<li>Calculate the median value for each sample.</li>
-<li>Raise e to the median value for each sample to get the scaling factor for each sample.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>edgeR</p>
-<h4 id="whats-the-best-method-to-use">Whats the best method to use?</h4>
-<p>Probably TPM. Here&rsquo;s why.</p>
-<p>Lets say we performed RNA-Seq on three samples (each sample gets one pie in the pictures below).</p>
-<p><strong>RPKM</strong></p>
-<p>If we normalize our data with RPKM, for each sample, the total RPKM is different. As you can see below, One sample has a total RPKM of 10, while the other two are 8 and 9. Because of this, we can&rsquo;t directly compare the RPKM of Gene B across the three samples. For example if we compare the RPKM of Gene B in samples 1 and 2, we would think it&rsquo;s the same, even though it accounts for a larger percentage of total expression in sample 2.</p>
-
-
-<br>
-
-<div style="text-align:center">
-<img style="height: 280px;" src="/images/rpkm.png">
-</div>
-
-<p><strong>TPM</strong></p>
-<p>If we normalize our data with TPM, for each sample, the total TPM is the same. That means that when Gene B&rsquo;s TPM is greater in sample 2 than sample 1, its expression is actually greater in sample 2 than sample 1.</p>
-
-
-<br>
-
-<div style="text-align:center;">
-<img style="height: 280px;" src="/images/tpm.png">
-</div>
-
-<p>Joshua Starmer has <a href="https://www.youtube.com/watch?v=TTUrtCY2k-w&amp;t=495s">a fantastic video</a> on these methods if you&rsquo;re looking for more.</p>
-
-  </article>
-
-  <br/>
-  
-</section>
-
+          <br />
+        </section>
       </div>
-      
     </main>
 
-    
-
-  <script src="/js/app.js"></script>
-  
+    <script src="/js/app.js"></script>
   </body>
 </html>

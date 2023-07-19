@@ -7,7 +7,7 @@
               : function (e) {
                     if (!e.document)
                         throw new Error(
-                            "jQuery requires a window with a document"
+                            "jQuery requires a window with a document",
                         );
                     return t(e);
                 })
@@ -78,7 +78,7 @@
                 return this.pushStack(
                     w.map(this, function (t, n) {
                         return e.call(t, n, t);
-                    })
+                    }),
                 );
             },
             slice: function () {
@@ -223,11 +223,11 @@
             (w.fn[Symbol.iterator] = n[Symbol.iterator]),
         w.each(
             "Boolean Number String Function Array Date RegExp Object Error Symbol".split(
-                " "
+                " ",
             ),
             function (e, t) {
                 l["[object " + t + "]"] = t.toLowerCase();
-            }
+            },
         );
     function C(e) {
         var t = !!e && "length" in e && e.length,
@@ -308,7 +308,7 @@
             $ = new RegExp(M + "+", "g"),
             B = new RegExp(
                 "^" + M + "+|((?:^|[^\\\\])(?:\\\\.)*)" + M + "+$",
-                "g"
+                "g",
             ),
             F = new RegExp("^" + M + "*," + M + "*"),
             _ = new RegExp("^" + M + "*([>+~]|" + M + ")" + M + "*"),
@@ -331,7 +331,7 @@
                         "*(\\d+)|))" +
                         M +
                         "*\\)|)",
-                    "i"
+                    "i",
                 ),
                 bool: new RegExp("^(?:" + P + ")$", "i"),
                 needsContext: new RegExp(
@@ -342,7 +342,7 @@
                         "*((?:-\\d)?\\d*)" +
                         M +
                         "*\\)|)(?=[^-]|$)",
-                    "i"
+                    "i",
                 ),
             },
             G = /^(?:input|select|textarea|button)$/i,
@@ -359,7 +359,7 @@
                     ? String.fromCharCode(r + 65536)
                     : String.fromCharCode(
                           (r >> 10) | 55296,
-                          (1023 & r) | 56320
+                          (1023 & r) | 56320,
                       );
             },
             te = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\0-\x1f\x7f-\uFFFF\w-]/g,
@@ -380,7 +380,7 @@
                 function (e) {
                     return !0 === e.disabled && ("form" in e || "label" in e);
                 },
-                { dir: "parentNode", next: "legend" }
+                { dir: "parentNode", next: "legend" },
             );
         try {
             L.apply((A = H.call(w.childNodes)), w.childNodes),
@@ -577,7 +577,7 @@
                               );
                           })),
                           (n.getElementsByClassName = Q.test(
-                              d.getElementsByClassName
+                              d.getElementsByClassName,
                           )),
                           (n.getById = ue(function (e) {
                               return (
@@ -636,7 +636,7 @@
                                                 if (
                                                     (n =
                                                         o.getAttributeNode(
-                                                            "id"
+                                                            "id",
                                                         )) &&
                                                     n.value === e
                                                 )
@@ -691,7 +691,11 @@
                                           y.push("[*^$]=" + M + "*(?:''|\"\")"),
                                       e.querySelectorAll("[selected]").length ||
                                           y.push(
-                                              "\\[" + M + "*(?:value|" + P + ")"
+                                              "\\[" +
+                                                  M +
+                                                  "*(?:value|" +
+                                                  P +
+                                                  ")",
                                           ),
                                       e.querySelectorAll("[id~=" + b + "-]")
                                           .length || y.push("~="),
@@ -728,7 +732,7 @@
                                   h.webkitMatchesSelector ||
                                   h.mozMatchesSelector ||
                                   h.oMatchesSelector ||
-                                  h.msMatchesSelector)
+                                  h.msMatchesSelector),
                           )) &&
                               ue(function (e) {
                                   (n.disconnectedMatch = m.call(e, "*")),
@@ -756,7 +760,7 @@
                                                     : e.compareDocumentPosition &&
                                                       16 &
                                                           e.compareDocumentPosition(
-                                                              r
+                                                              r,
                                                           ))
                                             )
                                         );
@@ -780,7 +784,7 @@
                                                 (e.ownerDocument || e) ===
                                                 (t.ownerDocument || t)
                                                     ? e.compareDocumentPosition(
-                                                          t
+                                                          t,
                                                       )
                                                     : 1) ||
                                         (!n.sortDetached &&
@@ -936,7 +940,7 @@
                                 (e[1] = e[1].replace(Z, ee)),
                                 (e[3] = (e[3] || e[4] || e[5] || "").replace(
                                     Z,
-                                    ee
+                                    ee,
                                 )),
                                 "~=" === e[2] && (e[3] = " " + e[3] + " "),
                                 e.slice(0, 4)
@@ -994,7 +998,7 @@
                             return (
                                 t ||
                                 ((t = new RegExp(
-                                    "(^|" + M + ")" + e + "(" + M + "|$)"
+                                    "(^|" + M + ")" + e + "(" + M + "|$)",
                                 )) &&
                                     E(e, function (e) {
                                         return t.test(
@@ -1003,7 +1007,7 @@
                                                 ("undefined" !=
                                                     typeof e.getAttribute &&
                                                     e.getAttribute("class")) ||
-                                                ""
+                                                "",
                                         );
                                     }))
                             );
@@ -1489,7 +1493,9 @@
                                     (l = i ? O(o, f) : p[c]) > -1 &&
                                     (o[l] = !(a[l] = f));
                         }
-                    } else (v = we(v === a ? v.splice(h, v.length) : v)), i ? i(null, a, v, u) : L.apply(a, v);
+                    } else
+                        (v = we(v === a ? v.splice(h, v.length) : v)),
+                            i ? i(null, a, v, u) : L.apply(a, v);
                 })
             );
         }
@@ -1507,14 +1513,14 @@
                             return e === t;
                         },
                         s,
-                        !0
+                        !0,
                     ),
                     f = me(
                         function (e) {
                             return O(t, e) > -1;
                         },
                         s,
-                        !0
+                        !0,
                     ),
                     p = [
                         function (e, n, r) {
@@ -1540,12 +1546,12 @@
                                 ve(
                                     e.slice(0, u - 1).concat({
                                         value: " " === e[u - 2].type ? "*" : "",
-                                    })
+                                    }),
                                 ).replace(B, "$1"),
                             n,
                             u < i && Ce(e.slice(u, i)),
                             i < o && Ce((e = e.slice(i))),
-                            i < o && ve(e)
+                            i < o && ve(e),
                         );
                     }
                     p.push(n);
@@ -1637,7 +1643,7 @@
                             if (
                                 !(t = (r.find.ID(
                                     l.matches[0].replace(Z, ee),
-                                    t
+                                    t,
                                 ) || [])[0])
                             )
                                 return n;
@@ -1651,7 +1657,8 @@
                                 (f = r.find[c]) &&
                                 (i = f(
                                     l.matches[0].replace(Z, ee),
-                                    (K.test(u[0].type) && ge(t.parentNode)) || t
+                                    (K.test(u[0].type) && ge(t.parentNode)) ||
+                                        t,
                                 ))
                             ) {
                                 if ((u.splice(o, 1), !(e = i.length && ve(u))))
@@ -1666,7 +1673,7 @@
                             t,
                             !g,
                             n,
-                            !t || (K.test(e) && ge(t.parentNode)) || t
+                            !t || (K.test(e) && ge(t.parentNode)) || t,
                         ),
                         n
                     );
@@ -1689,7 +1696,7 @@
                     if (!n)
                         return e.getAttribute(
                             t,
-                            "type" === t.toLowerCase() ? 1 : 2
+                            "type" === t.toLowerCase() ? 1 : 2,
                         );
                 }),
             (n.attributes &&
@@ -1774,7 +1781,7 @@
                       e,
                       w.grep(t, function (e) {
                           return 1 === e.nodeType;
-                      })
+                      }),
                   )
         );
     }),
@@ -1789,7 +1796,7 @@
                         w(e).filter(function () {
                             for (t = 0; t < r; t++)
                                 if (w.contains(i[t], this)) return !0;
-                        })
+                        }),
                     );
                 for (n = this.pushStack([]), t = 0; t < r; t++)
                     w.find(e, i[t], n);
@@ -1805,7 +1812,7 @@
                 return !!j(
                     this,
                     "string" == typeof e && D.test(e) ? w(e) : e || [],
-                    !1
+                    !1,
                 ).length;
             },
         });
@@ -1833,8 +1840,8 @@
                         w.parseHTML(
                             i[1],
                             t && t.nodeType ? t.ownerDocument || t : r,
-                            !0
-                        )
+                            !0,
+                        ),
                     ),
                     A.test(i[1]) && w.isPlainObject(t))
                 )
@@ -1903,7 +1910,7 @@
         },
         addBack: function (e) {
             return this.add(
-                null == e ? this.prevObject : this.prevObject.filter(e)
+                null == e ? this.prevObject : this.prevObject.filter(e),
             );
         },
     });
@@ -1965,7 +1972,7 @@
                     this.pushStack(i)
                 );
             };
-        }
+        },
     );
     var M = /[^\x20\t\r\n\f]+/g;
     function R(e) {
@@ -2133,7 +2140,7 @@
                                                   .fail(t.reject)
                                             : t[r[0] + "With"](
                                                   this,
-                                                  i ? [e] : arguments
+                                                  i ? [e] : arguments,
                                               );
                                     });
                                 }),
@@ -2155,7 +2162,7 @@
                                                 n.promise()
                                             )
                                                 throw new TypeError(
-                                                    "Thenable self-resolution"
+                                                    "Thenable self-resolution",
                                                 );
                                             (l =
                                                 e &&
@@ -2167,7 +2174,7 @@
                                                         ? l.call(
                                                               e,
                                                               a(o, n, I, i),
-                                                              a(o, n, W, i)
+                                                              a(o, n, W, i),
                                                           )
                                                         : (o++,
                                                           l.call(
@@ -2178,15 +2185,15 @@
                                                                   o,
                                                                   n,
                                                                   I,
-                                                                  n.notifyWith
-                                                              )
+                                                                  n.notifyWith,
+                                                              ),
                                                           ))
                                                     : (r !== I &&
                                                           ((s = void 0),
                                                           (u = [e])),
                                                       (i || n.resolveWith)(
                                                           s,
-                                                          u
+                                                          u,
                                                       ));
                                         }
                                     },
@@ -2199,7 +2206,7 @@
                                                   w.Deferred.exceptionHook &&
                                                       w.Deferred.exceptionHook(
                                                           e,
-                                                          c.stackTrace
+                                                          c.stackTrace,
                                                       ),
                                                       t + 1 >= o &&
                                                           (r !== W &&
@@ -2219,7 +2226,7 @@
                         return w
                             .Deferred(function (e) {
                                 n[0][3].add(
-                                    a(0, e, g(i) ? i : I, e.notifyWith)
+                                    a(0, e, g(i) ? i : I, e.notifyWith),
                                 ),
                                     n[1][3].add(a(0, e, g(t) ? t : I)),
                                     n[2][3].add(a(0, e, g(r) ? r : W));
@@ -2244,14 +2251,14 @@
                                 n[3 - e][2].disable,
                                 n[3 - e][3].disable,
                                 n[0][2].lock,
-                                n[0][3].lock
+                                n[0][3].lock,
                             ),
                         a.add(t[3].fire),
                         (o[t[0]] = function () {
                             return (
                                 o[t[0] + "With"](
                                     this === o ? void 0 : this,
-                                    arguments
+                                    arguments,
                                 ),
                                 this
                             );
@@ -2296,7 +2303,7 @@
             e.console.warn(
                 "jQuery.Deferred exception: " + t.message,
                 t.stack,
-                n
+                n,
             );
     }),
         (w.readyException = function (t) {
@@ -2519,7 +2526,7 @@
                           t,
                           arguments.length > 1,
                           null,
-                          !0
+                          !0,
                       );
             },
             removeData: function (e) {
@@ -2886,7 +2893,7 @@
                                         i && w.expr.match.needsContext.test(i),
                                     namespace: h.join("."),
                                 },
-                                o
+                                o,
                             )),
                             (p = u[d]) ||
                                 (((p = u[d] = []).delegateCount = 0),
@@ -2932,7 +2939,7 @@
                                 new RegExp(
                                     "(^|\\.)" +
                                         h.join("\\.(?:.*\\.|)") +
-                                        "(\\.|$)"
+                                        "(\\.|$)",
                                 )),
                             (a = o = p.length);
                         while (o--)
@@ -3178,7 +3185,7 @@
                         : e.which;
                 },
             },
-            w.event.addProp
+            w.event.addProp,
         ),
         w.each(
             {
@@ -3205,7 +3212,7 @@
                         );
                     },
                 };
-            }
+            },
         ),
         w.fn.extend({
             on: function (e, t, n, r) {
@@ -3224,7 +3231,7 @@
                                 ? r.origType + "." + r.namespace
                                 : r.origType,
                             r.selector,
-                            r.handler
+                            r.handler,
                         ),
                         this
                     );
@@ -3417,7 +3424,7 @@
                     },
                     null,
                     e,
-                    arguments.length
+                    arguments.length,
                 );
             },
             append: function () {
@@ -3493,7 +3500,7 @@
                     },
                     null,
                     e,
-                    arguments.length
+                    arguments.length,
                 );
             },
             replaceWith: function () {
@@ -3507,7 +3514,7 @@
                             (w.cleanData(ye(this)),
                             n && n.replaceChild(t, this));
                     },
-                    e
+                    e,
                 );
             },
         }),
@@ -3531,7 +3538,7 @@
                             s.apply(r, n.get());
                     return this.pushStack(r);
                 };
-            }
+            },
         );
     var We = new RegExp("^(" + re + ")(?!px)[a-z%]+$", "i"),
         $e = function (t) {
@@ -3670,8 +3677,8 @@
                             o -
                             u -
                             s -
-                            0.5
-                    )
+                            0.5,
+                    ),
                 )),
             u
         );
@@ -3797,7 +3804,7 @@
                                 e["offset" + t[0].toUpperCase() + t.slice(1)] -
                                     parseFloat(o[t]) -
                                     Ze(e, t, "border", !1, o) -
-                                    0.5
+                                    0.5,
                             )),
                         s &&
                             (i = ie.exec(n)) &&
@@ -3852,7 +3859,7 @@
                     },
                     e,
                     t,
-                    arguments.length > 1
+                    arguments.length > 1,
                 );
             },
         });
@@ -3888,7 +3895,7 @@
                                   this.options.duration * e,
                                   0,
                                   1,
-                                  this.options.duration
+                                  this.options.duration,
                               ))
                         : (this.pos = t = e),
                     (this.now = (this.end - this.start) * t + this.start),
@@ -4115,7 +4122,7 @@
                 opts: w.extend(
                     !0,
                     { specialEasing: {}, easing: w.easing._default },
-                    n
+                    n,
                 ),
                 originalProperties: t,
                 originalOptions: n,
@@ -4128,7 +4135,7 @@
                         l.opts,
                         t,
                         n,
-                        l.opts.specialEasing[t] || l.opts.easing
+                        l.opts.specialEasing[t] || l.opts.easing,
                     );
                     return l.tweens.push(r), r;
                 },
@@ -4307,7 +4314,7 @@
                 w.fn[e] = function (e, n, r) {
                     return this.animate(t, e, n, r);
                 };
-            }
+            },
         ),
         (w.timers = []),
         (w.fx.tick = function () {
@@ -4507,7 +4514,7 @@
             ],
             function () {
                 w.propFix[this.toLowerCase()] = this;
-            }
+            },
         );
     function vt(e) {
         return (e.match(M) || []).join(" ");
@@ -4594,7 +4601,17 @@
                           (i = 0), (o = w(this)), (a = xt(e));
                           while ((t = a[i++]))
                               o.hasClass(t) ? o.removeClass(t) : o.addClass(t);
-                      } else (void 0 !== e && "boolean" !== n) || ((t = mt(this)) && J.set(this, "__className__", t), this.setAttribute && this.setAttribute("class", t || !1 === e ? "" : J.get(this, "__className__") || ""));
+                      } else
+                          (void 0 !== e && "boolean" !== n) ||
+                              ((t = mt(this)) &&
+                                  J.set(this, "__className__", t),
+                              this.setAttribute &&
+                                  this.setAttribute(
+                                      "class",
+                                      t || !1 === e
+                                          ? ""
+                                          : J.get(this, "__className__") || "",
+                                  ));
                   });
         },
         hasClass: function (e) {
@@ -4746,7 +4763,7 @@
                     (t.namespace = x.join(".")),
                     (t.rnamespace = t.namespace
                         ? new RegExp(
-                              "(^|\\.)" + x.join("\\.(?:.*\\.|)") + "(\\.|$)"
+                              "(^|\\.)" + x.join("\\.(?:.*\\.|)") + "(\\.|$)",
                           )
                         : null),
                     (t.result = void 0),
@@ -4871,7 +4888,7 @@
                               "]",
                           i,
                           n,
-                          r
+                          r,
                       );
             });
         else if (n || "object" !== x(t)) r(e, t);
@@ -5166,7 +5183,7 @@
                 (v.promise(E),
                 (h.url = ((t || h.url || Ct.href) + "").replace(
                     Rt,
-                    Ct.protocol + "//"
+                    Ct.protocol + "//",
                 )),
                 (h.type = n.method || n.type || h.method || h.type),
                 (h.dataTypes = (h.dataType || "*").toLowerCase().match(M) || [
@@ -5205,7 +5222,7 @@
                       h.processData &&
                       0 ===
                           (h.contentType || "").indexOf(
-                              "application/x-www-form-urlencoded"
+                              "application/x-www-form-urlencoded",
                           ) &&
                       (h.data = h.data.replace(qt, "+"))
                     : ((d = h.url.slice(o.length)),
@@ -5221,7 +5238,7 @@
                     (w.lastModified[o] &&
                         E.setRequestHeader(
                             "If-Modified-Since",
-                            w.lastModified[o]
+                            w.lastModified[o],
                         ),
                     w.etag[o] &&
                         E.setRequestHeader("If-None-Match", w.etag[o])),
@@ -5235,7 +5252,7 @@
                               ("*" !== h.dataTypes[0]
                                   ? ", " + $t + "; q=0.01"
                                   : "")
-                        : h.accepts["*"]
+                        : h.accepts["*"],
                 );
             for (p in h.headers) E.setRequestHeader(p, h.headers[p]);
             if (h.beforeSend && (!1 === h.beforeSend.call(g, E, h) || c))
@@ -5332,8 +5349,8 @@
                                 data: n,
                                 success: r,
                             },
-                            w.isPlainObject(e) && e
-                        )
+                            w.isPlainObject(e) && e,
+                        ),
                     )
                 );
             };
@@ -5428,7 +5445,7 @@
                                 t.url,
                                 t.async,
                                 t.username,
-                                t.password
+                                t.password,
                             ),
                             t.xhrFields)
                         )
@@ -5466,7 +5483,7 @@
                                                       typeof s.responseText
                                                   ? { binary: s.response }
                                                   : { text: s.responseText },
-                                              s.getAllResponseHeaders()
+                                              s.getAllResponseHeaders(),
                                           ));
                             };
                         }),
@@ -5525,9 +5542,9 @@
                                         e &&
                                             o(
                                                 "error" === e.type ? 404 : 200,
-                                                e.type
+                                                e.type,
                                             );
-                                })
+                                }),
                             )),
                             r.head.appendChild(t[0]);
                     },
@@ -5557,7 +5574,7 @@
                         : "string" == typeof t.data &&
                           0 ===
                               (t.contentType || "").indexOf(
-                                  "application/x-www-form-urlencoded"
+                                  "application/x-www-form-urlencoded",
                               ) &&
                           Qt.test(t.data) &&
                           "data");
@@ -5607,7 +5624,7 @@
                     (h.createHTMLDocument
                         ? (((i = (t =
                               r.implementation.createHTMLDocument(
-                                  ""
+                                  "",
                               )).createElement("base")).href = r.location.href),
                           t.head.appendChild(i))
                         : (t = r)),
@@ -5646,7 +5663,7 @@
                                         ? w("<div>")
                                               .append(w.parseHTML(e))
                                               .find(r)
-                                        : e
+                                        : e,
                                 );
                         })
                         .always(
@@ -5655,10 +5672,10 @@
                                     a.each(function () {
                                         n.apply(
                                             this,
-                                            o || [e.responseText, t, e]
+                                            o || [e.responseText, t, e],
                                         );
                                     });
-                                }
+                                },
                         ),
                 this
             );
@@ -5676,7 +5693,7 @@
                 w.fn[t] = function (e) {
                     return this.on(t, e);
                 };
-            }
+            },
         ),
         (w.expr.pseudos.animated = function (e) {
             return w.grep(w.timers, function (t) {
@@ -5756,7 +5773,7 @@
                             (((i = w(e).offset()).top += w.css(
                                 e,
                                 "borderTopWidth",
-                                !0
+                                !0,
                             )),
                             (i.left += w.css(e, "borderLeftWidth", !0)));
                     }
@@ -5794,16 +5811,16 @@
                             o
                                 ? o.scrollTo(
                                       n ? o.pageXOffset : i,
-                                      n ? i : o.pageYOffset
+                                      n ? i : o.pageYOffset,
                                   )
                                 : (e[r] = i);
                         },
                         e,
                         r,
-                        arguments.length
+                        arguments.length,
                     );
                 };
-            }
+            },
         ),
         w.each(["top", "left"], function (e, t) {
             w.cssHooks[t] = _e(h.pixelPosition, function (e, n) {
@@ -5842,7 +5859,7 @@
                                           o["scroll" + e],
                                           t.body["offset" + e],
                                           o["offset" + e],
-                                          o["client" + e]
+                                          o["client" + e],
                                       ))
                                     : void 0 === i
                                     ? w.css(t, n, s)
@@ -5850,15 +5867,15 @@
                             },
                             t,
                             a ? i : void 0,
-                            a
+                            a,
                         );
                     };
-                }
+                },
             );
         }),
         w.each(
             "blur focus focusin focusout resize scroll click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup contextmenu".split(
-                " "
+                " ",
             ),
             function (e, t) {
                 w.fn[t] = function (e, n) {
@@ -5866,7 +5883,7 @@
                         ? this.on(t, null, e, n)
                         : this.trigger(t);
                 };
-            }
+            },
         ),
         w.fn.extend({
             hover: function (e, t) {

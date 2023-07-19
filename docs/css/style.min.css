@@ -116,7 +116,12 @@ pre {
   overflow-x: auto;
 }
 code {
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  font-family:
+    SFMono-Regular,
+    Consolas,
+    Liberation Mono,
+    Menlo,
+    monospace;
   display: inline-block;
   background-color: #000;
   color: #24292e;
@@ -216,7 +221,9 @@ img {
     background-color: rgba(254, 254, 254, 0.98);
     padding: 0;
     border-bottom: solid 2px #e2dfe1;
-    transition: opacity 0.25s, max-height 0.15s linear;
+    transition:
+      opacity 0.25s,
+      max-height 0.15s linear;
   }
 }
 #menu-control {
@@ -444,7 +451,7 @@ a:after {
   display: inline-block;
   width: 0;
   height: 2px;
-  background: #FF1968;
+  background: #ff1968;
   transition: 0.5s;
 }
 a:before {
@@ -761,46 +768,45 @@ code {
 }
 
 .homepage {
-    display: flex;
-    margin-top: 0;
-    margin-bottom: 0;
-    background-image: url(../images/cells.jpg);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-image: url(../images/cells.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .homepage-text {
-    margin: 37% 0%;
+  margin: 37% 0%;
 }
 
 .homepage-title {
-    text-align: center;
-    font-size: 350%;
-    line-height: 1.2em;
-    text-transform: uppercase;
-    color: #fff;
+  text-align: center;
+  font-size: 350%;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .homepage-subtitle {
-    font-size: 120%;
-    text-align: center;
-    padding-top: 1.5%;
-    color: #fff;
+  font-size: 120%;
+  text-align: center;
+  padding-top: 1.5%;
+  color: #fff;
 }
 
 .dna-base {
-    color: #FF1968;
+  color: #ff1968;
 }
 
 .post-image {
-    display: flex;
-    max-width: 60%;
+  display: flex;
+  max-width: 60%;
 }
 
 .square-image {
-    display: flex;
-    max-width: 30%;
+  display: flex;
+  max-width: 30%;
 }
-

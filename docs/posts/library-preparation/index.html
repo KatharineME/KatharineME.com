@@ -1,188 +1,266 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="author" content="Katharine Medetgul-Ernar">
-    <meta name="description" content="https://katharineme.com/">
-    <meta name="keywords" content="blog,developer,personal">
+    <meta name="author" content="Katharine Medetgul-Ernar" />
+    <meta name="description" content="https://katharineme.com/" />
+    <meta name="keywords" content="blog,developer,personal" />
 
-    <meta property="og:site_name" content="The Art of Genome Analysis">
-    <meta property="og:title" content="
+    <meta property="og:site_name" content="The Art of Genome Analysis" />
+    <meta
+      property="og:title"
+      content="
   Library Preparation - The Art of Genome Analysis
-">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://katharineme.com/posts/library-preparation/">
-    <meta property="og:image" content="https://katharineme.com/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="https://katharineme.com/posts/library-preparation/">
-    <meta name="twitter:image" content="https://katharineme.com/">
+"
+    />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://katharineme.com/posts/library-preparation/"
+    />
+    <meta property="og:image" content="https://katharineme.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:site"
+      content="https://katharineme.com/posts/library-preparation/"
+    />
+    <meta name="twitter:image" content="https://katharineme.com/" />
 
-    <base href="https://katharineme.com/posts/library-preparation/">
-    <title>
-  Library Preparation - The Art of Genome Analysis
-</title>
+    <base href="https://katharineme.com/posts/library-preparation/" />
+    <title>Library Preparation - The Art of Genome Analysis</title>
 
-    <link rel="canonical" href="https://katharineme.com/posts/library-preparation/">
-    
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="/css/normalize.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
+    <link
+      rel="canonical"
+      href="https://katharineme.com/posts/library-preparation/"
+    />
 
-    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700"
+    />
+    <link rel="stylesheet" href="/css/normalize.min.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
 
-    
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png"
+      sizes="16x16"
+    />
 
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="16x16">
+    <link
+      rel="alternate"
+      href="https://katharineme.com/index.xml"
+      type="application/rss+xml"
+      title="The Art of Genome Analysis"
+    />
+    <link
+      href="https://katharineme.com/index.xml"
+      rel="feed"
+      type="application/rss+xml"
+      title="The Art of Genome Analysis"
+    />
 
-    
-      <link rel="alternate" href="https://katharineme.com/index.xml" type="application/rss+xml" title="The Art of Genome Analysis">
-      <link href="https://katharineme.com/index.xml" rel="feed" type="application/rss+xml" title="The Art of Genome Analysis" />
-    
-
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.115.3" />
   </head>
 
   <body class="">
     <main class="wrapper">
       <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">The Art of Genome Analysis</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="https://katharineme.com/posts">Posts</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
-
+        <section class="container">
+          <a class="navigation-title" href="/">The Art of Genome Analysis</a>
+          <input type="checkbox" id="menu-control" />
+          <label class="menu-mobile float-right" for="menu-control">
+            <span class="btn-mobile float-right">&#9776;</span>
+            <ul class="navigation-list">
+              <li class="navigation-item align-center">
+                <a class="navigation-link" href="https://katharineme.com/posts"
+                  >Posts</a
+                >
+              </li>
+            </ul>
+          </label>
+        </section>
+      </nav>
 
       <div class="content">
-        
-  <section class="container post">
-  <article>
-    <header>
-      <h1 class="title">Library Preparation</h1>
-      <h2 class="date">August 2, 2020</h2>
+        <section class="container post">
+          <article>
+            <header>
+              <h1 class="title">Library Preparation</h1>
+              <h2 class="date">August 2, 2020</h2>
+            </header>
 
-      
-    </header>
+            <h2 id="initial-quality-check">Initial Quality Check</h2>
+            <ul>
+              <li>
+                Check DNA purity on Nanodrop (260/280 ratio shows RNA
+                contamination)
+              </li>
+              <li>Check DNA concentration on Qubit Fluorometer</li>
+            </ul>
+            <h2 id="fragmentation">Fragmentation</h2>
+            <p>Two main options for fragmenting the DNA</p>
+            <ul>
+              <li>
+                Sonication
+                <ul>
+                  <li>Uses a sonication machine</li>
+                  <li>Pros: very little base bias in cuts made</li>
+                  <li>
+                    Cons: Sonication machines are expensive, difficult to cut
+                    DNA fragments smaller than 300bp
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Enzyme digestion
+                <ul>
+                  <li>
+                    Pros: cheaper, doesnt require large sonication machine
+                  </li>
+                  <li>
+                    Cons: Produces minor base % bias in first 10 bases of
+                    fragments
+                    <ul>
+                      <li>This bias can be easily seen in FastQC results</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <h2 id="end-repair-and-a-tailing">End Repair and A Tailing</h2>
+            <p>
+              In order to ligate the necessary adapters to the fragmented
+              sequences, the ends of the fragments need to be made compatible
+              with those adapters. To do that we use a series of enzymes that
+              perform the exact cuts and additions we need.
+            </p>
+            <ol>
+              <li>T4 DNA Pol1 makes the ends of fragments blunt.</li>
+              <li>T4 PNK adds phosphate to 5&rsquo; makes 3&rsquo; OH.</li>
+              <li>Taq Pol adds tailing A to 3&rsquo; end</li>
+            </ol>
 
-    <h2 id="initial-quality-check">Initial Quality Check</h2>
-<ul>
-<li>Check DNA purity on Nanodrop (260/280 ratio shows RNA contamination)</li>
-<li>Check DNA concentration on Qubit Fluorometer</li>
-</ul>
-<h2 id="fragmentation">Fragmentation</h2>
-<p>Two main options for fragmenting the DNA</p>
-<ul>
-<li>Sonication
-<ul>
-<li>Uses a sonication machine</li>
-<li>Pros: very little base bias in cuts made</li>
-<li>Cons: Sonication machines are expensive, difficult to cut DNA fragments smaller than 300bp</li>
-</ul>
-</li>
-<li>Enzyme digestion
-<ul>
-<li>Pros: cheaper, doesnt require large sonication machine</li>
-<li>Cons: Produces minor base % bias in first 10 bases of fragments
-<ul>
-<li>This bias can be easily seen in FastQC results</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="end-repair-and-a-tailing">End Repair and A Tailing</h2>
-<p>In order to ligate the necessary adapters to the fragmented sequences, the ends of the fragments need to be made compatible with those adapters. To do that we use a series of enzymes that perform the exact cuts and additions we need.</p>
-<ol>
-<li>T4 DNA Pol1 makes the ends of fragments blunt.</li>
-<li>T4 PNK adds phosphate to 5&rsquo; makes 3&rsquo; OH.</li>
-<li>Taq Pol adds tailing A to 3&rsquo; end</li>
-</ol>
+            <img
+              class="post-image"
+              src="../../images/dna_fragment_end_repair.png"
+              alt="font pairing"
+            />
 
+            <h2 id="ligation">Ligation</h2>
+            <p>Adapters are ligated to fragments using T4 DNA Ligase.</p>
 
-<img class="post-image"src="../../images/dna_fragment_end_repair.png" alt="font pairing">
+            <img
+              class="post-image"
+              src="../../images/ligation.png"
+              alt="font pairing"
+            />
 
-<h2 id="ligation">Ligation</h2>
-<p>Adapters are ligated to fragments using T4 DNA Ligase.</p>
+            <p>Unique Molecular Identifiers (UMIs)</p>
+            <ul>
+              <li>
+                8-16nt barcode used to label a molecule of nucleic acid. Not
+                commonly used but very effective for identifying PCR generated
+                bias.
+              </li>
+              <li>
+                UMIs are added between the index sequence and the DNA fragment
+              </li>
+              <li>
+                There are two main UMI strategies:
+                <ul>
+                  <li>
+                    Random
+                    <ul>
+                      <li>Popular</li>
+                      <li>Use many random sequences</li>
+                      <li>
+                        However if there is a sequencing error the UMI sequence
+                        you wont be able to map it back to known UMI sequence
+                      </li>
+                      <li>
+                        The same UMI sequence might be used more than once in
+                        the same library, but it doesnt matter because the
+                        chance that two PCR replicates both had the same UMI
+                        before PCR is very low, so they can still be used to
+                        identify PCR duplicates.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Pre-designed
+                    <ul>
+                      <li>Less popular</li>
+                      <li>Very expensive</li>
+                      <li>
+                        Each UMI sequence is designed beforehand, making it
+                        possible to identify any errors later on
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <h2 id="purification">Purification</h2>
+            <p>
+              There are multiple purification steps throughout library
+              preparation and the goal is always the same: keep DNA fragments of
+              the desired size and wash away contaminants. Two popular methods
+              are:
+            </p>
+            <p>Spin column</p>
+            <ul>
+              <li>
+                Uses insert that binds DNA. Things that dont bind are washed
+                away after spinning.
+              </li>
+              <li>But looses some material</li>
+              <li>Keeps very small dsDNA including contaminants</li>
+            </ul>
+            <p>AMPure beads</p>
+            <ul>
+              <li>Magnetc beads that bind DNA in the presence of a buffer.</li>
+              <li>The strength of the binding is controlled by the buffer.</li>
+              <li>Can select for DNA &gt; 100bp</li>
+              <li>Doesnt loose much DNA</li>
+            </ul>
+            <h2 id="pcr">PCR</h2>
+            <p>
+              To make the minimum amount of DNA required for sequencing, usually
+              PCR needs to be done. The fewer cycles the better because PCR
+              doesnt amplify all strands equally - biases are introduced.
+            </p>
+            <p>
+              Some library preparation workflows use the PCR step to attach the
+              index and P5/P7 adapters to the fragments.
+            </p>
+            <h2 id="purification-1">Purification</h2>
+            <h2 id="quality-check-of-final-library">
+              Quality Check of Final Library
+            </h2>
+            <p>
+              You want to see &lt; 1% concentration of adapter dimers
+              (120bp-140bp) and primer dimers (50bp-100bp). Final libraries
+              should be between 200-700bp. Higher concentration of these
+              contaminants can lead to index hopping.
+            </p>
+          </article>
 
-
-<img class="post-image"src="../../images/ligation.png" alt="font pairing">
-
-<p>Unique Molecular Identifiers (UMIs)</p>
-<ul>
-<li>8-16nt barcode used to label a molecule of nucleic acid. Not commonly used but very effective for identifying PCR generated bias.</li>
-<li>UMIs are added between the index sequence and the DNA fragment</li>
-<li>There are two main UMI strategies:
-<ul>
-<li>Random
-<ul>
-<li>Popular</li>
-<li>Use many random sequences</li>
-<li>However if there is a sequencing error the UMI sequence you wont be able to map it back to known UMI sequence</li>
-<li>The same UMI sequence might be used more than once in the same library, but it doesnt matter because the chance that two PCR replicates both had the same UMI before PCR is very low, so they can still be used to identify PCR duplicates.</li>
-</ul>
-</li>
-<li>Pre-designed
-<ul>
-<li>Less popular</li>
-<li>Very expensive</li>
-<li>Each UMI sequence is designed beforehand, making it possible to identify any errors later on</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="purification">Purification</h2>
-<p>There are multiple purification steps throughout library preparation and the goal is always the same: keep DNA fragments of the desired size and wash away contaminants. Two popular methods are:</p>
-<p>Spin column</p>
-<ul>
-<li>Uses insert that binds DNA. Things that dont bind are washed away after spinning.</li>
-<li>But looses some material</li>
-<li>Keeps very small dsDNA including contaminants</li>
-</ul>
-<p>AMPure beads</p>
-<ul>
-<li>Magnetc beads that bind DNA in the presence of a buffer.</li>
-<li>The strength of the binding is controlled by the buffer.</li>
-<li>Can select for DNA &gt; 100bp</li>
-<li>Doesnt loose much DNA</li>
-</ul>
-<h2 id="pcr">PCR</h2>
-<p>To make the minimum amount of DNA required for sequencing, usually PCR needs to be done. The fewer cycles the better because PCR doesnt amplify all strands equally - biases are introduced.</p>
-<p>Some library preparation workflows use the PCR step to attach the index and P5/P7 adapters to the fragments.</p>
-<h2 id="purification-1">Purification</h2>
-<h2 id="quality-check-of-final-library">Quality Check of Final Library</h2>
-<p>You want to see &lt; 1% concentration of adapter dimers (120bp-140bp) and primer dimers (50bp-100bp). Final libraries should be between 200-700bp. Higher concentration of these contaminants can lead to index hopping.</p>
-
-  </article>
-
-  <br/>
-  
-</section>
-
+          <br />
+        </section>
       </div>
-      
     </main>
 
-    
-
-  <script src="/js/app.js"></script>
-  
+    <script src="/js/app.js"></script>
   </body>
 </html>
