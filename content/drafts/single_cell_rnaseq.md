@@ -173,6 +173,32 @@ Visualize clusters with non-linear dimensional reduction (UMAP, tSNE) using the 
 
 Detect and visualize marker genes for the clusters.
 
+## Analysis
+
+Used Cell Ranger Reference Genome and Gene Annotations From Here
+https://support.10xgenomics.com/single-cell-gene-expression/software/release-notes/build#grch38_3.0.0
+
+Generate Genome Index using the same Reference Genome and Gene Annotations as CellRanger
+star --runMode genomeGenerate --runThreadN 4 --genomeDir ./star_index/ --genomeFastaFiles ./Homo_sapiens.GRCh38.dna.primary_assembly.fa --sjdbGTFfile ./Homo_sapiens.GRCh38.93.gtf
+
+Ran the alignment
+star --runThreadN 4 --genomeDir ~/Downloads/ferreira_treg/star_index --readFilesIn ~/Downloads/ferreira_treg/7166-MR-91/7166-MR-91_S1_L005_R2_001.fastq.gz ~/Downloads/ferreira_treg/7166-MR-91/7166-MR-91_S1_L005_R1_001.fastq.gz --readFilesCommand "gzip --decompress --stdout" --outSAMtype BAM SortedByCoordinate --outFileNamePrefix ~/Downloads/ferreira_treg/output/testrun --soloType Droplet --soloCBwhitelist ~/Downloads/ferreira_treg/3M-february-2018.txt --soloUMIlen 12 --clipAdapterType CellRanger4 --outFilterScoreMin 30 --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIfiltering MultiGeneUMI_CR --soloUMIdedup 1MM_CR
+
+Another run for good measure:
+
+star --runThreadN 8 --genomeDir ~/Downloads/ferreira_treg/input/star_index --readFilesIn ~/Downloads/ferreira_treg/input/7166-MR-99/7166-MR-99_S1_L005_R2_001.fastq.gz ~/Downloads/ferreira_treg/input/7166-MR-99/7166-MR-99_S1_L005_R1_001.fastq.gz --readFilesCommand "gzip --decompress --stdout" --outSAMtype BAM SortedByCoordinate --outFileNamePrefix ~/Downloads/ferreira_treg/7166-MR-99/output/ --soloType Droplet --soloCBwhitelist ~/Downloads/ferreira_treg/input/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --clipAdapterType CellRanger4 --outFilterScoreMin 30 --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIfiltering MultiGeneUMI_CR --soloUMIdedup 1MM_CR --soloBarcodeReadLength 151
+
+Alignment attributes to add when things are working
+
+--outSAMattributes NH HI nM AS CR UR CB UB GX GN sS sQ sM
+--soloMultiMappers Uniform
+
+Understanding Output:
+
+https://kb.10xgenomics.com/hc/en-us/articles/115000794686-How-is-the-MEX-format-used-for-the-gene-barcode-matrices-
+https://support.10xgenomics.com/single-cell-multiome-atac-gex/software/pipelines/latest/output/matrices
+https://kb.10xgenomics.com/hc/en-us/articles/360023793031-How-can-I-convert-the-feature-barcode-matrix-from-Cell-Ranger-3-to-a-CSV-file-
+
 ## Sources
 
 https://www.biorxiv.org/content/10.1101/2021.05.05.442755v1.full.pdf
