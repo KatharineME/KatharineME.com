@@ -182,11 +182,43 @@ Generate Genome Index using the same Reference Genome and Gene Annotations as Ce
 star --runMode genomeGenerate --runThreadN 4 --genomeDir ./star_index/ --genomeFastaFiles ./Homo_sapiens.GRCh38.dna.primary_assembly.fa --sjdbGTFfile ./Homo_sapiens.GRCh38.93.gtf
 
 Ran the alignment
-star --runThreadN 4 --genomeDir ~/Downloads/ferreira_treg/star_index --readFilesIn ~/Downloads/ferreira_treg/7166-MR-91/7166-MR-91_S1_L005_R2_001.fastq.gz ~/Downloads/ferreira_treg/7166-MR-91/7166-MR-91_S1_L005_R1_001.fastq.gz --readFilesCommand "gzip --decompress --stdout" --outSAMtype BAM SortedByCoordinate --outFileNamePrefix ~/Downloads/ferreira_treg/output/testrun --soloType Droplet --soloCBwhitelist ~/Downloads/ferreira_treg/3M-february-2018.txt --soloUMIlen 12 --clipAdapterType CellRanger4 --outFilterScoreMin 30 --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIfiltering MultiGeneUMI_CR --soloUMIdedup 1MM_CR
+star
+--runThreadN 4
+--genomeDir ~/Downloads/ferreira_treg/star_index
+--readFilesIn ~/Downloads/ferreira_treg/7166-MR-91/7166-MR-91_S1_L005_R2_001.fastq.gz ~/Downloads/ferreira_treg/7166-MR-91/7166-MR-91_S1_L005_R1_001.fastq.gz
+--readFilesCommand "gzip --decompress --stdout"
+--outSAMtype BAM SortedByCoordinate
+--outFileNamePrefix ~/Downloads/ferreira_treg/output/testrun
+--soloType Droplet
+--soloCBwhitelist ~/Downloads/ferreira_treg/3M-february-2018.txt
+--soloUMIlen 12
+--clipAdapterType CellRanger4
+--outFilterScoreMin 30
+--soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts
+--soloUMIfiltering MultiGeneUMI_CR
+--soloUMIdedup 1MM_CR
 
 Another run for good measure:
 
-star --runThreadN 8 --genomeDir ~/Downloads/ferreira_treg/input/star_index --readFilesIn ~/Downloads/ferreira_treg/input/7166-MR-99/7166-MR-99_S1_L005_R2_001.fastq.gz ~/Downloads/ferreira_treg/input/7166-MR-99/7166-MR-99_S1_L005_R1_001.fastq.gz --readFilesCommand "gzip --decompress --stdout" --outSAMtype BAM SortedByCoordinate --outFileNamePrefix ~/Downloads/ferreira_treg/7166-MR-99/output/ --soloType Droplet --soloCBwhitelist ~/Downloads/ferreira_treg/input/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --clipAdapterType CellRanger4 --outFilterScoreMin 30 --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIfiltering MultiGeneUMI_CR --soloUMIdedup 1MM_CR --soloBarcodeReadLength 151
+star
+--runThreadN 8
+--genomeDir ~/Downloads/ferreira_treg/input/star_index
+--readFilesIn ~/Downloads/ferreira_treg/input/7166-MR-99/7166-MR-99_S1_L005_R2_001.fastq.gz ~/Downloads/ferreira_treg/input/7166-MR-99/7166-MR-99_S1_L005_R1_001.fastq.gz
+--readFilesCommand "gzip --decompress --stdout"
+--outSAMtype BAM SortedByCoordinate
+--outFileNamePrefix ~/Downloads/ferreira_treg/7166-MR-99/output/
+--soloType Droplet
+--soloCBwhitelist ~/Downloads/ferreira_treg/input/3M-february-2018.txt
+--soloCBstart 1
+--soloCBlen 16
+--soloUMIstart 17
+--soloUMIlen 12
+--clipAdapterType CellRanger4
+--outFilterScoreMin 30
+--soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts
+--soloUMIfiltering MultiGeneUMI_CR
+--soloUMIdedup 1MM_CR
+--soloBarcodeReadLength 151
 
 Alignment attributes to add when things are working
 

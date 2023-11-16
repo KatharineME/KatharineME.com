@@ -55,3 +55,20 @@ Limitations of the latest and greatest reference. What regions we dont have sequ
 GRC says they:
 
 "have decided to indefinitely postpone our next coordinate-changing update (GRCh39) while we evaluate new models and sequence content from ongoing efforts to better represent the genetic diversity of the human pangenome, including those of the Telemore-to-Telomere Consortium and the Human Pangenome Reference Consortium"
+
+## Notes To Be Integrated
+
+Gencdoe is basically a collaborative project across nearly 10 univerisituies with a. Goal of annotating al proteins coding loci as well as psuedgenes. Ensemble has been using / relaying not heir annotations since 2009. Each gencode release corresponds to an ensembl release. At least for human and mouse, ensembl release is exactly the egencode release.
+
+When aligning ran-see reads. It helps to have the genes annotations when the genome index is built because the aligner can use information about gene start and end sites and well as splice junctions to predict and map more accurately.
+
+The “analysis set” which was coined by UCSC refers to grch38 or hg38 with the alternative contigs filtered out. This is one reason why Heng Li’s favorite genome is: GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
+
+And finally, YES your gtf needs to match the version and patch of the reference genome you are using. Ensembl which is one of the main producers of gene annotations (gifs) releases updates more frequently than arch. However, ensembl keeps up to date with all the arch patches. Therefore you just need to make are your reference genome patch matches the gif file you are using.
+
+A particularly enlightening Boosters answer on this topic:
+Both Ensembl version 74/75 and version 73 are based on GRCh37, and should also work fine with hg19 - the coordinates should correspond.
+Each version of ensembl, which is a set of gene annotations, is based on a particular version of the genome sequence. But ensembl is updated far more regularly than the genome sequence is. There are new versions of Ensembl every six months if I remember correctly. Thus there is no "corresponding GTF" for a particular genome sequence version.
+As for your inconsistent results - thats just what happens when annotation versions get updated. Transcript models are retired or added - thus transcripts that were expressed in 73 simply don't exist in 75. Not every change that is made is correct - some transcripts for which you might have very good evidence in your RNAseq, might be removed from one version to the next, but we have to assume the newest version is the best. In the course of a three year project you are going to go through 6 versions of ensembl, and things are going to change quite a bit - thats just the nature of the beast.
+The current newest version of Ensembl annotations is version 85, which is based on the GRCh38 version of the sequence. Many people will tell you that you should be moving over to using GRCh38/hg38. However, as yet there aren't any RNA-seq tools that I am aware of that will cope with some of the new features of hg38, in particular the alternative contigs. Thus, if you want to use hg38, you will need to filter out the \_alt contigs before you map (or use the "analysis set" from the UCSC website, which already has these filtered out).
+You would then be able to use Ensembl 85.”
